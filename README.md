@@ -1,4 +1,4 @@
-# Desavio Frontend - Bem-vindo a Bitwise
+# Desafio Frontend - Bem-vindo a Bitwise
 
 Somos Humanos e amamos trabalho com pessoas humanas, pode parecer estranha essa frase, mas pense bem nas empresas que você já trabalhou e em algum momento você foi tratado como um robô ou pior como recurso, aqui sabemos que nossos **'wisers'** são a nossa assinatura, cultura e o motivo pelo qual nossa empresa existe.
 
