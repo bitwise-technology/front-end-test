@@ -18,7 +18,7 @@ Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que n�
 
 ## O nosso desafio
 
-Como você irá ver nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional! 
+Como você irá ver, nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional! 
 
 Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) que tenha as seguintes features:
 
