@@ -2,13 +2,80 @@ import styled from "styled-components";
 
 export const View = styled.div``;
 
+export const Nav = styled.div`
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const ContainerRepositories = styled.div`
+    background: #FFFFFF!important;
+    border-radius: 6px!important;
+    padding: 20px!important;
+    margin-top: 40px;
+    width: 100%;
+    box-shadow: 0px 2px 38px rgba(84,84,89,0.14);
+    label:nth-child(1) {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        color: #3D5879;
+        margin-bottom: 20px;
+    }
+`;
+export const HeaderTable = styled.thead`
+    margin-top: 50px;
+    th {
+        font-family: Roboto!important;
+        font-style: normal!important;
+        font-weight: 500!important;
+        font-size: 15px!important;
+        line-height: 18px!important;
+        text-transform: uppercase;
+        color: #657FA0;
+    }
+`;
+
+export const BodyTable = styled.tbody`
+    margin-top: 50px;
+    tr {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        color: #3D5879;
+    }
+`;
+
 export const ViewCenter = styled.div`
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
 `;
+export const ViewNumberRepositories = styled(ViewCenter)`
+    background: #FFFFFF;
+    box-shadow: 0px 2px 38px rgba(84, 84, 89, 0.14);
+    border-radius: 4px;
+    border-left: 5px solid #490248;
+    label:nth-child(1) {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 0;
+    }
+    label:nth-child(2) {
+        font-family: Gotham;
+        font-size: 16px;
+        line-height: 13px;
+        color: #878790;
+        margin-top: 2px;
+    }
 
+`;
 export const ViewSocial = styled(ViewCenter)`
     flex-direction: row;
     margin-top: 200px;
@@ -16,10 +83,19 @@ export const ViewSocial = styled(ViewCenter)`
 
 export const LeftContent = styled.div`
     padding-left: 8%;
-    margin-top: 5%;
+    padding-top: 5%;
+    padding-top: 5%;
 `;
 
 export const Content = styled.div`
+    height: 100%;
+    margin:0; 
+`;
+
+export const Container = styled.div`
+    padding: 50px 150px;
+    height: 100%;
+    margin:0; 
 `;
 
 export const ViewSearch = styled.div`
@@ -42,6 +118,31 @@ export const Polygon = styled.img`
 export const Logo = styled.img`
     width: 134px;
     height: 48px;
+`;
+
+    
+export const UserImg = styled.img`
+    width: 120px;
+    height: 120px;
+    background-blend-mode: normal;
+    filter: drop-shadow(0px 2px 4px rgba(84, 84, 89, 0.14));
+    border-radius: 4px;
+`;
+
+export const ViewUserInfo = styled.div`
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+`;
+
+export const UserName = styled.label`
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: bold;
+    color: #657FA0;
+    font-size: 22.2751px;
+    line-height: 175%;
 `;
 
 export const Computer = styled.img`
@@ -94,6 +195,15 @@ export const GitButton = styled.button`
     border-radius: 4px;
     cursor: pointer;
     outline: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    &:active {
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+    }
 `;
 
 export const Bold = styled.b``;

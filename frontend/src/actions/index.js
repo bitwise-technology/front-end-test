@@ -41,7 +41,7 @@ export const getUser = (user) => {
         }
         `;
         axios.post("https://api.github.com/graphql", {query: query}, {
-            headers: { 'Authorization': `Bearer b11f9ab05b45d2175d50f0c6852c36bb71cc63a4`}
+            headers: { 'Authorization': `Bearer `}
         })
         .then(response => {
             dispatch({type: "FINISH_USER", payload:response.data.data})
