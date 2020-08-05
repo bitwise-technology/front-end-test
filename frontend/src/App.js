@@ -1,9 +1,12 @@
 import React from 'react';
-import './App.css';
-import Routes from "./Routes";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
+import Base from "./components/Base";
+import reducer from "./reducers";
 
-function App() {
-  return <Routes/>
-}
+const App = () => (
+  <Provider store={createStore(reducer, {}, applyMiddleware(ReduxThunk))}><Base/></Provider>
+)
 
 export default App;
