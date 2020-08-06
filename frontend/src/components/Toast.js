@@ -3,7 +3,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaInstagram, FaLinkedin, FaMedium } from 'react-icons/fa';
 import { ViewSocialToast } from "../assets/styles";
 
-const msg = (text) => (
+/* 
+    Função responsável por gerenciar os alertas da aplicação
+    @param text = texto que será mostrado no alerta
+    @return = componente alert que será exibido na interface
+*/
+
+const Show = (text) => (
     <div>
         <label style = {{margin: 0}}>{text}</label>
         <label style = {{fontSize: 10, margin: 0, fontWeight: 0}}>Aproveite e acompanhe a Bitwise nas redes sociais:</label>
@@ -15,4 +21,4 @@ const msg = (text) => (
     </div>
 );
 
-export default msg;
+export default Show;

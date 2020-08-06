@@ -1,16 +1,28 @@
+/* Bibliotecas necessárias */
 import axios from "axios";
-import msg from "../components/Toast";
+import Show from "../components/Toast";
 import {toast} from "react-toastify";
 
+/* 
+  Função para realização da requisição à API GRAPHQL do Github
+  @param user = login do usuário pesquisado
+  @return = objeto contendo informações do usuário e seus repositórios
+
+*/
+
 export const getUser = (user) => {
+
     return dispatch => { 
 
-        if(!user) toast(msg("Informe um nome de usuário!"));
+        /* Verifica se algum usuário foi informado */
+        if(!user) toast(Show("Informe um nome de usuário!"));
         
         else {
 
+          /* Iniciando loading */
           dispatch({type: "GETTING_USER"});
 
+          /* Criando a query do Graphql */
           const query = `
           query{
               user(login: "${user}") {
@@ -48,24 +60,35 @@ export const getUser = (user) => {
               }
           }
           `;
+
+          /* Iniciando a requisição utilizando o axios e enviando a query como parâmetro */
           axios.post("https://api.github.com/graphql", {query: query}, {
-              headers: { 'Authorization': `Bearer ecaa60b47a98fb92f66c31dce067dd1f7fb5aa58`}
+
+              /* Necessário utilizar um token válido do github para conseguir realizar a requisição */
+              headers: { 'Authorization': `Bearer `}
           })
           .then(response => {
+              
+              /* Verificando se houve retorno */
               if(response.data.data.user){
-                
+
+                /* Verificando se o usuário possui repositórios */
                 if(response.data.data.user.repositories.nodes.length == 0){
-                  toast(msg("Esse usuário não possui nenhum repositório."))
+                  toast(Show("Esse usuário não possui nenhum repositório."));
                 }
 
-                dispatch({type: "FINISH_WITH_USER", payload:response.data.data})
+                /* Despachando o objeto requisitado */
+                dispatch({type: "FINISH_WITH_USER", payload:response.data.data});
 
               }else{
-                toast(msg("Nenhum usuário encontrado!"));
-                dispatch({type: "FINISH_WITHOUT_USER"})
+                toast(Show("Nenhum usuário encontrado!"));
+                dispatch({type: "FINISH_WITHOUT_USER"});
               }
           })
-          .catch(err => console.log(err))
+          .catch(err => {
+            console.log(err);
+            dispatch({type: "FINISH_WITHOUT_USER"});
+          })
         }
     }
 }

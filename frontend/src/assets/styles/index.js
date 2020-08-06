@@ -1,12 +1,30 @@
+/* Importação de bibliotecas utilizadas */
 import styled from "styled-components";
+
+
+/* 
+  Arquivo de gerenciamento dos estilos da aplicação
+  Utilizado a biblioteca styled-components
+*/
 
 export const View = styled.div``;
 
 export const Nav = styled.div`
+    padding: 50px 150px;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: 950px) {
+        padding: 50px 100px;
+    }
+    @media(max-width: 830px) {
+        padding: 50px 30px;
+    }
+    @media(max-width: 715px) {
+        padding: 30px 5px;
+    }
+
 `;
 
 export const ContainerRepositories = styled.div`
@@ -80,6 +98,9 @@ export const ViewNumberRepositories = styled(ViewCenter)`
 export const ViewSocial = styled(ViewCenter)`
     flex-direction: row;
     margin-top: 200px;
+    @media(max-width: 360px) {
+        margin-top: 100px;
+    }
 `;
 
 export const ViewSocialToast = styled(ViewSocial)`
@@ -97,8 +118,13 @@ export const Content = styled.div`
     margin:0; 
 `;
 
+export const ContentResult = styled.div`
+    height: 100%;
+    margin:0; 
+    padding: 30px 150px;
+`;
+
 export const Container = styled.div`
-    padding: 50px 150px;
     min-height: 100%;
     margin:0; 
     position:relative;
@@ -125,16 +151,86 @@ export const Polygon = styled.img`
         width: 550px;
         height: 430px;
     }
+    @media(max-width: 900px) {
+        width: 400px;
+        height: 300px;
+    }
+    @media(max-width: 780px) {
+        width: 300px;
+        height: 200px;
+    }
+    @media(max-width: 490px) {
+        width: 250px;
+        height: 150px;
+    }
+    @media(max-width: 360px) {
+        width: 220px;
+        height: 130px;
+    }
+`;
+
+export const Computer = styled.img`
+    overflow: hidden;
+    position: absolute;
+    width: 443px;
+    height: 406px;
+    right: 110px;
+    top: 130px;
+    @media(max-width: 1100px) {
+        width: 300px;
+        height: 260px;
+    }
+    @media(max-width: 900px) {
+        width: 200px;
+        height: 180px;
+    }
+    @media(max-width: 780px) {
+        width: 150px;
+        height: 130px;
+        right: 30px;
+        top: 60px;
+    }
+    @media(max-width: 490px) {
+        width: 110px;
+        height: 90px;
+        right: 40px;
+        top: 30px;
+    }
+    @media(max-width: 490px) {
+        width: 100px;
+        height: 80px;
+        right: 40px;
+        top: 30px;
+    }
 `;
 
 export const Logo = styled.img`
     width: 134px;
     height: 48px;
+    @media(max-width: 360px) {
+        width: 100px;
+        height: 40px;
+    }
+`;
+
+export const LogoResult = styled(Logo)`
+    @media(max-width: 470px) {
+        width: 100px;
+        height: 36px;
+    }
+    @media(max-width: 420px) {
+        width: 65px;
+        height: 30px;
+    }
 `;
 
 export const Logo2 = styled.img`
     width: 98px;
     height: 36px;
+    @media(max-width: 420px) {
+        width: 70px;
+        height: 30px;
+    }
 `;
 
     
@@ -147,7 +243,7 @@ export const UserImg = styled.img`
 `;
 
 export const ViewUserInfo = styled.div`
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -162,22 +258,22 @@ export const UserName = styled.label`
     line-height: 175%;
 `;
 
-export const Computer = styled.img`
-    overflow: hidden;
-    position: absolute;
-    width: 443px;
-    height: 406px;
-    right: 110px;
-    top: 130px;
-    @media(max-width: 1100px) {
-        width: 300px;
-        height: 260px;
-    }
-`;
-
 export const SearchText = styled.label`
     font-size: 2em;
     color: #5A3D5C;
+    @media(max-width: 650px) {
+        font-size:1.6em;
+    }
+    @media(max-width: 580px) {
+        font-size:1.3em;
+    }
+    @media(max-width: 435px) {
+        font-size:1.1em;
+    }
+    @media(max-width: 360px) {
+        font-size:1.1em;
+        margin-top: 80px;
+    }
 `;
 
 export const SearchInput = styled.div`
@@ -202,6 +298,29 @@ export const SearchInput = styled.div`
         margin-left: 14px;
         color: #4F4F4F;
     };
+    @media(max-width: 580px) {
+        width: 280px;
+    }
+    @media(max-width: 435px) {
+        width: 230px;
+    }
+    @media(max-width: 360px) {
+        font-size:1.1em;
+        margin-top: 16px;
+    }
+`;
+
+export const SearchInputResult = styled(SearchInput)`
+    @media(max-width: 665px) {
+        width: 250px;
+    }
+    @media(max-width: 515px) {
+        width: 200px;
+    }
+    @media(max-width: 420px) {
+        width: 180px;
+        height: 30px;
+    }
 `;
 
 export const GitButton = styled.button`
@@ -236,6 +355,20 @@ export const FooterTop = styled.div`
     div {padding: 0 30px;}
     padding-bottom: 30px;
     border-bottom: 3px solid #A51C92;
+
+    @media(max-width: 870px) {
+        padding: 50px 10px;
+        div {padding 0 24px;}
+    }
+    @media(max-width: 620px) {
+        padding: 50px 4px;
+        div {padding 0 10px;}
+    }
+    @media(max-width: 400px) {
+        padding: 50px 0px;
+        div {padding 0 0px;}
+    }
+
 `;
 
 export const FooterBottom = styled(FooterTop)`

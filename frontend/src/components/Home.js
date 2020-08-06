@@ -14,6 +14,11 @@ const polygon = require("../assets/images/polygon.png");
 const computer = require("../assets/images/img-app.png");
 const logo = require("../assets/images/logo.png");
 
+/* 
+  Classe responsável por renderizar a interface 
+  inicial (Home) da aplicação
+*/
+
 class Home extends React.Component {
 
     constructor(props){

@@ -1,8 +1,8 @@
 import React from "react";
 import
 {
-    View, ViewNumberRepositories, Logo, Nav, BodyTable, TextFooter, ViewCenter,
-    SearchInput, GitButton, ContainerRepositories, Footer, Logo2, TextFooter2, Top,
+    View, ViewNumberRepositories, LogoResult, Nav, BodyTable, TextFooter, ViewCenter,ContentResult,
+    SearchInputResult, GitButton, ContainerRepositories, Footer, Logo2, TextFooter2, Top,
     Container, UserImg, ViewUserInfo, UserName, HeaderTable, FooterTop, Polygon2, FooterBottom
 }    
 from "../assets/styles";
@@ -16,12 +16,23 @@ const logo = require("../assets/images/logo.png");
 const logo2 = require("../assets/images/logo2.png");
 const polygon = require("../assets/images/polygon2.png");
 
+/* 
+  Classe responsável por renderizar o resultado 
+  da pesquisa realizada
+*/
+
 class Result extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {user: ""}
     }
+
+    /* 
+        Função para renderizar a tabela de repositórios do usuário
+        @param user = objeto do usuário pesquisado
+        @return = array de linhas da tabela que serão mostradas na interface
+    */
 
     renderRows = (user) => {
         let arr = [];
@@ -39,12 +50,14 @@ class Result extends React.Component {
     }
 
     render = () => {
+        /* Guardando o objeto user em uma variável de mais fácil acesso */
         let user = this.props.user ? this.props.user.user : null;
-        return <View> 
+        return (
+        <View> 
         <Container>
             <Nav>
-                <Logo src = {logo}></Logo>
-                <SearchInput style = {{marginTop:0}} placeholder = "Buscar usuário">
+                <LogoResult src = {logo}></LogoResult>
+                <SearchInputResult style = {{marginTop:0}} placeholder = "Buscar usuário">
                     <FaSearch style = {{color: "#4F4F4F", marginLeft: 14, fontSize: 18}}></FaSearch>
                     <input value = {this.state.user} onChange = {user => this.setState({user: user.target.value})} placeholder = "Buscar usuário"></input>
                     <GitButton loading = {this.props.loading ? "true" : "false"} disabled = {this.props.loading} onClick = {() => this.props.getUser(this.state.user)}>
@@ -53,7 +66,7 @@ class Result extends React.Component {
                         <FaGithub style = {{color: "white", fontSize: 18}}></FaGithub>
                         }
                     </GitButton>
-                </SearchInput>
+                </SearchInputResult>
                 <View>
                     <FaMedium style = {{color: "#ca5abb", fontSize: 28}}></FaMedium>
                     <FaInstagram style = {{color: "#ca5abb", fontSize: 28}}></FaInstagram>
@@ -61,7 +74,7 @@ class Result extends React.Component {
                 </View>
             </Nav>
             {user ?
-                <View>
+                <ContentResult>
                     <ViewUserInfo>
                         <UserImg src = {user.avatarUrl}></UserImg>
                         <View style = {{marginLeft: 50}}>
@@ -88,8 +101,8 @@ class Result extends React.Component {
                             </BodyTable>
                         </table>
                     </ContainerRepositories>
-                </View>
-                : <label></label>
+                </ContentResult>
+                : null
             }
         </Container>
         <Footer>
@@ -125,6 +138,7 @@ class Result extends React.Component {
             </FooterBottom>
         </Footer>
         </View>
+        )
     }
 }
 
