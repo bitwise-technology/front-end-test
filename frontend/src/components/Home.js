@@ -44,9 +44,9 @@ class Home extends React.Component {
                 </SearchInput>
             </LeftContent>
             <ViewSocial>
-                <FaMedium style = {{color: "#FD71EA", fontSize: 28}}></FaMedium>
-                <FaInstagram style = {{color: "#FD71EA", fontSize: 28}}></FaInstagram>
-                <FaLinkedin style = {{color: "#FD71EA", fontSize: 28}}></FaLinkedin>
+                <FaMedium style = {{color: "#ca5abb", fontSize: 28}}></FaMedium>
+                <FaInstagram style = {{color: "#ca5abb", fontSize: 28}}></FaInstagram>
+                <FaLinkedin style = {{color: "#ca5abb", fontSize: 28}}></FaLinkedin>
             </ViewSocial>
         </Content>
     )

@@ -31,7 +31,7 @@ export const HeaderTable = styled.thead`
     th {
         font-family: Roboto!important;
         font-style: normal!important;
-        font-weight: 500!important;
+        font-weight: bold;
         font-size: 15px!important;
         line-height: 18px!important;
         text-transform: uppercase;
@@ -62,6 +62,7 @@ export const ViewNumberRepositories = styled(ViewCenter)`
     box-shadow: 0px 2px 38px rgba(84, 84, 89, 0.14);
     border-radius: 4px;
     border-left: 5px solid #490248;
+    padding: 0 10px;
     label:nth-child(1) {
         font-weight: bold;
         font-size: 20px;
@@ -94,12 +95,19 @@ export const Content = styled.div`
 
 export const Container = styled.div`
     padding: 50px 150px;
-    height: 100%;
+    min-height: 100%;
     margin:0; 
+    position:relative;
 `;
 
 export const ViewSearch = styled.div`
     margin-top: 10%;
+`;
+
+export const Polygon2 = styled.img`
+    width: 100%;
+    height: 70px;
+    
 `;
 
 export const Polygon = styled.img`
@@ -118,6 +126,11 @@ export const Polygon = styled.img`
 export const Logo = styled.img`
     width: 134px;
     height: 48px;
+`;
+
+export const Logo2 = styled.img`
+    width: 98px;
+    height: 36px;
 `;
 
     
@@ -204,6 +217,54 @@ export const GitButton = styled.button`
     &:focus {
         outline: none;
     }
+`;
+
+export const Footer = styled.footer`
+    background: #382039;
+    bottom: 0;
+`;
+
+export const FooterTop = styled.div`
+    padding: 50px 10%;
+    flex-direction: row;
+    display:flex;
+    justify-content: space-between;
+    div {padding: 0 30px;}
+    padding-bottom: 30px;
+    border-bottom: 3px solid #A51C92;
+`;
+
+export const FooterBottom = styled(FooterTop)`
+    div {padding: 0 30px;}
+    border-bottom: 0px;
+    margin-top: 50px;
+
+`;
+
+export const TextFooter = styled.label`
+    font-family: Gotham;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ca5abb;
+    letter-spacing: 1px;
+    margin: 0;
+`;
+
+export const Top = styled.a`
+    font-family: Gotham;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ca5abb!important;
+    letter-spacing: 1px;
+    margin: 0;
+    cursor: pointer;
+`;
+
+export const TextFooter2 = styled(TextFooter)`
+    font-weight: bold;
+    color: white;
 `;
 
 export const Bold = styled.b``;
