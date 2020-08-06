@@ -82,6 +82,10 @@ export const ViewSocial = styled(ViewCenter)`
     margin-top: 200px;
 `;
 
+export const ViewSocialToast = styled(ViewSocial)`
+    margin:10px;
+`;
+
 export const LeftContent = styled.div`
     padding-left: 8%;
     padding-top: 5%;
