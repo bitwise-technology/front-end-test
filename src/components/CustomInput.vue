@@ -1,15 +1,70 @@
 <template lang="pug">
   .input
-    img.search(src="../assets/Search.svg" alt="Icone de lupa")
-    input(type="text" placeholder="Buscar usuário")
-    .git
-      img(src="../assets/Git.svg" alt="Icone do Github")
+    img.search(
+      src="../assets/Search.svg"
+      alt="Icone de lupa"
+    )
+    input(
+      v-model="username"
+      type="text"
+      placeholder="Buscar usuário"
+      @keyup.enter="submit"
+    )
+    .git(
+      v-if="ShowGitIcon"
+      @click="submit"
+    )
+      img(
+        src="../assets/Git.svg"
+        alt="Icone do Github"
+      )
 </template>
 
 <script>
+import User from '../graphql/User.gql'
 
 export default {
-  name: 'custom-input'
+  name: 'custom-input',
+  props: {
+    ShowGitIcon: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  },
+  apollo: {
+    user: {
+      query: User,
+      skip: true,
+      variables: {
+        name: ''
+      },
+      error() {
+        this.loginNull = true
+        return false
+      }
+    }
+  },
+  data() {
+    return {
+      username: '',
+      loginNull: false
+    }
+  },
+  methods: {
+    async submit() {
+      if(this.username.length > 0) {
+        try {
+          this.$apollo.queries.user.setVariables({ name: this.username })
+          this.$apollo.queries.user.start()
+          const { data } = await this.$apollo.queries.user.refetch()
+        }
+        catch (error) {
+          alert('erro')
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -34,6 +89,7 @@ export default {
   .git {
     background-color: #5A3D5C;
     padding: 16px 22px;
+    cursor: pointer;
     &:hover {
       opacity: 0.9;
     }

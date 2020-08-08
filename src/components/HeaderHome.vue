@@ -1,6 +1,9 @@
 <template lang="pug">
   .header-home
-    <img class="logo" src="../assets/Logo.svg" alt="Logo da Bitwise">
+    img.logo(
+      src="../assets/Logo.svg"
+      alt="Logo da Bitwise"
+    )
 </template>
 
 <script>

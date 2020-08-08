@@ -10,7 +10,10 @@
             |  ficou muito 
             b fácil!
           custom-input
-        img(src="../assets/CenterHome.svg" alt="Imagem de pessoas trabalhando com tecnologia")
+        img(
+          src="../assets/CenterHome.svg"
+          alt="Imagem de pessoas trabalhando com tecnologia"
+        )
       footer-home
 </template>
 

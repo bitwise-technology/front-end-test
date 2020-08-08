@@ -1,13 +1,22 @@
 <template lang="pug">
   .media
     .medium
-      a(href="https://medium.com/" target="_blank")
+      a(
+        href="https://medium.com/"
+        target="_blank"
+        )
         img(src="../assets/Medium.svg")
     .linkedin
-      a(href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank")
+      a(
+        href="https://www.linkedin.com/company/bitwisetechnology/"
+        target="_blank"
+      )
         i.fab.fa-linkedin
     .instagram
-      a(href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank")
+      a(
+        href="https://www.linkedin.com/company/bitwisetechnology/"
+        target="_blank"
+      )
         i.fab.fa-instagram
 </template>
 
