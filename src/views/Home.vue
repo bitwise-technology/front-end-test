@@ -21,6 +21,7 @@ export default {
   name: 'Home',
   components: {
     HeaderHome: () => import('@/components/HeaderHome'),
+    FooterHome: () => import('@/components/FooterHome'),
     CustomInput
   }
 }
@@ -38,6 +39,7 @@ export default {
   .container {
     display: flex;
     flex-direction: column;
+    height: 100%;
     .main {
       display: flex;
       align-items: center;

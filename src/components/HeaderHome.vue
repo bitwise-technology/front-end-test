@@ -4,13 +4,9 @@
 </template>
 
 <script>
-import User from '@/components/User.vue'
 
 export default {
-  name: 'header-home',
-  components: {
-    User
-  }
+  name: 'header-home'
 }
 </script>
 
