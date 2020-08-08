@@ -2,10 +2,14 @@
   .home
     .container
       header-home
-      //- <!-- flex -->
-        //- <!-- h1 -->
-        //- <!-- img -->
-      //- <!-- input -->
+      .main
+        h1.title
+          | Buscar um usuário no 
+          b Github
+          |  ficou muito 
+          b fácil!
+        img(src="../assets/CenterHome.svg" alt="Imagem de pessoas trabalhando com tecnologia")
+        //- <!-- input -->
       //- <!-- footer -->
       user
 </template>
@@ -25,12 +29,34 @@ export default {
 .home {
   background: url('../assets/bg-home.png') no-repeat right top;
   height: 100%;
-  @media (max-width: 992px) {
+  @media (max-width: 991px) {
     background: transparent;
+  }
+  @media (max-width: 1199px) {
+    background-size: 75%;
   }
   .container {
     display: flex;
     flex-direction: column;
+    .main {
+      display: flex;
+      align-items: center;
+      .title {
+        text-align: center;
+        font-weight: normal;
+        color: #5A3D5C;
+        font-size: 42px;
+        flex: 1;
+      }
+      @media (max-width: 991px) {
+        > img {
+          display: none;
+        }
+        .title {
+          font-size: 24px;
+        }
+      }
+    }
   }
 }
 </style>

@@ -15,9 +15,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header-home {
-  margin-top: 60px;
-  margin-right: auto;
-  @media (max-width: 992px) {
+  margin: 45px auto 55px 0;
+  @media (max-width: 991px) {
     margin: 20px auto;
   }
 }
