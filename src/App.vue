@@ -6,9 +6,18 @@
 
 <style lang="scss">
 
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
 .container {
   max-width: auto;
   margin: 0 auto;
+  padding: 15px;
   @media (min-width: 576px) {
     max-width: 540px;
   }
@@ -29,5 +38,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
+  background: linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%);
 }
 </style>

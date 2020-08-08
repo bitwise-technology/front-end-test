@@ -28,6 +28,7 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-apollo": "~0.22.2",
+    "vue-cli-plugin-pug": "~1.0.7",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
