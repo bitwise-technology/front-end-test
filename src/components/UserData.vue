@@ -24,13 +24,11 @@
 <script>
 
 export default {
-  name: 'User',
+  name: 'user-data',
   props: {
-    msg: String
-  },
-  data() {
-    return {
-      name: "josetobias"
+    name: {
+      type: String,
+      required: true
     }
   }
 }
