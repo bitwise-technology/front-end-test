@@ -13,10 +13,11 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .header-home {
   margin: 45px auto 55px 0;
-  @media (max-width: 991px) {
+  @media (max-width: 992px) {
     margin: 20px auto;
   }
 }

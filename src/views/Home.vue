@@ -9,21 +9,19 @@
             b Github
             |  ficou muito 
             b fácil!
-          .input
-            img.search(src="../assets/Search.svg" alt="Icone de lupa")
-            input(type="text" placeholder="Buscar usuário")
-            .git
-              img(src="../assets/Git.svg" alt="Icone do Github")
+          custom-input
         img(src="../assets/CenterHome.svg" alt="Imagem de pessoas trabalhando com tecnologia")
-      //- footer-home
+      footer-home
 </template>
 
 <script>
+import CustomInput from '@/components/CustomInput.vue'
 
 export default {
   name: 'Home',
   components: {
     HeaderHome: () => import('@/components/HeaderHome'),
+    CustomInput
   }
 }
 </script>
@@ -31,10 +29,10 @@ export default {
 .home {
   background: url('../assets/bg-home.png') no-repeat right top;
   height: 100%;
-  @media (max-width: 991px) {
+  @media (max-width: 992px) {
     background: transparent;
   }
-  @media (max-width: 1199px) {
+  @media (max-width: 1200px) {
     background-size: 75%;
   }
   .container {
@@ -44,46 +42,29 @@ export default {
       display: flex;
       align-items: center;
       .left {
+        max-width: 100%;
         .title {
           font-weight: normal;
           color: #5A3D5C;
           font-size: 42px;
           flex: 1;
-        }
-        .input {
-          width: 100%;
-          height: 56px;
-          display: flex;
-          background-color: #fff;
-          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-          .search {
-            padding: 18px 22px;
-          }
-          input {
-            flex: 1;
-            font-size: 16px;
-            border: none;
-            outline: none;
-          }
-          .git {
-            background-color: #5A3D5C;
-            padding: 16px 22px;
-            &:hover {
-              opacity: 0.9;
-            }
-          }
+          margin-bottom: 100px;
         }
       }
       > img {
         margin-left: 130px;
       }
-      @media (max-width: 991px) {
+      @media (max-width: 992px) {
         > img {
           display: none;
         }
-        .title {
-          font-size: 24px;
-          text-align: center;
+        .left {
+          margin: auto;
+          .title {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 50px;
+          }
         }
       }
     }
