@@ -58,6 +58,7 @@ export default {
           this.$apollo.queries.user.setVariables({ name: this.username })
           this.$apollo.queries.user.start()
           const { data } = await this.$apollo.queries.user.refetch()
+          this.$router.push({ name: 'User', params: { username: data.user.login } })
         }
         catch (error) {
           alert('erro')
