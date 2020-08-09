@@ -38,6 +38,7 @@ export default {
 .home {
   background: url('../assets/bg-home.png') no-repeat right top;
   height: 100%;
+  min-height: 100vh;
   @media (max-width: 992px) {
     background: transparent;
   }
@@ -48,6 +49,7 @@ export default {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: inherit;
     .main {
       display: flex;
       align-items: center;

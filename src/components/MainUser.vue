@@ -1,21 +1,24 @@
 <template lang="pug">
   .main
-    top-user(
-      v-if="data"
-      :name="data.name"
-      :imageUrl="data.avatarUrl"
-      :repositories="data.repositories.totalCount"
-    )
+    template(v-if="data")
+      top-user(
+        :name="data.name"
+        :imageUrl="data.avatarUrl"
+        :repositories="data.repositories.totalCount"
+      )
+      repositories(:data="data.repositories.nodes")
 </template>
 
 <script>
 import UserData from '../graphql/UserData.gql'
 import TopUser from '@/components/TopUser.vue'
+import Repositories from '@/components/Repositories.vue'
 
 export default {
   name: 'main-user',
   components: {
-    TopUser
+    TopUser,
+    Repositories
   },
   props: {
     name: {
