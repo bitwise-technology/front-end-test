@@ -58,10 +58,15 @@ export default {
           this.$apollo.queries.user.setVariables({ name: this.username })
           this.$apollo.queries.user.start()
           const { data } = await this.$apollo.queries.user.refetch()
-          this.$router.push({ name: 'User', params: { username: data.user.login } })
+          if(this.$route.name !== 'User') {
+            this.$router.push({ name: 'User', params: { username: data.user.login } })
+          }
+          else {
+            this.$router.go()
+          }
         }
         catch (error) {
-          this.$modal.show('example')
+          this.$modal.show('userNotFound')
         }
       }
     }

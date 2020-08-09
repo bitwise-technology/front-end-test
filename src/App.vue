@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
     router-view
-    modal(name="example" class="modal")
+    modal(name="userNotFound" class="modal")
       .close(@click="close")
         i.fas.fa-times
       .modal-main
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     close() {
-      this.$modal.hide('example')
+      this.$modal.hide('userNotFound')
     }
   }
 }
