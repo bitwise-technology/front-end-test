@@ -60,6 +60,9 @@ export default {
             this.$router.push({ name: 'User', params: { username: data.user.login } })
           }
           else {
+            if(data.user.login !== this.$route.params.username) {
+              this.$router.push({ name: 'User', params: { username: data.user.login } })
+            }
             this.$router.go()
           }
         }

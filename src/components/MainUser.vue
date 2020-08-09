@@ -6,7 +6,7 @@
         :imageUrl="data.avatarUrl"
         :repositories="data.repositories.totalCount"
       )
-      repositories(:data="data.repositories.nodes")
+      repositories(:repos="data.repositories.nodes")
 </template>
 
 <script>
@@ -49,12 +49,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main {
   @media (max-width: 992px) {
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
 }
 </style>

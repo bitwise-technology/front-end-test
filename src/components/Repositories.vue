@@ -2,7 +2,7 @@
   .repositories-card
     .card-header
       h2 Repositórios
-    .cell.cell-header
+    .cell.cell-header(v-if="width >= 768")
       .name
         | Nome do reoisitório
       .commit
@@ -11,8 +11,8 @@
         | Msg do ultimo commmit
       .hash
         | Hash do ultimo commmit
-    template(v-for="repo in data") 
-      .cell
+    template(v-for="repo in repos") 
+      .cell(v-if="width >= 768")
         .name
           | {{ repo.name }}
         .commit
@@ -21,6 +21,18 @@
           | {{ repo.object.history.nodes[0].messageHeadline }}
         .hash
           | {{ repo.object.history.nodes[0].oid }}
+      .cell-mobile(v-else)
+        h4 {{ repo.name }}
+        .inner-repo
+          p 
+            b Qtd de commits: 
+            | {{ repo.object.history.totalCount }}
+          p
+            b Msg do ultimo commmit:
+          p {{ repo.object.history.nodes[0].messageHeadline }}
+          p
+            b Hash do ultimo commmit:
+          p {{ repo.object.history.nodes[0].oid }}
 </template>
 
 <script>
@@ -28,11 +40,28 @@
 export default {
   name: 'repositories',
   props: {
-    data: {
+    repos: {
       type: Array,
       required: true
     },
-  }
+  },
+  data() {
+    return {
+      width: 1400
+    }
+  },
+  methods: {
+    setWidth() {
+      this.width = window.innerWidth
+    }
+  },
+  mounted() {
+    this.setWidth()
+    window.addEventListener('resize', this.setWidth)
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.setWidth)
+  },
 }
 </script>
 
@@ -45,6 +74,9 @@ export default {
   color: #657FA0;
   max-height: 346px;
   overflow: auto;
+  @media (max-width: 767px) {
+    max-height: none;
+  }
   .card-header {
     h2 {
       margin: 0 0 15px 0;
@@ -71,6 +103,11 @@ export default {
       text-transform: uppercase;
       text-align: center;
       overflow: auto;
+    }
+  }
+  .cell-mobile {
+    .inner-repo {
+      margin-left: 15px;
     }
   }
 }
