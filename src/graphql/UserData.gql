@@ -1,0 +1,26 @@
+query($name: String!) { 
+  data: user(login: $name) {
+    name,
+    avatarUrl,
+    repositories(first: 10, privacy: PUBLIC) {
+      totalCount,
+      nodes {
+        id,
+        name
+        object(expression: "master") {
+          ... on Commit {
+            history {
+              totalCount
+              nodes {
+                committedDate
+              }
+              pageInfo {
+                endCursor
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -28,7 +28,7 @@ export default {
   align-items: center;
   margin: 60px 0;
   @media (max-width: 992px) {
-    margin: 20px auto;
+    margin: 20px auto 30px auto;
     flex-direction: column;
     .input {
       margin-top: 30px;

@@ -20,12 +20,14 @@
 <script>
 import CustomInput from '@/components/CustomInput.vue'
 import SocialMedia from '@/components/SocialMedia.vue'
+import HeaderHome from '@/components/HeaderHome.vue'
+import FooterHome from '@/components/FooterHome.vue'
 
 export default {
   name: 'Home',
   components: {
-    HeaderHome: () => import('@/components/HeaderHome'),
-    FooterHome: () => import('@/components/FooterHome'),
+    HeaderHome,
+    FooterHome,
     CustomInput,
     SocialMedia
   }

@@ -40,7 +40,6 @@ export default {
         name: ''
       },
       error() {
-        this.loginNull = true
         return false
       }
     }
@@ -48,7 +47,6 @@ export default {
   data() {
     return {
       username: '',
-      loginNull: false
     }
   },
   methods: {
