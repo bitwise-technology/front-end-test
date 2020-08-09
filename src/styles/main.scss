@@ -29,3 +29,57 @@ body {
     max-width: 1140px;
   }
 }
+
+.modal {
+  padding: 20px;
+  .vm--modal {
+    top: 120px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: fit-content !important;
+    background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
+    border-radius: 15px;
+    .close {
+      padding: 20px;
+      width: 100%;
+      text-align: right;
+      color: #fff;
+      @media (max-width: 992px) {
+        padding: 20px 20px 0px 20px !important;
+      }
+    }
+    .modal-main {
+      padding: 8px 40px 42px 40px;
+      @media (max-width: 992px) {
+        padding: 8px 20px 21px 20px;
+        h1 {
+          margin-bottom: 20px !important;
+        }
+      }
+      .modal-title {
+        color: #fff;
+        h1 {
+          margin: 0 0 40px 0;
+          font-size: 36px;
+        }
+      }
+      .modal-footer {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        p {
+          flex: 1;
+          margin: 0 20px 0 0;
+        }
+        i {
+          color: #fff !important;
+        }
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+}

@@ -19,16 +19,19 @@
 
 <script>
 import CustomInput from '@/components/CustomInput.vue'
+import SocialMedia from '@/components/SocialMedia.vue'
 
 export default {
   name: 'Home',
   components: {
     HeaderHome: () => import('@/components/HeaderHome'),
     FooterHome: () => import('@/components/FooterHome'),
-    CustomInput
+    CustomInput,
+    SocialMedia
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .home {
   background: url('../assets/bg-home.png') no-repeat right top;

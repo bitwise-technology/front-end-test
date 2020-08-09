@@ -1,8 +1,32 @@
-<template>
-  <div id="app">
-    <router-view/>
+<template lang="pug">
+  #app
+    router-view
+    modal(name="example" class="modal")
+      .close(@click="close")
+        i.fas.fa-times
+      .modal-main
+        .modal-title
+          h1 Nenhum usuário encontrado!
+        .modal-footer
+          p Enquanto isso, acompanhe a Bitwise nas redes sociais:
+          social-media
   </div>
 </template>
+
+<script>
+import SocialMedia from '@/components/SocialMedia.vue'
+
+export default {
+  components: {
+    SocialMedia
+  },
+  methods: {
+    close() {
+      this.$modal.hide('example')
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import "./styles/main.scss";

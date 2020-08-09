@@ -5,7 +5,7 @@
         href="https://medium.com/"
         target="_blank"
         )
-        img(src="../assets/Medium.svg")
+        logo-m
     .linkedin
       a(
         href="https://www.linkedin.com/company/bitwisetechnology/"
@@ -21,9 +21,13 @@
 </template>
 
 <script>
+import LogoM from '@/components/LogoM'
 
 export default {
-  name: 'social-media'
+  name: 'social-media',
+  components: {
+    LogoM
+  }
 }
 </script>
 
@@ -35,6 +39,9 @@ export default {
   i {
     color: #FD71EA;
     font-size: 28px;
+  }
+  a:hover {
+    opacity: 0.6;
   }
 }
 </style>

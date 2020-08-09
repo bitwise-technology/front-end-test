@@ -61,7 +61,7 @@ export default {
           this.$router.push({ name: 'User', params: { username: data.user.login } })
         }
         catch (error) {
-          alert('erro')
+          this.$modal.show('example')
         }
       }
     }
