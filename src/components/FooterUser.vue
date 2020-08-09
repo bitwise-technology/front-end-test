@@ -5,6 +5,8 @@
         .top
           .logo
             logo
+            .back-to-top-mobile
+              a(href="#") VOLTAR AO TOPO
           .text
             | Acreditamos no valor da tecnologia e no impacto positivo que a transformação digital exerce sobre a sociedade, mudando o nosso dia a dia, facilitando atividades comuns e acelerando os negócios.
           .location
@@ -38,6 +40,9 @@ export default {
   .footer-inner {
     background-color: #382039;
     margin-top: 100px;
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
     .container {
       .top {
         display: flex;
@@ -46,11 +51,38 @@ export default {
         padding: 60px 0;
         color: #A51C92;
         border-bottom: 3px solid #A51C92;
+        @media (max-width: 767px) {
+          padding: 10px 0;
+          border-bottom: none;
+          .location, .text {
+            display: none;
+          }
+        }
         .logo {
           margin-right: 60px;
+          @media (max-width: 767px) {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            width: 100%;
+          }
           svg {
             path {
               fill: #A51C92;
+            }
+          }
+          .back-to-top-mobile {
+            display: none;
+            @media (max-width: 767px) {
+              display: block;
+              margin-left: auto;
+            }
+            a {
+              text-decoration: none;
+              color: inherit;
+              &:hover {
+                color:#FD71EA
+              }
             }
           }
         }
@@ -73,6 +105,25 @@ export default {
         align-items: center;
         padding: 60px 0;
         color: #A51C92;
+        font-size: 12px;
+        a {
+          text-decoration: none;
+          color: inherit;
+          &:hover {
+            color:#FD71EA
+          }
+        }
+        @media (max-width: 767px) {
+          > a {
+            display: none;
+          }
+        }
+        @media (max-width: 576px) {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          padding: 10px 0 20px 0;
+        }
       }
     }
   }
