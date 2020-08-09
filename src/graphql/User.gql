@@ -1,8 +1,5 @@
 query($name: String!) { 
   user(login: $name) { 
-    login,
-    name,
-    bio,
-    email
+    login
   }
 }

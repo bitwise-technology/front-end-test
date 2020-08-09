@@ -1,18 +1,22 @@
 <template lang="pug">
   .user-page.container
-    user-data(:name="$route.params.username")
+    //- user-data(:name="$route.params.username")
+    header-user
 </template>
 
 <script>
-import UserData from '@/components/UserData.vue'
+// import UserData from '@/components/UserData.vue'
+import HeaderUser from '@/components/HeaderUser.vue'
 
 export default {
   name: 'User',
   components: {
-    UserData,
+    // UserData,
+    HeaderUser
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .user-page {
   display: flex;
