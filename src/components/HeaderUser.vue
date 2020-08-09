@@ -1,9 +1,6 @@
 <template lang="pug">
   .header
-    img.logo(
-      src="../assets/Logo.svg"
-      alt="Logo da Bitwise"
-    )
+    logo
     custom-input(:ShowGitIcon="false")
     social-media
 </template>
@@ -11,12 +8,14 @@
 <script>
 import CustomInput from '@/components/CustomInput'
 import SocialMedia from '@/components/SocialMedia'
+import Logo from '@/components/Logo'
 
 export default {
   name: 'header-user',
   components: {
     SocialMedia,
-    CustomInput
+    CustomInput,
+    Logo
   }
 }
 </script>

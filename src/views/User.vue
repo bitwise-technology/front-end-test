@@ -1,21 +1,25 @@
 <template lang="pug">
-  .user-page.container
-    //- user-data(:name="$route.params.username")
-    header-user
-    main-user(:name="$route.params.username")
+  .user-page
+    .container
+      //- user-data(:name="$route.params.username")
+      header-user
+      main-user(:name="$route.params.username")
+    //- footer-user
 </template>
 
 <script>
 // import UserData from '@/components/UserData.vue'
 import HeaderUser from '@/components/HeaderUser.vue'
 import MainUser from '@/components/MainUser.vue'
+import FooterUser from '@/components/FooterUser.vue'
 
 export default {
   name: 'User',
   components: {
     // UserData,
     HeaderUser,
-    MainUser
+    MainUser,
+    FooterUser
   }
 }
 </script>

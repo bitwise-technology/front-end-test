@@ -13,19 +13,24 @@ body {
 }
 
 .container {
-  max-width: auto;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
   padding: 15px;
   @media (min-width: 576px) {
+    width: auto;
     max-width: 540px;
   }
   @media (min-width: 768px) {
+    width: auto;
     max-width: 720px;
   }
   @media (min-width: 992px) {
+    width: auto;
     max-width: 960px;
   }
   @media (min-width: 1200px) {
+    width: auto;
     max-width: 1140px;
   }
 }

@@ -1,15 +1,16 @@
 <template lang="pug">
   .header-home
-    img.logo(
-      src="../assets/Logo.svg"
-      alt="Logo da Bitwise"
-    )
+    logo
 </template>
 
 <script>
+import Logo from '@/components/Logo'
 
 export default {
-  name: 'header-home'
+  name: 'header-home',
+  components: {
+    Logo
+  }
 }
 </script>
 
