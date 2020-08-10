@@ -1,6 +1,7 @@
 <template lang="pug">
   .header
-    logo
+    router-link(to="/")
+      logo
     custom-input(:ShowGitIcon="false")
     social-media
 </template>

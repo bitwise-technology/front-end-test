@@ -79,7 +79,7 @@ export default {
 .repositories-card {
   width: 100%;
   background-color: #fff;
-  padding: 30px;
+  padding: 30px 30px 10px 30px;
   margin: 30px 0 50px 0;
   color: #657FA0;
   max-height: 346px;

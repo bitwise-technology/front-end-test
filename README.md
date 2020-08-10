@@ -1,29 +1,19 @@
 # front-end-test
 
-## Project setup
+## Executar Projeto
+1 -  Instalar todas as dependências
+
 ```
 npm install
 ```
+2 - Criar um arquivo .env na raíz do projeto com o token do git: VUE_APP_GITHUB_GRAPHQL_AUTH_TOKEN
 
-### Compiles and hot-reloads for development
+3- Executar o projeto
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar arquivos para produção
 ```
 npm run build
 ```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

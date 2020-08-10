@@ -1,6 +1,7 @@
 <template lang="pug">
   .header-home
-    logo
+    router-link(to="/")
+      logo
 </template>
 
 <script>
