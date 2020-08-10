@@ -1,5 +1,5 @@
 <template lang="pug">
-  .repositories-card
+  .repositories-card(ref="repositories")
     .card-header
       h2 Repositórios
     .cell.cell-header(v-if="width >= 768")
@@ -47,20 +47,30 @@ export default {
   },
   data() {
     return {
-      width: 1400
+      width: 1400,
+      bottom: false
     }
   },
   methods: {
     setWidth() {
       this.width = window.innerWidth
-    }
+    },
+    scroll(scroll) {
+      this.bottom = scroll.target.scrollHeight - scroll.target.scrollTop  <= scroll.target.clientHeight
+      if(this.bottom) {
+        this.$emit('more-repositories')
+        this.bottom = false
+      }
+    },
   },
   mounted() {
     this.setWidth()
-    window.addEventListener('resize', this.setWidth)
+    this.$refs.repositories.addEventListener('scroll', this.scroll)
+    window.addEventListener('scroll', this.setWidth)
   },
-  destroyed() {
-    window.removeEventListener('resize', this.setWidth)
+  beforeDestroy() {
+    this.$refs.repositories.removeEventListener('scroll', this.scroll, false)
+    window.removeEventListener('resize', this.setWidth, false)
   },
 }
 </script>
@@ -74,9 +84,6 @@ export default {
   color: #657FA0;
   max-height: 346px;
   overflow: auto;
-  @media (max-width: 767px) {
-    max-height: none;
-  }
   .card-header {
     h2 {
       margin: 0 0 15px 0;
@@ -108,6 +115,10 @@ export default {
   .cell-mobile {
     .inner-repo {
       margin-left: 15px;
+    }
+    h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
   }
 }

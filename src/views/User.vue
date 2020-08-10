@@ -4,7 +4,7 @@
       //- user-data(:name="$route.params.username")
       header-user
       main-user(:name="$route.params.username")
-    //- footer-user
+    footer-user
 </template>
 
 <script>

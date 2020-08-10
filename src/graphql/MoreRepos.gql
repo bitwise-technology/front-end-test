@@ -1,8 +1,6 @@
-query($name: String!) { 
-  data: user(login: $name) {
-    name,
-    avatarUrl,
-    repositories(first: 5, privacy: PUBLIC) {
+query($name: String!, $last: String!) { 
+  more: user(login: $name) {
+    repositories(first: 5, privacy: PUBLIC, after: $last) {
       totalCount,
       pageInfo {
         endCursor,
