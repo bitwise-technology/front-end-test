@@ -2,7 +2,7 @@
   .main
     template(v-if="data")
       top-user(
-        :name="data.name"
+        :name="nameUser"
         :imageUrl="data.avatarUrl"
         :repositories="data.repositories.totalCount"
       )
@@ -32,8 +32,8 @@ export default {
   },
   data() {
     return {
-      repos1: [],
       repos: [],
+      nameUser: '',
       hasNextPage: false,
       endCursor: '',
       firstRequest: true,
@@ -48,6 +48,7 @@ export default {
         name: ''
       },
       result(ApolloQueryResult) {
+        this.nameUser = ApolloQueryResult.data.data.name || ApolloQueryResult.data.data.login
         this.repos = ApolloQueryResult.data.data.repositories.nodes
         this.hasNextPage = ApolloQueryResult.data.data.repositories.pageInfo.hasNextPage
         this.endCursor = ApolloQueryResult.data.data.repositories.pageInfo.endCursor

@@ -2,6 +2,7 @@ query($name: String!) {
   data: user(login: $name) {
     name,
     avatarUrl,
+    login,
     repositories(first: 5, privacy: PUBLIC) {
       totalCount,
       pageInfo {

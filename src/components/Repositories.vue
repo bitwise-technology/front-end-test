@@ -1,38 +1,40 @@
 <template lang="pug">
   .repositories-card(ref="repositories")
-    .card-header
-      h2 Repositórios
-    .cell.cell-header(v-if="width >= 768")
-      .name
-        | Nome do reoisitório
-      .commit
-        | Qtd de commits
-      .msg
-        | Msg do ultimo commmit
-      .hash
-        | Hash do ultimo commmit
-    template(v-for="repo in repos") 
-      .cell(v-if="width >= 768")
+    template(v-if="repos.length")
+      .card-header
+        h2 Repositórios
+      .cell.cell-header(v-if="width >= 768")
         .name
-          | {{ repo.name }}
+          | Nome do reoisitório
         .commit
-          | {{ repo.object.history.totalCount }}
+          | Qtd de commits
         .msg
-          | {{ repo.object.history.nodes[0].messageHeadline }}
+          | Msg do ultimo commmit
         .hash
-          | {{ repo.object.history.nodes[0].oid }}
-      .cell-mobile(v-else)
-        h4 {{ repo.name }}
-        .inner-repo
-          p 
-            b Qtd de commits: 
+          | Hash do ultimo commmit
+      template(v-for="repo in repos") 
+        .cell(v-if="width >= 768")
+          .name
+            | {{ repo.name }}
+          .commit
             | {{ repo.object.history.totalCount }}
-          p
-            b Msg do ultimo commmit:
-          p {{ repo.object.history.nodes[0].messageHeadline }}
-          p
-            b Hash do ultimo commmit:
-          p {{ repo.object.history.nodes[0].oid }}
+          .msg
+            | {{ repo.object.history.nodes[0].messageHeadline }}
+          .hash
+            | {{ repo.object.history.nodes[0].oid }}
+        .cell-mobile(v-else)
+          h4 {{ repo.name }}
+          .inner-repo
+            p 
+              b Qtd de commits: 
+              | {{ repo.object.history.totalCount }}
+            p
+              b Msg do ultimo commmit:
+            p {{ repo.object.history.nodes[0].messageHeadline }}
+            p
+              b Hash do ultimo commmit:
+            p {{ repo.object.history.nodes[0].oid }}
+    h2(v-else) Nenhum repositório encontrado
 </template>
 
 <script>
