@@ -4,7 +4,8 @@
       .container
         .top
           .logo
-            logo
+            router-link(to="/")
+              logo
             .back-to-top-mobile
               a(href="#") VOLTAR AO TOPO
           .text
@@ -65,6 +66,9 @@ export default {
             align-items: center;
             margin: 0;
             width: 100%;
+          }
+          > a:hover {
+            opacity: 0.8;
           }
           svg {
             path {

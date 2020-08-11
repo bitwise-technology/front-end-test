@@ -36,6 +36,9 @@ export default {
     .media {
       display: none;
     }
+    a:hover {
+      opacity: 0.8;
+    }
   }
   .input {
     max-width: 490px;

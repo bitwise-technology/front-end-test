@@ -41,7 +41,7 @@ export default {
   img {
     width: 120px;
     height: 120px;
-    filter: drop-shadow(0px 2px 4px rgba(84, 84, 89, 0.14));
+    box-shadow: 0px 2px 6px rgba(84, 84, 89, 0.14);
   }
   .container-data {
     margin-left: 32px;

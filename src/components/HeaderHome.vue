@@ -21,5 +21,8 @@ export default {
   @media (max-width: 992px) {
     margin: 20px auto;
   }
+  a:hover {
+    opacity: 0.8;
+  }
 }
 </style>

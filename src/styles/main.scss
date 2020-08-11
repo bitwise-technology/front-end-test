@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+a {
+  transition: all 0.3s;
+}
+
 .container {
   width: 100%;
   max-width: none;
