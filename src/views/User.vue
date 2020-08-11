@@ -1,17 +1,25 @@
 <template lang="pug">
   .user-page
+    modal(name="reposNotFound" class="modal")
+        .close(@click="close")
+          i.fas.fa-times
+        .modal-main
+          .modal-title
+            h1 Nenhum repositório encontrado!
+          .modal-footer
+            p Enquanto isso, acompanhe a Bitwise nas redes sociais:
+            social-media
     .container
-      //- user-data(:name="$route.params.username")
       header-user
       main-user(:name="$route.params.username")
     footer-user
 </template>
 
 <script>
-// import UserData from '@/components/UserData.vue'
 import HeaderUser from '@/components/HeaderUser.vue'
 import MainUser from '@/components/MainUser.vue'
 import FooterUser from '@/components/FooterUser.vue'
+import SocialMedia from '@/components/SocialMedia.vue'
 
 export default {
   name: 'User',
@@ -19,7 +27,13 @@ export default {
     // UserData,
     HeaderUser,
     MainUser,
-    FooterUser
+    FooterUser,
+    SocialMedia
+  },
+  methods: {
+    close() {
+      this.$modal.hide('reposNotFound')
+    }
   }
 }
 </script>

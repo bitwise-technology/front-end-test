@@ -64,11 +64,15 @@ export default {
         this.bottom = false
       }
     },
+    showModal() {
+      if(this.repos.length === 0) this.$modal.show('reposNotFound')
+    }
   },
   mounted() {
     this.setWidth()
     this.$refs.repositories.addEventListener('scroll', this.scroll)
     window.addEventListener('scroll', this.setWidth)
+    this.showModal()
   },
   beforeDestroy() {
     this.$refs.repositories.removeEventListener('scroll', this.scroll, false)
