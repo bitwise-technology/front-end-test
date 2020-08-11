@@ -8,6 +8,7 @@
       v-model="username"
       type="text"
       placeholder="Buscar usuário"
+      @keyup="searchUsers"
       @keyup.enter="submit"
     )
     .git(
@@ -18,10 +19,15 @@
         src="../assets/Git.svg"
         alt="Icone do Github"
       )
+    .select(:class="{ 'show-git': !ShowGitIcon }" v-if="users.length > 0")
+      template(v-for="user in users")
+        .value(@click="otherUser(user.login)")
+          p {{ user.login }}
 </template>
 
 <script>
 import User from '../graphql/User.gql'
+import MoreUsers from '../graphql/MoreUsers.gql'
 
 export default {
   name: 'custom-input',
@@ -42,11 +48,22 @@ export default {
       error() {
         return false
       }
+    },
+    moreUsers: {
+      query: MoreUsers,
+      skip: true,
+      variables: {
+        name: '',
+      },
+      error() {
+        return false
+      }
     }
   },
   data() {
     return {
       username: '',
+      users: []
     }
   },
   methods: {
@@ -70,6 +87,21 @@ export default {
           this.$modal.show('userNotFound')
         }
       }
+    },
+    async searchUsers() {
+      if(this.username.length > 0) {
+        this.$apollo.queries.moreUsers.setVariables({ name: this.username })
+        this.$apollo.queries.moreUsers.start()
+        const { data } = await this.$apollo.queries.moreUsers.refetch()
+        if(data) this.users = data.moreUsers.nodes
+      }
+      else {
+        this.users = []
+      }
+    },
+    otherUser(user) {
+      this.username = user
+      this.submit()
     }
   }
 }
@@ -99,6 +131,29 @@ export default {
     cursor: pointer;
     &:hover {
       opacity: 0.9;
+    }
+  }
+  .select {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 56px;
+    .value {
+      overflow: hidden;
+      padding: 18px 66px 18px 66px;
+      transition: all 0.3s;
+      &:hover {
+        background-color: darken(#fff, 8);
+      }
+      p {
+        margin: 0;
+        overflow: hidden;
+      }
+    }
+  }
+  .select.show-git {
+    .value {
+      padding-right: 0;
     }
   }
 }

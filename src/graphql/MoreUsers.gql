@@ -1,0 +1,9 @@
+query($name: String!) { 
+  moreUsers: search(type: USER, first: 5, query: $name) {
+    nodes {
+      ... on User {
+        login
+      }
+    }
+  }
+}
