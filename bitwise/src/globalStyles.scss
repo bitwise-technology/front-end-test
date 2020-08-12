@@ -10,6 +10,10 @@
 html {
     font-size: 62.5%;
     line-height: 1;
+
+    @media screen and (min-width: 768px) {
+        font-size: 70%;
+    }
 }
 
 :root {
