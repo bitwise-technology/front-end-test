@@ -1,0 +1,11 @@
+{
+  "name": "front-end-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tiago-jv0/front-end-test.git",
+  "author": "Tiago José <tiago_jvo@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^2.4.4"
+  }
+}
