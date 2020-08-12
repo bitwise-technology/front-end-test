@@ -3,9 +3,9 @@ import React from 'react'
 import { shallow } from 'enzyme';
 
 describe('<Header />', () => {
-    test('should render a text inside the header', () => {
+    test('should render a logo inside the header', () => {
         const wrapper = shallow(<Header />)
-        expect(wrapper.find('.greeting-message' )).toHaveLength(1)
+        expect(wrapper.find('.header__brand')).toHaveLength(1)
     })
     
 })

@@ -1,10 +1,14 @@
 import React from 'react'
 
+import {ReactComponent as BitwiseLogo} from '../../assets/bitwiseLogo.svg'
+
+import './style.scss'
+
 const Header = () => {
     return (
-        <div>
-            <p className='greeting-message'>Eae</p>
-        </div>
+        <header className='header'>
+            <BitwiseLogo className='header__brand'/>
+        </header>
     )
 }
 
