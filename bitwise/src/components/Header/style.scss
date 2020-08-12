@@ -1,5 +1,12 @@
 .header {
-    &__brand {
-        margin: 6rem 0 0 15rem;
+	grid-area: header;
+
+	display: flex;
+	justify-content: center;
+
+	&__brand {
+		margin: 3rem auto;
+
+		// margin: 6rem 0 0 7.5rem;
     }
 }

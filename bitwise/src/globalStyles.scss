@@ -11,3 +11,16 @@ html {
     font-size: 62.5%;
     line-height: 1;
 }
+
+:root {
+	--color-primary: #382039;
+	--color-primary-dark: #200f21;
+
+	--color-secondary: #5a3d5c;
+	--color-secundary-bright: #fd71ea;
+
+    --color-purple: #a51c92;
+    
+	--linear-gradient-from: #a51c92;
+	--linear-gradient-to: #f638dc;
+}

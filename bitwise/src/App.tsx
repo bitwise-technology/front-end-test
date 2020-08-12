@@ -1,12 +1,12 @@
 import React from 'react'
 
 import './globalStyles.scss'
+import Landing from './pages/Landing'
 
-import Header from './components/Header'
 const App = () => {
     return (
         <div>
-            < Header />
+            <Landing />
         </div>
     )
 }
