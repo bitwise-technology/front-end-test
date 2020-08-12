@@ -1,15 +1,16 @@
 import React, { useState, Fragment } from 'react'
 import { graphql } from 'react-apollo'
+import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import Logo from '../img/Logo.png'
 import ImgApp from '../img/img-app-6.png'
 import ImgBack from '../img/Polygon.png'
-import { RiSearchLine, RiGithubLine, RiInstagramLine, RiLinkedinBoxLine, RiMediumLine } from "react-icons/ri";
+import { RiSearchLine, RiGithubLine, RiInstagramLine, RiLinkedinBoxLine, RiMediumLine, RiHome2Line } from "react-icons/ri";
 import * as S from './styled'
 
 const getRepositories = gql`
 query GetRepositories {
-    user(login: "LoPhine") {
+    user($login: String!) {
       name
       login
       avatarUrl
@@ -34,10 +35,32 @@ query GetRepositories {
     }
   }
 `
+const MyRepositoryComponent = () => {
+  const { loading, error, data } = useQuery(getRepositories, {
+    variables: {
+      login: 'usuario' 
+    },
+  });
 
-function App(props) {
+  if (loading) {
+    return console.log("calma ae")
+  }
+  if (error) {
+    return console.log(erro)
+  }
 
-  const [usuario, setUsuario ] = useState('')
+  if (data) {
+    const { user } = data;
+    return 
+      console.log(user.name)
+};
+
+function Home(props) {
+
+  const [usuario, setUsuario] = useState('')
+  function hadlePesquisa() {
+    console.log(usuario)
+  }
   return (
     <Fragment>
       <S.Container>
@@ -49,15 +72,15 @@ function App(props) {
         </div>
         <div>
           <S.Title>Buscar um usuário no <b>Github</b> ficou muito <b>fácil!</b></S.Title>
-          <S.Input placeholder="Buscar usuário" className="usuarioInput" value={usuario} onChange={e => console.log(e.target.value)} ></S.Input>
-          <RiSearchLine />
-          <S.Button type="button"><RiGithubLine /></S.Button>
+          <S.Input placeholder="Buscar usuário" className="usuarioInput" value={usuario} onChange={e => setUsuario(e.target.value)} ></S.Input>
+          <RiSearchLine size={30} />
+          <S.Button type="button" onClick={hadlePesquisa}><RiGithubLine size={30} /></S.Button>
         </div>
         <S.ImgApp src={ImgApp} alt="imagem bonitinha "></S.ImgApp>
         <S.DivIcon>
-          <RiMediumLine />
-          <RiLinkedinBoxLine />
-          <RiInstagramLine />
+          <RiMediumLine size={30} />
+          <RiLinkedinBoxLine size={30} />
+          <RiInstagramLine size={30} />
         </S.DivIcon>
       </S.Container>
     </Fragment>
@@ -65,4 +88,4 @@ function App(props) {
 
 }
 
-export default graphql(getRepositories, { name: 'repositories' })(App)
+export default graphql(getRepositories, { name: 'repos' } )(Home)
