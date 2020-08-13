@@ -11,13 +11,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 const App = () => {
 	const userContext: any = useContext(UserContext);
 
-	console.log(userContext.user);
-
 	return (
 		<div>
 			<Switch>
 				<Route exact path="/" component={Landing} />
-				<Route path="/profile" render={() => userContext.user ? <Profile /> : <Redirect to="/" />} />
+				<Route path="/profile" render={() => userContext.data ? <Profile /> : <Redirect to="/" />} />
 			</Switch>
 		</div>
 	);

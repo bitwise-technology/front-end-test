@@ -7,10 +7,13 @@ import { UserContext } from '../../contexts/UserContext';
 import { ReactComponent as Logo } from '../../assets/bitwiseLogo.svg';
 import { ReactComponent as SocialMedia } from '../../assets/Sociais.svg';
 import ImgSrc from '../../assets/Polygon 2.png';
-const Profile: React.FC = () => {
-	const { user }: any = useContext(UserContext);
 
-	console.log(user);
+import TableHeader from '../../components/TableHeader';
+const Profile: React.FC = () => {
+	const {
+		data: { user },
+	}: any = useContext(UserContext);
+	const tableHeaderColumns = ['Nome do repositório', 'Qtd de commit', 'Msg Ultimo Commit', 'Hash do ultimo commit'];
 
 	return (
 		<div className="page">
@@ -22,11 +25,11 @@ const Profile: React.FC = () => {
 
 			<section className="data">
 				<section className="profile">
-					<div className="profile__image"></div>
+					<img src={user.avatarUrl} className="profile__image" />
 					<div className="profile__data">
-						<h2 className="profile__name">Ferdinando Carrara</h2>
+						<h2 className="profile__name">{user.name}</h2>
 						<div className="profile__repositories">
-							<span>32</span>
+							<span>{user.repositories.totalCount}</span>
 							<span>Repositories</span>
 						</div>
 					</div>
@@ -34,7 +37,11 @@ const Profile: React.FC = () => {
 
 				<div className="show">
 					<h2 className="title">Titulo</h2>
-					<table className="table"></table>
+					<table className="table">
+
+                        <TableHeader headerColumns={tableHeaderColumns}/>
+
+                    </table>
 				</div>
 			</section>
 
