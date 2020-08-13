@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import './globalStyles.scss';
+import './styles/main.scss'
+
 import Landing from './pages/Landing';
 
 import Alert from './components/Alert';

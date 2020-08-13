@@ -1,0 +1,117 @@
+.alert {
+	position: absolute;
+	border-radius: 10px;
+	right: 0rem;
+	top: 0rem;
+	width: 100vw;
+
+	z-index: 1;
+	background-image: linear-gradient(90deg, var(--linear-gradient-from) 0%, var(--linear-gradient-to) 100%);
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, 1fr);
+
+	grid-template-areas:
+		'text'
+        'mediaText' 
+        'mediaIcons';
+
+	overflow: hidden;
+
+	@media screen and (min-width: 992px) {
+        top: 5rem;
+		width: 78rem;
+		height: 20rem;
+
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: max-content min-content;
+		grid-template-areas:
+			'text text'
+			'mediaText mediaIcons';
+	}
+
+	&__text {
+		font-weight: bold;
+		font-size: 2rem;
+		line-height: 2rem;
+		color: #fff;
+		grid-area: text;
+        padding-top: 5.6rem;
+        padding-left: 4rem;
+		@media screen and (min-width: 992px) {
+            font-size: 3.6rem;
+            letter-spacing: 1px;
+			line-height: 4rem;
+			color: #e4dede;
+		}
+	}
+}
+
+.media {
+	&__text {
+		color: #fff;
+		font-size: 1.4rem;
+		grid-area: mediaText;
+		padding-left: 4rem;
+		padding-top: 4.2rem;
+	}
+
+	&__icons {
+        margin-top: 2rem;
+        padding-left: 3rem;
+
+        grid-area: mediaIcons;
+        
+        svg {
+            margin: 0 1rem;
+            height: 3rem;
+            width: 3rem;
+            path {
+                fill: #fff;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            display: flex;
+            align-items: center;
+            margin-top: 0rem;
+            padding-left: 2rem;
+            svg {
+                margin: 0 1rem;
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+
+	}
+}
+
+.cta-button {
+    position: absolute;
+    padding: 1rem;
+	font-size: 2rem;
+	top: 2rem;
+	right: 2rem;
+	color: #fff;
+	cursor: pointer;
+}
+
+.animate {
+	transition: all 1s;
+	animation: InAndOut 0.4s ease-in;
+}
+
+@keyframes InAndOut {
+	0% {
+		transform: translate(10rem);
+	}
+
+	50% {
+		transform: translate(0);
+	}
+
+	100% {
+		transform: translate(10rem);
+	}
+}
