@@ -45,7 +45,8 @@
 		right: 0;
 
 		@media screen and (min-width: 992px) {
-			width: 70%;
+            width: 70%;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
 		}
 	}
 
