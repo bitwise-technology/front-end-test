@@ -1,6 +1,7 @@
-@import './utils/varibles';
+@import './utils/variables';
 
 @import './base/base';
-@import './base/typography'
-@import './base/_animations';
+@import './base/typography';
+@import './base/animations';
 
+@import './components/Alert';

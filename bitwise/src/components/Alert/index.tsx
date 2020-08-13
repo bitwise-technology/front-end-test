@@ -4,8 +4,6 @@ import { ReactComponent as LinkedInSVG } from '../../assets/in.svg';
 import { ReactComponent as MediumSVG } from '../../assets/medium.svg';
 import { ReactComponent as InstaSVG } from '../../assets/insta.svg';
 
-import './styles.scss';
-
 interface AlertProps {
 	showAlert: boolean;
 	text: string;

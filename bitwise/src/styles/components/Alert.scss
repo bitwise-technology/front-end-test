@@ -6,7 +6,7 @@
 	width: 100vw;
 
 	z-index: 1;
-	background-image: linear-gradient(90deg, var(--linear-gradient-from) 0%, var(--linear-gradient-to) 100%);
+	background-image: linear-gradient(90deg, $linear-gradient-from 0%, $linear-gradient-to 100%);
 
 	display: grid;
 	grid-template-columns: 1fr;
