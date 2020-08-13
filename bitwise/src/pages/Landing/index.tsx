@@ -1,7 +1,7 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 
 import { useLazyQuery } from 'react-apollo';
-import { GET_USER_INFO } from '../../apollo-queries';
+import { GET_USER_INFO, GET_NEARBY_NAMES } from '../../apollo-queries';
 
 import Header from '../../components/Header';
 import Alert from '../../components/Alert';
@@ -16,31 +16,48 @@ import BackgroundImg from '../../assets/Polygon 1 (1).png';
 
 import './styles.scss';
 
+interface PossibleUserGithubApi {
+	login: string;
+}
+
 const Landing = () => {
 	const [username, setUsername] = useState('');
 	const [showAlert, setShowAlert] = useState(false);
-	let [getUserInfo, { loading, data, called }] = useLazyQuery(GET_USER_INFO, {
+	let [getUserInfo, { loading, data: userInfo, called : userCalled }] = useLazyQuery(GET_USER_INFO, {
 		pollInterval: 0,
-		fetchPolicy: 'network-only',
 		onError: () => setShowAlert(true),
 	});
+	let [
+		getNearbyNames,
+		{ loading: nearbyNamesLoading, data: nearbyNames, called: nearbyNamesCalled, error: nearbyNamesError },
+	] = useLazyQuery(GET_NEARBY_NAMES, {
+		pollInterval: 0,
+		onCompleted: (data) => {
+			console.log(data);
+		},
+	});
 
-	if (called && loading) {
-		return <p>loading...</p>;
-	}
+	useEffect(() => {
+		if (username.length) {
+			getNearbyNames({
+				variables: {
+					name: username,
+				},
+			});
+		}
+	}, [getNearbyNames, username]);
 
-	if (called && data) {
-		console.log(data);
+	if(userCalled && userInfo) {
+		console.log(userInfo)
 	}
 
 	const handleChange = ({ target }: ChangeEvent) => {
 		setUsername((target as HTMLInputElement).value);
 	};
-
-	const handleClick = () => {
+	const handleClick = (user: string) => {
 		getUserInfo({
 			variables: {
-				user: username,
+				user,
 			},
 		});
 	};
@@ -69,9 +86,23 @@ const Landing = () => {
 						value={username}
 						onChange={handleChange}
 					/>
-					<div className="search-container__icon" onClick={handleClick}>
+					<div className="search-container__icon" onClick={() => handleClick(username)}>
 						<GithubSVG />
 					</div>
+				</div>
+
+				<div>
+					{nearbyNames &&
+						nearbyNames.search.nodes.map(({ login }: { login: string }) => {
+							return (
+								<span
+									onClick={() => handleClick(login)}
+									style={{ padding: '1rem', display: 'inline-block', cursor: 'pointer' }}
+								>
+									{login}
+								</span>
+							);
+						})}
 				</div>
 			</div>
 

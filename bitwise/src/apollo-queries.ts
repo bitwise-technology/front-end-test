@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'; 
+import { gql } from 'apollo-boost';
 
 export const GET_USER_INFO = gql`
 	query GetGithubUserInfo($user: String!) {
@@ -24,6 +24,18 @@ export const GET_USER_INFO = gql`
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+`;
+
+export const GET_NEARBY_NAMES = gql`
+	query GetNearbyNames($name: String!) {
+		search(type: USER, first: 3, query: $name) {
+			nodes {
+				... on User {
+					login
 				}
 			}
 		}
