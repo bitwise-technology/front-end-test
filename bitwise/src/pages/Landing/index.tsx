@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 
-import { useLazyQuery } from 'react-apollo';
-import { GET_USER_INFO, GET_NEARBY_NAMES } from '../../apollo-queries';
+import { useGithubApiData } from '../../hooks/useGithubApiData';
+import { GET_NEARBY_NAMES, GET_USER_INFO } from '../../apollo-queries';
 
 import Header from '../../components/Header';
 import Alert from '../../components/Alert';
@@ -16,50 +16,27 @@ import BackgroundImg from '../../assets/Polygon 1 (1).png';
 
 import './styles.scss';
 
-interface PossibleUserGithubApi {
-	login: string;
-}
-
 const Landing = () => {
 	const [username, setUsername] = useState('');
 	const [showAlert, setShowAlert] = useState(false);
-	let [getUserInfo, { loading, data: userInfo, called : userCalled }] = useLazyQuery(GET_USER_INFO, {
-		pollInterval: 0,
-		onError: () => setShowAlert(true),
-	});
-	let [
-		getNearbyNames,
-		{ loading: nearbyNamesLoading, data: nearbyNames, called: nearbyNamesCalled, error: nearbyNamesError },
-	] = useLazyQuery(GET_NEARBY_NAMES, {
-		pollInterval: 0,
-		onCompleted: (data) => {
-			console.log(data);
-		},
-	});
 
+	const { getData: getNearbyNames, data: nearbyNames } = useGithubApiData(GET_NEARBY_NAMES);
+	const { getData: getUserData, data: userInfo } = useGithubApiData(GET_USER_INFO);
 	useEffect(() => {
 		if (username.length) {
-			getNearbyNames({
-				variables: {
-					name: username,
-				},
-			});
+			getNearbyNames({ variables: { name: username } });
 		}
 	}, [getNearbyNames, username]);
 
-	if(userCalled && userInfo) {
-		console.log(userInfo)
+	if (userInfo) {
+		console.log(userInfo);
 	}
 
 	const handleChange = ({ target }: ChangeEvent) => {
 		setUsername((target as HTMLInputElement).value);
 	};
 	const handleClick = (user: string) => {
-		getUserInfo({
-			variables: {
-				user,
-			},
-		});
+		getUserData({ variables: { user: username } });
 	};
 
 	return (
@@ -96,7 +73,7 @@ const Landing = () => {
 						nearbyNames.search.nodes.map(({ login }: { login: string }) => {
 							return (
 								<span
-									onClick={() => handleClick(login)}
+									onClick={() => getUserData({ variables: { user: login } })}
 									style={{ padding: '1rem', display: 'inline-block', cursor: 'pointer' }}
 								>
 									{login}
