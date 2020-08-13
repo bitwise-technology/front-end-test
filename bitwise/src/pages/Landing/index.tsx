@@ -1,10 +1,11 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, useContext } from 'react';
+
+import { useHistory } from 'react-router-dom';
 
 import { useGithubApiData } from '../../hooks/useGithubApiData';
 import { GET_NEARBY_NAMES, GET_USER_INFO } from '../../apollo-queries';
 
 import Header from '../../components/Header';
-import Alert from '../../components/Alert';
 
 import { ReactComponent as GithubSVG } from '../../assets/Vector.svg';
 import { ReactComponent as LinkedInSVG } from '../../assets/in.svg';
@@ -16,9 +17,10 @@ import BackgroundImg from '../../assets/Polygon 1 (1).png';
 
 import './styles.scss';
 
+import { UserContext } from '../../contexts/UserContext';
+
 const Landing = () => {
 	const [username, setUsername] = useState('');
-	const [showAlert, setShowAlert] = useState(false);
 
 	const { getData: getNearbyNames, data: nearbyNames } = useGithubApiData(GET_NEARBY_NAMES);
 	const { getData: getUserData, data: userInfo } = useGithubApiData(GET_USER_INFO);
@@ -28,20 +30,26 @@ const Landing = () => {
 		}
 	}, [getNearbyNames, username]);
 
-	if (userInfo) {
-		console.log(userInfo);
-	}
+	const userContext: any = useContext(UserContext);
+	const history = useHistory();
+	useEffect(() => {
+		if (userInfo) {
+			userContext.setUser(userInfo);
+			history.push('/profile');
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [userInfo]);
 
 	const handleChange = ({ target }: ChangeEvent) => {
 		setUsername((target as HTMLInputElement).value);
 	};
-	const handleClick = (user: string) => {
+	const handleClick = () => {
 		getUserData({ variables: { user: username } });
 	};
 
 	return (
 		<div className="main">
-			<Alert showAlert={showAlert} setShowAlert={setShowAlert} text="User não encontrado!" />
+			{/* <Alert showAlert={showAlert} setShowAlert={setShowAlert} text="User não encontrado!" /> */}
 
 			<Header />
 
@@ -63,7 +71,7 @@ const Landing = () => {
 						value={username}
 						onChange={handleChange}
 					/>
-					<div className="search-container__icon" onClick={() => handleClick(username)}>
+					<div style={{ cursor: 'pointer' }} className="search-container__icon" onClick={handleClick}>
 						<GithubSVG />
 					</div>
 				</div>
@@ -74,7 +82,12 @@ const Landing = () => {
 							return (
 								<span
 									onClick={() => getUserData({ variables: { user: login } })}
-									style={{ padding: '1rem', display: 'inline-block', cursor: 'pointer' }}
+									style={{
+										margin: '0 1rem',
+										padding: '1rem',
+										display: 'inline-block',
+										cursor: 'pointer',
+									}}
 								>
 									{login}
 								</span>
