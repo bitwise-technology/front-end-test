@@ -1,0 +1,55 @@
+.profile {
+	&__footer {
+		background-color: #382039;
+		margin-top: -0.2rem;
+
+		color: #fd71ea;
+
+		.info {
+			width: 80%;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 5rem 0;
+
+			&__text {
+				width: 30%;
+				word-break: normal;
+				letter-spacing: 1px;
+				font-size: 1.2rem;
+				text-align: left;
+			}
+
+			&__contact {
+				display: flex;
+				flex-direction: column;
+				width: 20%;
+				font-size: 1.5rem;
+				line-height: 1.5;
+				& > span {
+					color: #fff;
+				}
+			}
+
+			border-bottom: 1px solid #a51c92;
+		}
+
+		.bottom {
+			width: 80%;
+			padding: 5rem 0;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			&__medias {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+				& > * {
+					fill: #fd71ea;
+				}
+			}
+		}
+	}
+}
