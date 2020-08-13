@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
 import { ReactComponent as LinkedInSVG } from '../../assets/in.svg';
 import { ReactComponent as MediumSVG } from '../../assets/medium.svg';
@@ -7,22 +7,26 @@ import { ReactComponent as InstaSVG } from '../../assets/insta.svg';
 import './styles.scss';
 
 interface AlertProps {
-	show: boolean;
-	// setShow: Function;
+	showAlert: boolean;
+	text: string;
+	setShowAlert: Function;
 }
-const Alert: React.FC<AlertProps> = ({ show }) => {
-	return show ? (
-		<div className={`alert ${show ? 'animate' : null}`}>
-			<p className="alert__text">Nenhum user encontrado!</p>
+const Alert: React.FC<AlertProps> = ({ showAlert, text, setShowAlert }) => {
+	const handleClick = (event: MouseEvent): void => {
+		setShowAlert((previousState: boolean) => !previousState);
+	};
+
+	return showAlert ? (
+		<div className={`alert ${showAlert ? 'animate' : null}`}>
+			<p className="alert__text">{text}!</p>
 			<span className="media__text">Enquanto isso, acompanhe a bitwise nas redes socias</span>
 			<div className="media__icons">
 				<MediumSVG />
-
 				<LinkedInSVG />
 				<InstaSVG />
 			</div>
 
-			<span className="cta-button" onClick={() => console.log('clicked')}>
+			<span className="cta-button" onClick={handleClick}>
 				x
 			</span>
 		</div>

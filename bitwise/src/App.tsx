@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-import './globalStyles.scss'
-import Landing from './pages/Landing'
+import './globalStyles.scss';
+import Landing from './pages/Landing';
 
-import Alert from './components/Alert'
+import Alert from './components/Alert';
 
 const App = () => {
-    return (
-        <div>
-            <Landing />
-            <Alert show={true} />
-        </div>
-    )
-}
+	const [showAlert, setShowAlert] = useState(false);
 
-export default App
+	return (
+		<div>
+			<Landing />
+			<Alert showAlert={showAlert} setShowAlert={setShowAlert} text="User não encontrado!" />
+		</div>
+	);
+};
+
+export default App;
