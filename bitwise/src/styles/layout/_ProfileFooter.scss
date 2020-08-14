@@ -63,9 +63,8 @@
 		font-size: 1.2rem;
 		text-align: center;
 		padding: 2rem 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		
+		@include flex-center;
 
 		@media screen and (min-width: 760px) {
 			font-size: 1.2rem;

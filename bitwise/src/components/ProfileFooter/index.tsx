@@ -3,8 +3,6 @@ import React from 'react';
 import { ReactComponent as SocialMedia } from '../../assets/Sociais.svg';
 import { ReactComponent as Logo } from '../../assets/logo_bottom.svg';
 
-
-import './styles.scss'
 const ProfileFooter = () => {
 	return (
 		<footer className="profile-footer">

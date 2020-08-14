@@ -16,8 +16,6 @@ import {ReactComponent as SearchSVG} from '../../assets/searchIcon.svg'
 import PeopleImg from '../../assets/landingImage.png';
 import BackgroundImg from '../../assets/Polygon 1 (1).png';
 
-import './styles.scss';
-
 import { UserContext } from '../../contexts/UserContext';
 import Alert from '../../components/Alert';
 

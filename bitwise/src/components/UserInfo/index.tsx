@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './styles.scss'
-
 interface UserProfile {
 	user: {
 		avatarUrl: string;

@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './styles.scss'
-
 interface ITableHeaderProps {
     headerColumns: Array<string>;
 }

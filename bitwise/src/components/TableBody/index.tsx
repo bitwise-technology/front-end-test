@@ -1,7 +1,4 @@
 import React from 'react'
-
-import './styles.scss'
-
 export interface TableReportUserGithub {
     repositoryName : string;
     amountOfCommits : string;

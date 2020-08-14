@@ -1,7 +1,21 @@
 @import './utils/variables';
 
+@import './utils/mixins';
+
 @import './base/base';
 @import './base/typography';
 @import './base/animations';
 
-@import './components/Alert';
+
+@import './components/Spinner';
+@import './components/TableHeader';
+@import './components/TableBody';
+@import './components/UserInfo';
+
+@import './layout/Header';
+@import './layout/Alert';
+@import './layout/ProfileFooter';
+
+
+@import './pages/Landing';
+@import './pages/Profile';
