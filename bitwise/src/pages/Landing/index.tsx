@@ -19,12 +19,14 @@ import BackgroundImg from '../../assets/Polygon 1 (1).png';
 import './styles.scss';
 
 import { UserContext } from '../../contexts/UserContext';
+import Alert from '../../components/Alert';
 
 const Landing = () => {
 	const [username, setUsername] = useState('');
+	const [showAlert, setShowAlert] = useState(false);
 
 	const { getData: getNearbyNames, data: nearbyNames } = useGithubApiData(GET_NEARBY_NAMES);
-	const { getData: getUserData, data: userInfo } = useGithubApiData(GET_USER_INFO);
+	const { getData: getUserData, data: userInfo } = useGithubApiData(GET_USER_INFO , () => setShowAlert(true));
 	useEffect(() => {
 		if (username.length) {
 			getNearbyNames({ variables: { name: username } });
@@ -48,9 +50,10 @@ const Landing = () => {
 		getUserData({ variables: { user: username } });
 	};
 
+
 	return (
 		<div className="main">
-			{/* <Alert showAlert={showAlert} setShowAlert={setShowAlert} text="User não encontrado!" /> */}
+			<Alert showAlert={showAlert} setShowAlert={setShowAlert} text="Nenhum usuário encontrado!" />
 
 			<Header />
 

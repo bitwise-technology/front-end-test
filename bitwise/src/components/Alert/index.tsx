@@ -15,8 +15,8 @@ const Alert: React.FC<AlertProps> = ({ showAlert, text, setShowAlert }) => {
 	};
 
 	return showAlert ? (
-		<div className={`alert ${showAlert ? 'animate' : null}`}>
-			<p className="alert__text">{text}!</p>
+		<div className='alert'>
+			<p className="alert__text">{text}</p>
 			<span className="media__text">Enquanto isso, acompanhe a bitwise nas redes socias</span>
 			<div className="media__icons">
 				<MediumSVG />
