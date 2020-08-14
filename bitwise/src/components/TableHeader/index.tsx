@@ -11,7 +11,7 @@ const TableHeader: React.FC<ITableHeaderProps> = ({ headerColumns }) => {
 			<tr>
 				{headerColumns.map((column) => {
 					return (
-						<th className="table__header__data" key={column}>
+						<th className="table__header" key={column}>
 							{column}
 						</th>
 					);

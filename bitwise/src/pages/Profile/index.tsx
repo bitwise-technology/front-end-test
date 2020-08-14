@@ -57,21 +57,21 @@ const Profile: React.FC = () => {
 
 	return (
 		<div className="page">
-			<header className="search__header">
-				<Logo className="search__logo" />
+			<header className="profile__header">
+				<Logo className="profile__logo" />
 				<div style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-					<SearchSVG style={{ left: '13%' }} className="search-container__search-icon" />
+					<SearchSVG style={{ position:'absolute', top: '50%' , transform: 'translateY(-50%)', left: '13%' }} className="profile-container__search-icon" />
 
 					<input
 						value={username}
 						onKeyUp={handleKeyUp}
 						onChange={handleChange}
 						type="text"
-						className="search__input"
+						className="profile__input"
 						placeholder="Buscar usuário.."
 					/>
 				</div>
-				<SocialMedia style={{ height: '2.5rem' }} className="search__medias" />
+				<SocialMedia style={{ height: '2.5rem' }} className="profile__medias" />
 			</header>
 
 			<section className="data">

@@ -7,8 +7,8 @@ import { ReactComponent as Logo } from '../../assets/logo_bottom.svg';
 import './styles.scss'
 const ProfileFooter = () => {
 	return (
-		<footer className="profile__footer">
-			<div className="info">
+		<footer className="profile-footer">
+			<div className="profile-footer__info">
 				<Logo />
 				<p className="info__text">
 					Acreditamos no valor da tecnologia e no impacto positivo que a transformação digital exerce sobre a
@@ -19,7 +19,7 @@ const ProfileFooter = () => {
 					<p>
 						{' '}
 						R. Raphael Dias da Silva, 75 <br />
-						3º andar • Sala 306 e 308 Campolim • Sorocaba/SP
+						3º andar • Sala 306 e 308 <br /> Campolim • Sorocaba/SP
 					</p>
 				</div>
 				<div className="info__contact">
@@ -32,12 +32,12 @@ const ProfileFooter = () => {
 				</div>
 			</div>
 
-			<div className="bottom">
-				<p> Todos os direitos reservados - 2020</p>
+			<div className="profile-footer__end">
+				<p className='profile-footer__end-text'> Todos os direitos reservados - 2020</p>
 
-				<SocialMedia style={{ height: '2.5rem' }} className="bottom__medias" />
+				<SocialMedia style={{ height: '2.5rem' }} className="profile-footer__end-medias" />
 
-				<p>Voltar ao topo</p>
+				<p className='profile-footer__end-text'>Voltar ao topo</p>
 			</div>
 		</footer>
 	);
