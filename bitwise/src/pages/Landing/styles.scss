@@ -72,11 +72,12 @@
 
 	&__box {
 		display: flex;
+		position: relative;
 		margin-top: 5rem;
 		input {
 			width: 90%;
 			font-size: 1.5rem;
-
+			padding-left: 6.4rem;
 			&::placeholder {
 				font-size: 1.5rem;
 			}
@@ -89,6 +90,13 @@
 		align-items: center;
 		padding: 1rem;
 		background-color: #5a3d5c;
+	}
+
+	&__search-icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 2.2rem;
 	}
 
 	@media screen and (min-width: 992px) {

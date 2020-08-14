@@ -11,6 +11,7 @@ import { ReactComponent as GithubSVG } from '../../assets/Vector.svg';
 import { ReactComponent as LinkedInSVG } from '../../assets/in.svg';
 import { ReactComponent as MediumSVG } from '../../assets/medium.svg';
 import { ReactComponent as InstaSVG } from '../../assets/insta.svg';
+import {ReactComponent as SearchSVG} from '../../assets/searchIcon.svg'
 
 import PeopleImg from '../../assets/landingImage.png';
 import BackgroundImg from '../../assets/Polygon 1 (1).png';
@@ -63,6 +64,7 @@ const Landing = () => {
 					ficou muito <strong className="emphasis">fácil!</strong>
 				</p>
 				<div className="search-container__box">
+					<SearchSVG className='search-container__search-icon'/>
 					<input
 						name="username"
 						id="username"
