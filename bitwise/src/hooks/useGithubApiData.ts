@@ -6,14 +6,12 @@ interface GithubApiData {
 	data: any;
 }
 
-export const useGithubApiData = (query: DocumentNode): GithubApiData => {
+export const useGithubApiData = (query: DocumentNode, errorHandler?: any): GithubApiData => {
 	const [getData, { data: githubInfo, loading, error, called }] = useLazyQuery(query, {
 		pollInterval: 0,
+		onError: (error) => errorHandler(error),
+		onCompleted: (data) => console.log(data)
 	});
-
-	if (called && error) {
-		console.error(error);
-	}
 
 	if (called && loading) {
 		console.log('loading...');
