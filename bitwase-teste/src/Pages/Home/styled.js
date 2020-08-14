@@ -24,29 +24,7 @@ export const LogoBit = styled.img`
     top: 7.73%;
     bottom: 86.08%;
 `
-export const Input = styled.input`
-    position: absolute;
-    width: 563px;
-    height: 56px;
-    left: 150px;
-    top: 436px;
-    background: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 4px;
-    box-shadow: 0px 4px 4px grey;
-`
-export const Button = styled.button`
-    position: absolute;
-    width: 64px;
-    height: 56px;
-    left: 649px;
-    top: 436px;
-    background: #5A3D5C;
-    border-radius: 2px;
-    color: #fff;
-    border: 0px;
-`
+
 export const ImgApp = styled.img`
    position: absolute;
     width: 443px;
@@ -67,10 +45,12 @@ export const Title = styled.h1`
     letter-spacing: -3px;
     color: #5a3d5c;
 `
-export const DivIcon = styled.div`
+
+export const DivIcons = styled.div`
     left: 49.21%;
     right: 46.74%;
     top: 91.62%;
     bottom: 5.28%;
-    color: #fd71ea;
+    margin-top: 45%;
+    margin-left: 45%;
 `
