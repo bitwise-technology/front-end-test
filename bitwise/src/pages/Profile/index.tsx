@@ -1,7 +1,5 @@
 import React, { useContext, useState, ChangeEvent, KeyboardEvent, useEffect } from 'react';
 
-import './styles.scss';
-
 import { UserContext } from '../../contexts/UserContext';
 
 import { ReactComponent as Logo } from '../../assets/bitwiseLogo.svg';

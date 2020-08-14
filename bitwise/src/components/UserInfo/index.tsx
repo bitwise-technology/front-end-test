@@ -17,11 +17,11 @@ const UserInfo: React.FC<UserProfile | any> = ({
 	},
 }) => {
 	return (
-		<section className="profile">
-			<img src={avatarUrl} className="profile__image" />
-			<div className="profile__data">
-				<h2 className="profile__name">{name}</h2>
-				<div className="profile__repositories">
+		<section className="user">
+			<img src={avatarUrl} className="user__image" />
+			<div className="user__data">
+				<h2 className="user__name">{name}</h2>
+				<div className="user__repositories">
 					<span>{totalCount}</span>
 					<span>Repositories</span>
 				</div>
