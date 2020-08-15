@@ -14,7 +14,7 @@ import { ApolloClient } from 'apollo-boost';
 const httpLink = createHttpLink({
 	uri: 'https://api.github.com/graphql',
 	headers: {
-		authorization: 'Bearer 02d67a28bd40775c6f09e92041fe1a4186600cce',
+		authorization: 'Bearer 750360835f5f8b2cbe0f11142a618d5f39e74315',
 	},
 });
 

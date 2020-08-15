@@ -15,13 +15,17 @@ const Alert: React.FC<AlertProps> = ({ showAlert, text, setShowAlert }) => {
 	};
 
 	return showAlert ? (
-		<div className='alert'>
+		<div className="alert">
 			<p className="alert__text">{text}</p>
 			<span className="media__text">Enquanto isso, acompanhe a bitwise nas redes socias</span>
 			<div className="media__icons">
 				<MediumSVG />
-				<LinkedInSVG />
-				<InstaSVG />
+				<a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel='noopener noreferrer'>
+					<LinkedInSVG />
+				</a>
+				<a href="https://www.instagram.com/bitwisetechnology/" target="_blank" rel='noopener noreferrer'>
+					<InstaSVG />
+				</a>
 			</div>
 
 			<span className="cta-button" onClick={handleClick}>
