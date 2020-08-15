@@ -19,6 +19,7 @@ import BackgroundImg from '../../assets/Polygon 1 (1).png';
 import { UserContext } from '../../contexts/UserContext';
 import Alert from '../../components/Alert';
 import NearbyNames from '../../components/NearbyNames';
+import CustomInput from '../../components/CustomInput';
 
 const Landing = () => {
 	const [username, setUsername] = useState('');
@@ -59,9 +60,11 @@ const Landing = () => {
 					ficou muito <strong className="emphasis">fácil!</strong>
 				</p>
 				<div className="search-container__box">
-					<SearchSVG className="search-container__search-icon" />
-					<input
+					<CustomInput
+						icon={<SearchSVG className="search-container__search-icon" />}
 						name="username"
+						style={{ width: '100%' }}
+						isShadowed={false}
 						id="username"
 						type="text"
 						placeholder="Buscar um usuário..."
@@ -83,10 +86,10 @@ const Landing = () => {
 
 			<div className="footer">
 				<MediumSVG className="footer__icon" />
-				<a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel='noopener noreferrer'>
+				<a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel="noopener noreferrer">
 					<LinkedInSVG className="footer__icon" />
 				</a>
-				<a href="https://www.instagram.com/bitwisetechnology/" target="_blank" rel='noopener noreferrer'>
+				<a href="https://www.instagram.com/bitwisetechnology/" target="_blank" rel="noopener noreferrer">
 					<InstaSVG className="footer__icon" />
 				</a>
 			</div>

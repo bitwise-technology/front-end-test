@@ -1,0 +1,29 @@
+.input-container {
+	width: 100%;
+	position: relative;
+	display: flex;
+    justifycontent: center;
+    
+    &__input {
+        display: none;
+        width: 80%;
+        padding: 1.5rem 5rem;
+        border: none;
+        margin: 0 auto;
+    
+        &::placeholder {
+            font-size: 1.3rem;
+        }
+    
+        @media screen and (min-width: 768px) {
+            display: block;
+        }
+    }
+    
+}
+
+
+.shadow {
+    box-shadow: 0 1rem 2rem #f0f0f0;
+
+}

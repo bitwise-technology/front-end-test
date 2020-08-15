@@ -17,6 +17,7 @@ import { GET_USER_INFO } from '../../apollo-queries';
 
 import { mapGetUserResponseToTableBodyData } from '../../utils/mappers';
 import ProfileFooter from '../../components/ProfileFooter';
+import CustomInput from '../../components/CustomInput';
 const Profile: React.FC = () => {
 	const {
 		data: { user },
@@ -53,22 +54,29 @@ const Profile: React.FC = () => {
 		}
 	};
 
+	const inputIcon = (
+		<SearchSVG
+			style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: '13%' }}
+			className="profile-container__search-icon"
+		/>
+	);
+
 	return (
 		<div className="page">
 			<header className="profile__header">
 				<Logo className="profile__logo" />
-				<div style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-					<SearchSVG style={{ position:'absolute', top: '50%' , transform: 'translateY(-50%)', left: '13%' }} className="profile-container__search-icon" />
 
-					<input
-						value={username}
-						onKeyUp={handleKeyUp}
-						onChange={handleChange}
-						type="text"
-						className="profile__input"
-						placeholder="Buscar usuário.."
-					/>
-				</div>
+				<CustomInput
+					type="text"
+					name="username"
+					placeholder=""
+					id="username"
+					value={username}
+					onKeyUp={handleKeyUp}
+					onChange={handleChange}
+					icon={inputIcon}
+				/>
+
 				<SocialMedia style={{ height: '2.5rem' }} className="profile__medias" />
 			</header>
 
@@ -85,7 +93,7 @@ const Profile: React.FC = () => {
 				</div>
 			</section>
 
-			<img src={ImgSrc} className="horizontal-line" alt="Alguma coisa" />
+			<img src={ImgSrc} className="horizontal-line" alt="Horizontal line" />
 
 			<ProfileFooter />
 		</div>

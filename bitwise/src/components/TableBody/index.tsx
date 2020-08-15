@@ -3,7 +3,7 @@ export interface TableReportUserGithub {
     repositoryName : string;
     amountOfCommits : string;
     lastCommitMessage : string;
-    lastCommitHash: string;
+	lastCommitHash: string;
     [index: string] : string;
 }
 
