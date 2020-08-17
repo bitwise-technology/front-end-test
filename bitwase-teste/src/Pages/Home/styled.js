@@ -9,12 +9,12 @@ export const Container = styled.div`
     background: linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%);
 
 `
-export const ImgDiv = styled.div`
-    /* position: absolute;
-    width: 925px;
-    height: 647px;
-    left: 515px;
-    top: 0px; */
+export const ImgDiv = styled.img`
+    position: absolute;
+    width: 64%;
+    height: 83%;
+    left: 36%;
+    top: 0px;
 `
 
 export const LogoBit = styled.img`
@@ -27,10 +27,10 @@ export const LogoBit = styled.img`
 
 export const ImgApp = styled.img`
    position: absolute;
-    width: 443px;
-    height: 406px;
-    left: 843px;
-    top: 164px;
+    width: 30%;
+    height: 52%;
+    left: 58%;
+    top: 20%;
 `
 
 
@@ -51,6 +51,6 @@ export const DivIcons = styled.div`
     right: 46.74%;
     top: 91.62%;
     bottom: 5.28%;
-    margin-top: 45%;
+    margin-top: 44%;
     margin-left: 45%;
 `
