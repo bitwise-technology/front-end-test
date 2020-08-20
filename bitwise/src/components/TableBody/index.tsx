@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { v4 } from 'uuid';
 export interface TableReportUserGithub {
-    repositoryName : string;
-    amountOfCommits : string;
-    lastCommitMessage : string;
+	repositoryName: string;
+	amountOfCommits: string;
+	lastCommitMessage: string;
 	lastCommitHash: string;
-    [index: string] : string;
+	[index: string] : string
 }
 
 export interface ITableBody<T> {
@@ -13,11 +14,15 @@ export interface ITableBody<T> {
 const TableBody: React.FC<ITableBody<TableReportUserGithub>> = ({ data }) => {
 	return (
 		<tbody>
-			{data.map((item : TableReportUserGithub) => {
+			{data.map((item: TableReportUserGithub) => {
 				return (
 					<tr>
-						{Object.keys(item).map((key : string) => {
-							return <td className='table__data'>{item[key]}</td>;
+						{Object.keys(item).map((key: string) => {
+							return (
+								<td key={v4()} className="table__data">
+									{item[key]}
+								</td>
+							);
 						})}
 					</tr>
 				);
@@ -26,5 +31,4 @@ const TableBody: React.FC<ITableBody<TableReportUserGithub>> = ({ data }) => {
 	);
 };
 
-
-export default TableBody
+export default TableBody;

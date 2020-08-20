@@ -6,11 +6,11 @@ import { GET_NEARBY_NAMES } from '../../apollo-queries';
 import { useGithubApiData } from '../../hooks/useGithubApiData';
 
 interface NearbyNamesProps {
-    username : string,
-    getUserData : Function
+	username: string;
+	getUserData: Function;
 }
 
-const NearbyNames : React.FC<NearbyNamesProps> = ({ username, getUserData }) => {
+const NearbyNames: React.FC<NearbyNamesProps> = ({ username, getUserData }) => {
 	const { getData: getNearbyNames, data: nearbyNames } = useGithubApiData(GET_NEARBY_NAMES, (error: ApolloError) =>
 		console.log(error)
 	);
@@ -27,6 +27,7 @@ const NearbyNames : React.FC<NearbyNamesProps> = ({ username, getUserData }) => 
 				nearbyNames.search.nodes.map(({ login }: { login: string }) => {
 					return (
 						<span
+							key={login}
 							onClick={() => getUserData({ variables: { user: login } })}
 							style={{
 								margin: '0 1rem',
