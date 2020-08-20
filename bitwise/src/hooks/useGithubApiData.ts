@@ -7,10 +7,9 @@ interface GithubApiData {
 }
 
 export const useGithubApiData = (query: DocumentNode, errorHandler?: any): GithubApiData => {
-	const [getData, { data: githubInfo, loading, error, called }] = useLazyQuery(query, {
+	const [getData, { data: githubInfo, loading, called }] = useLazyQuery(query, {
 		pollInterval: 0,
 		onError: (error) => errorHandler(error),
-		onCompleted: (data) => console.log(data)
 	});
 
 	if (called && loading) {

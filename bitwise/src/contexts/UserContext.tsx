@@ -6,5 +6,5 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }: { children: React.ReactElement }) => {
 	const [user, setUser] = useLocalStorage('user', null);
 
-	return <UserContext.Provider value={{ data :user, setUser }}>{children}</UserContext.Provider>;
+	return <UserContext.Provider value={{ user, setUser }}>{children}</UserContext.Provider>;
 };
