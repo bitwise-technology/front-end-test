@@ -18,37 +18,46 @@ import { GET_USER_INFO } from '../../apollo-queries';
 import { mapGetUserResponseToTableBodyData } from '../../utils/mappers';
 import ProfileFooter from '../../components/ProfileFooter';
 import CustomInput from '../../components/CustomInput';
+import Alert from '../../components/Alert';
 const Profile: React.FC = () => {
-	const {
-		data: { user },
-		setUser,
-	}: any = useContext(UserContext);
+	const [userToGetInfo, setUserToGetInfo] = useState('');
+	const [alertText, setAlertText] = useState('');
+	const [showAlert, setShowAlert] = useState(false);
 
-	const [username, setUsername] = useState('');
+	const { user, setUser }: any = useContext(UserContext);
 
-	const { getData: getUserData, data: userInfo } = useGithubApiData(GET_USER_INFO, (error: any) =>
-		console.log(error)
-	);
+	const { getData: getUserData, data: userInfo } = useGithubApiData(GET_USER_INFO, (error: any) => {
+		setAlertText('Usuário não encontrado !')
+		setShowAlert(true);
+	});
 
 	useEffect(() => {
 		if (userInfo) {
 			setUser(userInfo);
 		}
-	}, [userInfo]);
+	}, [userInfo, setUser]);
+
+	useEffect(() => {
+		console.log(user);
+		if (!user?.repositories?.totalCount) {
+			setAlertText('Usuário encontrado não possui repositórios');
+			setShowAlert(true)
+		}
+	}, [user]);
 
 	const tableHeaderColumns = ['Nome do repositório', 'Qtd de commit', 'Msg Ultimo Commit', 'Hash do ultimo commit'];
 
 	const tableBodyData = mapGetUserResponseToTableBodyData(user);
 
 	const handleChange = ({ target: input }: ChangeEvent) => {
-		setUsername((input as HTMLInputElement).value);
+		setUserToGetInfo((input as HTMLInputElement).value);
 	};
 
 	const handleKeyUp = ({ keyCode }: KeyboardEvent) => {
 		if (keyCode === 13) {
 			getUserData({
 				variables: {
-					user: username,
+					user: userToGetInfo,
 				},
 			});
 		}
@@ -63,6 +72,8 @@ const Profile: React.FC = () => {
 
 	return (
 		<div className="page">
+			<Alert setShowAlert={setShowAlert} text={alertText} showAlert={showAlert} />
+
 			<header className="profile__header">
 				<Logo className="profile__logo" />
 
@@ -71,29 +82,30 @@ const Profile: React.FC = () => {
 					name="username"
 					placeholder=""
 					id="username"
-					value={username}
+					value={userToGetInfo}
 					onKeyUp={handleKeyUp}
 					onChange={handleChange}
 					icon={inputIcon}
+					isShadowed={true}
 				/>
 
 				<SocialMedia style={{ height: '2.5rem' }} className="profile__medias" />
 			</header>
 
-			<section className="data">
-				<UserInfo user={user} />
+			<section className="profile__user-data">
+				<UserInfo user={user.user} />
 
-				<div className="show">
+				<div className="profile__user-table">
 					<h2 className="title">Titulo</h2>
 					<table className="table">
 						<TableHeader headerColumns={tableHeaderColumns} />
 
-						<TableBody data={tableBodyData} />
+						{tableBodyData && <TableBody data={tableBodyData} />}
 					</table>
 				</div>
 			</section>
 
-			<img src={ImgSrc} className="horizontal-line" alt="Horizontal line" />
+			<img src={ImgSrc} className="horizontal-line" alt="Horizontal" />
 
 			<ProfileFooter />
 		</div>
