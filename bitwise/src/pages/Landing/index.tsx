@@ -1,53 +1,34 @@
-import React, { useState, useEffect, ChangeEvent, useContext } from 'react';
+import React, { ChangeEvent , MouseEvent } from 'react';
 
-import { useHistory } from 'react-router-dom';
 
-import { useGithubApiData } from '../../hooks/useGithubApiData';
-import { GET_USER_INFO } from '../../apollo-queries';
-
-import Header from '../../components/Header';
+import Header from '../../components/LandingHeader';
 
 import { ReactComponent as GithubSVG } from '../../assets/Vector.svg';
-import { ReactComponent as LinkedInSVG } from '../../assets/in.svg';
-import { ReactComponent as MediumSVG } from '../../assets/medium.svg';
-import { ReactComponent as InstaSVG } from '../../assets/insta.svg';
+
 import { ReactComponent as SearchSVG } from '../../assets/searchIcon.svg';
 
-import PeopleImg from '../../assets/landingImage.png';
+import PeopleWorkingImg from '../../assets/landingImage.png';
 import BackgroundImg from '../../assets/Polygon 1 (1).png';
-
-import { UserContext } from '../../contexts/UserContext';
 
 import Alert from '../../components/Alert';
 import NearbyNames from '../../components/NearbyNames';
 import CustomInput from '../../components/CustomInput';
+import MediaIcons from '../../components/MediaIcons';
+import useUserInfo from '../../hocs/useUserInfo';
 
-const Landing = () => {
-	const [userToGetInfo, setUserToGetInfo] = useState('');
-	const [showAlert, setShowAlert] = useState(false);
+interface LandingProps {
+	userToGetInfo: string;
+	showAlert: boolean;
+	setShowAlert: Function;
+	getData: Function;
+	onChange: (event : ChangeEvent) => void;
+	onClick: (event : MouseEvent) => void;
+}
 
-	const { getData: getUserData, data: userInfo } = useGithubApiData(GET_USER_INFO, () => setShowAlert(true));
-
-	const userContext: any = useContext(UserContext);
-
-	const history = useHistory();
-
-	useEffect(() => {
-		if (userInfo) {
-			userContext.setUser(userInfo);
-			history.push('/profile');
-		}
-	}, [userInfo , history, userContext]);
-
-	const handleChange = ({ target }: ChangeEvent) => {
-		setUserToGetInfo((target as HTMLInputElement).value);
-	};
-	const handleClick = () => {
-		getUserData({ variables: { user: userToGetInfo } });
-	};
+const Landing: React.FC<LandingProps> = ({ onChange, onClick, setShowAlert, showAlert, userToGetInfo, getData }) => {
 
 	return (
-		<div className="main">
+		<div className="landing-main">
 			<Alert showAlert={showAlert} setShowAlert={setShowAlert} text="Nenhum usuário encontrado!" />
 
 			<Header />
@@ -71,32 +52,26 @@ const Landing = () => {
 						type="text"
 						placeholder="Buscar um usuário..."
 						value={userToGetInfo}
-						onChange={handleChange}
+						onChange={onChange}
 					/>
-					<div style={{ cursor: 'pointer' }} className="search-container__icon" onClick={handleClick}>
+					<div style={{ cursor: 'pointer' }} className="search-container__icon" onClick={onClick}>
 						<GithubSVG />
 					</div>
 				</div>
 
-				<NearbyNames username={userToGetInfo} getUserData={getUserData} />
+				<NearbyNames username={userToGetInfo} getUserData={getData} />
 			</div>
 
 			<div className="aside">
-				<img src={PeopleImg} alt="People working" className="aside__main-img" />
+				<img src={PeopleWorkingImg} alt="People working" className="aside__main-img" />
 				<img src={BackgroundImg} alt="Background" className="aside__background" />
 			</div>
 
 			<div className="footer">
-				<MediumSVG className="footer__icon" />
-				<a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel="noopener noreferrer">
-					<LinkedInSVG className="footer__icon" />
-				</a>
-				<a href="https://www.instagram.com/bitwisetechnology/" target="_blank" rel="noopener noreferrer">
-					<InstaSVG className="footer__icon" />
-				</a>
+				<MediaIcons />
 			</div>
 		</div>
 	);
 };
 
-export default Landing;
+export default useUserInfo(Landing);
