@@ -1,0 +1,39 @@
+.profile {
+	&__header {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		padding-top: 2rem;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 992px) {
+			flex-direction: row;
+		}
+
+		@media screen and (min-width: 768px) {
+			padding: 3rem 5rem;
+		}
+	}
+
+	&__logo {
+		width: 100%;
+	}
+
+	&__medias {
+		width: 40%;
+		display: none;
+
+		@media screen and (min-width: 768px) {
+			display: block;
+		}
+		& > * {
+			fill: $linear-gradient-to;
+			width: 1rem;
+		}
+	}
+}
