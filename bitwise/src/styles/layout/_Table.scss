@@ -1,0 +1,10 @@
+.table {
+    color: $color-neutral-blue;
+
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+        padding: 1rem 0;
+        border-radius: 6px;
+    }
+}

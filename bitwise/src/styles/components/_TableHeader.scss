@@ -1,4 +1,9 @@
 .table__header {
-	padding: 1rem;
+	padding: 1rem 0 1.4rem 0;
 	font-size: 1rem;
+	width: 25%;
+	border-bottom: 1px solid #C4C8D1;
+	@media screen and (min-width: 992px) {
+		font-size: 1.5rem
+	}
 }
