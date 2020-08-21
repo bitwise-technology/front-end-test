@@ -16,7 +16,7 @@ const TableBody: React.FC<ITableBody<TableReportUserGithub>> = ({ data }) => {
 		<tbody>
 			{data.map((item: TableReportUserGithub) => {
 				return (
-					<tr>
+					<tr key={v4()} className='table__row'>
 						{Object.keys(item).map((key: string) => {
 							return (
 								<td key={v4()} className="table__data">

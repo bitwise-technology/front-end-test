@@ -5,7 +5,7 @@
 		height: 12rem;
 		border-radius: 4px;
 		background: #f0f0f0;
-		margin: 0 1rem;
+		margin-right:3.2rem;
 	}
 
 	&__name {
@@ -15,16 +15,19 @@
         padding-bottom: 1rem;
 	}
 
-	&__repositories {
+	&__amountOfRepositories {
 		background-color: #fff;
 		box-shadow: 0px 2px 38px rgba(84, 84, 89, 0.14);
-		flex-direction: column;
+
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		
 		max-width: 10rem;
 		padding: 2rem 1.5rem;
 		position: relative;
+
 		& > * {
 			display: block;
 		}
@@ -43,9 +46,9 @@
 			background-color: #490248;
 			display: inline-block;
 			width: 3px;
-			height: 10px;
+			height: 25px;
 			transform: translateY(-50%);
-			border-radius: 100px;
+			border-radius: 0 100px 100px 0;
 			left: 0;
 			top: 50%;
 			position: absolute;

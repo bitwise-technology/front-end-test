@@ -1,8 +1,6 @@
-.emphasis {
-	font-weight: bold;
-}
 
-.main {
+
+.landing-main {
 	background: linear-gradient(359.39deg, #efeeee 0.46%, #ffffff 99.42%);
 	height: 100vh;
 	max-height: 100vh;
@@ -111,14 +109,7 @@
 	justify-content: center;
 	align-items: center;
 	padding: 4rem 0;
-	&__icon {
-		margin: 0 11px;
-		width: 24px;
-		height: 23px;
-		& > * {
-			fill: #fd71ea;
-		}
-	}
+
 
 	@media screen and (min-width: 992px) {
 		align-items: flex-end;
