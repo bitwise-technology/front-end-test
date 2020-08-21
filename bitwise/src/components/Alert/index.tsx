@@ -1,8 +1,6 @@
 import React, { MouseEvent } from 'react';
 
-import { ReactComponent as LinkedInSVG } from '../../assets/in.svg';
-import { ReactComponent as MediumSVG } from '../../assets/medium.svg';
-import { ReactComponent as InstaSVG } from '../../assets/insta.svg';
+import MediaIcons from '../MediaIcons';
 
 interface AlertProps {
 	showAlert: boolean;
@@ -19,13 +17,7 @@ const Alert: React.FC<AlertProps> = ({ showAlert, text, setShowAlert }) => {
 			<p className="alert__text">{text}</p>
 			<span className="media__text">Enquanto isso, acompanhe a bitwise nas redes socias</span>
 			<div className="media__icons">
-				<MediumSVG />
-				<a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel='noopener noreferrer'>
-					<LinkedInSVG />
-				</a>
-				<a href="https://www.instagram.com/bitwisetechnology/" target="_blank" rel='noopener noreferrer'>
-					<InstaSVG />
-				</a>
+				<MediaIcons />
 			</div>
 
 			<span className="cta-button" onClick={handleClick}>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ReactComponent as SocialMedia } from '../../assets/Sociais.svg';
 import { ReactComponent as Logo } from '../../assets/logo_bottom.svg';
+import MediaIcons from '../MediaIcons';
 
 const ProfileFooter = () => {
 	return (
@@ -33,9 +33,9 @@ const ProfileFooter = () => {
 			<div className="profile-footer__end">
 				<p className='profile-footer__end-text'> Todos os direitos reservados - 2020</p>
 
-				<SocialMedia style={{ height: '2.5rem' }} className="profile-footer__end-medias" />
+				<MediaIcons />
 
-				<p className='profile-footer__end-text'>Voltar ao topo</p>
+				<a rel="noopenner noreferr" className='profile-footer__end-text' href="#top">Voltar ao topo</a>
 			</div>
 		</footer>
 	);
