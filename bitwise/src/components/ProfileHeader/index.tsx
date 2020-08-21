@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from '../../assets/bitwiseLogo.svg';
 
 import CustomInput from '../../components/CustomInput';
 import MediaIcons from '../MediaIcons';
-import useUserInfo from '../../hocs/useUserInfo';
+import withUserInfo from '../../hocs/withUserInfo';
 
 interface ProfileHeaderProps {
 	userToGetInfo: string;
@@ -47,4 +47,4 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ userToGetInfo, onChange, 
 	);
 };
 
-export default useUserInfo(ProfileHeader);
+export default withUserInfo(ProfileHeader);

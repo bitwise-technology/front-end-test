@@ -14,7 +14,7 @@ import Alert from '../../components/Alert';
 import NearbyNames from '../../components/NearbyNames';
 import CustomInput from '../../components/CustomInput';
 import MediaIcons from '../../components/MediaIcons';
-import useUserInfo from '../../hocs/useUserInfo';
+import withUserInfo from '../../hocs/withUserInfo';
 
 interface LandingProps {
 	userToGetInfo: string;
@@ -74,4 +74,4 @@ const Landing: React.FC<LandingProps> = ({ onChange, onClick, setShowAlert, show
 	);
 };
 
-export default useUserInfo(Landing);
+export default withUserInfo(Landing);

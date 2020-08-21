@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 import { UserContext } from '../contexts/UserContext';
 
-const useUserInfo = (WrappedComponent: any) => {
+const withUserInfo = (WrappedComponent: any) => {
 	const OuterComponent = (props: any) => {
 		const [userToGetInfo, setUserToGetInfo] = useState('');
 		const [showAlert, setShowAlert] = useState(false);
@@ -62,4 +62,4 @@ const useUserInfo = (WrappedComponent: any) => {
 	
 };
 
-export default useUserInfo;
+export default withUserInfo;
