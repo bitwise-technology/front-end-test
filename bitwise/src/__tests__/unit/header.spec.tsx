@@ -1,4 +1,4 @@
-import Header from '../../components/Header';
+import Header from '../../components/LandingHeader';
 import React from 'react'
 import { shallow } from 'enzyme';
 
