@@ -1,22 +1,30 @@
-import React, { ReactComponentElement } from 'react';
+import React from 'react';
 
-interface MediaIconsProps {
-	icons: Array<{
-		icon: SVGElement;
-        link: string;
-        inverse: boolean
-	}>;
-}
-const MediaIcons: React.FC<MediaIconsProps> = ({ icons }) => {
+import { ReactComponent as LinkedInSVG } from '../../assets/in.svg';
+import { ReactComponent as MediumSVG } from '../../assets/medium.svg';
+import { ReactComponent as InstaSVG } from '../../assets/insta.svg';
+
+const MediaIcons = () => {
 	return (
-		<>
-			{icons.map(({ icon, link }) => (
-				<a href={link} target="_blank" ref="noopener noreferrer">
-					{' '}
-					{icon}
-				</a>
-			))}
-		</>
+		<div className="icons">
+			<MediumSVG className="icons__icon" />
+			<a
+				className="icons__link"
+				href="https://www.linkedin.com/company/bitwisetechnology/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<LinkedInSVG className="icons__icon" />
+			</a>
+			<a
+				className="icons__link"
+				href="https://www.instagram.com/bitwisetechnology/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<InstaSVG className="icons__icon" />
+			</a>
+		</div>
 	);
 };
 

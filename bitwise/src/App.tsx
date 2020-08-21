@@ -8,6 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import './styles/main.scss';
 
+// const Landing = lazy(() => import('./pages/Landing'));
 const Landing = lazy(() => import('./pages/Landing'));
 const Profile = lazy(() => import('./pages/Profile'));
 

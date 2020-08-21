@@ -1,0 +1,11 @@
+.icons {
+    display: flex;
+    &__icon {
+		margin: 0 11px;
+		width: 24px;
+		height: 23px;
+		& > * {
+			fill: #fd71ea;
+		}
+	}
+}
