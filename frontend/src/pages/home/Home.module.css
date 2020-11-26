@@ -1,0 +1,34 @@
+.Container {
+  width: 80%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.BgImage {
+  position: absolute;
+  left: 515px;
+  top: 0px;
+}
+
+.HomeContent {
+  width: 1100px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+
+}
+
+.SearchContent {
+  width: 50%;
+}
+
+.HomeText {
+  width: 100%;
+  font-size: 42px;
+  line-height: 50px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -3px;
+  color: #5A3D5C;
+  padding-top: 10%;
+}
