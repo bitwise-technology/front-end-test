@@ -1,0 +1,47 @@
+.SearchBar {
+  margin-top: 15%;
+  display: flex;
+  background: #fff;
+  height: 10%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 3%;
+  box-shadow: 0px 5px 5px 0px rgba(119, 116, 116, 0.75);
+}
+
+.InputContainer {
+  width: 90%;
+  justify-content: space-between;
+}
+
+.Input {
+  padding-left: 20px;
+  width: 90%;
+  max-height: 100%;
+  border: none;
+}
+
+.Input:hover,
+.Input:active,
+.Input:focus {
+  cursor: pointer;
+  outline: none;
+
+}
+
+.Button {
+  background:   #5A3D5C;
+  border: none;
+  border-radius: 2px;
+  width: 10%;
+  height: 100%;
+  transition: background-color 0.2s;
+}
+
+.Button:hover,
+.Button:active,
+.Button:focus {
+  background:  hsl(296,20%,40%);
+  cursor: pointer;
+  outline: none;
+}
