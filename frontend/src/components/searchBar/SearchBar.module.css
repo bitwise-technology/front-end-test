@@ -29,19 +29,3 @@
 
 }
 
-.Button {
-  background:   #5A3D5C;
-  border: none;
-  border-radius: 2px;
-  width: 10%;
-  height: 100%;
-  transition: background-color 0.2s;
-}
-
-.Button:hover,
-.Button:active,
-.Button:focus {
-  background:  hsl(296,20%,40%);
-  cursor: pointer;
-  outline: none;
-}
