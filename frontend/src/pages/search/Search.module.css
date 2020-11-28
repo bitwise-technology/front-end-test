@@ -1,0 +1,13 @@
+.Container {
+  width: 80%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.Nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
