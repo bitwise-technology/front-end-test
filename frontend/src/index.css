@@ -1,5 +1,7 @@
+
 body {
-  background: linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%);
+  width: 1200px;
+  background: #EFEEEE;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
