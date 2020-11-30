@@ -2,7 +2,6 @@
   width: 80%;
   margin: auto;
   padding-top: 5%;
-
 }
 
 .BgImage {
@@ -33,4 +32,9 @@
   color: #5A3D5C;
   padding-top: 10%;
   margin-bottom: 15%;
+}
+
+.Medias {
+  display: flex;
+  justify-content: center;
 }

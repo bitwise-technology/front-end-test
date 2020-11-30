@@ -9,6 +9,7 @@ import bgImage from '../../assets/images/background-image.svg';
 import homeImage from '../../assets/images/home-image.svg';
 
 import { useQuery, gql } from '@apollo/client';
+import Medias from '../../components/medias/Medias';
 
 const GET_USER = gql`
   query  User($login: String!){
@@ -55,6 +56,9 @@ const Home = () => {
           {isClicked ? <Users login={login}/> : null}
         </div>
         <img src={homeImage} alt="Bitwise" />
+      </div>
+      <div className={classes.Medias}>
+        <Medias />
       </div>
     </div>
   )
