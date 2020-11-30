@@ -1,7 +1,8 @@
 
 body {
   width: 1200px;
-  background: #EFEEEE;
+  height: 1000px;
+  background: #EFEEEE ;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,6 +10,6 @@ body {
   left: 0px;
   top: 0px;
   position: absolute;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
