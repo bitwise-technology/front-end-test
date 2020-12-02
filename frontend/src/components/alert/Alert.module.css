@@ -1,0 +1,9 @@
+.Alert {
+  background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
+  color: white;
+  width: 400px;
+  border-radius: 5px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
