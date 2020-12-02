@@ -60,7 +60,7 @@ const Home = () => {
           </h1>
           <SearchBar changeHandler={inputChangeHandler} clicked={clickHandler}/>
           {render === "redirect" ? <Redirect to={{pathname: "/search", state:{login: login}}} /> 
-          : render === "alert" ? <Alert /> : null}
+          : render === "alert" ? <Alert type="notFound"/> : null}
         </div>
         <img src={homeImage} alt="Bitwise" />
       </div>
