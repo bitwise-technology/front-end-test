@@ -4,6 +4,7 @@ import classes from './Search.module.css';
 
 import Logo from '../../components/logo/Logo';
 import SearchBar from '../../components/searchBar/SearchBar';
+import Footer from '../../components/footer/Footer';
 
 import User from '../../queryComponent/user/User';
 import Medias from '../../components/medias/Medias';
@@ -17,6 +18,7 @@ const Search = (props) => {
 
 
   return (
+    <>
      <div className={classes.Container}>
       <nav className={classes.Nav}>
         <Logo />
@@ -27,6 +29,8 @@ const Search = (props) => {
         <User login={login}/>
       </div>
      </div>
+      <Footer />
+    </>
     
     
   );
