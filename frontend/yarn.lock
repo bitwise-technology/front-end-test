@@ -4027,6 +4027,14 @@ detect-port-alt@1.1.6:
     address "^1.0.1"
     debug "^2.6.0"
 
+did-you-mean@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/did-you-mean/-/did-you-mean-0.0.1.tgz#8851ce82407903cb62c12cb6ad4f676921ccdec3"
+  integrity sha1-iFHOgkB5A8tiwSy2rU9naSHM3sM=
+  dependencies:
+    levenshtein "*"
+    underscore "*"
+
 diff-sequences@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-26.6.2.tgz#48ba99157de1923412eed41db6b6d4aa9ca7c0b1"
@@ -5221,6 +5229,14 @@ getpass@^0.1.1:
   integrity sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
   dependencies:
     assert-plus "^1.0.0"
+
+git-commit-msg-linter@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/git-commit-msg-linter/-/git-commit-msg-linter-3.0.0.tgz#f7bffab647fe6f30a5634f644c0fe70a5861fb5b"
+  integrity sha512-0qaE7RMhXFHsub4PSpTS3+5QYGb5ck/XW6AQChCWjkMOQHfKjCCZ7VMxT8w0hqE2y+z6UbpcK5s/icgg5S+d1A==
+  dependencies:
+    chalk "^2.4.2"
+    did-you-mean "^0.0.1"
 
 glob-parent@^3.1.0:
   version "3.1.0"
@@ -6801,6 +6817,11 @@ leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
   integrity sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==
+
+levenshtein@*:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/levenshtein/-/levenshtein-1.0.5.tgz#3911737a9cb56da345d008f55782c6f138979ba3"
+  integrity sha1-ORFzepy1baNF0Aj1V4LG8TiXm6M=
 
 levn@^0.4.1:
   version "0.4.1"
@@ -10633,6 +10654,11 @@ typescript@^4.0.3:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.2.tgz#6369ef22516fe5e10304aae5a5c4862db55380e9"
   integrity sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==
+
+underscore@*:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.12.0.tgz#4814940551fc80587cef7840d1ebb0f16453be97"
+  integrity sha512-21rQzss/XPMjolTiIezSu3JAjgagXKROtNrYFEOWK109qY1Uv2tVjPTZ1ci2HgvQDA16gHYSthQIJfB+XId/rQ==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
