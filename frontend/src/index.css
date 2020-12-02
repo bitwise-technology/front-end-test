@@ -1,7 +1,5 @@
 
 body {
-  width: 1200px;
-  height: 1000px;
   background: #EFEEEE ;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -10,6 +8,6 @@ body {
   left: 0px;
   top: 0px;
   position: absolute;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
