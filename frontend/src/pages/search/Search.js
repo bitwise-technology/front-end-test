@@ -6,10 +6,10 @@ import Logo from '../../components/logo/Logo';
 import SearchBar from '../../components/searchBar/SearchBar';
 
 import User from '../../queryComponent/user/User';
+import Medias from '../../components/medias/Medias';
 
-const Search = () => {
-  const [login, setLogin] = useState("laioAndrade");
-
+const Search = (props) => {
+  const [login, setLogin] = useState(props.location.state.login);
 
   const inputChangeHandler = (event) => {
     setLogin(event.target.value);
@@ -21,6 +21,7 @@ const Search = () => {
       <nav className={classes.Nav}>
         <Logo />
         <SearchBar changeHandler={inputChangeHandler}/>
+        <Medias />
       </nav>  
       <div>
         <User login={login}/>
