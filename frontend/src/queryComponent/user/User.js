@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
 import classes from './User.module.css';
+import Alert from '../../components/alert/Alert';
 
 const GET_INFOS = gql` 
   query  User($login: String!){
@@ -49,35 +50,39 @@ const User = ({login}) => {
 
   return (
     <div>
+      {data.user.repositories.totalCount === 0 ? <Alert caller="search"/>: 
+      <div>
       <div className={classes.User}>
-        <img className={classes.Avatar} src={data.user.avatarUrl} />
-        <div className={classes.UserInfo}>
-          <h2>{data.user.name}</h2>
-          <div className={classes.TotalRepositories}>
-            <span><strong>{data.user.repositories.totalCount}</strong></span>
-            <span className={classes.Repository}>Repositórios</span>
-          </div>
-        </div>
+      <img className={classes.Avatar} src={data.user.avatarUrl} />
+      <div className={classes.UserInfo}>
+        <h2>{data.user.name}</h2>
         
+        <div className={classes.TotalRepositories}>
+          <span><strong>{data.user.repositories.totalCount}</strong></span>
+          <span className={classes.Repository}>Repositórios</span>
+        </div>
       </div>
-      <div className={classes.Table}> 
-          <div className={classes.HeaderList}>
-            <span>NOME DO REPOSITÓRIO</span>
-            <span>QTD DE COMMIT</span>
-            <span>MSG ULTIMO COMMIT</span>
-            <span>HASH DO ULTIMO COMMIT</span>
-          </div>
-          {data ? data.user.repositories.nodes.map(repository => {
-            return (
-              <div className={classes.DataList} key={repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}>
-                <span>{repository.defaultBranchRef.target.history.edges[0].node.repository.name}</span>
-                <span>{repository.defaultBranchRef.target.history.edges[0].node.history.totalCount}</span>
-                <span>{repository.defaultBranchRef.target.history.edges[0].node.message}</span>
-                <span>{repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}</span>
-              </div>
-            )
-          }): null}
-      </div>
+    </div>
+    <div className={classes.Table}> 
+        <div className={classes.HeaderList}>
+          <span>NOME DO REPOSITÓRIO</span>
+          <span>QTD DE COMMIT</span>
+          <span>MSG ULTIMO COMMIT</span>
+          <span>HASH DO ULTIMO COMMIT</span>
+        </div>
+        {data ? data.user.repositories.nodes.map(repository => {
+          return (
+            <div className={classes.DataList} key={repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}>
+              <span>{repository.defaultBranchRef.target.history.edges[0].node.repository.name}</span>
+              <span>{repository.defaultBranchRef.target.history.edges[0].node.history.totalCount}</span>
+              <span>{repository.defaultBranchRef.target.history.edges[0].node.message}</span>
+              <span>{repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}</span>
+            </div>
+          )
+        }): null}
+        </div>
+    </div>
+    }
     </div>
   )
 }
