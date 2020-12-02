@@ -1,0 +1,56 @@
+.Footer {
+  margin-top: 80px;
+  box-sizing: border-box;
+}
+
+.Bar {
+  background-image: url('../../assets/images/bar.svg');
+}
+
+.Content {
+  margin: -5px;
+  padding: 0;
+  height: 300px;
+  background: #382039;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.List {
+  width: 80%;
+  margin: auto;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  gap:5%;
+  align-items: flex-start;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #FD71EA;
+}
+
+.List p{
+  color: white;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.Line {
+  width: 80%;
+  height: 3px;
+  background: #A51C92;
+  margin-bottom: 3%;
+}
+
+.Copyright {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#FD71EA ;
+  font-size: 0.8rem;
+  margin-bottom: 40px;
+}
