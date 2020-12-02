@@ -1,9 +1,17 @@
 .Alert {
   background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
   color: white;
-  width: 400px;
+  width: 450px;
   border-radius: 5px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
+  top: 10px;
+  right: 10px;
+  position: fixed;
+  padding: 20px;
+}
+
+.Footer {
+  display: flex;
+  font-size: 0.7rem;
+  justify-content: space-between;
+  align-items: center;
 }

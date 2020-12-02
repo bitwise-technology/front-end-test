@@ -3,21 +3,19 @@ import classes from './Alert.module.css';
 
 import Medias from '../medias/Medias';
 
-const Alert = ({caller}) => {
+const Alert = ({type}) => {
   return (
-    <>
-    {caller === "home" ?
-    <div className={classes.Home}> 
-      <p>Nenhum usuário encontrado!</p>
-      <Medias />
-    </div>
-    :
-    <div className={classes.Search}> 
-      <p>Nenhum usuário encontrado!</p>
-      <Medias />
-    </div>
-  }
-  </>
+    <div className={classes.Alert}>
+    {type === "notFound" ?
+      <p><strong>Nenhum usuário encontrado!</strong></p> :
+      <p><strong>Este usuário não possui ou participa de algum repositório!</strong></p>
+      }
+      <div className={classes.Footer}>
+        <span>Enquanto isso, acompanhe a Bitwise nas redes sociais:</span>
+        <Medias />
+      </div>
+      
+  </div>
   )
 }
 
