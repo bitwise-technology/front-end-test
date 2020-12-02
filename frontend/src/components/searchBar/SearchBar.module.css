@@ -1,7 +1,7 @@
 .SearchBar {
   display: flex;
   background: #fff;
-  height: 10%;
+  height: 40px;
   align-items: center;
   justify-content: space-between;
   padding-left: 3%;
@@ -9,7 +9,8 @@
 }
 
 .InputContainer {
-  width: 90%;
+  display: flex;
+  width: 360px;
   justify-content: space-between;
 }
 

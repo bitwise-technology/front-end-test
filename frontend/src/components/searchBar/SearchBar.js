@@ -7,7 +7,6 @@ import classes from  './SearchBar.module.css';
 import Button from '../button/Button';
 const SearchBar = ({ changeHandler, clicked }) => {
 
-
   return (
     <div className={classes.SearchBar}>
       <div className={classes.InputContainer}>
