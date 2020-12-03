@@ -30,7 +30,6 @@ const Footer = () => {
           Quebec
         </span></li>
         </ul>
-
         <div className={classes.Line}/>
         <div className={classes.Copyright}>
           <span>Todos os direitos reservados - 2020</span>

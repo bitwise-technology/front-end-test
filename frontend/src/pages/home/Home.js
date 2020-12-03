@@ -49,6 +49,10 @@ const Home = () => {
       setIsClicked(true);
   }
 
+  const closeHandler = () => {
+    setRender("");
+}
+
   return (
     <div className={classes.Container}>
       <Logo />
@@ -60,7 +64,7 @@ const Home = () => {
           </h1>
           <SearchBar changeHandler={inputChangeHandler} clicked={clickHandler}/>
           {render === "redirect" ? <Redirect to={{pathname: "/search", state:{login: login}}} /> 
-          : render === "alert" ? <Alert type="notFound"/> : null}
+          : render === "alert" ? <Alert type="notFound" closeHandler={closeHandler}/> : null}
         </div>
         <img src={homeImage} alt="Bitwise" />
       </div>
