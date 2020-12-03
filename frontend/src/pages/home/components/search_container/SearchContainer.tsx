@@ -16,7 +16,7 @@ import {
 } from "./SearchContainerStyles";
 
 const GET_NEARBY_NAMES = gql`
-  query GetNearbyNames($name: String!) {
+  query GetNearbyUserNames($name: String!) {
     search(type: USER, first: 3, query: $name) {
       nodes {
         ... on User {
@@ -27,28 +27,67 @@ const GET_NEARBY_NAMES = gql`
   }
 `;
 
+export const GET_USER_INFO = gql`
+	query GetGithubUserInfo($user: String!) {
+		user(login: $user) {
+			name
+			avatarUrl
+			repositories(first: 10, orderBy: { field: CREATED_AT, direction: DESC }) {
+				totalCount
+				edges {
+					node {
+						name
+						ref(qualifiedName: "master") {
+							target {
+								... on Commit {
+									history(first: 1) {
+										totalCount
+										nodes {
+											message
+											abbreviatedOid
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+`; 
+
 const SearchContainer = () => {
-  const [nameToSearch, setNameToSearch] = useState("");
-  const [getNearbyNames, { data }] = useLazyQuery(GET_NEARBY_NAMES);
+  const [userToSearch, setUserToSearch] = useState("");
+  const [getUserInfo , {data : userInfo }] = useLazyQuery(GET_USER_INFO);
+  const [getNearbyUserNames, { data : nearbyNames }] = useLazyQuery(GET_NEARBY_NAMES);
 
   const handleInputChange = ({
     target: input,
   }: React.ChangeEvent<HTMLInputElement>): void => {
-    const name = input.value;
+    const user = input.value;
 
-    setNameToSearch(name);
+    setUserToSearch(user);
   };
 
   useEffect(() => {
-    if (nameToSearch.length) {
-      console.log(nameToSearch);
-      getNearbyNames({
+    if (userToSearch.length) {
+      console.log(userToSearch);
+      getNearbyUserNames({
         variables: {
-          name: nameToSearch,
+          name: userToSearch,
         },
       });
     }
-  }, [nameToSearch, getNearbyNames]);
+  }, [userToSearch, getNearbyUserNames]);
+
+  const fetchUser = (user: String = userToSearch) => {
+    getUserInfo({
+      variables: {
+        user: user
+      }
+    })
+  }
 
   return (
     <StyledSearchContainer>
@@ -66,17 +105,17 @@ const SearchContainer = () => {
           id='search'
           placeholder='Buscar usuário'
           autoComplete='off'
-          value={nameToSearch}
+          value={userToSearch}
           onChange={handleInputChange}
         ></StyledInput>
-        <GithubIconContainer>
+        <GithubIconContainer onClick={() => fetchUser()}>
           <GithubIcon />
         </GithubIconContainer>
       </InputContainer>
-      {data && (
+      {nearbyNames && (
         <NearbyNames>
-          {data?.search?.nodes?.map(({login}: {login : string}) => (
-            <span key={login}>{login}</span>
+          {nearbyNames?.search?.nodes?.map(({login}: {login : string}) => (
+            <span  key={login} onClick={() => fetchUser(login)}>{login}</span>
           ))}
         </NearbyNames>
       )}
