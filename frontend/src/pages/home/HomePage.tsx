@@ -8,11 +8,12 @@ import {ReactComponent as LinkedinAndInstagramIcons} from '../../assets/linkedin
 
 import PurpleBackground from '../../assets/purple_background.png';
 import PeopleWorkingImage from '../../assets/people_working.png';
+
 import Header from './components/header/Header';
 
 
 
-const SearchPage = () => {
+const Home = () => {
     return (
         <PageContainer>
 
@@ -46,4 +47,4 @@ ficou muito <EmphasizedText>fácil!</EmphasizedText>
     )
 }
 
-export default SearchPage
+export default Home
