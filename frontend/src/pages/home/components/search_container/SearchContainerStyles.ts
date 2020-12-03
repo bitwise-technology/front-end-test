@@ -6,6 +6,7 @@ import {ReactComponent as SearchIcon} from '../../../../assets/search_icon.svg';
 
 export const StyledSearchContainer = styled.section`
     margin-top: 141px;
+    max-width: 563px;
 
 `;
 
@@ -55,6 +56,13 @@ export const GithubIconContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+export const NearbyNames = styled.div`
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
 `;
 
 

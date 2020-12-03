@@ -13,7 +13,11 @@ import Header from "./components/header/Header";
 import SearchContainer from "./components/search_container/SearchContainer";
 import Footer from "./components/footer/Footer";
 
+
+
+
 const Home = () => {
+
   return (
     <PageContainer>
       <StyledBackgroundImage src={PurpleBackground} alt='Purple Background' />
