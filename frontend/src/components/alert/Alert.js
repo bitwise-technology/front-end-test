@@ -3,9 +3,10 @@ import classes from './Alert.module.css';
 
 import Medias from '../medias/Medias';
 
-const Alert = ({type}) => {
+const Alert = ({type, closeHandler}) => {
+
   return (
-    <div className={classes.Alert}>
+    <div className={classes.Alert} onClick={closeHandler}>
     {type === "notFound" ?
       <p><strong>Nenhum usuário encontrado!</strong></p> :
       <p><strong>Este usuário não possui ou participa de algum repositório!</strong></p>
