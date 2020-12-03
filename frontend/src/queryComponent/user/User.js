@@ -46,42 +46,44 @@ const User = ({login}) => {
   const { loading, error, data } = useQuery(GET_INFOS, ({ variables: { login }}));
 
   if(loading) return <p>Loading</p>
-  if(error) return <Alert type="notFound"/>;
+  if(error) {
+    return <Alert type="notFound" />;
+  }
 
   return (
     <div>
       {data.user.repositories.totalCount === 0 ? <Alert type="noRepo"/>: 
       <div>
-      <div className={classes.User}>
-      <img className={classes.Avatar} src={data.user.avatarUrl} />
-      <div className={classes.UserInfo}>
-        <h2>{data.user.name}</h2>
-        
-        <div className={classes.TotalRepositories}>
-          <span><strong>{data.user.repositories.totalCount}</strong></span>
-          <span className={classes.Repository}>Repositórios</span>
-        </div>
-      </div>
-    </div>
-    <div className={classes.Table}> 
-        <div className={classes.HeaderList}>
-          <span>NOME DO REPOSITÓRIO</span>
-          <span>QTD DE COMMIT</span>
-          <span>MSG ULTIMO COMMIT</span>
-          <span>HASH DO ULTIMO COMMIT</span>
-        </div>
-        {data ? data.user.repositories.nodes.map(repository => {
-          return (
-            <div className={classes.DataList} key={repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}>
-              <span>{repository.defaultBranchRef.target.history.edges[0].node.repository.name}</span>
-              <span>{repository.defaultBranchRef.target.history.edges[0].node.history.totalCount}</span>
-              <span>{repository.defaultBranchRef.target.history.edges[0].node.message}</span>
-              <span>{repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}</span>
+        <div className={classes.User}>
+          <img className={classes.Avatar} src={data.user.avatarUrl} />
+          <div className={classes.UserInfo}>
+            <h2>{data.user.name}</h2>
+            
+            <div className={classes.TotalRepositories}>
+              <span><strong>{data.user.repositories.totalCount}</strong></span>
+              <span className={classes.Repository}>Repositórios</span>
             </div>
-          )
-        }): null}
+          </div>
         </div>
-    </div>
+        <div className={classes.Table}> 
+            <div className={classes.HeaderList}>
+              <span>NOME DO REPOSITÓRIO</span>
+              <span>QTD DE COMMIT</span>
+              <span>MSG ULTIMO COMMIT</span>
+              <span>HASH DO ULTIMO COMMIT</span>
+            </div>
+            {data ? data.user.repositories.nodes.map(repository => {
+              return (
+                <div className={classes.DataList} key={repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}>
+                  <span>{repository.defaultBranchRef.target.history.edges[0].node.repository.name}</span>
+                  <span>{repository.defaultBranchRef.target.history.edges[0].node.history.totalCount}</span>
+                  <span>{repository.defaultBranchRef.target.history.edges[0].node.message}</span>
+                  <span>{repository.defaultBranchRef.target.history.edges[0].node.abbreviatedOid}</span>
+                </div>
+              )
+            }): null}
+            </div>
+        </div>
     }
     </div>
   )
