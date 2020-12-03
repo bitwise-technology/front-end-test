@@ -44,6 +44,7 @@ export const RepositoriesCount = styled.div`
         top: 50%;
         left: 0;
         transform: translateY(-50%);
+        border-radius: 0px 100px 100px 0px;
     }
 
     & > strong {
