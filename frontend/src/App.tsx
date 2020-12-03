@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
+import {GlobalStyle} from './GlobalStyles';
+import SearchPage from './pages/home/HomePage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Iniciando Projeto...</h1>
+            <GlobalStyle />
+
+      <SearchPage></SearchPage>
     </div>
   );
 }
