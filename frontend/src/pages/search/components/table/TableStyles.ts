@@ -12,7 +12,6 @@ export const TableBody = styled.div`
   &::-webkit-scrollbar {
     width: 6px;
     height: 59px;
-
   }
 
   &::-webkit-scrollbar-thumb {
