@@ -5,6 +5,9 @@ export const FooterContainer = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 41px;
+  transform: translateY(-50px);
+
+  & > :first-child {
+    margin-right: 11px;
+  } 
 `;

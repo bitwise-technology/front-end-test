@@ -59,10 +59,12 @@ export const GithubIconContainer = styled.div`
 `;
 
 export const NearbyNames = styled.div`
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
+    padding-top: 10px;
+    font-size: 12px;
+
+    & > *:not(:first-child) {
+        margin-left: 40px;
+    }
 `;
 
 
