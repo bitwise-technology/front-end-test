@@ -93,3 +93,37 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+
+@media (max-width: 800px) {
+  .User {
+    margin-bottom: 50px;
+  }
+
+  .UserInfo {
+  }
+
+  .Table{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .HeaderList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 280px;
+    border-right: 2px solid #C4C8D1;
+  }
+
+  .DataList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 280px;
+  }
+}

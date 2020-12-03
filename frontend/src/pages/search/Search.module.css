@@ -11,3 +11,10 @@
   margin-bottom: 5%;
 }
 
+@media (max-width: 800px) {
+  .Nav {
+    height: 200px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

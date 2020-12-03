@@ -15,3 +15,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
+@media (max-width: 800px){
+  .Alert {
+    width: 200px;
+  }
+}
