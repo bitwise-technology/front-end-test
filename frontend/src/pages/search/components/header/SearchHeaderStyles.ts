@@ -26,7 +26,7 @@ export const StyledInput = styled.input`
     border: none;
     padding: 12px 0;
     padding-left: 55px;
-    width: 90%;
+    width: 100%;
     outline : none;
     display: inline-block;
     font-size: 16px;

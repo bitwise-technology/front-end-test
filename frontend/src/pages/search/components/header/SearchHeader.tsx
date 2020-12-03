@@ -8,7 +8,7 @@ import { ReactComponent as LinkedinAndInstagramIcons } from "../../../../assets/
 import { HeaderContainer, InputContainer, MediaIconsContainer, StyledInput, StyledSearchIcon } from "./SearchHeaderStyles";
 
 
-const Header = () => {
+const SearchHeader = () => {
   return (
     <HeaderContainer>
       <BitwiseLogo />
@@ -24,4 +24,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default SearchHeader;

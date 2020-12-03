@@ -1,12 +1,17 @@
 import React from "react";
-import Header from "./components/header/SearchHeader";
-
+import SearchHeader from "./components/header/SearchHeader";
+import UserInfo from "./components/user_info/UserInfo";
+import {
+    PageContainer,
+} from "./SearchPageStyles";
 
 const SearchPage = () => {
   return (
-    <div>
-        <Header />
-    </div>
+    <PageContainer>
+      <SearchHeader />
+
+      <UserInfo />
+    </PageContainer>
   );
 };
 
