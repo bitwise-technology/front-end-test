@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { gql, useLazyQuery, useQuery } from "@apollo/client";
+import { gql, useLazyQuery } from "@apollo/client";
 
 import { ReactComponent as GithubIcon } from "../../../../assets/github_icon.svg";
 
