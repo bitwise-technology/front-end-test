@@ -7,8 +7,8 @@ import {StyledHeader} from './HeaderStyles';
 const Header = () => {
     return (
         <StyledHeader>
-        <BitwiseLogo />
-    </StyledHeader>
+            <BitwiseLogo />
+        </StyledHeader>
     )
 }
 
