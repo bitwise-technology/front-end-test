@@ -14,15 +14,16 @@ import { Context } from "../../contexts/AlertContext";
 
 const Alert = () => {
 
-    const {showAlert, setShowAlert} = useContext(Context);
+    const {showAlert, setShowAlert , text} = useContext(Context);
 
     const closeAlert = () => {
         setShowAlert && setShowAlert(false);
     }
 
+    console.log(showAlert);
   return (
     showAlert ? <AlertContainer>
-      <AlertTitle>Nenhum usuário encontrado!</AlertTitle>
+      <AlertTitle>{text}</AlertTitle>
       <AlertCloseButton onClick={closeAlert}>x</AlertCloseButton>
 
       <AlertFooter>
