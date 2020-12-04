@@ -1,4 +1,5 @@
 import React from "react";
+import { Repositories } from "../../../../contexts/UserContext";
 
 import {
   TableDataCell,
@@ -9,7 +10,13 @@ import {
   TableBody,
 } from "./TableStyles";
 
-const Table = () => {
+interface TableProps {
+  data: Repositories;
+}
+
+const Table: React.FC<TableProps> = ({ data }) => {
+  const { edges } = data;
+
   return (
     <>
       <TableHeader>
@@ -21,40 +28,16 @@ const Table = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableDataCell>Data 01</TableDataCell>
-          <TableDataCell>Data 02</TableDataCell>
-          <TableDataCell>Data 03</TableDataCell>
-          <TableDataCell>Data 04</TableDataCell>
-        </TableRow>
-
-        <StrippedTableRow>
-          <TableDataCell>Data 01</TableDataCell>
-          <TableDataCell>Data 02</TableDataCell>
-          <TableDataCell>Data 03</TableDataCell>
-          <TableDataCell>Data 04</TableDataCell>
-        </StrippedTableRow>
-
-        <TableRow>
-          <TableDataCell>Data 01</TableDataCell>
-          <TableDataCell>Data 02</TableDataCell>
-          <TableDataCell>Data 03</TableDataCell>
-          <TableDataCell>Data 04</TableDataCell>
-        </TableRow>
-
-        <TableRow>
-          <TableDataCell>Data 01</TableDataCell>
-          <TableDataCell>Data 02</TableDataCell>
-          <TableDataCell>Data 03</TableDataCell>
-          <TableDataCell>Data 04</TableDataCell>
-        </TableRow>
-
-        <TableRow>
-          <TableDataCell>Data 01</TableDataCell>
-          <TableDataCell>Data 02</TableDataCell>
-          <TableDataCell>Data 03</TableDataCell>
-          <TableDataCell>Data 04</TableDataCell>
-        </TableRow>
+        {edges.map((edge, index) => {
+          return <TableRow>
+            <TableDataCell>{edge?.node?.name ?? ''}</TableDataCell>
+            <TableDataCell>
+              {edge?.node?.ref?.target?.history?.totalCount ?? ''}
+            </TableDataCell>
+            <TableDataCell>{edge?.node?.ref?.target?.history?.nodes[0]?.message ?? ''}</TableDataCell>
+            <TableDataCell>{edge?.node?.ref?.target?.history?.nodes[0]?.abbreviatedOid ?? ''}</TableDataCell>
+          </TableRow>;
+        })}
       </TableBody>
     </>
   );

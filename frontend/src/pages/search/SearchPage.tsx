@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import SearchHeader from "./components/header/SearchHeader";
 import Table from "./components/table/Table";
@@ -17,20 +17,26 @@ import {
   
 } from "./SearchPageStyles";
 import SearchFooter from "./components/footer/SearchFooter";
+import { Context } from "../../contexts/UserContext";
 
 const SearchPage = () => {
+
+  const {user} = useContext(Context);
+
+  console.log(user)
+
   return (
     <PageContainer>
       <SearchHeader />
 
-      <UserInfo />
+      {user && <UserInfo name={user?.name} avatarUrl={user?.avatarUrl} totalRepositories={user?.repositories.totalCount}/>}
 
       <RepositoriesInfoContainer>
         <RepositoriesActionsContainer>
           <RepositoriesTitle>Titulo</RepositoriesTitle>
           <StyledThreeDots />
         </RepositoriesActionsContainer>
-        <Table />
+        {user?.repositories && <Table data={user?.repositories}/>}
       </RepositoriesInfoContainer>
 
       <StyledPurpleRow src={PurpleRow} alt='Purple row' />

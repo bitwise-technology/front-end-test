@@ -6,14 +6,20 @@ import {
   UserName,
 } from "./UserInfoStyles";
 
-const UserInfo = () => {
+interface UserInfoProps {
+  name?: string;
+  totalRepositories?: number;
+  avatarUrl?: string
+}
+
+const UserInfo: React.FC<UserInfoProps> = ({ name, totalRepositories, avatarUrl }) => {
   return (
     <UserInfoContainer>
-      <UserAvatar />
+      <UserAvatar src={avatarUrl} alt="User Image"/>
       <div>
-        <UserName> Tiago José </UserName>
+        <UserName> {name}</UserName>
         <RepositoriesCount>
-          <strong>32</strong>
+          <strong>{totalRepositories}</strong>
           <span>Repositorios</span>
         </RepositoriesCount>
       </div>

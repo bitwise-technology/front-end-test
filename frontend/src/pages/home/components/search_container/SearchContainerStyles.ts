@@ -61,7 +61,7 @@ export const GithubIconContainer = styled.div`
 export const NearbyNames = styled.div`
     padding-top: 10px;
     font-size: 12px;
-
+    height: 20px;
     & > *:not(:first-child) {
         margin-left: 40px;
     }

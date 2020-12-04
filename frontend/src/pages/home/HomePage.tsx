@@ -14,8 +14,6 @@ import SearchContainer from "./components/search_container/SearchContainer";
 import Footer from "./components/footer/Footer";
 
 
-
-
 const Home = () => {
 
   return (

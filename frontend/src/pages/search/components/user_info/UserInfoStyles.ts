@@ -6,7 +6,7 @@ export const UserInfoContainer = styled.div`
   display: flex;
 `;
 
-export const UserAvatar = styled.div`
+export const UserAvatar = styled.img`
     width: 120px;
     height: 120px;
     background-color: #000;
