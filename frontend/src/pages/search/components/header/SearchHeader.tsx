@@ -52,7 +52,7 @@ const SearchHeader = () => {
         setShowAlert && setShowAlert(true);
       }
     }
-  }, [provider, setShowAlert, setText , isMount]);
+  }, [provider, setShowAlert, setText, isMount]);
 
   return (
     <HeaderContainer>
@@ -71,8 +71,11 @@ const SearchHeader = () => {
         ></StyledInput>
       </InputContainer>
       <MediaIconsContainer>
-        <MediumIcon />
-        <LinkedinAndInstagramIcons />
+        <a href='https://medium.com/@bitwisetechnology' target="_blank"><MediumIcon /></a> 
+        <a href='https://www.instagram.com/bitwisetechnology/ target="_blank"'>
+          {" "}
+          <LinkedinAndInstagramIcons />
+        </a>
       </MediaIconsContainer>
     </HeaderContainer>
   );
