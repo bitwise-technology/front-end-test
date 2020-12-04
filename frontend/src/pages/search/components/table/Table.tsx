@@ -29,14 +29,21 @@ const Table: React.FC<TableProps> = ({ data }) => {
       </TableHeader>
       <TableBody>
         {edges.map((edge, index) => {
-          return <TableRow>
-            <TableDataCell>{edge?.node?.name ?? ''}</TableDataCell>
-            <TableDataCell>
-              {edge?.node?.ref?.target?.history?.totalCount ?? ''}
-            </TableDataCell>
-            <TableDataCell>{edge?.node?.ref?.target?.history?.nodes[0]?.message ?? ''}</TableDataCell>
-            <TableDataCell>{edge?.node?.ref?.target?.history?.nodes[0]?.abbreviatedOid ?? ''}</TableDataCell>
-          </TableRow>;
+          return (
+            <TableRow>
+              <TableDataCell>{edge?.node?.name ?? ""}</TableDataCell>
+              <TableDataCell>
+                {edge?.node?.ref?.target?.history?.totalCount ?? ""}
+              </TableDataCell>
+              <TableDataCell>
+                {edge?.node?.ref?.target?.history?.nodes[0]?.message ?? ""}
+              </TableDataCell>
+              <TableDataCell>
+                {edge?.node?.ref?.target?.history?.nodes[0]?.abbreviatedOid ??
+                  ""}
+              </TableDataCell>
+            </TableRow>
+          );
         })}
       </TableBody>
     </>

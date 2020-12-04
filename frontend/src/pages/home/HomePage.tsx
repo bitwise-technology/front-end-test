@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <PageContainer>
+
       <StyledBackgroundImage src={PurpleBackground} alt='Purple Background' />
       <StyledPeopleWorkingImage src={PeopleWorkingImage} alt='People Working' />
 
