@@ -77,7 +77,7 @@ const SearchContainer = () => {
       </InputContainer>
 
       <NearbyNames
-        fetchUser={handleClick}
+        fetchUser={provider.fetchUser}
         nameToSearchNearbies={userToFetchFromGithub}
       />
     </StyledSearchContainer>

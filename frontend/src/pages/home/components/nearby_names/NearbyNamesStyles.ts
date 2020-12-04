@@ -5,5 +5,6 @@ export const NearbyNamesContainer = styled.div`
     height: 20px;
     & > *:not(:first-child) {
         margin-left: 40px;
+        cursor: pointer;
     }
 `;

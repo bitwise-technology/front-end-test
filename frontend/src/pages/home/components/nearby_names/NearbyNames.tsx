@@ -6,7 +6,7 @@ import { NearbyNamesContainer } from "./NearbyNamesStyles";
 import { GET_NEARBY_NAMES } from "../../../../graphql/queries";
 
 interface NearbyNamesProps {
-  fetchUser: Function;
+  fetchUser?: Function;
   nameToSearchNearbies : string
 }
 
@@ -14,6 +14,10 @@ const NearbyNames: React.FC<NearbyNamesProps> = ({ fetchUser , nameToSearchNearb
   const [getNearbyUserNames, { data: nearbyNames }] = useLazyQuery(
     GET_NEARBY_NAMES
   );
+
+  const handleClick = (login: string) => {
+    fetchUser && fetchUser(login)
+  }
 
   useEffect(() => {
     if (nameToSearchNearbies.length) {
@@ -28,7 +32,7 @@ const NearbyNames: React.FC<NearbyNamesProps> = ({ fetchUser , nameToSearchNearb
   return (
     <NearbyNamesContainer>
       {nearbyNames?.search?.nodes?.map(({ login }: { login: string }) => (
-        <span key={login} onClick={() => fetchUser(login)}>
+        <span key={login} onClick={() => handleClick(login)}>
           {login}
         </span>
       ))}
