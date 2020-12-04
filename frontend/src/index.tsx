@@ -6,6 +6,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+import UserProvider from "./contexts/UserContext";
+
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
   headers: {
@@ -17,9 +19,11 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <Router>
-        <App />
-      </Router>
+      <UserProvider>
+        <Router>
+          <App />
+        </Router>
+      </UserProvider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
