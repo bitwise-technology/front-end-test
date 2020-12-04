@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { ReactComponent as MediumIcon } from "../../assets/medium_icon.svg";
 import { ReactComponent as LinkedinAndInstagramIcons } from "../../assets/linkedin_and_insta_icons.svg";
@@ -10,12 +10,20 @@ import {
   AlertTitle,
   SocialMedia,
 } from "./AlertStyles";
+import { Context } from "../../contexts/AlertContext";
 
 const Alert = () => {
+
+    const {showAlert, setShowAlert} = useContext(Context);
+
+    const closeAlert = () => {
+        setShowAlert && setShowAlert(false);
+    }
+
   return (
-    <AlertContainer>
+    showAlert ? <AlertContainer>
       <AlertTitle>Nenhum usuário encontrado!</AlertTitle>
-      <AlertCloseButton>x</AlertCloseButton>
+      <AlertCloseButton onClick={closeAlert}>x</AlertCloseButton>
 
       <AlertFooter>
         <AlertSubtitle>
@@ -26,7 +34,7 @@ const Alert = () => {
           <LinkedinAndInstagramIcons />
         </SocialMedia>
       </AlertFooter>
-    </AlertContainer>
+    </AlertContainer> : null
   );
 };
 

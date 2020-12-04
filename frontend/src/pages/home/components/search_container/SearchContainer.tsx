@@ -16,11 +16,9 @@ import {
 } from "./SearchContainerStyles";
 
 import { GET_NEARBY_NAMES, GET_USER_INFO } from "../../../../graphql/queries";
-import { Context } from "../../../../contexts/UserContext";
+import { Context as AlertContext } from "../../../../contexts/AlertContext";
+import {Context} from '../../../../contexts/UserContext';
 import { useHistory } from "react-router-dom";
-
-
-
 
 
 const SearchContainer = () => {
@@ -29,8 +27,10 @@ const SearchContainer = () => {
 
   const {setUser} = useContext(Context);
 
+  const {setShowAlert} = useContext(AlertContext);
+
   const [userToSearch, setUserToSearch] = useState("");
-  const [getUserInfo , {data }] = useLazyQuery(GET_USER_INFO);
+  const [getUserInfo , {data , error: userNotFound }] = useLazyQuery(GET_USER_INFO);
   const [getNearbyUserNames, { data : nearbyNames }] = useLazyQuery(GET_NEARBY_NAMES);
 
   const handleInputChange = ({
@@ -40,6 +40,13 @@ const SearchContainer = () => {
 
     setUserToSearch(user);
   };
+
+
+  useEffect(() => {
+    if(userNotFound) {
+      setShowAlert && setShowAlert(true);
+    }
+  } , [userNotFound , setShowAlert])
 
   useEffect(() => {
     if(setUser && data) {

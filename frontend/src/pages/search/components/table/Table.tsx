@@ -29,8 +29,8 @@ const Table: React.FC<TableProps> = ({ data }) => {
       </TableHeader>
       <TableBody>
         {edges.map((edge, index) => {
-          return (
-            <TableRow>
+          const tableContent = (
+            <>
               <TableDataCell>{edge?.node?.name ?? ""}</TableDataCell>
               <TableDataCell>
                 {edge?.node?.ref?.target?.history?.totalCount ?? ""}
@@ -42,7 +42,12 @@ const Table: React.FC<TableProps> = ({ data }) => {
                 {edge?.node?.ref?.target?.history?.nodes[0]?.abbreviatedOid ??
                   ""}
               </TableDataCell>
-            </TableRow>
+            </>
+          );
+          return index % 2 === 0 ? (
+            <TableRow>{tableContent}</TableRow>
+          ) : (
+            <StrippedTableRow>{tableContent}</StrippedTableRow>
           );
         })}
       </TableBody>
