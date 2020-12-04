@@ -41,6 +41,12 @@ const SearchContainer = () => {
     provider.fetchUser && provider.fetchUser(userToFetchFromGithub);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.keyCode === 13) {
+      provider.fetchUser && provider.fetchUser(userToFetchFromGithub);
+    }
+  };
+
   useEffect(() => {
     if (isMount) {
       if (provider.wasUserFetchedSuccesfully) {
@@ -70,6 +76,7 @@ const SearchContainer = () => {
           autoComplete='off'
           value={userToFetchFromGithub}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
         ></StyledInput>
         <GithubIconContainer onClick={handleClick}>
           <GithubIcon />

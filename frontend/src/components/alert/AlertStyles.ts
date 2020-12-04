@@ -64,7 +64,7 @@ export const AlertSubtitle = styled.p`
   flex: 1;
 `;
 
-export const SocialMedia = styled.div`
+export const SocialMediaContainer = styled.div`
   & > :first-child {
     margin-right: 10px;
   }

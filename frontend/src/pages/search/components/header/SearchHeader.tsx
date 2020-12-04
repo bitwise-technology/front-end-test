@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import { ReactComponent as BitwiseLogo } from "../../../../assets/bitwise_logo.svg";
-import { ReactComponent as MediumIcon } from "../../../../assets/medium_icon.svg";
-import { ReactComponent as LinkedinAndInstagramIcons } from "../../../../assets/linkedin_and_insta_icons.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
 
@@ -15,6 +13,8 @@ import {
 } from "./SearchHeaderStyles";
 import { Context } from "../../../../contexts/AlertContext";
 import { useIsMount } from "../../../../custom_hooks/useIsMount";
+import { Link } from "react-router-dom";
+import SocialMedia from "../../../../components/social_media/SocialMedia";
 
 const SearchHeader = () => {
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
@@ -56,7 +56,9 @@ const SearchHeader = () => {
 
   return (
     <HeaderContainer>
-      <BitwiseLogo />
+      <Link to='/'>
+        <BitwiseLogo />
+      </Link>
       <InputContainer>
         <StyledSearchIcon />
         <StyledInput
@@ -71,11 +73,7 @@ const SearchHeader = () => {
         ></StyledInput>
       </InputContainer>
       <MediaIconsContainer>
-        <a href='https://medium.com/@bitwisetechnology' target="_blank"><MediumIcon /></a> 
-        <a href='https://www.instagram.com/bitwisetechnology/ target="_blank"'>
-          {" "}
-          <LinkedinAndInstagramIcons />
-        </a>
+        <SocialMedia />
       </MediaIconsContainer>
     </HeaderContainer>
   );

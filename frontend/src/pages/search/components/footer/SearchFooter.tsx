@@ -1,9 +1,7 @@
 import React from "react";
 
 import { ReactComponent as BitwiseLogo } from "../../../../assets/bitwise_logo_2.svg";
-
-import { ReactComponent as MediumIcon } from "../../../../assets/medium_icon.svg";
-import { ReactComponent as LinkedinAndInstagramIcons } from "../../../../assets/linkedin_and_insta_icons.svg";
+import SocialMedia from "../../../../components/social_media/SocialMedia";
 
 import {
   StyledFooter,
@@ -16,6 +14,7 @@ import {
   BackToTopText,
   IconsContainer,
 } from "./SearchFooterStyles";
+
 
 const SearchFooter = () => {
   return (
@@ -56,11 +55,7 @@ const SearchFooter = () => {
       <CopyrightGroup>
         <CopyrightText>Todos os direitos reservados - 2020</CopyrightText>
         <IconsContainer>
-          <a href='https://medium.com/@bitwisetechnology' target="_blank"><MediumIcon /></a> 
-          <a href='https://www.instagram.com/bitwisetechnology/' target="_blank">
-            {" "}
-            <LinkedinAndInstagramIcons />
-          </a>
+          <SocialMedia />
         </IconsContainer>
         <BackToTopText>VOLTAR AO TOPO</BackToTopText>
       </CopyrightGroup>

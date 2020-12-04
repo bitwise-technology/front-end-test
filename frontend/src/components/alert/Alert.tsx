@@ -8,7 +8,7 @@ import {
   AlertFooter,
   AlertSubtitle,
   AlertTitle,
-  SocialMedia,
+  SocialMediaContainer,
 } from "./AlertStyles";
 import { Context } from "../../contexts/AlertContext";
 
@@ -19,8 +19,6 @@ const Alert = () => {
     const closeAlert = () => {
         setShowAlert && setShowAlert(false);
     }
-
-    console.log(showAlert);
   return (
     showAlert ? <AlertContainer>
       <AlertTitle>{text}</AlertTitle>
@@ -30,10 +28,10 @@ const Alert = () => {
         <AlertSubtitle>
           Enquanto isso, acompanhe a Bitwise nas redes sociais:
         </AlertSubtitle>
-        <SocialMedia>
+        <SocialMediaContainer>
           <MediumIcon />
           <LinkedinAndInstagramIcons />
-        </SocialMedia>
+        </SocialMediaContainer>
       </AlertFooter>
     </AlertContainer> : null
   );
