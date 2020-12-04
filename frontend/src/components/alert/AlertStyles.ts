@@ -49,6 +49,10 @@ export const AlertSubtitle = styled.p`
 
 export const SocialMedia = styled.div`
 
+    & > :first-child {
+        margin-right: 10px;
+    }
+
     & > * > path {
         fill: #fff !important;
     }

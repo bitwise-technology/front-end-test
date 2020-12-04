@@ -95,6 +95,11 @@ export const CopyrightGroup = styled.div`
 `;
 
 export const IconsContainer = styled.div`
+
+  & > :first-child {
+    margin-right: 10px;
+  }
+
   @media screen and (max-width: 600px) {
     margin: 30px 0;
   }
