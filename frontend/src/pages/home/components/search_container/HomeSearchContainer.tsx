@@ -14,7 +14,7 @@ import {
 
 import { UserContext } from "../../../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
-import NearbyNames from "../nearby_names/NearbyNames";
+import NearbyNames from "../../../../components/nearby_names/NearbyNames";
 import { Context } from "../../../../contexts/AlertContext";
 import { useIsMount } from "../../../../custom_hooks/useIsMount";
 

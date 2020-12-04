@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useLazyQuery } from "@apollo/client";
 
 import { NearbyNamesContainer } from "./NearbyNamesStyles";
-import { GET_NEARBY_NAMES } from "../../../../graphql/queries";
+import { GET_NEARBY_NAMES } from "../../graphql/queries";
 
 interface NearbyNamesProps {
   fetchUser?: Function;

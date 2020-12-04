@@ -13,14 +13,17 @@ import {
 import { Context } from "../../contexts/AlertContext";
 
 const Alert = () => {
+  const { showAlert, setShowAlert, text } = useContext(Context);
 
-    const {showAlert, setShowAlert , text} = useContext(Context);
+  const closeAlert = () => {
+    setShowAlert && setShowAlert(false);
+  };
 
-    const closeAlert = () => {
-        setShowAlert && setShowAlert(false);
-    }
-  return (
-    showAlert ? <AlertContainer>
+  setTimeout(() => {
+    setShowAlert && setShowAlert(false);
+  }, 3 * 1000);
+  return showAlert ? (
+    <AlertContainer>
       <AlertTitle>{text}</AlertTitle>
       <AlertCloseButton onClick={closeAlert}>x</AlertCloseButton>
 
@@ -33,8 +36,8 @@ const Alert = () => {
           <LinkedinAndInstagramIcons />
         </SocialMediaContainer>
       </AlertFooter>
-    </AlertContainer> : null
-  );
+    </AlertContainer>
+  ) : null;
 };
 
 export default Alert;
