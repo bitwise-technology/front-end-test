@@ -7,14 +7,19 @@ import {ReactComponent as SearchIcon} from '../../../../assets/search_icon.svg';
 export const StyledSearchContainer = styled.section`
     margin-top: 141px;
     max-width: 563px;
+    @media screen and (max-width: 1366px) {
+        max-width: 400px;
+    }
 
 `;
 
 export const SearchContainerText = styled.p`
     font-weight: 300;
     font-size: 42px;
-    width: 540px;
+    max-width: 540px;
     color: var(--secondary-color);
+    
+
 `;
 
 
@@ -26,6 +31,10 @@ export const InputContainer = styled.div`
     box-shadow: 1px 1px 4px #000;
     margin-top: 87px;
     border-radius: 4px;
+
+    
+    @media screen and (max-width: 1366px) {
+    }
 
 `;
 
