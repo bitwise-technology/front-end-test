@@ -11,6 +11,7 @@ export const UserAvatar = styled.img`
     height: 120px;
     background-color: #000;
     border-radius: 4px;
+    box-shadow: 1px 1px 10px #000;
 `;
 
 export const UserName = styled.p`
