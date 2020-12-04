@@ -65,13 +65,13 @@ export const BitwiseLocation = styled.div``;
 export const StyledHorizontalLineContainer = styled.hr`
   margin-top: 61px;
 
-  background-color: #fd71ea;
+  background-color: var(--footerTextColor);
   height: 1px;
   border: none;
 `;
 
 export const CopyrightGroup = styled.div`
-  color: #fd71ea;
+  color: var(--footerTextColor);
   padding-top: 61px;
   display: flex;
   justify-content: space-between;

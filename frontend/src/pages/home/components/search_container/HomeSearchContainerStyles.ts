@@ -59,7 +59,7 @@ export const StyledInput = styled.input`
 
 
 export const GithubIconContainer = styled.div`
-    background-color: #5A3D5C;
+    background-color: var(--wine-color);
     height: 59px;
     width: 10%;
     display: flex;
@@ -71,6 +71,6 @@ export const GithubIconContainer = styled.div`
 
 
 export const EmphasizedText = styled.strong`
-    color: #5A3D5C;
+    color: var(--wine-color);
     font-weight: bold;
 `;

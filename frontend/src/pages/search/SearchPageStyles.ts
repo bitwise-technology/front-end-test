@@ -44,7 +44,7 @@ export const RepositoriesActionsContainer = styled.div`
 export const RepositoriesTitle = styled.h2`
   font-weight: bold;
   font-size: 20px;
-  color: #3d5879;
+  color: var(--dataColor);
 `;
 
 export const StyledThreeDots = styled(ThreeDots)`

@@ -7,7 +7,7 @@ export const AlertContainer = styled.div`
   top: 50px;
   width: 786px;
   height: 198px;
-  background-image: linear-gradient(90deg, #a51c92 0%, #f638dc 100%);
+  background-image: linear-gradient(90deg, var(--purple) 0%, var(--purple-light) 100%);
   border-radius: 20px;
   display: flex;
   flex-direction: column;

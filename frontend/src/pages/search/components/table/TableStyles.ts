@@ -14,7 +14,7 @@ export const TableBody = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #ADB6C0;
+    background-color: var(--scrollBarThumbColor );
     border-radius: 3px;
   }
 `;
@@ -32,7 +32,7 @@ export const TableHeaderCell = styled.strong`
   width: 25%;
   font-size: 15px;
   line-height: 17px;
-  color: #657fa0;
+  color : var(--headerColor);
   padding-top: 28px;
   padding-bottom: 24px;
 `;
@@ -41,7 +41,7 @@ export const TableDataCell = styled.p`
   font-weight: 400;
   font-size: 15px;
   line-height: 17px;
-  color: #3d5879;
+  color: var(--dataColor);
   padding-top: 28px;
   padding-bottom: 24px;
   width: 25%;
@@ -56,5 +56,5 @@ export const TableDataCell = styled.p`
 `;
 
 export const StrippedTableRow = styled(TableRow)`
-  background-color: #fafafc;
+  background-color: var(--strippedRowColor);
 `;

@@ -8,9 +8,20 @@ export const GlobalStyle = createGlobalStyle`
         --secondary-one : #FD71EA;
         --dark : #200F21;
         -purple : #A51C92;
+        --purple-light: #F638DC;
         --white: #F0F0F0;
         
+        --blackColor : #000;
 
+        --strippedRowColor : #fafafc;
+        --dataColor : #3d5879;
+        --headerColor: #657fa0;
+
+        --footerTextColor :#fd71ea;
+
+        --scrollBarThumbColor : #ADB6C0
+
+        --wineColor : #5A3D5C;
     }
 
     *::after,

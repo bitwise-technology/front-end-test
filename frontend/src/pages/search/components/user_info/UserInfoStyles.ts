@@ -7,7 +7,6 @@ export const UserInfoContainer = styled.div`
 
   @media screen and (max-width: 1366px) {
     padding-left: 45px;
-
   }
 
   @media screen and (max-width: 992px) {
@@ -26,15 +25,15 @@ export const UserInfoContainer = styled.div`
 export const UserAvatar = styled.img`
   width: 120px;
   height: 120px;
-  background-color: #000;
+  background-color: var(--blackColor);
   border-radius: 4px;
-  box-shadow: 1px 1px 10px #000;
+  box-shadow: 1px 1px 10px var(--blackColor);
 `;
 
 export const UserName = styled.p`
   margin-left: 32px;
   margin-top: 15px;
-  color: #657fa0;
+  color: var(--headerColor);
   font-weight: bold;
   font-size: 22px;
 `;
