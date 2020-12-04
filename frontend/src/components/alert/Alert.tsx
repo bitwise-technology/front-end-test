@@ -21,7 +21,8 @@ const Alert = () => {
 
   setTimeout(() => {
     setShowAlert && setShowAlert(false);
-  }, 3 * 1000);
+  }, 7 * 1000);
+
   return showAlert ? (
     <AlertContainer>
       <AlertTitle>{text}</AlertTitle>

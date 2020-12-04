@@ -1,6 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+
+const fadeIn = keyframes`
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1)
+  }
+`;
 
 export const AlertContainer = styled.div`
+  animation: ${fadeIn} 0.3s linear forwards;
   position: absolute;
   right: 0;
   z-index: 2;
