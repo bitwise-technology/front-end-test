@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const TableHeader = styled.div`
-  border-bottom: 1px solid #000;
   font-family: "Roboto", sans-serif;
 `;
 
@@ -25,6 +24,7 @@ export const TableRow = styled.div`
   width: 100%;
   padding-left: 28px;
   font-family: "Roboto", sans-serif;
+  border-bottom: 1px solid #D4DAE4;
 `;
 
 export const TableHeaderCell = styled.strong`
@@ -45,6 +45,8 @@ export const TableDataCell = styled.p`
   padding-top: 28px;
   padding-bottom: 24px;
   width: 25%;
+  max-width: 25%;
+  overflow-wrap: break-word;
 `;
 
 export const StrippedTableRow = styled(TableRow)`

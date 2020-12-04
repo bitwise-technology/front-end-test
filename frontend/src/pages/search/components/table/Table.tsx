@@ -29,25 +29,28 @@ const Table: React.FC<TableProps> = ({ data }) => {
       </TableHeader>
       <TableBody>
         {edges.map((edge, index) => {
+          const repositoryName = edge?.node?.name ?? "";
+          const repositoryAmmountOfCommits =
+            edge?.node?.ref?.target?.history?.totalCount ?? "";
+          const repositoryLastMessage =
+            edge?.node?.ref?.target?.history?.nodes[0]?.message ?? "";
+          const repositoryAbbreviatedId =
+            edge?.node?.ref?.target?.history?.nodes[0]?.abbreviatedOid ?? "";
+
           const tableContent = (
             <>
-              <TableDataCell>{edge?.node?.name ?? ""}</TableDataCell>
-              <TableDataCell>
-                {edge?.node?.ref?.target?.history?.totalCount ?? ""}
-              </TableDataCell>
-              <TableDataCell>
-                {edge?.node?.ref?.target?.history?.nodes[0]?.message ?? ""}
-              </TableDataCell>
-              <TableDataCell>
-                {edge?.node?.ref?.target?.history?.nodes[0]?.abbreviatedOid ??
-                  ""}
-              </TableDataCell>
+              <TableDataCell>{repositoryName}</TableDataCell>
+              <TableDataCell>{repositoryAmmountOfCommits}</TableDataCell>
+              <TableDataCell>{repositoryLastMessage}</TableDataCell>
+              <TableDataCell>{repositoryAbbreviatedId}</TableDataCell>
             </>
           );
           return index % 2 === 0 ? (
-            <TableRow>{tableContent}</TableRow>
+            <TableRow key={repositoryName}>{tableContent}</TableRow>
           ) : (
-            <StrippedTableRow>{tableContent}</StrippedTableRow>
+            <StrippedTableRow key={repositoryName}>
+              {tableContent}
+            </StrippedTableRow>
           );
         })}
       </TableBody>
