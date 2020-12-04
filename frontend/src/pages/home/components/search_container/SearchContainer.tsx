@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { ReactComponent as GithubIcon } from "../../../../assets/github_icon.svg";
 
@@ -16,6 +16,7 @@ import { UserContext } from "../../../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 import NearbyNames from "../nearby_names/NearbyNames";
 import { Context } from "../../../../contexts/AlertContext";
+import { useIsMount } from "../../../../custom_hooks/useIsMount";
 
 const SearchContainer = () => {
   const history = useHistory();
@@ -25,8 +26,9 @@ const SearchContainer = () => {
 
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
 
-  const didMount = useRef(false);
-
+  //To not need to put it in the Dependecy Array of useEffect
+  const isMount = (useIsMount() as unknown) as React.Ref<boolean>;
+  
   const handleInputChange = ({
     target: input,
   }: React.ChangeEvent<HTMLInputElement>): void => {
@@ -40,15 +42,13 @@ const SearchContainer = () => {
   };
 
   useEffect(() => {
-    if (didMount.current) {
+    if (isMount) {
       if (provider.wasUserFetchedSuccesfully) {
         history.push("/search");
       } else {
         setText && setText("Nenhum usuário encontrado!");
         setShowAlert && setShowAlert(true);
       }
-    }else {
-      didMount.current = true;
     }
   }, [provider, history, setShowAlert, setText]);
 

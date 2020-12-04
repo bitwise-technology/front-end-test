@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { ReactComponent as BitwiseLogo } from "../../../../assets/bitwise_logo.svg";
 import { ReactComponent as MediumIcon } from "../../../../assets/medium_icon.svg";
 import { ReactComponent as LinkedinAndInstagramIcons } from "../../../../assets/linkedin_and_insta_icons.svg";
 
-import {UserContext} from '../../../../contexts/UserContext';
+import { UserContext } from "../../../../contexts/UserContext";
 
 import {
   HeaderContainer,
@@ -14,17 +14,15 @@ import {
   StyledSearchIcon,
 } from "./SearchHeaderStyles";
 import { Context } from "../../../../contexts/AlertContext";
-
+import { useIsMount } from "../../../../custom_hooks/useIsMount";
 
 const SearchHeader = () => {
-
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
   const provider = useContext(UserContext);
   const { setText, setShowAlert } = useContext(Context);
 
-
-  const didMount = useRef(false);
-
+  //To not need to put it in the Dependecy Array of useEffect
+  const isMount = (useIsMount() as unknown) as React.Ref<boolean>;
 
   const handleInputChange = ({
     target: input,
@@ -41,23 +39,20 @@ const SearchHeader = () => {
   };
 
   useEffect(() => {
-    if(provider.user?.repositories.totalCount === 0 ){
-      setText && setText('O usuário não possui repositórios');
+    if (provider.user?.repositories.totalCount === 0) {
+      setText && setText("O usuário não possui repositórios");
       setShowAlert && setShowAlert(true);
     }
-  } , [provider , setText, setShowAlert])
+  }, [provider, setText, setShowAlert]);
 
   useEffect(() => {
-    if (didMount.current) {
-      if (!provider.wasUserFetchedSuccesfully) {     
+    if (isMount) {
+      if (!provider.wasUserFetchedSuccesfully) {
         setText && setText("Nenhum usuário encontrado!");
         setShowAlert && setShowAlert(true);
       }
-    }else {
-      didMount.current = true;
     }
-  }, [provider, setShowAlert, setText]);
- 
+  }, [provider, setShowAlert, setText , isMount]);
 
   return (
     <HeaderContainer>
