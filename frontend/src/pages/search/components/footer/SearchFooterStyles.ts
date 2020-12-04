@@ -105,4 +105,5 @@ export const CopyrightText = styled.p`
 export const BackToTopText = styled.p`
   font-weight: 350;
   align-items: center;
+  cursor: pointer;
 `;

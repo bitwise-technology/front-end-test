@@ -17,6 +17,11 @@ import {
 
 
 const SearchFooter = () => {
+
+  const backToTop = (event: React.MouseEvent) => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+  }
+
   return (
     <StyledFooter>
       <BitwiseInfo>
@@ -57,7 +62,7 @@ const SearchFooter = () => {
         <IconsContainer>
           <SocialMedia />
         </IconsContainer>
-        <BackToTopText>VOLTAR AO TOPO</BackToTopText>
+        <BackToTopText onClick={backToTop}>VOLTAR AO TOPO</BackToTopText>
       </CopyrightGroup>
     </StyledFooter>
   );

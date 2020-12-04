@@ -42,6 +42,7 @@ export const AlertCloseButton = styled.span`
   top: 20px;
   right: 20px;
   font-size: 20px;
+  cursor: pointer;
 `;
 
 export const AlertTitle = styled.h2`
