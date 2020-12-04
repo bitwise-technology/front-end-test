@@ -58,15 +58,6 @@ export const GithubIconContainer = styled.div`
     align-items: center;
 `;
 
-export const NearbyNames = styled.div`
-    padding-top: 10px;
-    font-size: 12px;
-    height: 20px;
-    & > *:not(:first-child) {
-        margin-left: 40px;
-    }
-`;
-
 
 export const EmphasizedText = styled.strong`
     color: #5A3D5C;
