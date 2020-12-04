@@ -10,7 +10,7 @@ import {
   GithubIconContainer,
   StyledInput,
   StyledSearchIcon,
-} from "./SearchContainerStyles";
+} from "./HomeSearchContainerStyles";
 
 import { UserContext } from "../../../../contexts/UserContext";
 import { useHistory } from "react-router-dom";

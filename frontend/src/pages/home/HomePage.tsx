@@ -9,9 +9,9 @@ import {
 import PurpleBackground from "../../assets/purple_background.png";
 import PeopleWorkingImage from "../../assets/people_working.png";
 
-import Header from "./components/header/Header";
-import SearchContainer from "./components/search_container/SearchContainer";
-import Footer from "./components/footer/Footer";
+import Header from "./components/header/HomeHeader";
+import SearchContainer from "./components/search_container/HomeSearchContainer";
+import Footer from "./components/footer/HomeFooter";
 
 
 const Home = () => {
