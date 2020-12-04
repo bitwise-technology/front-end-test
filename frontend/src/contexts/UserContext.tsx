@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import { useLazyQuery } from "@apollo/client";
+import React, { useEffect, useState } from "react";
+import { GET_USER_INFO } from "../graphql/queries";
 
-export const UserContext = React.createContext<ContextType>({user: undefined, setUser: undefined});
+export const UserContext = React.createContext<ContextType>({});
 
 export interface Repositories {
   totalCount: number;
@@ -32,22 +34,53 @@ export interface User {
   repositories: Repositories;
 }
 
-
-
 export interface ContextType {
   user?: User;
-  setUser?: (user: User) => void;
+  wasUserFetchedSuccesfully?: boolean;
+  fetchUser?: (user: string) => void;
 }
 
 const UserProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<User>();
+  const [getUserInfo, { data, error }] = useLazyQuery(GET_USER_INFO);
 
-  const userObject = {
-    user,
-    setUser,
+  const fetchUser = (user: string) => {
+    getUserInfo({
+      variables: {
+        user: user,
+      },
+    });
   };
 
-  return <UserContext.Provider value={userObject}>{children}</UserContext.Provider>;
+  const [providerObject, setNewProviderObject] = useState<ContextType>({
+    user: undefined,
+    wasUserFetchedSuccesfully: false,
+    fetchUser
+  });
+
+  useEffect(() => {
+    if (data) {
+      setNewProviderObject((oldProviderObject) => ({
+        ...oldProviderObject,
+        user: data.user,
+        wasUserFetchedSuccesfully: true,
+      }));
+    }
+  }, [data, setNewProviderObject]);
+
+  useEffect(() => {
+    if (error) {
+      setNewProviderObject((oldProviderObject) => ({
+        ...oldProviderObject,
+        wasUserFetchedSuccesfully: false,
+      }));
+    }
+  }, [error, setNewProviderObject]);
+
+  return (
+    <UserContext.Provider value={providerObject}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
 export default UserProvider;

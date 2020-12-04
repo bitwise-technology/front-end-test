@@ -6,7 +6,7 @@ import { NearbyNamesContainer } from "./NearbyNamesStyles";
 import { GET_NEARBY_NAMES } from "../../../../graphql/queries";
 
 interface NearbyNamesProps {
-  fetchUser: (user: String) => void;
+  fetchUser: Function;
   nameToSearchNearbies : string
 }
 

@@ -1,6 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-
-import { useLazyQuery } from "@apollo/client";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 import { ReactComponent as GithubIcon } from "../../../../assets/github_icon.svg";
 
@@ -14,55 +12,45 @@ import {
   StyledSearchIcon,
 } from "./SearchContainerStyles";
 
-import { GET_USER_INFO } from "../../../../graphql/queries";
-import { Context as AlertContext } from "../../../../contexts/AlertContext";
 import { UserContext } from "../../../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 import NearbyNames from "../nearby_names/NearbyNames";
+import { Context } from "../../../../contexts/AlertContext";
 
 const SearchContainer = () => {
   const history = useHistory();
 
-  const { setUser } = useContext(UserContext);
+  const provider = useContext(UserContext);
+  const { setText, setShowAlert } = useContext(Context);
 
-  const { setShowAlert } = useContext(AlertContext);
+  const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
 
-  const [userToFetchFromGithub, setuserToFetchFromGithub] = useState("");
-  const [getUserInfo, { data, error: userNotFound }] = useLazyQuery(
-    GET_USER_INFO
-  );
-
+  const didMount = useRef(false);
 
   const handleInputChange = ({
     target: input,
   }: React.ChangeEvent<HTMLInputElement>): void => {
     const user = input.value;
 
-    setuserToFetchFromGithub(user);
+    setUserToFetchFromGithub(user);
+  };
+
+  const handleClick = (event: React.MouseEvent) => {
+    provider.fetchUser && provider.fetchUser(userToFetchFromGithub);
   };
 
   useEffect(() => {
-    if (userNotFound) {
-      setShowAlert && setShowAlert(true);
+    if (didMount.current) {
+      if (provider.wasUserFetchedSuccesfully) {
+        history.push("/search");
+      } else {
+        setText && setText("Nenhum usuário encontrado!");
+        setShowAlert && setShowAlert(true);
+      }
+    }else {
+      didMount.current = true;
     }
-  }, [userNotFound, setShowAlert]);
-
-  useEffect(() => {
-    if (setUser && data) {
-      setUser(data.user);
-      history.push("/search");
-    }
-  }, [data, setUser, history]);
-
-  
-
-  const fetchUser = (user: String = userToFetchFromGithub) => {
-    getUserInfo({
-      variables: {
-        user: user,
-      },
-    });
-  };
+  }, [provider, history, setShowAlert, setText]);
 
   return (
     <StyledSearchContainer>
@@ -83,13 +71,15 @@ const SearchContainer = () => {
           value={userToFetchFromGithub}
           onChange={handleInputChange}
         ></StyledInput>
-        <GithubIconContainer onClick={() => fetchUser()}>
+        <GithubIconContainer onClick={handleClick}>
           <GithubIcon />
         </GithubIconContainer>
       </InputContainer>
 
-      <NearbyNames fetchUser={fetchUser} nameToSearchNearbies={userToFetchFromGithub}/>
-    
+      <NearbyNames
+        fetchUser={handleClick}
+        nameToSearchNearbies={userToFetchFromGithub}
+      />
     </StyledSearchContainer>
   );
 };

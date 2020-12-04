@@ -23,8 +23,6 @@ const SearchPage = () => {
 
   const {user} = useContext(UserContext);
 
-  console.log(user)
-
   return (
     <PageContainer>
       <SearchHeader />
