@@ -17,11 +17,11 @@ import {
   
 } from "./SearchPageStyles";
 import SearchFooter from "./components/footer/SearchFooter";
-import { Context } from "../../contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 
 const SearchPage = () => {
 
-  const {user} = useContext(Context);
+  const {user} = useContext(UserContext);
 
   console.log(user)
 

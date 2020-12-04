@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const Context = React.createContext<ContextType>({user: undefined, setUser: undefined});
+export const UserContext = React.createContext<ContextType>({user: undefined, setUser: undefined});
 
 export interface Repositories {
   totalCount: number;
@@ -47,7 +47,7 @@ const UserProvider: React.FC = ({ children }) => {
     setUser,
   };
 
-  return <Context.Provider value={userObject}>{children}</Context.Provider>;
+  return <UserContext.Provider value={userObject}>{children}</UserContext.Provider>;
 };
 
 export default UserProvider;

@@ -1,16 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { GlobalStyle } from "./GlobalStyles";
 
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import { Context } from "./contexts/UserContext";
+import { UserContext } from "./contexts/UserContext";
 
 import Home from "./pages/home/HomePage";
 import SearchPage from "./pages/search/SearchPage";
 import Alert from "./components/alert/Alert";
 
 function App() {
-  const { user } = useContext(Context);
+  const { user } = useContext(UserContext);
   return (
       <div className='App'>
         <GlobalStyle />

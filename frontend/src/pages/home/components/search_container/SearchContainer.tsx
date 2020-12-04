@@ -17,21 +17,23 @@ import {
 
 import { GET_NEARBY_NAMES, GET_USER_INFO } from "../../../../graphql/queries";
 import { Context as AlertContext } from "../../../../contexts/AlertContext";
-import {Context} from '../../../../contexts/UserContext';
+import { UserContext } from "../../../../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 
-
 const SearchContainer = () => {
-
   const history = useHistory();
 
-  const {setUser} = useContext(Context);
+  const { setUser } = useContext(UserContext);
 
-  const {setShowAlert} = useContext(AlertContext);
+  const { setShowAlert } = useContext(AlertContext);
 
   const [userToSearch, setUserToSearch] = useState("");
-  const [getUserInfo , {data , error: userNotFound }] = useLazyQuery(GET_USER_INFO);
-  const [getNearbyUserNames, { data : nearbyNames }] = useLazyQuery(GET_NEARBY_NAMES);
+  const [getUserInfo, { data, error: userNotFound }] = useLazyQuery(
+    GET_USER_INFO
+  );
+  const [getNearbyUserNames, { data: nearbyNames }] = useLazyQuery(
+    GET_NEARBY_NAMES
+  );
 
   const handleInputChange = ({
     target: input,
@@ -41,19 +43,18 @@ const SearchContainer = () => {
     setUserToSearch(user);
   };
 
-
   useEffect(() => {
-    if(userNotFound) {
+    if (userNotFound) {
       setShowAlert && setShowAlert(true);
     }
-  } , [userNotFound , setShowAlert])
+  }, [userNotFound, setShowAlert]);
 
   useEffect(() => {
-    if(setUser && data) {
+    if (setUser && data) {
       setUser(data.user);
-      history.push('/search');
+      history.push("/search");
     }
-  } , [data , setUser, history])
+  }, [data, setUser, history]);
 
   useEffect(() => {
     if (userToSearch.length) {
@@ -69,10 +70,10 @@ const SearchContainer = () => {
   const fetchUser = (user: String = userToSearch) => {
     getUserInfo({
       variables: {
-        user: user
-      }
-    })
-  }
+        user: user,
+      },
+    });
+  };
 
   return (
     <StyledSearchContainer>
@@ -98,11 +99,13 @@ const SearchContainer = () => {
         </GithubIconContainer>
       </InputContainer>
 
-        <NearbyNames>
-          {nearbyNames?.search?.nodes?.map(({login}: {login : string}) => (
-            <span  key={login} onClick={() => fetchUser(login)}>{login}</span>
-          ))}
-        </NearbyNames>
+      <NearbyNames>
+        {nearbyNames?.search?.nodes?.map(({ login }: { login: string }) => (
+          <span key={login} onClick={() => fetchUser(login)}>
+            {login}
+          </span>
+        ))}
+      </NearbyNames>
     </StyledSearchContainer>
   );
 };
