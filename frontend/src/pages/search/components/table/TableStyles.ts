@@ -47,6 +47,12 @@ export const TableDataCell = styled.p`
   width: 25%;
   max-width: 25%;
   overflow-wrap: break-word;
+
+  @media screen and (max-width: 700px) {
+    &:last-child {
+      padding-left: 10px;
+    }
+  }
 `;
 
 export const StrippedTableRow = styled(TableRow)`

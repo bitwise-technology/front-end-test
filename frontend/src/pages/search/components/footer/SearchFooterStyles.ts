@@ -12,7 +12,7 @@ export const StyledFooter = styled.footer`
   line-height: 20px;
   font-size: 12px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1366px) {
     padding-left: 124px;
     padding-right: 130px;
   }
@@ -20,16 +20,13 @@ export const StyledFooter = styled.footer`
   @media screen and (max-width: 992px) {
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 70px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     height: auto;
   }
 
-  @media screen and (max-width: 600px) {
-  }
-
-  /* Small devices (portrait tablets and large phones, 600px and up) */
   @media screen and (max-width: 600px) {
     padding-left: 0;
     padding-right: 0;
@@ -46,7 +43,7 @@ export const BitwiseInfo = styled.div`
     justify-content: space-around;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
@@ -76,16 +73,11 @@ export const StyledHorizontalLineContainer = styled.hr`
 export const CopyrightGroup = styled.div`
   color: #fd71ea;
   padding-top: 61px;
-
   display: flex;
   justify-content: space-between;
 
   @media screen and (max-width: 992px) {
     justify-content: space-around;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding-bottom: 50px;
   }
 
   @media screen and (max-width: 600px) {
@@ -100,7 +92,7 @@ export const IconsContainer = styled.div`
     margin-right: 10px;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     margin: 30px 0;
   }
 `;

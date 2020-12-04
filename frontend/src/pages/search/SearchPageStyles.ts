@@ -18,6 +18,21 @@ export const RepositoriesInfoContainer = styled.div`
   max-width: 1102px;
   max-height: 347px;
   background-color: #fff;
+
+  @media screen and (max-width: 1366px) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  @media screen and (max-width: 700px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 `;
 
 export const RepositoriesActionsContainer = styled.div`
