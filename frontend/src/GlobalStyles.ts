@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-
     :root {
         --primary-color : #382039;
         --secondary-color : #5A3D5C;
@@ -22,6 +21,10 @@ export const GlobalStyle = createGlobalStyle`
         --scrollBarThumbColor : #ADB6C0;
 
         --wineColor : #5A3D5C;
+    }
+
+    body {
+        font-family: 'Roboto';
     }
 
     *::after,

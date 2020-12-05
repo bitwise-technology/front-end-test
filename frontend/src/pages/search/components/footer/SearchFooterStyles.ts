@@ -103,7 +103,7 @@ export const CopyrightText = styled.p`
   }
 `;
 export const BackToTopText = styled.p`
-  font-weight: 350;
+  font-weight: bold;
   align-items: center;
   cursor: pointer;
 `;
