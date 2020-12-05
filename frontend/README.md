@@ -1,5 +1,5 @@
 # Comandos para inicializar o projeto:
-
+- Adicione um arquivo .env na raiz do projeto com a variável REACT_APP_GITHUB_TOKEN setada para o seu token de acesso a api do github
 - **yarn** : Para fazer download de todas as dependências do projeto
 - **yarn start** : Comando que inicializa o projeto localmente na porta : **3000**
 
