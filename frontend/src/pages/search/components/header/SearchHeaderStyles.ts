@@ -41,7 +41,7 @@ export const InputContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 2px 3px 4px var(--secondary-color);
+  box-shadow: 2px 3px 4px #808080;
   width: 491px;
   position: relative;
 
