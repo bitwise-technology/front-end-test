@@ -21,26 +21,26 @@ import CustomInput from "../../../../components/custom_input/CustomInput";
 const SearchHeader = () => {
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
   const provider = useContext(UserContext);
-  const { setText, setShowAlert } = useContext(AlertContext);
+  const { setAlertText, setShowAlert } = useContext(AlertContext);
 
   const isMount = useIsMount();
 
   useEffect(() => {
     if (provider.user?.repositories.totalCount === 0) {
-      setText && setText("O usuário não possui repositórios");
+      setAlertText && setAlertText("O usuário não possui repositórios");
       setShowAlert && setShowAlert(true);
     }
-  }, [provider, setText, setShowAlert]);
+  }, [provider, setAlertText, setShowAlert]);
 
   useEffect(() => {
     if (isMount) {
       if (!provider.wasUserFetchedSuccesfully) {
-        setText && setText("Nenhum usuário encontrado!");
+        setAlertText && setAlertText("Nenhum usuário encontrado!");
         setShowAlert && setShowAlert(true);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [provider, setShowAlert, setText]);
+  }, [provider, setShowAlert, setAlertText]);
 
   return (
     <HeaderContainer>

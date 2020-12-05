@@ -24,7 +24,7 @@ const SearchContainer = () => {
   const history = useHistory();
 
   const provider = useContext(UserContext);
-  const { setText, setShowAlert } = useContext(AlertContext);
+  const { setAlertText, setShowAlert } = useContext(AlertContext);
 
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
 
@@ -39,12 +39,12 @@ const SearchContainer = () => {
       if (provider.wasUserFetchedSuccesfully) {
         history.push("/search");
       } else {
-        setText && setText("Nenhum usuário encontrado!");
+        setAlertText && setAlertText("Nenhum usuário encontrado!");
         setShowAlert && setShowAlert(true);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [provider, history, setShowAlert, setText]);
+  }, [provider, history, setShowAlert, setAlertText]);
 
   return (
     <StyledSearchContainer>
