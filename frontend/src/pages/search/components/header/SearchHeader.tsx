@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as BitwiseLogo } from "../../../../assets/bitwise_logo.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
-import { Context } from "../../../../contexts/AlertContext";
+import { AlertContext } from "../../../../contexts/AlertContext";
 
 import { useIsMount } from "../../../../custom_hooks/useIsMount";
 
@@ -22,7 +22,7 @@ import {
 const SearchHeader = () => {
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
   const provider = useContext(UserContext);
-  const { setText, setShowAlert } = useContext(Context);
+  const { setText, setShowAlert } = useContext(AlertContext);
 
   //To not need to put it in the Dependecy Array of useEffect
   const isMount = (useIsMount() as unknown) as React.Ref<boolean>;

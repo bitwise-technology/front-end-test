@@ -7,7 +7,7 @@ interface ContextType {
   setShowAlert: Function;
 }
 
-export const Context = React.createContext<Partial<ContextType>>({});
+export const AlertContext = React.createContext<Partial<ContextType>>({});
 
 const AlertProvider: React.FC = ({ children }) => {
 
@@ -22,7 +22,7 @@ const AlertProvider: React.FC = ({ children }) => {
   };
 
   return (
-    <Context.Provider value={alertContextValue}>{children}</Context.Provider>
+    <AlertContext.Provider value={alertContextValue}>{children}</AlertContext.Provider>
   );
 };
 

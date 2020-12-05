@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { ReactComponent as GithubIcon } from "../../../../assets/github_icon.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
-import { Context } from "../../../../contexts/AlertContext";
+import { AlertContext } from "../../../../contexts/AlertContext";
 
 import { useIsMount } from "../../../../custom_hooks/useIsMount";
 
@@ -24,7 +24,7 @@ const SearchContainer = () => {
   const history = useHistory();
 
   const provider = useContext(UserContext);
-  const { setText, setShowAlert } = useContext(Context);
+  const { setText, setShowAlert } = useContext(AlertContext);
 
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
 

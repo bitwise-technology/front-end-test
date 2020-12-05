@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Context } from "../../contexts/AlertContext";
+import { AlertContext } from "../../contexts/AlertContext";
 
 
 import { ReactComponent as MediumIcon } from "../../assets/medium_icon.svg";
@@ -16,16 +16,12 @@ import {
 } from "./AlertStyles";
 
 const Alert = () => {
-  const { showAlert, setShowAlert, text } = useContext(Context);
+  const { showAlert, setShowAlert, text } = useContext(AlertContext);
 
   const closeAlert = () => {
     setShowAlert && setShowAlert(false);
   };
-
-  setTimeout(() => {
-    setShowAlert && setShowAlert(false);
-  }, 7 * 1000);
-
+  
   return showAlert ? (
     <AlertContainer>
       <AlertTitle>{text}</AlertTitle>
