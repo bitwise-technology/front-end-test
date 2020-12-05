@@ -13,31 +13,27 @@ export const GET_NEARBY_NAMES = gql`
 `;
 
 export const GET_USER_INFO = gql`
-	query GetGithubUserInfo($user: String!) {
-		user(login: $user) {
-			name
-			avatarUrl
-			repositories(first: 10, orderBy: { field: CREATED_AT, direction: DESC }) {
-				totalCount
-				edges {
-					node {
-						name
-						ref(qualifiedName: "master") {
-							target {
-								... on Commit {
-									history(first: 1) {
-										totalCount
-										nodes {
-											message
-											abbreviatedOid
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-`; 
+  query GetGithubUserInfo($user: String!) {
+    user(login: $user) {
+      name
+      avatarUrl
+      repositories(first: 10, orderBy: { field: CREATED_AT, direction: DESC }) {
+        totalCount
+        nodes {
+          name
+          defaultBranchRef {
+            target {
+              ... on Commit {
+                message
+                abbreviatedOid
+                history {
+                  totalCount
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

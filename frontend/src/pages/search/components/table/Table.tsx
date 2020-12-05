@@ -15,7 +15,7 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ data }) => {
-  const { edges } = data;
+  const { nodes } = data;
 
   return (
     <>
@@ -28,14 +28,14 @@ const Table: React.FC<TableProps> = ({ data }) => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {edges.map((edge, index) => {
-          const repositoryName = edge?.node?.name ?? "";
+        {nodes.map((node, index) => {
+          const repositoryName = node?.name ?? "";
           const repositoryAmmountOfCommits =
-            edge?.node?.ref?.target?.history?.totalCount ?? "";
+            node?.defaultBranchRef?.target?.history?.totalCount ?? "";
           const repositoryLastMessage =
-            edge?.node?.ref?.target?.history?.nodes[0]?.message ?? "";
+            node?.defaultBranchRef?.target?.message ?? "";
           const repositoryAbbreviatedId =
-            edge?.node?.ref?.target?.history?.nodes[0]?.abbreviatedOid ?? "";
+            node?.defaultBranchRef?.target?.abbreviatedOid ?? "";
 
           const tableContent = (
             <>

@@ -6,21 +6,15 @@ export const UserContext = React.createContext<ContextType>({});
 
 export interface Repositories {
   totalCount: number;
-  edges: [
+  nodes: [
     {
-      node: {
-        name: string;
-        ref: {
-          target: {
-            history: {
-              totalCount: number;
-              nodes: [
-                {
-                  message: string;
-                  abbreviatedOid: string;
-                }
-              ];
-            };
+      name: string;
+      defaultBranchRef: {
+        target: {
+          message: string;
+          abbreviatedOid: string;
+          history: {
+            totalCount: number;
           };
         };
       };
@@ -54,7 +48,7 @@ const UserProvider: React.FC = ({ children }) => {
   const [providerObject, setNewProviderObject] = useState<ContextType>({
     user: undefined,
     wasUserFetchedSuccesfully: false,
-    fetchUser
+    fetchUser,
   });
 
   useEffect(() => {
