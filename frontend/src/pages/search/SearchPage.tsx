@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import SearchHeader from "./components/header/SearchHeader";
-import Table from "./components/table/Table";
+import Table from "../../components/table/Table";
 import UserInfo from "./components/user_info/UserInfo";
 
 import PurpleRow from "../../assets/purple_row.png";
@@ -23,6 +23,8 @@ const SearchPage = () => {
 
   const {user} = useContext(UserContext);
 
+  const tableHeaders=  ['Nome do Repositório' , 'Qtd de commit' , 'Msg Ultimo Commit' , 'Hash do ultimo commit']
+
   return (
     <PageContainer>
       <SearchHeader />
@@ -34,7 +36,7 @@ const SearchPage = () => {
           <RepositoriesTitle>Titulo</RepositoriesTitle>
           <StyledThreeDots />
         </RepositoriesActionsContainer>
-        {user?.repositories && <Table data={user?.repositories}/>}
+        {user?.repositories && <Table data={user?.repositories} headers={tableHeaders}/>}
       </RepositoriesInfoContainer>
 
       <StyledPurpleRow src={PurpleRow} alt='Purple row' />
