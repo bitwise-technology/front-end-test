@@ -1,7 +1,7 @@
 import React from "react";
 
-import { ReactComponent as MediumIcon } from "../../assets/medium_icon.svg";
-import { ReactComponent as LinkedinAndInstagramIcons } from "../../assets/linkedin_and_insta_icons.svg";
+import { ReactComponent as MediumIcon } from "../../assets/icons/medium_icon.svg";
+import { ReactComponent as LinkedinAndInstagramIcons } from "../../assets/icons/linkedin_and_insta_icons.svg";
 
 
 const SocialMedia = () => {

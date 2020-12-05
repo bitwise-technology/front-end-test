@@ -6,7 +6,7 @@ import UserInfo from "./components/user_info/UserInfo";
 import SearchFooter from "./components/footer/SearchFooter";
 
 
-import PurpleRow from "../../assets/purple_row.png";
+import PurpleRow from "../../assets/images/purple_row.png";
 
 import { UserContext } from "../../contexts/UserContext";
 

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-import { ReactComponent as BitwiseLogo } from "../../../../assets/bitwise_logo.svg";
+import { ReactComponent as BitwiseLogo } from "../../../../assets/icons/bitwise_logo.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
 import { AlertContext } from "../../../../contexts/AlertContext";

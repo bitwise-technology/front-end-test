@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { ReactComponent as GithubIcon } from "../../../../assets/github_icon.svg";
+import { ReactComponent as GithubIcon } from "../../../../assets/icons/github_icon.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
 import { AlertContext } from "../../../../contexts/AlertContext";

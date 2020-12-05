@@ -3,8 +3,8 @@ import React, { useContext } from "react";
 import { AlertContext } from "../../contexts/AlertContext";
 
 
-import { ReactComponent as MediumIcon } from "../../assets/medium_icon.svg";
-import { ReactComponent as LinkedinAndInstagramIcons } from "../../assets/linkedin_and_insta_icons.svg";
+import { ReactComponent as MediumIcon } from "../../assets/icons/medium_icon.svg";
+import { ReactComponent as LinkedinAndInstagramIcons } from "../../assets/icons/linkedin_and_insta_icons.svg";
 
 import {
   AlertCloseButton,
@@ -21,7 +21,7 @@ const Alert = () => {
   const closeAlert = () => {
     setShowAlert && setShowAlert(false);
   };
-  
+
   return showAlert ? (
     <AlertContainer>
       <AlertTitle>{text}</AlertTitle>

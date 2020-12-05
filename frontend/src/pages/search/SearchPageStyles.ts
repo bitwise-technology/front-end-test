@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ReactComponent as ThreeDots } from "../../assets/three_dots_icon.svg";
+import { ReactComponent as ThreeDots } from "../../assets/icons/three_dots_icon.svg";
 
 export const PageContainer = styled.div`
   background: linear-gradient(359.39deg, #efeeee 0.46%, #ffffff 99.42%);

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ReactComponent as SearchIcon } from "../../../../assets/search_icon.svg";
+import { ReactComponent as SearchIcon } from "../../../../assets/icons/search_icon.svg";
 
 export const HeaderContainer = styled.header`
   padding-left: 150px;

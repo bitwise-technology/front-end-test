@@ -6,8 +6,8 @@ import {
   StyledPeopleWorkingImage,
 } from "./HomePageStyles";
 
-import PurpleBackground from "../../assets/purple_background.png";
-import PeopleWorkingImage from "../../assets/people_working.png";
+import PurpleBackground from "../../assets/images/purple_background.png";
+import PeopleWorkingImage from "../../assets/images/people_working.png";
 
 import Header from "./components/header/HomeHeader";
 import SearchContainer from "./components/search_container/HomeSearchContainer";
