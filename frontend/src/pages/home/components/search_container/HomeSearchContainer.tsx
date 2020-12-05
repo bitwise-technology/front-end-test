@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-
 import { ReactComponent as GithubIcon } from "../../../../assets/github_icon.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
@@ -21,7 +20,6 @@ import {
   StyledSearchIcon,
 } from "./HomeSearchContainerStyles";
 
-
 const SearchContainer = () => {
   const history = useHistory();
 
@@ -30,9 +28,8 @@ const SearchContainer = () => {
 
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
 
-  //To not need to put it in the Dependecy Array of useEffect
-  const isMount = (useIsMount() as unknown) as React.Ref<boolean>;
-  
+  const isMount = useIsMount();
+
   const handleInputChange = ({
     target: input,
   }: React.ChangeEvent<HTMLInputElement>): void => {
@@ -60,6 +57,7 @@ const SearchContainer = () => {
         setShowAlert && setShowAlert(true);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [provider, history, setShowAlert, setText]);
 
   return (

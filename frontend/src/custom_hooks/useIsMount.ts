@@ -5,5 +5,5 @@ export const useIsMount = () => {
   useEffect(() => {
     isMountRef.current = true;
   }, []);
-  return isMountRef;
+  return isMountRef.current;
 };
