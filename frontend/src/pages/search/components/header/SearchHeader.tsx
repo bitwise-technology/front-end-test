@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 import { ReactComponent as BitwiseLogo } from "../../../../assets/icons/bitwise_logo.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
@@ -15,31 +14,16 @@ import {
   HeaderContainer,
   InputContainer,
   MediaIconsContainer,
-  StyledInput,
   StyledSearchIcon,
 } from "./SearchHeaderStyles";
+import CustomInput from "../../../../components/custom_input/CustomInput";
 
 const SearchHeader = () => {
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
   const provider = useContext(UserContext);
   const { setText, setShowAlert } = useContext(AlertContext);
 
-  //To not need to put it in the Dependecy Array of useEffect
-  const isMount = (useIsMount() as unknown) as React.Ref<boolean>;
-
-  const handleInputChange = ({
-    target: input,
-  }: React.ChangeEvent<HTMLInputElement>): void => {
-    const user = input.value;
-
-    setUserToFetchFromGithub(user);
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.keyCode === 13) {
-      provider.fetchUser && provider.fetchUser(userToFetchFromGithub);
-    }
-  };
+  const isMount = useIsMount();
 
   useEffect(() => {
     if (provider.user?.repositories.totalCount === 0) {
@@ -55,7 +39,8 @@ const SearchHeader = () => {
         setShowAlert && setShowAlert(true);
       }
     }
-  }, [provider, setShowAlert, setText, isMount]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [provider, setShowAlert, setText]);
 
   return (
     <HeaderContainer>
@@ -64,16 +49,16 @@ const SearchHeader = () => {
       </Link>
       <InputContainer>
         <StyledSearchIcon />
-        <StyledInput
+        <CustomInput
+          style={{ padding: "12px 0", paddingLeft: "55px", width: "100%" } as CSSStyleDeclaration}
           type='text'
           name='search'
           id='search'
           placeholder='Buscar usuário'
-          autoComplete='off'
-          value={userToFetchFromGithub}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-        ></StyledInput>
+          userToFetchFromGithub={userToFetchFromGithub}
+          setUserToFetchFromGithub={setUserToFetchFromGithub}
+          fetchUser={provider.fetchUser}
+        ></CustomInput>
       </InputContainer>
       <MediaIconsContainer>
         <SocialMedia />

@@ -9,6 +9,7 @@ import { AlertContext } from "../../../../contexts/AlertContext";
 import { useIsMount } from "../../../../custom_hooks/useIsMount";
 
 import NearbyNames from "../../../../components/nearby_names/NearbyNames";
+import CustomInput from "../../../../components/custom_input/CustomInput";
 
 import {
   EmphasizedText,
@@ -16,7 +17,6 @@ import {
   StyledSearchContainer,
   SearchContainerText,
   GithubIconContainer,
-  StyledInput,
   StyledSearchIcon,
 } from "./HomeSearchContainerStyles";
 
@@ -30,22 +30,8 @@ const SearchContainer = () => {
 
   const isMount = useIsMount();
 
-  const handleInputChange = ({
-    target: input,
-  }: React.ChangeEvent<HTMLInputElement>): void => {
-    const user = input.value;
-
-    setUserToFetchFromGithub(user);
-  };
-
   const handleClick = (event: React.MouseEvent) => {
     provider.fetchUser && provider.fetchUser(userToFetchFromGithub);
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.keyCode === 13) {
-      provider.fetchUser && provider.fetchUser(userToFetchFromGithub);
-    }
   };
 
   useEffect(() => {
@@ -70,16 +56,15 @@ const SearchContainer = () => {
 
       <InputContainer>
         <StyledSearchIcon />
-        <StyledInput
+        <CustomInput
           type='text'
           name='search'
           id='search'
           placeholder='Buscar usuário'
-          autoComplete='off'
-          value={userToFetchFromGithub}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-        ></StyledInput>
+          userToFetchFromGithub={userToFetchFromGithub}
+          setUserToFetchFromGithub={setUserToFetchFromGithub}
+          fetchUser={provider.fetchUser}
+        />
         <GithubIconContainer onClick={handleClick}>
           <GithubIcon />
         </GithubIconContainer>
