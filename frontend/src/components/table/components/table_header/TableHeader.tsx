@@ -15,7 +15,11 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headers }) => {
     <TableHeaderContainer>
       <TableRow>
         {headers.map((header) => {
-          return <TableHeaderCell>{header.toUpperCase()}</TableHeaderCell>;
+          return (
+            <TableHeaderCell key={header}>
+              {header.toUpperCase()}
+            </TableHeaderCell>
+          );
         })}
       </TableRow>
     </TableHeaderContainer>
