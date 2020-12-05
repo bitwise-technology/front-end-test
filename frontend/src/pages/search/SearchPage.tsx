@@ -3,8 +3,12 @@ import React, { useContext } from "react";
 import SearchHeader from "./components/header/SearchHeader";
 import Table from "../../components/table/Table";
 import UserInfo from "./components/user_info/UserInfo";
+import SearchFooter from "./components/footer/SearchFooter";
+
 
 import PurpleRow from "../../assets/purple_row.png";
+
+import { UserContext } from "../../contexts/UserContext";
 
 
 import {
@@ -16,8 +20,6 @@ import {
   StyledPurpleRow,
   
 } from "./SearchPageStyles";
-import SearchFooter from "./components/footer/SearchFooter";
-import { UserContext } from "../../contexts/UserContext";
 
 const SearchPage = () => {
 

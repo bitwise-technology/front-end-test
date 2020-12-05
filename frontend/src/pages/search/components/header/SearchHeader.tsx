@@ -1,8 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 import { ReactComponent as BitwiseLogo } from "../../../../assets/bitwise_logo.svg";
 
 import { UserContext } from "../../../../contexts/UserContext";
+import { Context } from "../../../../contexts/AlertContext";
+
+import { useIsMount } from "../../../../custom_hooks/useIsMount";
+
+import SocialMedia from "../../../../components/social_media/SocialMedia";
 
 import {
   HeaderContainer,
@@ -11,10 +18,6 @@ import {
   StyledInput,
   StyledSearchIcon,
 } from "./SearchHeaderStyles";
-import { Context } from "../../../../contexts/AlertContext";
-import { useIsMount } from "../../../../custom_hooks/useIsMount";
-import { Link } from "react-router-dom";
-import SocialMedia from "../../../../components/social_media/SocialMedia";
 
 const SearchHeader = () => {
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");

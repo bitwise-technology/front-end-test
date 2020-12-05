@@ -1,5 +1,7 @@
-import { useLazyQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
+
+import { useLazyQuery } from "@apollo/client";
+
 import { GET_USER_INFO } from "../graphql/queries";
 
 export const UserContext = React.createContext<ContextType>({});

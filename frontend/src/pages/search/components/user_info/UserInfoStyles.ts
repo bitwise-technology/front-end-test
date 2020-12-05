@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const UserInfoContainer = styled.div`
   padding-left: 150px;
   padding-right: 191px;

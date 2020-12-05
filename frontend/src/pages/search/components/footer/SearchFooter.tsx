@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ReactComponent as BitwiseLogo } from "../../../../assets/bitwise_logo_2.svg";
+
 import SocialMedia from "../../../../components/social_media/SocialMedia";
 
 import {

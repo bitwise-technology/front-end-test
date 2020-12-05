@@ -1,7 +1,11 @@
 import React, { useContext } from "react";
 
+import { Context } from "../../contexts/AlertContext";
+
+
 import { ReactComponent as MediumIcon } from "../../assets/medium_icon.svg";
 import { ReactComponent as LinkedinAndInstagramIcons } from "../../assets/linkedin_and_insta_icons.svg";
+
 import {
   AlertCloseButton,
   AlertContainer,
@@ -10,7 +14,6 @@ import {
   AlertTitle,
   SocialMediaContainer,
 } from "./AlertStyles";
-import { Context } from "../../contexts/AlertContext";
 
 const Alert = () => {
   const { showAlert, setShowAlert, text } = useContext(Context);

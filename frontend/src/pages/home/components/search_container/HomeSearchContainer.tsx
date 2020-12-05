@@ -1,6 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+
 
 import { ReactComponent as GithubIcon } from "../../../../assets/github_icon.svg";
+
+import { UserContext } from "../../../../contexts/UserContext";
+import { Context } from "../../../../contexts/AlertContext";
+
+import { useIsMount } from "../../../../custom_hooks/useIsMount";
+
+import NearbyNames from "../../../../components/nearby_names/NearbyNames";
 
 import {
   EmphasizedText,
@@ -12,11 +21,6 @@ import {
   StyledSearchIcon,
 } from "./HomeSearchContainerStyles";
 
-import { UserContext } from "../../../../contexts/UserContext";
-import { useHistory } from "react-router-dom";
-import NearbyNames from "../../../../components/nearby_names/NearbyNames";
-import { Context } from "../../../../contexts/AlertContext";
-import { useIsMount } from "../../../../custom_hooks/useIsMount";
 
 const SearchContainer = () => {
   const history = useHistory();
