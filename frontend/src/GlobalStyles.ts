@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Roboto';
+        background: linear-gradient(359.39deg, #efeeee 0.46%, #ffffff 99.42%);
     }
 
     *::after,
