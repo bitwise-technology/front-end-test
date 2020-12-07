@@ -14,7 +14,7 @@ const client = new ApolloClient({
   headers: {
     Authorization: `bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
   },
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({resultCaching: false}),
 });
 
 ReactDOM.render(
