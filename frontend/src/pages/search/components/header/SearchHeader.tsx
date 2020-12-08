@@ -17,6 +17,7 @@ import {
   StyledSearchIcon,
 } from "./SearchHeaderStyles";
 import CustomInput from "../../../../components/custom_input/CustomInput";
+import { CSSProperties } from "styled-components";
 
 const SearchHeader = () => {
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
@@ -50,7 +51,7 @@ const SearchHeader = () => {
       <InputContainer>
         <StyledSearchIcon />
         <CustomInput
-          style={{ padding: "12px 0", paddingLeft: "55px", width: "100%" } as CSSStyleDeclaration}
+          style={{ padding: "12px 0", paddingLeft: "55px", width: "100%" } as CSSProperties}
           type='text'
           name='search'
           id='search'

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 
 import { StyledInput } from "./CustomInputStyles";
 
-interface InputProps extends Partial<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   userToFetchFromGithub: string;
   setUserToFetchFromGithub: Function;
   fetchUser?: Function;
@@ -12,7 +12,8 @@ const CustomInput: React.FC<InputProps> = ({
   userToFetchFromGithub,
   setUserToFetchFromGithub,
   fetchUser,
-}, ...otherProperties) => {
+  ...otherProperties
+},) => {
   const handleInputChange = ({
     target: input,
   }: React.ChangeEvent<HTMLInputElement>): void => {

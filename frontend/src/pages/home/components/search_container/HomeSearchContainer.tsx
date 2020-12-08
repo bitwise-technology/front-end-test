@@ -24,6 +24,7 @@ const SearchContainer = () => {
   const history = useHistory();
 
   const provider = useContext(UserContext);
+  
   const { setAlertText, setShowAlert } = useContext(AlertContext);
 
   const [userToFetchFromGithub, setUserToFetchFromGithub] = useState("");
