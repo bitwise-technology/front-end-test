@@ -26,15 +26,13 @@ const SearchHeader = () => {
 
   const isMount = useIsMount();
 
-  useEffect(() => {
-    if (provider.user?.repositories.totalCount === 0) {
-      setAlertText && setAlertText("O usuário não possui repositórios");
-      setShowAlert && setShowAlert(true);
-    }
-  }, [provider, setAlertText, setShowAlert]);
+
 
   useEffect(() => {
     if (isMount) {
+      if(provider.wasUserFetchedSuccesfully) {
+        setShowAlert && setShowAlert(false);
+      }
       if (!provider.wasUserFetchedSuccesfully) {
         setAlertText && setAlertText("Nenhum usuário encontrado!");
         setShowAlert && setShowAlert(true);
@@ -42,6 +40,13 @@ const SearchHeader = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [provider, setShowAlert, setAlertText]);
+
+  useEffect(() => {
+    if (provider.user?.repositories.totalCount === 0) {
+      setAlertText && setAlertText("O usuário não possui repositórios");
+      setShowAlert && setShowAlert(true);
+    }
+  }, [provider, setAlertText, setShowAlert]);
 
   return (
     <HeaderContainer>

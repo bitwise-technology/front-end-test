@@ -38,6 +38,7 @@ const SearchContainer = () => {
   useEffect(() => {
     if (isMount) {
       if (provider.wasUserFetchedSuccesfully) {
+        setShowAlert && setShowAlert(false);
         history.push("/search");
       } else {
         setAlertText && setAlertText("Nenhum usuário encontrado!");
