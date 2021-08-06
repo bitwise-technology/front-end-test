@@ -11,9 +11,6 @@ const searchMaterialStyles = makeStyles(theme => ({
   inputHeader: {
     width: '40%'
   },
-  socialHeader: {
-
-  },
   containerAvatarRepos: {
     marginBottom: 45
   },
