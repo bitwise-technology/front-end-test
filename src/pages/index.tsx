@@ -25,7 +25,7 @@ export default function Home() {
       </Grid>
       <Grid container direction="column" className={materialStyles.containerHome}>
         <header className={materialStyles.header}>
-          <Grid className={materialStyles.logo}>
+          <Grid>
             <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
           </Grid>
         </header>
@@ -36,7 +36,6 @@ export default function Home() {
               direction="row"
               alignItems="center"
               justifyContent="space-between"
-              className={materialStyles.divRowSearch}
             >
               <Grid className={materialStyles.divTitle}>
                 <Typography
