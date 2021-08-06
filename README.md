@@ -1,8 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Site Running](https://git-hub-search-bfkonbl30-front-end-test-gerson-dantas.vercel.app/)
+
+![test ronning](https://github.com/GersonDantas/img/blob/main/testBetwise.gif)
+
+Hi! This is another test I did. I use NextJS, but implementing the architecture that React uses, (Client Side). You can see this in the "ClientOnly" Component:
+
+```bash
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+```
+When using "useEffect", I guarantee that it is on the "client side". Because useEffect only runs on the client side.
+
+I use grapQL with [apolloClient](https://www.apollographql.com/docs/react/get-started/) to integrate with
+[gitHub grapQL api](https://docs.github.com/pt/graphql)
+
+And for styling, use the [material-ui](https://material-ui.com/pt/components/material-icons/). Here you will notice a peculiarity, as I like to separate all styles files in the "styles" folder
+
+
+
 
 ## Getting Started
 
-First, run the development server:
+Before running the project, create a ".env" file to contain an environment variable responsible for authenticating to gitHub. Because gitHub's grapQL api only accepts requests from applications that [create a personal access token](https://docs.github.com/pt/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). I created an example file (.env.example) that contains the way you should create the variable:
+
+```bash
+NEXT_APP_GITHUB_AUTH_TOKEN=GITHUB_0AUTH
+```
+Replace GITHUB_0AUTH with personal access token
 
 ```bash
 npm run dev
@@ -10,25 +34,12 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies used
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+    apollo/client: ^3.4.2,
+    material-ui/core: ^4.12.3,
+    material-ui/icons: ^4.11.2,
+    graphql: ^15.5.1,
+    nprogress: ^0.2.0,
+    uuid: ^8.3.2
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

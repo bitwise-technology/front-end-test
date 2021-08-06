@@ -46,7 +46,7 @@ function Search() {
           <Grid className={classes.inputHeader}>
             <Input gitButton={false} />
           </Grid>
-          <Grid className={classes.socialHeader}>
+          <Grid>
             <Social />
           </Grid>
         </Grid>
