@@ -21,12 +21,6 @@ const homeUseStyles = makeStyles((theme) => ({
     paddingTop: '60px',
     height: '18vh'
   },
-  logo: {
-
-  },
-  divRowSearch: {
-
-  },
 }))
 
 export default homeUseStyles
