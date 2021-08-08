@@ -3,7 +3,7 @@ import Modal from '@material-ui/core/Modal'
 import { useGlobalContextData } from '@store/globalContext'
 import { Grid, IconButton, Typography } from '@material-ui/core'
 import Social from '@components/Social'
-import ModalAlertStyles from '@styles/components/modalAlert'
+import ModalAlertStyles from '@styles/components/ModalAlertStyles'
 import CloseIcon from '@material-ui/icons/Close';
 
 function ModalAlert() {
@@ -31,10 +31,10 @@ function ModalAlert() {
         </Grid>
         <Grid>
           <Grid container direction='row' className={classes.divTextModal}>
-            <Typography variant='body2' className={classes.textModal}>
+            <Typography variant='body2'>
               Enquanto isso, acompanhe a Bitwise nas redes sociais
             </Typography>
-            <Social className={classes.social} white />
+            <Social className={classes.socialModal} white />
           </Grid>
         </Grid>
       </Grid>

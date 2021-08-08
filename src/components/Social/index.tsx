@@ -9,7 +9,7 @@ import InWhite from '@assets/images/icons/inWhite.svg'
 import Insta from '@assets/images/icons/insta.svg'
 import InstaWhite from '@assets/images/icons/instaWhite.svg'
 import Grid from "@material-ui/core/Grid"
-import SocialIconStyles from '@styles/components/socialIconStyles'
+import SocialIconStyles from '@styles/components/SocialIconStyles'
 
 interface PropsSocial {
   className?: string

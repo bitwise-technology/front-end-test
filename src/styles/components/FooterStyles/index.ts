@@ -36,7 +36,7 @@ const footerMaterialStyles = makeStyles(theme => ({
     fontSize: 12,
     lineHeight: '1.5rem'
   },
-  socialNetworks: {
+  socialNetworksDiv: {
     position: 'absolute',
     left: '50%',
     transform: 'translateX(-50%)'

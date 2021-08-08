@@ -5,23 +5,25 @@ export default createMuiTheme({
       palette: {
         primary:{
             main: '#382039',
-            dark: '#200F21',
+            light: '#200F21',
+            dark: '#3D5879'
         },
         secondary: {
             main: '#5A3D5C',
-            light: '#F0F0F0'
+            dark: '#F0F0F0',
+            light: '#657FA0'
         },
         error: {
             main: red.A700,
         },
         success: {
             main: '#A51C92',
-            light: 'linear-gradient(90deg, #A51C92 0%, #F638DC 100%)'
+            light: 'linear-gradient(90deg, #A51C92 0%, #F638DC 100%)',
         },
         info: {
             main: '#FD71EA',
-            light: 'linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%)',
-            dark: '#FAFAFC'
+            dark: '#FAFAFC',
+            light: '#fef'
         },
     },
     overrides: {

@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography'
 
 import PolygonFooter from '@assets/images/PolygonFooter.svg'
 import Social from "../Social"
-import footerMaterialStyles from '@styles/components/FooterUseStyles'
+import footerMaterialStyles from '@styles/components/FooterStyles'
 import Logo from '@assets/images/LogoFooter.svg'
 import Link from 'next/link'
 
@@ -62,7 +62,7 @@ function Footer() {
               Todos os direitos reservados - 2020
             </Typography>
           </Grid>
-          <Grid item className={classes.socialNetworks}>
+          <Grid item className={classes.socialNetworksDiv}>
             <Social />
           </Grid>
           <Grid item>

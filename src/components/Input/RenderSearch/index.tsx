@@ -13,7 +13,7 @@ import { getUsersSearc } from '@shared/useQuery'
 import { USERS } from '@shared/graphql'
 import { RenderSearchProps } from 'src/types'
 import { useGlobalContextData } from '@store/globalContext'
-import inputUseStyles from '@styles/components/InputUseStyles'
+import inputUseStyles from '@styles/components/InputStyles'
 import IsLoading from '@components/IsLoading'
 
 export default function RenderSearch({

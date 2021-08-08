@@ -1,15 +1,8 @@
 import {makeStyles} from '@material-ui/core/styles'
 
 const searchMaterialStyles = makeStyles(theme => ({
-  headerSearch: {
-    paddingTop: '60px',
-    marginBottom: '60px'
-  },
   mainSearch: {
     minHeight: 650,
-  },
-  inputHeader: {
-    width: '40%'
   },
   containerAvatarRepos: {
     marginBottom: 45

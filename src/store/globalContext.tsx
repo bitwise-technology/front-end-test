@@ -6,15 +6,7 @@ import {
   SetStateAction,
   ReactNode
 } from 'react'
-
-interface ContextData {
-  visibleModal: boolean
-  setVisibleModal: Dispatch<SetStateAction<boolean>>
-  arrayRepos: any
-  setArrayRepos: Dispatch<SetStateAction<any>>
-  arrayUsers: any
-  setArrayUsers: Dispatch<SetStateAction<any>>
-}
+import {ContextData} from 'src/types'
 
 export const GlobalContext = createContext({} as ContextData)
 

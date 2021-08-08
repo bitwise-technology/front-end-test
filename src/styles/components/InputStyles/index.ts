@@ -33,6 +33,7 @@ const inputUseStyles = makeStyles(theme => ({
     height: '160px',
     width: '100%',
     padding: theme.spacing(1),
+    zIndex: theme.zIndex.modal
   },
   linkUser: {
     textDecoration: 'none',

@@ -1,21 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-//material import
 import Grid from '@material-ui/core/Grid'
 import Modal from '@components/ModalAlert'
 
-import Input from '@components/Input'
-import Social from '@components/Social'
 import Table from '@components/Table'
-import Logo from '@assets/images/Logo.svg'
 import searchMaterialStyles from '@styles/pages/Search'
 import { getUsersSearc } from '@shared/useQuery'
 import { DATA_USER } from '@shared/graphql'
 import { Typography } from '@material-ui/core'
 import Footer from '@components/Footer'
 import {useGlobalContextData} from '@store/globalContext'
+import Header from '@components/Header'
 
 function Search() {
   const {
@@ -32,28 +29,15 @@ function Search() {
   return (
     <>
       {visibleModal && <Modal />}
-      <header id='header'>
+      <Header />
+      <main className={classes.mainSearch}>
         <Grid
           container
           direction='row'
-          alignItems='center'
-          justifyContent='space-between'
-          className={classes.headerSearch}
+          alignItems='flex-end'
+          className={classes.containerAvatarRepos}
         >
-          <Grid >
-            <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
-          </Grid>
-          <Grid className={classes.inputHeader}>
-            <Input gitButton={false} />
-          </Grid>
-          <Grid>
-            <Social />
-          </Grid>
-        </Grid>
-      </header>
-      <main className={classes.mainSearch}>
-        <Grid container direction='row' alignItems='flex-end' className={classes.containerAvatarRepos}>
-          <img src={data.user.avatarUrl} alt={data.user.name} className={classes.avatar}/>
+          <img src={data.user.avatarUrl} alt={`photo ${data.user.name}`} className={classes.avatar}/>
           <Grid container direction='column' className={classes.infoUser}>
             <Typography variant='h2' className={classes.userName}>{data.user.name}</Typography>
             <Grid

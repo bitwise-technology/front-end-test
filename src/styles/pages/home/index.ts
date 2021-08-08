@@ -17,7 +17,7 @@ const homeUseStyles = makeStyles((theme) => ({
     lineHeight: '50px',
     marginBottom: '87px',
   },
-  header :{
+  headerHome :{
     paddingTop: '60px',
     height: '18vh'
   },

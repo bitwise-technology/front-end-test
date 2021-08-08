@@ -9,7 +9,7 @@ const tableStyles = makeStyles(theme => ({
     padding: 32
   },
   titleTableRepos: {
-    color: '#3D5879',
+    color: theme.palette.primary.dark,
     fontSize: 20,
   },
   tableContainer: {
@@ -17,7 +17,7 @@ const tableStyles = makeStyles(theme => ({
   },
   tableCellHead: {
     backgroundColor: '#fff',
-    color: '#657FA0',
+    color: theme.palette.secondary.light,
     width: '25%',
     '&:first-child': {
       padding: 30,
@@ -25,15 +25,17 @@ const tableStyles = makeStyles(theme => ({
   },
   tableCellBody: {
     height:  70,
-    color: '#657FA0',
+    color: theme.palette.secondary.light,
   },
   tableRow: {
     '&:hover': {
-      backgroundColor: theme.palette.secondary.light
+      backgroundColor: theme.palette.info.light
     }
   },
   loading: {
-
+    backgroundColor: '#fff',
+    display: 'flex',
+    justifyContent: 'center'
   }
 }))
 

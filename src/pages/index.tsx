@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-//material import
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
@@ -15,16 +14,16 @@ import useStylesMaterial from '@styles/pages/home'
 import {useGlobalContextData} from '@store/globalContext'
 
 export default function Home() {
-  const materialStyles = useStylesMaterial()
+  const classes = useStylesMaterial()
   const {visibleModal} = useGlobalContextData()
   return (
     <>
       {visibleModal && <Modal />}
-      <Grid className={materialStyles.polygonStart}>
+      <Grid className={classes.polygonStart}>
         <Image src={Polygon} height="539" width="770" alt="polygon start" />
       </Grid>
-      <Grid container direction="column" className={materialStyles.containerHome}>
-        <header className={materialStyles.header}>
+      <Grid container direction="column" className={classes.containerHome}>
+        <header className={classes.headerHome}>
           <Grid>
             <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
           </Grid>
@@ -37,16 +36,16 @@ export default function Home() {
               alignItems="center"
               justifyContent="space-between"
             >
-              <Grid className={materialStyles.divTitle}>
+              <Grid className={classes.divTitle}>
                 <Typography
-                  className={materialStyles.mainTitle}
+                  className={classes.mainTitle}
                   color="primary"
                   variant="h1"
                   component="h1"
                 >
                   Buscar um usuário no <strong>GitHub </strong>ficou muito <strong>fácil!</strong>
                 </Typography>
-                <Input gitButton={true} />
+                <Input gitButton />
               </Grid>
               <Grid>
                 <Image

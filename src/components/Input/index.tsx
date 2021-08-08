@@ -3,20 +3,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Router from 'next/router'
 
-//material import
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import SearchIcon from '@material-ui/icons/Search'
 import InputBase from '@material-ui/core/InputBase'
 import Grid from '@material-ui/core/Grid'
-import { useGlobalContextData } from '@store/globalContext'
 
+import { useGlobalContextData } from '@store/globalContext'
 import RenderSearch from './RenderSearch'
 import gitHub from '@assets/images/icons/gitHub.svg'
-import inputUseStyles from '@styles/components/InputUseStyles'
-import { getUsersSearc } from '@shared/useQuery'
-import { USERS } from '@shared/graphql'
+import inputUseStyles from '@styles/components/InputStyles'
 
 interface InputProps {
   gitButton: boolean
@@ -46,7 +43,11 @@ function Input({ gitButton}: InputProps) {
 
   const handleSearch = () => {
     if(!!searchUser) {
-      Router.push(`https://github.com/search?q=${searchUser}+in%3Afullname&type=Users`)
+      setSearchUser('')
+      Router.push({
+        pathname: 'UsersSearch',
+        query: {query: searchUser}
+      })
     } else {
       setVisibleModal(true)
     }
@@ -64,7 +65,7 @@ function Input({ gitButton}: InputProps) {
         <IconButton onClick={handleSearch}>
           <SearchIcon />
         </IconButton>
-        <InputBase className={materialStyles.input} placeholder='Buscar usuário' onChange={handleChange}/>
+        <InputBase className={materialStyles.input} value={searchUser} placeholder='Buscar usuário' onChange={handleChange}/>
         {gitButton && (
           <Link
             href={`https://github.com/search?q=${searchUser}+in%3Afullname&type=Users`}
