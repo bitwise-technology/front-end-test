@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { Dispatch, MutableRefObject, ReactNode, RefObject, SetStateAction } from 'react';
 import { ApolloError } from '@apollo/client'
 import { OverridableComponent } from '@material-ui/core/OverridableComponent';
 import { ClassNameMap } from '@material-ui/core/styles/withStyles';
@@ -21,11 +21,11 @@ export interface resQuery {
 }
 
 export interface RenderSearchProps {
-  tipeSearch: string
+  typeSearch: string
   first: number
   query: string
-  objectSearch: { after: string; nextPage: boolean; first?: number }
-  handleAfter: (endCursor: string, hasNextPage: boolean) => void
+  paperRefSearch: MutableRefObject<HTMLDivElement | null>
+  setTipeSearch: Dispatch<SetStateAction<string>>
 }
 
 export interface ListUsersProps {
@@ -36,6 +36,7 @@ export interface ListUsersProps {
   array: Array<any>
   setArray: Dispatch<SetStateAction<Array<any>>>
   handleAfter: (endCursor: string, hasNextPage: boolean) => void
+  paperRefListUsers: MutableRefObject<HTMLDivElement | null>
 }
 
 export interface PaperTableProps {

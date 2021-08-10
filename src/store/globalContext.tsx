@@ -2,8 +2,6 @@ import {
   useContext,
   createContext,
   useState,
-  Dispatch,
-  SetStateAction,
   ReactNode
 } from 'react'
 import {ContextData} from 'src/types'

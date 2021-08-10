@@ -19,17 +19,19 @@ import ListUsersStyles from '@styles/components/ListUserStyles'
 import { getUsersSearc } from '@shared/useQuery'
 import { USERS_SEARCH } from '@shared/graphql'
 import { useGlobalContextData } from '@store/globalContext'
-import {ListUsersProps} from 'src/types'
+import { ListUsersProps } from 'src/types'
+import IsLoading from '@components/IsLoading'
 
-function ListUsers({
+const ListUsers: React.FC<ListUsersProps> = ({
   after,
   nextPage,
   first,
   query,
   array,
   setArray,
-  handleAfter
-}: ListUsersProps) {
+  handleAfter,
+  paperRefListUsers
+}) => {
 
   const { setVisibleModal } = useGlobalContextData()
   const classes = ListUsersStyles()
@@ -43,6 +45,12 @@ function ListUsers({
   })
 
   useEffect(() => {
+    if (paperRefListUsers && array.length >  first) {
+      paperRefListUsers.current?.scrollBy(0, paperRefListUsers.current.scrollHeight )
+    }
+  }, [array])
+
+  useEffect(() => {
     if (!loading && !error ) {
       data.search.nodes.map((val: any) => {
         setArray((old: any) => [...old, val])
@@ -52,56 +60,68 @@ function ListUsers({
 
   if(loading) {
     NProgress.start()
-    return <>casa</>
+    return (
+      <Paper className={classes.paperUsersSearch}>
+        <Grid container justifyContent='center'>
+          <IsLoading />
+        </Grid>
+      </Paper>
+    )
   }
 
-  if(error) {
+  if(error || data.search.nodes.length === 0) {
     setVisibleModal(true)
-    Router.push('/Search')
+    Router.push('/')
   }
 
   const {hasNextPage} = data?.search.pageInfo
   const {endCursor} = data?.search.pageInfo
 
   return (
-    <Paper className={classes.paperUsersSearch}>
-      {
-        array.map((val) => (
-          <div key={`${val.id}${uuidv4()}`}>
-            <Link
-                href={{
-                  pathname: '/Search',
-                  query: { login: val.login }
-                }}
-              >
-              <a className={classes.linkUser}>
-                <ListItem alignItems="flex-start" className={classes.listemItem}>
-                  <ListItemAvatar>
-                    <Avatar alt={`photo ${val.name}`} src={val.avatarUrl} />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={val.name}
-                    secondary={
-                      <>
-                        <Typography
-                          component="span"
-                          variant="body2"
-                          className={classes.inline}
-                          color="textPrimary"
-                        >
-                          {val.login}
-                        </Typography>
-                        {!!val.bio ? ` - ${val.bio}`  : <span> no written bio</span>}
-                      </>
-                    }
-                  />
-                </ListItem>
-              </a>
-            </Link>
-            <Divider />
-          </div>
-        ))
-      }
+    <Paper ref={paperRefListUsers} className={classes.paperUsersSearch}>
+        <Grid container direction="column">
+          {
+            array.map((val) => (
+              <div key={`${val.id}${uuidv4()}`}>
+                <Link
+                    href={{
+                      pathname: '/Search',
+                      query: { login: val.login }
+                    }}
+                  >
+                  <a className={classes.linkUser}>
+                    <ListItem alignItems="flex-start" className={classes.listemItem}>
+                      <ListItemAvatar>
+                        <Avatar alt={`photo ${val.name}`} src={val.avatarUrl} />
+                      </ListItemAvatar>
+                      <ListItemText
+                        primary={val.name}
+                        secondary={
+                          <>
+                            <Typography
+                              component="span"
+                              variant="body2"
+                              className={classes.inline}
+                              color="textPrimary"
+                            >
+                              {val.login}
+                            </Typography>
+                            {
+                            !!val.bio
+                            ? ` - ${val.bio}`
+                            : <span> no written bio</span>
+                            }
+                          </>
+                        }
+                      />
+                    </ListItem>
+                  </a>
+                </Link>
+                <Divider />
+              </div>
+            ))
+          }
+        </Grid>
       <>
         {
           hasNextPage && (

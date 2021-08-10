@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 
 import List from '@material-ui/core/List'
@@ -14,7 +14,7 @@ function UserSearch() {
   const {
     query: { query }
   } = useRouter()
-
+  const paperRefListUsers = useRef(null)
   const { visibleModal } = useGlobalContextData()
   const classes = UsersSearchStyles()
 
@@ -36,11 +36,12 @@ function UserSearch() {
           <ListUsers
             after={after}
             nextPage={nextPage}
-            first={4}
+            first={9}
             query={query as string}
             array={LocalArrayUsers}
             setArray={setLocalArrayUsers}
             handleAfter={handleAfter}
+            paperRefListUsers={paperRefListUsers}
           />
         </List>
       </main>

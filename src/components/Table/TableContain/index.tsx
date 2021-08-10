@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import MaterialTable from '@material-ui/core/Table'
 import TableHead from '@material-ui/core/TableHead'
@@ -8,7 +8,9 @@ import TableBody from '@material-ui/core/TableBody'
 import TableContainer from '@material-ui/core/TableContainer'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+
 import {PaperTableProps} from 'src/types'
+import { useGlobalContextData } from '@store/globalContext';
 
 
 function PaperTable ({classes, repTitle, children}: PaperTableProps) {

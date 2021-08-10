@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles'
 
-const homeUseStyles = makeStyles((theme) => ({
+const homeUseStyles = makeStyles(() => ({
   polygonStart: {
     position: 'absolute',
     right: 0,

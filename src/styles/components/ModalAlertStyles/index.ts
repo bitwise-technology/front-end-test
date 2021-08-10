@@ -14,19 +14,24 @@ const ModalAlertStyles = makeStyles(theme => ({
     color: '#fff'
   },
   titleModal: {
-    paddingBottom: 10
+    paddingBottom: 10,
+    wordWrap: 'break-word'
   },
   divTextModal: {
-    width: '100%'
+    width: '100%',
+    padding: '0 14px 15px 0',
+    '& > p': {
+      width: '70%'
+    }
   },
   iconClose: {
     position: 'absolute',
     top: 0,
     right: '6px',
-    color: '#fff'
+    color: '#fff !important'
   },
   socialModal: {
-    width: '30%',
+    width: '30% !important',
   }
 }))
 

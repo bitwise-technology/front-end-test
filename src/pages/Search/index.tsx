@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
@@ -14,10 +14,11 @@ import Footer from '@components/Footer'
 import {useGlobalContextData} from '@store/globalContext'
 import Header from '@components/Header'
 
-function Search() {
+const Search: React.FC = () => {
   const {
     query: { login }
   } = useRouter()
+  const paperRefTable = useRef(null)
   const {visibleModal} = useGlobalContextData()
   const classes = searchMaterialStyles()
 
@@ -53,7 +54,7 @@ function Search() {
                 alignItems='center'
                 className={classes.containerRepoCount}
               >
-                <strong className={classes.strongCrepo}>{data.user.repositories.totalCount}</strong>
+                <strong >{data.user.repositories.totalCount}</strong>
                 <p className={classes.repositoriesSquare}>Repositórios</p>
               </Grid>
             </Grid>
@@ -61,6 +62,7 @@ function Search() {
         </Grid>
         <Table
           login={login as string}
+          paperRefTable={paperRefTable}
         />
       </main>
       <Footer />

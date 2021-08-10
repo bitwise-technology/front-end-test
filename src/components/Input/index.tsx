@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Router from 'next/router'
@@ -19,19 +19,12 @@ interface InputProps {
   gitButton: boolean
 }
 
-function Input({ gitButton}: InputProps) {
+const Input: React.FC<InputProps> = ({ gitButton}) => {
+  const paperRefSearch = useRef(null)
   const [searchUser, setSearchUser] = useState('')
-  const [after, setAfter] = useState('')
-  const [nextPage, setNextPage] = useState(false)
   const [tipeSearch, setTipeSearch] = useState('')
 
   const { setArrayUsers, setVisibleModal } = useGlobalContextData()
-
-  const handleAfter = (endCursor: string, hasNextPage: boolean) => {
-    setTipeSearch('moreUser')
-    setAfter(endCursor)
-    setNextPage(hasNextPage)
-  }
 
   const handleChange = (e: {
     target: { value: React.SetStateAction<string> }
@@ -88,11 +81,11 @@ function Input({ gitButton}: InputProps) {
         )}
       </Paper>
       <RenderSearch
-        tipeSearch={tipeSearch}
-        first={3}
+        typeSearch={tipeSearch}
+        first={9}
         query={searchUser}
-        objectSearch={{ after, nextPage }}
-        handleAfter={handleAfter}
+        paperRefSearch={paperRefSearch}
+        setTipeSearch={setTipeSearch}
       />
     </Grid>
   )

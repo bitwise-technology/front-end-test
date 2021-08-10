@@ -36,8 +36,12 @@ const inputUseStyles = makeStyles(theme => ({
     zIndex: theme.zIndex.modal
   },
   linkUser: {
-    textDecoration: 'none',
-    lineHeight: '5px'
+    '&:hover':{
+      backgroundColor: theme.palette.info.light
+    },
+    '& > a' : {
+      textDecoration: 'none',
+    }
   },
 }))
 

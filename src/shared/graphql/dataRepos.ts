@@ -4,7 +4,7 @@ export const DATA_REPOS = gql`
   query DATA_USER($login: String!, $after: String) {
     user(login: $login) {
       id
-      repositories(first: 3, privacy: PUBLIC, after: $after) {
+      repositories(first: 4, privacy: PUBLIC, after: $after) {
         totalCount
         pageInfo {
           endCursor

@@ -2,7 +2,8 @@ import {makeStyles} from '@material-ui/core/styles'
 
 const tableStyles = makeStyles(theme => ({
   paperTable: {
-    minHeight: 450,
+    height: '450px',
+    overflow: 'scroll',
   },
   divTitleTableRepos: {
     height: 95,
@@ -26,6 +27,12 @@ const tableStyles = makeStyles(theme => ({
   tableCellBody: {
     height:  70,
     color: theme.palette.secondary.light,
+  },
+  moreButtonIcon: {
+    color: theme.palette.primary.main,
+    '&:hover' : {
+      backgroundColor: theme.palette.info.light
+    }
   },
   tableRow: {
     '&:hover': {

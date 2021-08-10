@@ -1,23 +1,25 @@
-# [Site Running](https://git-hub-search-bfkonbl30-front-end-test-gerson-dantas.vercel.app/)
+# gitHub user search
 
-![test ronning](https://github.com/GersonDantas/img/blob/main/testBetwise.gif)
+Hi! This is another test I did. I use NextJS, but implementing the architecture that React uses, (Client Side).
 
-Hi! This is another test I did. I use NextJS, but implementing the architecture that React uses, (Client Side). You can see this in the "ClientOnly" Component:
+## [Site Running](https://githubsearch-gff8dim8j-front-end-test-gerson-dantas.vercel.app/)
+
+![test ronning](https://github.com/GersonDantas/img/blob/main/gitHubSearchGif.gif)
+
+You can see the implementation of the React architecture in the "ClientOnly" component:
 
 ```bash
   useEffect(() => {
     setHasMounted(true)
   }, [])
 ```
+
 When using "useEffect", I guarantee that it is on the "client side". Because useEffect only runs on the client side.
 
 I use grapQL with [apolloClient](https://www.apollographql.com/docs/react/get-started/) to integrate with
 [gitHub grapQL api](https://docs.github.com/pt/graphql)
 
 And for styling, use the [material-ui](https://material-ui.com/pt/components/material-icons/). Here you will notice a peculiarity, as I like to separate all styles files in the "styles" folder
-
-
-
 
 ## Getting Started
 

@@ -20,8 +20,12 @@ const searchMaterialStyles = makeStyles(theme => ({
   userName: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#657FA0',
+    color: theme.palette.secondary.light,
     marginBottom: 15
+  },
+  containerRepoCount: {
+    width: '80% !important',
+    paddingLeft: '10px'
   },
   containerSquare: {
     width: 96,
@@ -41,12 +45,6 @@ const searchMaterialStyles = makeStyles(theme => ({
     lineHeight: '13px',
     color: '#878790'
   },
-  strongCrepo: {
-  },
-  containerRepoCount: {
-    width: '80%',
-    paddingLeft: '10px'
-  }
 }))
 
 export default searchMaterialStyles
