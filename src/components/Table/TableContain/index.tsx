@@ -13,7 +13,14 @@ import {PaperTableProps} from 'src/types'
 import { useGlobalContextData } from '@store/globalContext';
 
 
-function PaperTable ({classes, repTitle, children}: PaperTableProps) {
+function PaperTable ({classes, repTitle, children, paperRefTable}: PaperTableProps) {
+  const { arrayRepos } = useGlobalContextData()
+  useEffect(() => {
+    if (paperRefTable && arrayRepos.length > 4) {
+      console.log(paperRefTable)
+      paperRefTable.current?.scrollBy(0, paperRefTable.current.scrollHeight)
+    }
+  }, [arrayRepos])
   return (
     <>
       <Grid
@@ -25,7 +32,7 @@ function PaperTable ({classes, repTitle, children}: PaperTableProps) {
           {repTitle}
         </Typography>
       </Grid>
-      <TableContainer className={classes.tableContainer}>
+      <TableContainer className={classes.tableContainer} ref={paperRefTable}>
         <MaterialTable stickyHeader aria-label="User atributes">
           <TableHead>
             <TableRow>
@@ -43,7 +50,7 @@ function PaperTable ({classes, repTitle, children}: PaperTableProps) {
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody className={classes.tBody} >
             {children}
           </TableBody>
         </MaterialTable>

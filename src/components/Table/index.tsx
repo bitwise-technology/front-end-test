@@ -19,10 +19,10 @@ import { useMemo } from 'react'
 
 interface TableProps {
   login: string
-  paperRefTable: MutableRefObject<HTMLDivElement | null>
 }
 
-const Table: React.FC<TableProps> = ({ login, paperRefTable  }) => {
+const Table: React.FC<TableProps> = ({ login  }) => {
+  const paperRefTable = useRef(null)
   const { setArrayRepos, arrayRepos } = useGlobalContextData()
   const [repTitle, setRepTitle] = useState('Repositórios')
   const [after, setAfter] = useState('')
@@ -39,13 +39,6 @@ const Table: React.FC<TableProps> = ({ login, paperRefTable  }) => {
   Router.events.on('beforeHistoryChange', () => {
     setArrayRepos([])
   })
-
-  useEffect(() => {
-    if (paperRefTable && arrayRepos.length > 4) {
-      console.log(paperRefTable)
-      paperRefTable.current?.scrollBy(0,450)
-    }
-  }, [arrayRepos])
 
   useEffect(() => {
     if (!loading && !error ) {
@@ -73,10 +66,11 @@ const Table: React.FC<TableProps> = ({ login, paperRefTable  }) => {
   const { hasNextPage } = data.user.repositories.pageInfo
 
   return (
-    <Paper elevation={1} ref={paperRefTable} className={classes.paperTable} >
+    <Paper elevation={1}  className={classes.paperTable} >
         <TableContain
           classes={classes}
           repTitle={repTitle}
+          paperRefTable={paperRefTable}
         >
           {arrayRepos?.map((val: any) => (
             <TableRow

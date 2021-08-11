@@ -18,7 +18,6 @@ const Search: React.FC = () => {
   const {
     query: { login }
   } = useRouter()
-  const paperRefTable = useRef(null)
   const {visibleModal} = useGlobalContextData()
   const classes = searchMaterialStyles()
 
@@ -62,7 +61,6 @@ const Search: React.FC = () => {
         </Grid>
         <Table
           login={login as string}
-          paperRefTable={paperRefTable}
         />
       </main>
       <Footer />

@@ -3,7 +3,6 @@ import {makeStyles} from '@material-ui/core/styles'
 const tableStyles = makeStyles(theme => ({
   paperTable: {
     height: '450px',
-    overflow: 'scroll',
   },
   divTitleTableRepos: {
     height: 95,
@@ -15,6 +14,9 @@ const tableStyles = makeStyles(theme => ({
   },
   tableContainer: {
     maxHeight: 300
+  },
+  tBody: {
+    overflow: 'scroll'
   },
   tableCellHead: {
     backgroundColor: '#fff',

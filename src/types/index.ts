@@ -43,4 +43,5 @@ export interface PaperTableProps {
   classes: ClassNameMap
   repTitle: string
   children: OverridableComponent<TableRowTypeMap<TableCellProps>> | ReactNode
+  paperRefTable?: MutableRefObject<HTMLDivElement | null>
 }
