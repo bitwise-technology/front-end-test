@@ -12,7 +12,7 @@ export interface ContextData {
   setArrayRepos: Dispatch<SetStateAction<any>>
   arrayUsers: any
   setArrayUsers: Dispatch<SetStateAction<any>>
-  toggleTheme?: (e: ChangeEvent<HTMLInputElement>) => void
+  toggleTheme: (e: ChangeEvent<HTMLInputElement>) => void
   changeTheme: boolean
   setChangeTheme: Dispatch<SetStateAction<boolean>>
 }
