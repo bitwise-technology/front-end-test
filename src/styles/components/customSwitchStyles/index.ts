@@ -4,13 +4,13 @@ export const customSwitchStyles = makeStyles( theme => ({
   root: {
     width: '42px !important',
     height: '26px !important',
-    padding: 0,
-    margin: theme.spacing(1),
+    padding: '0 !important',
+    margin: `${theme.spacing(1)} !important`,
   },
   switchBase: {
-    padding: 1,
+    padding: '1px !important',
     "&$checked": {
-      transform: "translateX(16px)",
+      transform: "translateX(16px) !important",
       color: `${theme.palette.common.white} !important`,
       "& + $track": {
         backgroundColor: theme.palette.info.main,
