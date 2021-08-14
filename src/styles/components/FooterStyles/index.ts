@@ -5,7 +5,7 @@ const footerMaterialStyles = makeStyles(theme => ({
     width: '100vw',
     minHeight: 495,
     backgroundColor: theme.palette.primary.main,
-    color: theme.palette.info.main
+    color: theme.palette.secondary.main
   },
   footerContainer: {
     minHeight: 400,
@@ -18,11 +18,11 @@ const footerMaterialStyles = makeStyles(theme => ({
   divider:{
     minHeight: 3,
     minWidth: '100%',
-    backgroundColor: '#A51C92'
+    backgroundColor: theme.palette.secondary.main
   },
   topBack: {
     textDecoration: 'none',
-    color: theme.palette.info.main,
+    color: theme.palette.secondary.main,
     fontFamily: '"Roboto", sans-serif',
     fontWeight: 'bold',
     '&:hover': {

@@ -11,14 +11,20 @@ const ListUsersStyles = makeStyles(theme => ({
   },
   listemItem: {
     '&:hover':{
-      backgroundColor: theme.palette.info.light
+      backgroundColor: theme.palette.primary.main
     }
   },
   linkUser: {
     textDecoration: 'none',
-    color: theme.palette.primary.light,
+    color: theme.palette.secondary.light,
     '&:visited': {
-      color: theme.palette.secondary.light
+      color: theme.palette.primary.main
+    }
+  },
+  iconButtonLister: {
+    color: `${theme.palette.primary.main} !important`,
+    '&:hover' : {
+      backgroundColor: theme.palette.info.light
     }
   }
 }))

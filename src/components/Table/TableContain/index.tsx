@@ -17,7 +17,6 @@ function PaperTable ({classes, repTitle, children, paperRefTable}: PaperTablePro
   const { arrayRepos } = useGlobalContextData()
   useEffect(() => {
     if (paperRefTable && arrayRepos.length > 4) {
-      console.log(paperRefTable)
       paperRefTable.current?.scrollBy(0, paperRefTable.current.scrollHeight)
     }
   }, [arrayRepos])

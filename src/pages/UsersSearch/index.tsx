@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useRouter } from 'next/router'
+import Nprogress from 'nprogress'
 
 import List from '@material-ui/core/List'
 
@@ -17,15 +18,19 @@ function UserSearch() {
   const paperRefListUsers = useRef(null)
   const { visibleModal } = useGlobalContextData()
   const classes = UsersSearchStyles()
-
   const [LocalArrayUsers, setLocalArrayUsers] = useState<Array<any>>([])
   const [after, setAfter] = useState('')
   const [nextPage, setNextPage] = useState(false)
+  const Router = useRouter()
 
   const handleAfter = (endCursor: string, hasNextPage: boolean) => {
     setAfter(endCursor)
     setNextPage(hasNextPage)
   }
+
+  Router.events.on('routeChangeStart', () => {
+    Nprogress.start
+  })
 
   return (
     <>

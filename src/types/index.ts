@@ -1,4 +1,4 @@
-import { Dispatch, MutableRefObject, ReactNode, RefObject, SetStateAction } from 'react';
+import { ChangeEvent, Dispatch, MutableRefObject, ReactNode, SetStateAction } from 'react';
 import { ApolloError } from '@apollo/client'
 import { OverridableComponent } from '@material-ui/core/OverridableComponent';
 import { ClassNameMap } from '@material-ui/core/styles/withStyles';
@@ -12,6 +12,9 @@ export interface ContextData {
   setArrayRepos: Dispatch<SetStateAction<any>>
   arrayUsers: any
   setArrayUsers: Dispatch<SetStateAction<any>>
+  toggleTheme?: (e: ChangeEvent<HTMLInputElement>) => void
+  changeTheme: boolean
+  setChangeTheme: Dispatch<SetStateAction<boolean>>
 }
 
 export interface resQuery {

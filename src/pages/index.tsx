@@ -12,6 +12,7 @@ import imageApp from '@assets/images/img-app.svg'
 import Polygon from '@assets/images/Polygon.svg'
 import useStylesMaterial from '@styles/pages/home'
 import {useGlobalContextData} from '@store/globalContext'
+import CustomSwitch from '@components/customSwitch'
 
 export default function Home() {
   const classes = useStylesMaterial()
@@ -24,8 +25,13 @@ export default function Home() {
       </Grid>
       <Grid container direction="column" className={classes.containerHome}>
         <header className={classes.headerHome}>
-          <Grid>
-            <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
+          <Grid container direction='row' alignItems='center' spacing={2}>
+            <Grid item>
+              <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
+            </Grid>
+            <Grid item>
+              <CustomSwitch />
+            </Grid>
           </Grid>
         </header>
         <main>

@@ -126,7 +126,10 @@ const ListUsers: React.FC<ListUsersProps> = ({
         {
           hasNextPage && (
             <Grid container justifyContent='center'>
-              <IconButton onClick={() => handleAfter(endCursor, hasNextPage)}>
+              <IconButton
+                onClick={() => handleAfter(endCursor, hasNextPage)}
+                className={classes.iconButtonLister}
+                >
                 <KeyboardArrowDownIcon />
               </IconButton>
             </Grid>

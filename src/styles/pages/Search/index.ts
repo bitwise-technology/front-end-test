@@ -25,10 +25,11 @@ const searchMaterialStyles = makeStyles(theme => ({
   },
   containerRepoCount: {
     width: '80% !important',
-    paddingLeft: '10px'
+    paddingLeft: '10px',
+    color: '#000'
   },
   containerSquare: {
-    width: 96,
+    width: '96px !important',
     height: 64,
     backgroundColor: '#fff',
     boxShadow: '0px 2px 38px rgba(84, 84, 89, 0.14)',

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, MutableRefObject } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { v4 as uuidv4 } from 'uuid'
@@ -15,7 +15,6 @@ import { useGlobalContextData } from '@store/globalContext'
 import tableStyles from '@styles/components/TableStyles'
 import TableContain from './TableContain'
 import IconButton from '@material-ui/core/IconButton/IconButton'
-import { useMemo } from 'react'
 
 interface TableProps {
   login: string

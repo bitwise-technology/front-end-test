@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Nprogress from 'nprogress'
 
 import Grid from '@material-ui/core/Grid'
 import Modal from '@components/ModalAlert'
@@ -18,13 +18,26 @@ const Search: React.FC = () => {
   const {
     query: { login }
   } = useRouter()
-  const {visibleModal} = useGlobalContextData()
+  const {visibleModal, setVisibleModal} = useGlobalContextData()
   const classes = searchMaterialStyles()
-
+  const Router = useRouter()
   const { loading, error, data } = getUsersSearc({ login }, DATA_USER)
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
+  if (loading) {
+    Nprogress.start()
+    return (
+      <>
+        <Header />
+        <main className={classes.mainSearch}>
+        </main>
+        <Footer />
+      </>
+    )
+  }
+  if (error) {
+    setVisibleModal(true)
+    Router.push('/')
+  }
 
   return (
     <>

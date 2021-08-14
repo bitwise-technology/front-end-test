@@ -2,7 +2,8 @@ import {
   useContext,
   createContext,
   useState,
-  ReactNode
+  ReactNode,
+  ChangeEvent
 } from 'react'
 import {ContextData} from 'src/types'
 
@@ -10,10 +11,12 @@ export const GlobalContext = createContext({} as ContextData)
 
 export type ContextProvider = {
   children: ReactNode
+  toggleTheme: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export function ContextProvider({ children }: ContextProvider) {
+export function ContextProvider({ children, toggleTheme }: ContextProvider) {
   const [visibleModal, setVisibleModal] = useState(false)
+  const [changeTheme, setChangeTheme] = useState(false)
   const [arrayRepos, setArrayRepos] = useState([])
   const [arrayUsers, setArrayUsers] = useState([])
 
@@ -25,7 +28,10 @@ export function ContextProvider({ children }: ContextProvider) {
         arrayRepos,
         setArrayRepos,
         arrayUsers,
-        setArrayUsers
+        setArrayUsers,
+        changeTheme,
+        setChangeTheme,
+        toggleTheme
       }}
     >
       {children}

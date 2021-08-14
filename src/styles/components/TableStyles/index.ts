@@ -9,7 +9,7 @@ const tableStyles = makeStyles(theme => ({
     padding: 32
   },
   titleTableRepos: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.secondary.light,
     fontSize: 20,
   },
   tableContainer: {
@@ -19,7 +19,6 @@ const tableStyles = makeStyles(theme => ({
     overflow: 'scroll'
   },
   tableCellHead: {
-    backgroundColor: '#fff',
     color: theme.palette.secondary.light,
     width: '25%',
     '&:first-child': {
@@ -31,7 +30,7 @@ const tableStyles = makeStyles(theme => ({
     color: theme.palette.secondary.light,
   },
   moreButtonIcon: {
-    color: theme.palette.primary.main,
+    color: `${theme.palette.primary.main} !important`,
     '&:hover' : {
       backgroundColor: theme.palette.info.light
     }

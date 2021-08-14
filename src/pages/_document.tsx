@@ -1,7 +1,7 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
-import theme from '../styles/materialTheme';
+// import theme from '../styles/materialTheme';
 
 export default class MyDocument extends Document {
   render() {
@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.secondary.main} />
+          {/* <meta name="theme-color" content={theme.palette.secondary.main} /> */}
           <link href="/fonts/style.css" rel="stylesheet"/>
         </Head>
         <body>

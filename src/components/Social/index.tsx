@@ -21,21 +21,21 @@ function Social({className, white}: PropsSocial) {
   return (
     <Grid container direction='row' justifyContent='center' className={className}>
       <Grid item className={classes.iconSocial}>
-        <Link href='https://medium.com/brasil'>
+        <Link href='https://medium.com/@gersondantas_533'>
           <a target='_blank'>
             <Image src={white ? MediunWhite : Mediun} height='24' width='24' alt='linkedin icon'/>
           </a>
         </Link>
       </Grid>
       <Grid item className={classes.iconSocial}>
-        <Link href='https://www.linkedin.com/'>
+        <Link href='https://www.linkedin.com/in/gersonsantosss/'>
           <a target='_blank'>
             <Image src={ white ? InWhite : In} height='24' width='24' alt='linkedin icon'/>
           </a>
         </Link>
       </Grid>
       <Grid item className={classes.iconSocial}>
-        <Link href='https://www.instagram.com/'>
+        <Link href='https://www.instagram.com/gerson_santtoss/'>
           <a target='_blank'>
             <Image src={  white ? InstaWhite : Insta} height='24' width='24' alt='linkedin icon'/>
           </a>
