@@ -2,9 +2,9 @@
 
 Hey! This is another test I did. It has a dark theme option, as you can see below in the demo:
 
-## [Site Running](https://githubsearch-gff8dim8j-front-end-test-gerson-dantas.vercel.app/)
+## [Site Running](https://githubsearch-ax9jdzhgz-front-end-test-gerson-dantas.vercel.app/)
 
-![test ronning](https://github.com/GersonDantas/img/blob/main/gitHubSearchGif.gif)
+![test ronning](https://github.com/GersonDantas/img/blob/main/SearchGitHub.gif)
 
  I use NextJS, but implementing the architecture that React uses, (Client Side). You can see the implementation of the React architecture in the "ClientOnly" component:
 
