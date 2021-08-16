@@ -7,7 +7,7 @@ const homeUseStyles = makeStyles(() => ({
     zIndex: -1,
   },
   containerHome :{
-    height: '92vh',
+    height: 'fit-content',
   },
   divImageLogo: {
     display: 'block',
@@ -15,11 +15,10 @@ const homeUseStyles = makeStyles(() => ({
   divTitle :{
     paddingRight: 50
   },
-  divItensHome: {
-  },
   imagemNoteSearch: {
     display: 'flex',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    marginBottom: 50
   },
   mainTitle : {
     fontSize: '42px',
@@ -27,11 +26,16 @@ const homeUseStyles = makeStyles(() => ({
     marginBottom: '87px',
   },
   headerHome :{
-    paddingTop: '60px',
-    height: '18vh'
+    paddingTop: '30px',
   },
   divHeaderHome: {
     display: 'flex'
+  },
+  socialNetworksHome: {
+    position: 'absolute',
+    bottom: 5,
+    left: '50%',
+    transform: 'translateX(-50%)'
   },
   '@media screen and (max-width: 960px)': {
     divTitle :{
@@ -53,13 +57,16 @@ const homeUseStyles = makeStyles(() => ({
     }
   },
   '@media screen and (max-width: 600px)': {
+    socialNetworksHome: {
+      position: 'relative',
+    },
     mainTitle : {
       padding: 0,
       fontSize: '22px',
     },
     divHeaderHome: {
       justifyContent: 'center',
-      marginBottom: 50,
+      marginBottom: 10,
     },
     divItensHome: {
       justifyContent: 'center'
