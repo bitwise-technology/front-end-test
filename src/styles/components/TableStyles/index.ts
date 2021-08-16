@@ -44,6 +44,14 @@ const tableStyles = makeStyles(theme => ({
     backgroundColor: '#fff',
     display: 'flex',
     justifyContent: 'center'
+  },
+  '@media screen and (max-width: 960px)': {
+    titleTableRepos: {
+      fontSize: 16,
+    },
+    tableCellHead: {
+      width: '15%',
+    },
   }
 }))
 

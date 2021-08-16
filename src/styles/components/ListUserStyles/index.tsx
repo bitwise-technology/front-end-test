@@ -7,11 +7,11 @@ const ListUsersStyles = makeStyles(theme => ({
     overflowX: 'hidden',
   },
   inline: {
-    display: 'inline'
+    display: 'inline',
   },
   listemItem: {
     '&:hover':{
-      backgroundColor: theme.palette.primary.main
+      backgroundColor: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.info.light,
     }
   },
   linkUser: {

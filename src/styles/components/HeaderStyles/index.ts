@@ -5,9 +5,24 @@ const HeaderStyles = makeStyles(theme => ({
     paddingTop: '60px',
     marginBottom: '60px'
   },
-  inputHeader: {
-    width: '40%'
+  divLogoHeaderUS: {
+    display: 'flex',
+    alignItems: 'center',
   },
+  inputHeader: {
+  },
+  divSocialUS: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+  },
+  '@media screen and (max-width: 960px)': {
+    divSocialUS: {
+      justifyContent: 'center',
+    },
+    divLogoHeaderUS: {
+      justifyContent: 'center',
+    },
+  }
 }))
 
 export default HeaderStyles

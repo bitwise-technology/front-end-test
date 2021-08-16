@@ -20,21 +20,20 @@ function Header () {
         alignItems='center'
         justifyContent='space-between'
         className={classes.headerSearch}
+        spacing={2}
       >
-        <Grid item>
-          <Grid container alignItems='center' spacing={2}>
-            <Link href='/'>
-              <a>
-                <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
-              </a>
-            </Link>
-            <CustomSwitch />
-          </Grid>
+        <Grid item sm={12} xs={12} md={4} classes={{root: classes.divLogoHeaderUS}}>
+          <Link href='/'>
+            <a>
+              <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
+            </a>
+          </Link>
+          <CustomSwitch />
         </Grid>
-        <Grid className={classes.inputHeader} item>
+        <Grid className={classes.inputHeader} item sm={12} xs={12} md={4}>
           <Input gitButton={false} />
         </Grid>
-        <Grid item>
+        <Grid item sm={12} xs={12} md={4} classes={{root: classes.divSocialUS}}>
           <Social />
         </Grid>
       </Grid>

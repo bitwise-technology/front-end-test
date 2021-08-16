@@ -19,7 +19,7 @@ interface PropsSocial {
 function Social({className, white}: PropsSocial) {
   const classes = SocialIconStyles()
   return (
-    <Grid container direction='row' justifyContent='center' className={className}>
+    <>
       <Grid item className={classes.iconSocial}>
         <Link href='https://stackoverflow.com/users/15898985/gerson-dantas'>
           <a target='_blank'>
@@ -41,7 +41,7 @@ function Social({className, white}: PropsSocial) {
           </a>
         </Link>
       </Grid>
-    </Grid>
+    </>
   )
 }
 

@@ -48,8 +48,9 @@ export default function Home() {
                 alignItems="center"
                 justifyContent="space-between"
                 spacing={4}
+                classes={{root: classes.divItensHome}}
               >
-                <Grid item md={12} lg={6} className={classes.divTitle}>
+                <Grid item sm={12} md={6} className={classes.divTitle}>
                   <Typography
                     className={classes.mainTitle}
                     color="secondary"
@@ -60,7 +61,7 @@ export default function Home() {
                   </Typography>
                   <Input gitButton />
                 </Grid>
-                <Grid item md={12} lg={6} classes={{
+                <Grid item sm={12} md={6} classes={{
                   item: classes.imagemNoteSearch
                 }}>
                   <Image
@@ -75,7 +76,9 @@ export default function Home() {
           </main>
         </Grid>
       </Grid>
-      <Social />
+      <Grid container justifyContent='center'>
+        <Social />
+      </Grid>
     </>
   )
 }

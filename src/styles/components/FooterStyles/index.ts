@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 const footerMaterialStyles = makeStyles(theme => ({
   footer: {
     width: '100vw',
-    minHeight: 495,
+    height: 'fit-content',
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.secondary.main
   },
@@ -12,8 +12,6 @@ const footerMaterialStyles = makeStyles(theme => ({
     padding: '5% 15.1% 0 15.1%'
   },
   logoFooter: {
-    marginTop: 20,
-    height: '100%'
   },
   divider:{
     minHeight: 3,
@@ -24,13 +22,21 @@ const footerMaterialStyles = makeStyles(theme => ({
     textDecoration: 'none',
     color: theme.palette.secondary.main,
     fontFamily: '"Roboto", sans-serif',
-    fontWeight: 'bold',
+    fontSize: 16,
+    textAlign: 'end',
     '&:hover': {
-      color: theme.palette.success.main
+      color: theme.palette.secondary.light
     }
   },
   titleTextFooter: {
     color: '#fff'
+  },
+  divToback: {
+  },
+  divCountry: {
+  },
+  divCopyRight: {
+    width: '100%'
   },
   textFooter: {
     fontSize: 12,
@@ -39,7 +45,32 @@ const footerMaterialStyles = makeStyles(theme => ({
   socialNetworksDiv: {
     position: 'absolute',
     left: '50%',
-    transform: 'translateX(-50%)'
+    transform: 'translateX(-50%)',
+    display: 'flex',
+  },
+  '@media screen and (max-width: 960px)': {
+    logoFooter: {
+      display: 'none'
+    },
+    socialNetworksDiv: {
+      bottom: 0
+    },
+    divToback: {
+      marginBottom: 70,
+      width: '100%'
+    },
+    divCountry: {
+      width: '100%',
+    },
+    textFooter: {
+      textAlign: 'center',
+    },
+    divider:{
+      marginBottom: 10
+    },
+    titleTextFooter: {
+      textAlign: 'center'
+    },
   }
 }))
 

@@ -7,7 +7,7 @@ export const createTheme = (dark:  boolean) =>
           type: dark ? 'dark' : 'light',
           primary:{
               main: '#7CBAE6',
-              light: '#200F21',
+              light: '#6c6c6c',
               dark: '#9CDAF0'
           },
           secondary: {
@@ -47,10 +47,12 @@ export const createTheme = (dark:  boolean) =>
               right: 0,
             },
             '@media screen and (max-width: 600px)': {
-              '.MuiContainer-root, .MuiContainer-maxWidthLg': {
+              main: {
+                padding: 0
+              },
+              header: {
                 padding: 0,
-                margin: 0,
-              }
+              },
             }
           },
         },

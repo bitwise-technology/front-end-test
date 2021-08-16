@@ -15,6 +15,8 @@ const homeUseStyles = makeStyles(() => ({
   divTitle :{
     paddingRight: 50
   },
+  divItensHome: {
+  },
   imagemNoteSearch: {
     display: 'flex',
     justifyContent: 'flex-end'
@@ -44,6 +46,7 @@ const homeUseStyles = makeStyles(() => ({
     },
     mainTitle : {
       fontSize: '32px',
+      textAlign: 'center'
     },
     containerHome :{
       justifyContent: 'space-evenly',
@@ -57,7 +60,10 @@ const homeUseStyles = makeStyles(() => ({
     divHeaderHome: {
       justifyContent: 'center',
       marginBottom: 50,
-    }
+    },
+    divItensHome: {
+      justifyContent: 'center'
+    },
   },
 }))
 
