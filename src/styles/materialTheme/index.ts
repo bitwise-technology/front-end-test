@@ -45,6 +45,12 @@ export const createTheme = (dark:  boolean) =>
               padding: '0',
               position: 'absolute',
               right: 0,
+            },
+            '@media screen and (max-width: 600px)': {
+              '.MuiContainer-root, .MuiContainer-maxWidthLg': {
+                padding: 0,
+                margin: 0,
+              }
             }
           },
         },

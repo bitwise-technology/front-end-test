@@ -38,10 +38,15 @@ yarn dev
 
 ## Technologies used
 
-    apollo/client: ^3.4.2,
-    material-ui/core: ^4.12.3,
-    material-ui/icons: ^4.11.2,
-    graphql: ^15.5.1,
-    nprogress: ^0.2.0,
-    uuid: ^8.3.2
+    - @apollo/client: ^3.4.2;
+    - @material-ui/core: ^4.12.3;
+    - @material-ui/icons: ^4.11.2;
+    - graphql: ^15.5.1;
+    - next: 11.0.1;
+    - nprogress: ^0.2.0;
+    - react: 17.0.2;
+    - react-dom: 17.0.2;
+    - react-infinite-scroll-component: ^6.1.0;
+    - typescript: ^4.3.5;
+    - uuid: ^8.3.2 .
 

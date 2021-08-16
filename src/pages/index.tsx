@@ -24,46 +24,56 @@ export default function Home() {
         <Image src={Polygon} height="539" width="770" alt="polygon start" />
       </Grid>
       <Grid container direction="column" className={classes.containerHome}>
-        <header className={classes.headerHome}>
-          <Grid container direction='row' alignItems='center' spacing={2}>
-            <Grid item>
-              <Image src={Logo} height="48" width="133" alt="logo Bitwise" />
-            </Grid>
-            <Grid item>
-              <CustomSwitch />
-            </Grid>
-          </Grid>
-        </header>
-        <main>
-          <section>
-            <Grid
-              container
-              direction="row"
-              alignItems="center"
-              justifyContent="space-between"
-            >
-              <Grid className={classes.divTitle}>
-                <Typography
-                  className={classes.mainTitle}
-                  color="primary"
-                  variant="h1"
-                  component="h1"
-                >
-                  Buscar um usuário no <strong>GitHub </strong>ficou muito <strong>fácil!</strong>
-                </Typography>
-                <Input gitButton />
+        <Grid item>
+          <header className={classes.headerHome}>
+            <Grid container direction='row'
+              alignItems='center'
+              spacing={2}
+              classes={{root: classes.divHeaderHome}}>
+              <Grid item xl={6} >
+                <Image src={Logo} height={Logo.height} width={Logo.width} alt="logo Bitwise" />
               </Grid>
-              <Grid>
-                <Image
-                  src={imageApp}
-                  height="403"
-                  width="443"
-                  alt="image App"
-                />
+              <Grid item xl={6}>
+                <CustomSwitch />
               </Grid>
             </Grid>
-          </section>
-        </main>
+          </header>
+        </Grid>
+        <Grid item>
+          <main>
+            <section>
+              <Grid
+                container
+                direction="row"
+                alignItems="center"
+                justifyContent="space-between"
+                spacing={4}
+              >
+                <Grid item md={12} lg={6} className={classes.divTitle}>
+                  <Typography
+                    className={classes.mainTitle}
+                    color="secondary"
+                    variant="h1"
+                    component="h1"
+                  >
+                    Buscar um usuário no <strong>GitHub </strong>ficou muito <strong>fácil!</strong>
+                  </Typography>
+                  <Input gitButton />
+                </Grid>
+                <Grid item md={12} lg={6} classes={{
+                  item: classes.imagemNoteSearch
+                }}>
+                  <Image
+                    src={imageApp}
+                    height="403"
+                    width="443"
+                    alt="image App"
+                  />
+                </Grid>
+              </Grid>
+            </section>
+          </main>
+        </Grid>
       </Grid>
       <Social />
     </>

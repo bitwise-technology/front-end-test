@@ -4,13 +4,20 @@ const homeUseStyles = makeStyles(() => ({
   polygonStart: {
     position: 'absolute',
     right: 0,
-    zIndex: -1
+    zIndex: -1,
   },
   containerHome :{
     height: '92vh',
   },
+  divImageLogo: {
+    display: 'block',
+  },
   divTitle :{
-    width: '44%',
+    paddingRight: 50
+  },
+  imagemNoteSearch: {
+    display: 'flex',
+    justifyContent: 'flex-end'
   },
   mainTitle : {
     fontSize: '42px',
@@ -20,6 +27,37 @@ const homeUseStyles = makeStyles(() => ({
   headerHome :{
     paddingTop: '60px',
     height: '18vh'
+  },
+  divHeaderHome: {
+    display: 'flex'
+  },
+  '@media screen and (max-width: 960px)': {
+    divTitle :{
+      paddingRight: 0
+    },
+    imagemNoteSearch: {
+      justifyContent: 'center',
+      width: '100%'
+    },
+    polygonStart: {
+      display: 'none',
+    },
+    mainTitle : {
+      fontSize: '32px',
+    },
+    containerHome :{
+      justifyContent: 'space-evenly',
+    }
+  },
+  '@media screen and (max-width: 600px)': {
+    mainTitle : {
+      padding: 0,
+      fontSize: '22px',
+    },
+    divHeaderHome: {
+      justifyContent: 'center',
+      marginBottom: 50,
+    }
   },
 }))
 
