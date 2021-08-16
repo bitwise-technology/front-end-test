@@ -32,7 +32,7 @@ function ModalAlert() {
         <Grid>
           <Grid container direction='row' className={classes.divTextModal}>
             <Typography variant='body2'>
-              Enquanto isso, acompanhe a Bitwise nas redes sociais
+              Enquanto isso, acompanhe minhas redes sociais
             </Typography>
             <Social className={classes.socialModal} white />
           </Grid>
