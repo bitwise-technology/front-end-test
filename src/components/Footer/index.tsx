@@ -42,8 +42,8 @@ function Footer() {
           <Grid item md={3} sm={12} classes={{root: classes.divCountry}}>
             <Typography variant='subtitle2' className={classes.titleTextFooter}>BRASIL</Typography>
             <Typography paragraph variant='body2' className={classes.textFooter}>
-              R. Raphael Dias da Silva, 75 3º andar • Sala 306 e 308 Campolim •
-              Sorocaba/SP
+              R. pinheiros, 6650 • Sala 306 e 308 Campolim •
+              souza/PB
             </Typography>
           </Grid>
           <Grid item md={3} sm={12} classes={{root: classes.divCountry}}>
@@ -60,7 +60,7 @@ function Footer() {
         <Grid container justifyContent='space-between' spacing={3}>
           <Grid item md={4} sm={12} classes={{root: classes.divCopyRight}}>
             <Typography variant='body2' className={classes.textFooter}>
-              Todos os direitos reservados - 2020
+              Todos os direitos reservados - 2021
             </Typography>
           </Grid>
           <Grid item md={4} sm={12} className={classes.socialNetworksDiv}>
