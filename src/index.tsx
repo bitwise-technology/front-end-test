@@ -7,10 +7,11 @@ const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
   cache: new InMemoryCache(),
   headers: {
-    Authorization: `Bearer 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`,
+    Authorization: `Bearer ${process.env.REACT_APP_GRAPHQL_KEY}`,
   },
 });
 
+console.log(process.env.REACT_APP_GRAPHQL_KEY)
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
