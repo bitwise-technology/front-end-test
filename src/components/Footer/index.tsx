@@ -6,6 +6,11 @@ import SocialMediaIcons from '../SocialMediaIcons';
 
 const Footer: React.FC = () => {
 
+  function ScrollTop() {
+    window.scrollTo(0, 0);
+    document.getElementById("details")?.scroll({top:0, behavior:'smooth'});
+  }
+
   return (
     <Styled.Container>
       <Styled.Image src={FooterBg} alt="" />
@@ -45,7 +50,7 @@ const Footer: React.FC = () => {
         <SocialMediaIcons/>
 
         <Styled.BackToTopButton
-          onClick={() => window.scrollTo(0, 0)}
+          onClick={ScrollTop}
         >
           Voltar para o topo
         </Styled.BackToTopButton>

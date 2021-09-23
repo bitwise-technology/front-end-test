@@ -41,7 +41,7 @@ function Details() {
 
   
   return (  
-    <Styled.Container>
+    <Styled.Container id="details">
       <Styled.Header>
         <Logo/>
         <view style={{minWidth: '50%'}}>
