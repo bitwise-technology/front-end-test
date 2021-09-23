@@ -36,7 +36,7 @@ function Landing() {
 
     getUser();
     console.log(input);
-  }, [input]);
+  }, [input, getUser]);
 
   return (
     <Styled.Container id="landing-page">

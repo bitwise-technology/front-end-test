@@ -37,7 +37,7 @@ function Details() {
 
     getUser();
     console.log(input);
-  }, [input]);
+  }, [input, getUser]);
 
   
   return (  
