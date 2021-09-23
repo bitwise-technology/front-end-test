@@ -61,4 +61,12 @@ OBS: O Github possui API para busca dos usuários
 - Aplicação de Design Patterns
 - Nível de fidelidade/carinho do desenvolvimento da UI que entregamos no figama
 
+## Como rodar a aplicação 
+
+ - Clone o repositório 
+ - Instale as dependências com `yarn install`
+ - Faça uma cópia do arquivo `.env.example` e renomei-o para `.env`
+ - Adicione seu token de acesso do Github (OAuth access token) na variável `REACT_APP_GITHUB_TOKEN` do arquivo `.env`
+ - Execute o comando `yarn start`
+
 
