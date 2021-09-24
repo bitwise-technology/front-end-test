@@ -8,18 +8,19 @@ import { GetUser } from '../../services/graphQL';
 import { User } from '../../services/models';
 import Footer from '../../components/Footer';
 import * as Styled from './styles';
+import ErrorText from '../../components/Error';
 
 function Details() {
-  const location:any = useLocation();
+  const location: any = useLocation();
   const [input, setInput] = useState<string>('');
   const firstUpdate = useRef(true);
   const [user, setUser] = useState<User>(location.state.user);
-  const [getUser, { error, data}] = useLazyQuery(GetUser, {
+  const [getUser, { error, data }] = useLazyQuery(GetUser, {
     variables: {
       login: input
     },
     onCompleted() {
-      if(data.user) {
+      if (data.user) {
         setUser(data.user);
       }
     }
@@ -30,7 +31,7 @@ function Details() {
   }
 
   useEffect(() => {
-    if(firstUpdate.current) {
+    if (firstUpdate.current) {
       firstUpdate.current = false;
       return;
     }
@@ -39,41 +40,41 @@ function Details() {
     console.log(input);
   }, [input, getUser]);
 
-  
-  return (  
+
+  return (
     <Styled.Container id="details">
       <Styled.Header>
-        <Logo/>
-        <view style={{minWidth: '50%'}}>
+        <Logo />
+        <view style={{ minWidth: '50%' }}>
           <InputBar submit={handleSubmit} />
           {error &&
             <p>{error.message}</p>
           }
         </view>
       </Styled.Header>
-      
+
       <Styled.ProfileContainer>
         <Styled.ProfileImage src={user.avatarUrl} alt="" />
-        
+
         <Styled.NameLabel>
           {user.name}
         </Styled.NameLabel>
 
         <Styled.RepoCountContainer>
-          {user.repositories.totalCount}<br/>
+          {user.repositories.totalCount}<br />
           Repositórios
         </Styled.RepoCountContainer>
       </Styled.ProfileContainer>
 
       <Styled.ReposContainer>
         <Styled.Infos>
-        <Styled.InfosLabel>NOME DO REPOSITÓRIO</Styled.InfosLabel>
-        <Styled.InfosLabel>QTD DE COMMIT</Styled.InfosLabel>
-        <Styled.InfosLabel>MSG ULTIMO COMMIT</Styled.InfosLabel>
-        <Styled.InfosLabel>HASH DO ULTIMO COMMIT</Styled.InfosLabel>
+          <Styled.InfosLabel>NOME DO REPOSITÓRIO</Styled.InfosLabel>
+          <Styled.InfosLabel>QTD DE COMMIT</Styled.InfosLabel>
+          <Styled.InfosLabel>MSG ULTIMO COMMIT</Styled.InfosLabel>
+          <Styled.InfosLabel>HASH DO ULTIMO COMMIT</Styled.InfosLabel>
         </Styled.Infos>
 
-        {
+        {user.repositories &&
           user.repositories.nodes.map((element, index) => {
             return (
               <Repo
@@ -86,11 +87,17 @@ function Details() {
             );
           })
         }
+
+        {!user.repositories &&
+          <ErrorText>
+            Nenhum repositório encontrado!
+          </ErrorText>
+        }
       </Styled.ReposContainer>
-      
-      <Footer/>
+
+      <Footer />
     </Styled.Container>
-  );  
+  );
 }
 
 export default Details;
