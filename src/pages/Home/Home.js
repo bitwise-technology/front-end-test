@@ -5,7 +5,7 @@ import Logo from '../../assets/image/Logo.svg'
 import Polygon from '../../assets/image/Polygon.svg'
 import ImgApp from '../../assets/image/img-app.png'
 import Sociais from '../../assets/image/Sociais.svg'
-import Search from "../Search/search";
+import Search from "../../components/Search/search";
 
 function Header() {
   return (
