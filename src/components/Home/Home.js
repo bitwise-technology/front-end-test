@@ -1,10 +1,11 @@
 import React from "react";
 import "./styled.css";
-import Git from '../../image/git.svg'
-import Logo from '../../image/Logo.svg'
-import Polygon from '../../image/Polygon.svg'
-import ImgApp from '../../image/img-app.png'
-import Sociais from '../../image/Sociais.svg'
+// import Git from '../../assets/image/git.svg'
+import Logo from '../../assets/image/Logo.svg'
+import Polygon from '../../assets/image/Polygon.svg'
+import ImgApp from '../../assets/image/img-app.png'
+import Sociais from '../../assets/image/Sociais.svg'
+import Search from "../Search/search";
 
 function Header() {
   return (
@@ -18,13 +19,7 @@ function Header() {
           Buscar um usuário no <b>Github</b> ficou muito <b>fácil!</b>
         </p>
       </div>
-      <div className='search_case'>
-          <input type="text" className='search' placeholder='Buscar usuário'>
-          </input>
-          <button className='git'>
-              <img src={Git} alt="" />
-          </button>
-      </div>
+      <Search />
       <div className='sociais'>
           <img src={Sociais} alt="Sociais" />
       </div>
