@@ -1,58 +1,70 @@
-import React, { useState } from 'react'
-import Api from '../../services/api'
-import { useHistory } from 'react-router-dom'
+import React, { useState } from "react";
+import Api from "../../services/api";
+import { useHistory } from "react-router-dom";
 
-import Git from '../../assets/image/git.svg'
-import { FiSearch } from 'react-icons/fi'
-import Sociais from '../../assets/image/Sociais.svg'
-import './styled.css'
+import Git from "../../assets/image/git.svg";
+import { FiSearch } from "react-icons/fi";
+import Sociais from "../../assets/image/Sociais.svg";
+import "./styled.css";
 
 function Search() {
-    const history = useHistory()
-    const [user, setUser] = useState()
-    const [error, setError] = useState(false)
+  const history = useHistory();
+  const [user, setUser] = useState();
+  const [error, setError] = useState(false);
 
-    function submitGetUser() {
-      Api.get(`users/${user}/repos`)
-      .then(res => {
-        const repositories = res.data
-        const repositoriesName = []
+  function submitGetUser() {
+    Api.get(`users/${user}/repos`)
+      .then((res) => {
+        const repositories = res.data;
+        const repositoriesName = [];
 
         repositories.map((repository) => {
-          return repositoriesName.push(repository.name, repository.startgazes_count, repository.forks, repository.open_issues)
-        })
-        localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName))
-        setError(false)
-        history.push('./repositories')
+          return repositoriesName.push(
+            repository.name,
+            // repository.commits_url,
+            // repository.comments_url,
+            // repository.issue_comment_url
+          );
+        });
+        localStorage.setItem(
+          "repositoriesName",
+          JSON.stringify(repositoriesName)
+        );
+        setError(false);
+        history.push("./repositories");
       })
 
-      .catch(err => {
-        setError(true)
-      })
-    }
+      .catch((err) => {
+        setError(true);
+      });
+  }
 
-    return (
-        <div className='search_case'>
-          <input type="text" 
-          className='search' 
-          placeholder='Buscar usuário'
-          value={user}
-          onChange={(e) => setUser(e.target.value)}
-          >
-          </input>
-            <FiSearch className='search_icon'/>
-          <button className='git' type='subimit' onClick={submitGetUser}>
-              <img className='git_img' src={Git} alt="" />
-          </button>
-            {error ? 
-            <div className='alert'>
-              <h2>Nenhum usuário encontrado!</h2>
-            <span>Enquanto isso, acompanhe a Bitwise nas redes sociais:
-              <img src={Sociais} alt="sociais" />
-            </span>
-            </div> : '' }
-      </div>
-    )
+  return (
+    <div className="search_case">
+      <input
+        type="text"
+        className="search"
+        placeholder="Buscar usuário"
+        value={user}
+        onChange={(e) => setUser(e.target.value)}
+      ></input>
+      <FiSearch className="search_icon" />
+      <button className="git" type="subimit" onClick={submitGetUser}>
+        <img className="git_img" src={Git} alt="" />
+      </button>
+      {error ? (
+        <div className="alert">
+          <h2>Nenhum usuário encontrado!</h2>
+          <span>
+            Enquanto isso, acompanhe a Bitwise nas redes sociais:
+            <img src={Sociais} alt="sociais" />
+          </span>
+        </div>
+      ) : (
+        ""
+      )}
+    </div>
+  );
 }
 
-export default Search
+export default Search;

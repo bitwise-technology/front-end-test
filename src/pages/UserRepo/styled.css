@@ -1,11 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
+
+body {
+    background: linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 header {
     display: flex;
-    margin: 50px 200px 0 140px;
+    margin: 50px 340px 0 210px;
     justify-content: space-between;
 }
 
@@ -26,4 +33,77 @@ header > input {
     font-size: 19.2px;
 
     color: #4F4F4F;
+}
+
+.btn_back {
+    display: flex;
+    width: 80px;
+    height: 35px;
+    position: absolute;
+    right: 20vh;
+    top: 48px;
+    text-decoration: none;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #fffff0;
+    transition: .3s;
+
+    background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
+}
+
+.btn_back:hover {
+    opacity: 80%;
+}
+
+.wrapper {
+    display: flex;
+    margin-left: 11.5%;
+
+    background: #FFFFFF;
+    border-radius: 6px; 
+}
+.list {
+    width: 280px;
+    margin-right: 50px;
+}
+
+.title {
+    margin-left: 13.6%;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #3D5879;
+}
+.list > h3 {
+    margin:0 0 10% 11%;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    color: #657FA0;
+}
+
+.repository_name {
+    margin: 2% 0 0 13.6%;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    line-height: 51px;
+    /* identical to box height */
+
+    color: #3D5879;
 }
