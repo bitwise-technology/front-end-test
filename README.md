@@ -1,64 +1,70 @@
-# Desafio Frontend - Bem-vindo a Bitwise
+# Getting Started with Create React App
 
-Somos Humanos e amamos trabalhar com pessoas humanas, pode parecer estranha essa frase, mas pense bem nas empresas que você já trabalhou e em algum momento você foi tratado como um robô ou pior como recurso, aqui sabemos que nossos **'wisers'** são a nossa assinatura, cultura e o motivo pelo qual nossa empresa existe.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Nosso modelo de negócios combina projetos de valor compartilhado com consultoria nas tecnologias mais avançadas. Esse desafio é uma oportunidade para fazer parte do nosso time em uma jornada de aprendizado e desenvolvimento!
+## Available Scripts
 
-## Que tipo de pessoas buscamos?
+In the project directory, you can run:
 
-Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que não fiquem presas em paradigmas de programação, pois acreditamos que linguagens, frameworks o SDK's precisam ser escolhidas baseadas na necessidade de cada projeto. E o que isso quer dizer? Simples, quer dizer que nós amamos trabalhar com tecnologias de ponta e quem decidirá as ferramentas a serem utilizadas assim como a composição tecnológica será o time envolvido.
+### `yarn start`
 
-## Instruções para participar
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Crie sua conta no github, caso você não tenha uma
-- Crie um novo fork do repositório do desafio
-- Crie uma nova branch com seu nome-sobrenome
-- Faça um pull request para o nosso repositório quando você terminar o desafio.
-- Envie um email para douglas@bitwise.ltda para te adicionarmos ao time slack do desafio.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## O nosso desafio
+### `yarn test`
 
-Como você irá ver, nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional! 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) que tenha as seguintes features:
+### `yarn build`
 
-- Implementação do campo de busca pelo nome de usuários no github
-- Caso o nome de usuário seja encontrado pela busca, mostrar imagem do perfil do github na pagina principal como está desenhada no Figma
-- Caso o nome de usuário não seja encontrado mostrar um alerta informando que o usuário não existe.
-- Caso o nome de usuário possua ou participe de algum repositório, então mostrar uma lista com 
-  | Quantidade de repositórios do usuário | ( Participação e Repositórios criados pelo usuário )
-  | Nome do Repo | Quantidade de commits do usuário | Mensagem do ultimo commit | Hash do ultimo commit | 
-- Caso o nome de usuário não possua e nem participe de nenhum repositório mostrar um alert informando que o usuário encontrado não possui nenhum repo.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Você pode usar qualquer tipo de tecnologia para entregar o projeto como: ReactJS, VueJS, Ruby on Rails e etc.. Não existe limites ou formas erradas de fazer o projeto. 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-OBS: *É muito importante para analisarmos sua capacidade de adaptação a novas tecnologias que o projeto seja implementado utilizando a **API de GraphQL**, mas se caso você encontre muitos problemas para entender ou implementar o GraphQL, como fallback você pode utilizar a versão **REST** , mas lembre-se, que ao fazer isso você irá perder uma grande quantidade pontos no nosso teste.*
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `yarn eject`
 
-## Interface no figma
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-![](images/interface-example.png) 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Interface: https://www.figma.com/file/QwOji1MvZGBQiK5BCM9lxL/Bitwise-tests?node-id=0%3A1
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### Adicionais
+## Learn More
 
-Caso você consiga completar todas tarefas acima e queira nós mostrar que você manja:
-- Adicione ao campo de busca sugestões de nome de usuários, ou seja, quando usuário começar a digitar "mend" abaixo do campo de busca ira mostrar uma lista de nomes como: "mendos, mendesbarreto, mendeswhat" etc.. e quando usuário clicar em um desses nomes irá executar as atividades descritas acima.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-OBS: O Github possui API para busca dos usuários
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-## O que iremos avaliar?
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-- Adaptação a novos tipos de tecnologias como API de GraphQL do Github
-- Coesão das mensagens dos commits
-- Testes automatizados como (Unit Test, UI Test ...)
-- Estrutura do projeto
-- Nomenclatura de classes, funções e métodos
-- Conhecimento em CI/CD
-- Aplicação de Design Patterns
-- Nível de fidelidade/carinho do desenvolvimento da UI que entregamos no figama
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
