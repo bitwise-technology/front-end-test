@@ -18,12 +18,9 @@ function Search() {
         const repositories = res.data;
         const repositoriesName = [];
 
-        repositories.map((repository) => {
+        repositories.map(() => {
           return repositoriesName.push(
-            repository.name,
-            // repository.commits_url,
-            // repository.comments_url,
-            // repository.issue_comment_url
+            user
           );
         });
         localStorage.setItem(
@@ -47,7 +44,7 @@ function Search() {
         placeholder="Buscar usuário"
         value={user}
         onChange={(e) => setUser(e.target.value)}
-      ></input>
+      />
       <FiSearch className="search_icon" />
       <button className="git" type="subimit" onClick={submitGetUser}>
         <img className="git_img" src={Git} alt="" />

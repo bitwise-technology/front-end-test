@@ -18,17 +18,20 @@ header {
 
 
 header > input {
-    position: absolute;
-    top: 4%;
-    left: 30%;
+    width: 491px;
+    height: 48.84px;
+    background: #FFFFFF;
+    border: 0.872114px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 3.48845px;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .icon_search {
     position: absolute;
-    top: 6.2%;
-    left: 31%;
+    top: 7.6%;
+    left: 34.2%;
 
     font-size: 19.2px;
 

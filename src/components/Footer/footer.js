@@ -35,7 +35,7 @@ function Footer() {
         <div className='rodape'>
             <p>Todos os direitos reservados - 2020</p>
             <img src={Sociais} alt="" />
-            <a href="#">About</a>
+            <a href="#">Voltar ao topo</a>
         </div>
       </div>
     </footer>
