@@ -1,19 +1,12 @@
-import React from 'react'
-import FooterMain from '../FooterMain/FooterMain'
-import Hero from '../Hero/Hero'
-import Logo from '../Logo/Logo'
-import ContainerSection from './styled'
+import React from "react";
+import ContainerSection from "./styled";
 
-export const Container = () => {
+export const Container = ({ children}) => {
   return (
-    <React.Fragment>
-      <ContainerSection>
-          <Logo />
-          <Hero/>
-          <FooterMain />
-      </ContainerSection>
-    </React.Fragment>
-  )
-}
+    <>
+      <ContainerSection>{children}</ContainerSection>
+    </>
+  );
+};
 
-export default Container
+export default Container;
