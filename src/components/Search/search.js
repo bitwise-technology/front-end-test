@@ -26,7 +26,7 @@ function Search() {
         localStorage.setItem(
           "repositoriesName",
           JSON.stringify(repositoriesName)
-        );
+          );
         setError(false);
         history.push("./repositories");
       })
@@ -34,6 +34,11 @@ function Search() {
       .catch((err) => {
         setError(true);
       });
+
+  }
+
+  function closeAlert() {
+    document.getElementById('alertmodal').className = "close";
   }
 
   return (
@@ -46,15 +51,16 @@ function Search() {
         onChange={(e) => setUser(e.target.value)}
       />
       <FiSearch className="search_icon" />
-      <button className="git" type="subimit" onClick={submitGetUser}>
+      <button className="git" id='btnSearch' type="subimit" onClick={submitGetUser}>
         <img className="git_img" src={Git} alt="" />
       </button>
       {error ? (
-        <div className="alert">
+        <div className="alert" id='alertmodal'>
+          <button onClick={closeAlert} className='btnclose'>x</button>
           <h2>Nenhum usuário encontrado!</h2>
           <span>
             Enquanto isso, acompanhe a Bitwise nas redes sociais:
-            <img src={Sociais} alt="sociais" />
+            <img src={Sociais}  alt="sociais" />
           </span>
         </div>
       ) : (

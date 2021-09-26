@@ -9,8 +9,8 @@
     position: absolute;
     width: 64px;
     height: 56px;
-    left: 772px;
-    top: 436px;
+    left: 770px;
+    top: 437px;
     cursor: pointer;
 
     background: #5A3D5C;
@@ -23,6 +23,10 @@
     right: 10.42%;
     top: 25.06%;
     bottom: 8.33%;
+}
+
+.search_case {
+    background-color: #fcfcfc;
 }
 
 .search {
@@ -48,8 +52,8 @@
 
 .search_icon {
     position: absolute;
-    left: 13%;
-    top: 53.1%;
+    left: 12%;
+    top: 48.6%;
     font-size: 19.2px;
 
     color: #4F4F4F;
@@ -59,8 +63,8 @@
     position: absolute;
     width: 600px;
     height: 160px;
-    left: 12.5%;
-    top: 60%;
+    left: 11.5%;
+    top: 55%;
     border-radius: 20px;
     letter-spacing: -1px;
 
@@ -73,7 +77,7 @@
     font-weight: bold;
     font-size: 29px;
     line-height: 60px;
-    margin: 30px 0 0 40px;
+    margin: 5px 0 0 40px;
     
     color: #F0F0F0;
 }
@@ -98,3 +102,15 @@
     width: 75px;
     margin-left: 50px;
 }
+
+.close {
+    display: none;
+}
+
+.btnclose {
+    color: #FFFFFF;
+    background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
+    padding:1rem 0 0 36rem;
+    border-radius: 50%;
+}
+

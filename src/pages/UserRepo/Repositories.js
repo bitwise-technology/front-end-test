@@ -16,19 +16,20 @@ function Repositories() {
     useEffect(() => {
         let repositoriesName = localStorage.getItem('repositoriesName')
         if(repositoriesName != null) {
-            /*repositoriesName = JSON.parse(repositoriesName)*/
+            repositoriesName = JSON.parse(repositoriesName)
             setRepositories(repositoriesName)
             localStorage.clear()
         // }else {
         //     history.push('/')
+            }
+        }, [])
+        if(repositories !== [] ){
+            Api.get(`users/${repositories[0]}/repos`)
+            .then((res) => {
+                setUser(res.data);
+                    })   
         }
-    }, [])
-   
-    Api.get(`users/${repositories[0]}/repos`)
-    .then((res) => {
-        setUser(res.data);
-    })  
-
+        console.log()
     return (
         <>
         <header>
@@ -54,7 +55,7 @@ function Repositories() {
                 <h3>Qtd de commit</h3>
                 {user.map(repository=> {
                     return (
-                        <div className='repository_name'><p>{repository.size}</p></div>
+                        <div className='repository_name'><p>{repository.id}</p></div>
                     )
                 })}
             </div>

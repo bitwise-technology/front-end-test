@@ -30,8 +30,8 @@ header > input {
 
 .icon_search {
     position: absolute;
-    top: 7.6%;
-    left: 34.2%;
+    top: 6.8%;
+    left: 35.8%;
 
     font-size: 19.2px;
 
@@ -44,7 +44,7 @@ header > input {
     height: 35px;
     position: absolute;
     right: 20vh;
-    top: 48px;
+    top: 57px;
     text-decoration: none;
     border-radius: 10px;
     align-items: center;
