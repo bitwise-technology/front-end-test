@@ -7,15 +7,8 @@ const Footermain = styled.footer `
   justify-content: center;
   align-items: flex-end;
   position: relative;
-  //border: 1px solid blue;
+ // border: 1px solid blue;
   bottom: -12%;
-
-  img {
-    width: 100%;
-    max-width: 32px;
-    cursor: pointer;
-    margin-left: 16px;
-  }
 `
 
 export default Footermain 
