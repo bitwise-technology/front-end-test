@@ -1,19 +1,20 @@
-import React from 'react'
-import HeroImage from '../HeroImage/HeroImage'
-import TituloHero from '../TituloHero/TituloHero'
-import InputHero from '../InputHero/InputHero'
-import HeroSection from './styled'
+import React from "react";
+import HeroImage from "../HeroImage/HeroImage";
+import TituloHero from "../TituloHero/TituloHero";
+import InputHero from "../InputHero/InputHero";
+import HeroSection from "./styled";
 
-const Hero = () => {
+const Hero = ({ userName, updateUserName }) => {
+
   return (
-    <React.Fragment>
+    <>
       <HeroSection>
         <TituloHero />
         <HeroImage />
-       <InputHero />
+        <InputHero primary={true} userName={userName} updateUserName={updateUserName} />
       </HeroSection>
-    </React.Fragment>
-  )
-}
+    </>
+  );
+};
 
-export default Hero
+export default Hero;
