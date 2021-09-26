@@ -4,9 +4,9 @@ import Heroimg from './styled'
 
 const HeroImage = () => {
   return (
-    <React.Fragment>
+    <>
       <Heroimg  src={HeroImg}/>
-    </React.Fragment>
+    </>
   )
 }
 
