@@ -1,10 +1,8 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const ImgLogo = styled.img `
-  width: 100%;
-  max-width: 135px;
-  height: 48px;
-  margin: 60px;
-`
+export const LogoWrapper = styled(Link)`
+  padding: 60px 60px;
+  display: inline-block;
+`;
 
-export default ImgLogo

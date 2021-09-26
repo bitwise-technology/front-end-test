@@ -1,14 +1,14 @@
-import React from 'react'
-import logoSvg from '../../svg/Logo.svg'
-import ImgLogo from './styled'
+import React from "react";
 
-const Logo = () => {
-  const descricaoLogo = 'Essa é a logo'
+import { LogoWrapper } from "./styled";
+
+const Logo = ({ src }) => {
+  const descricaoLogo = "Bitwise Tecnology";
   return (
-    <React.Fragment>
-      <ImgLogo src={logoSvg} alt={descricaoLogo} />
-    </React.Fragment>
-  )
-}
+    <LogoWrapper to="/">
+      <img src={src} alt={descricaoLogo} />
+    </LogoWrapper>
+  );
+};
 
-export default Logo
+export default Logo;
