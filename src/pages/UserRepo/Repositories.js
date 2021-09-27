@@ -1,87 +1,118 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 // import { useHistory } from 'react-router-dom'
-import { FiSearch } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import Api from '../../services/api'
+import { FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import Api from "../../services/api";
 
-import Logo from '../../assets/image/Logo.svg'
-import Sociais from '../../assets/image/Sociais.svg'
-import './styled.css'
+import Logo from "../../assets/image/Logo.svg";
+import Sociais from "../../assets/image/Sociais.svg";
+import "./styled.css";
 
 function Repositories() {
-    // const history = useHistory()
-    const [repositories, setRepositories] = useState([])
-    const [user, setUser] = useState([])
+  // const history = useHistory()
+  const [repositories, setRepositories] = useState([]);
+  const [user, setUser] = useState([]);
+  const [avatar, setAvatar] = useState([]);
 
-    useEffect(() => {
-        let repositoriesName = localStorage.getItem('repositoriesName')
-        if(repositoriesName != null) {
-            repositoriesName = JSON.parse(repositoriesName)
-            setRepositories(repositoriesName)
-            localStorage.clear()
-        // }else {
-        //     history.push('/')
-            }
-        }, [])
-        if(repositories !== [] ){
-            Api.get(`users/${repositories[0]}/repos`)
-            .then((res) => {
-                setUser(res.data);
-                    })   
-        }
-        console.log()
-    return (
-        <>
-        <header>
-            <img src={Logo} alt="logo" />
-            <input type="text" 
-            placeholder='Buscar usuário' />
-            <img src={Sociais} alt="Sociais" />
-            <FiSearch className='icon_search'/>
-        </header>
-            <Link className='btn_back' to="/">Voltar</Link>
-                <h2 className='title'>Titulo</h2>
-            <div className='wrapper'>
-            <div className='list'>
-                <h3>Nome do repositório</h3>
-                {user.map(repository=> {
-                    return (
-                        <div className='repository_name'>{repository.name}</div>
-                    )
-                })}
-            </div>
+  useEffect(() => {
+    let userName = localStorage.getItem("repositoriesName");
+    if (userName != null) {
+      userName = JSON.parse(userName);
+      setUser(userName);
+      localStorage.clear();
+      // }else {
+      //     history.push('/')
+    }
+  }, []);
 
-            <div className='list'>
-                <h3>Qtd de commit</h3>
-                {user.map(repository=> {
-                    return (
-                        <div className='repository_name'><p>{repository.id}</p></div>
-                    )
-                })}
-            </div>
+  useEffect(() => {
+    if (user !== []) {
+      Api.get(`users/${user[0]}/repos`).then((res) => {
+        setRepositories(res.data);
+      });
+    }
+  }, [user]);
 
-            <div className='list'>
-                <h3>Msg Ultimo commit</h3>
-                {user.map(repository=> {
-                    return (
-                        
-                        <div className='repository_name'>ola</div>
-                        
-                    )
-                })}
-            </div>
+  useEffect(() => {
+    if (user !== []) {
+      Api.get(`users/${user[0]}`).then((res) => {
+        setAvatar(res.data);
+      });
+    }
+  }, [user]);
 
-            <div className='list'>
-                <h3>hash do ultimo commit</h3>
-                {user.map(repository=> {
-                    return (
-                        <div className='repository_name'>gladson</div>
-                    )
-                })}
-            </div>
-            </div>
+  return (
+    <>
+      <header>
+        <img src={Logo} alt="logo" />
+        <input type="text" placeholder="Buscar usuário" />
+        <img src={Sociais} alt="Sociais" />
+        <FiSearch className="icon_search" />
+      </header>
+      <Link className="btn_back" to="/">
+        Voltar
+      </Link>
+
+      <div className="user">
+        <img src={avatar.avatar_url} alt="" />
+        <div>
+          <p className="userName">{avatar.name}</p>
+          <div className="repositorios">
+            {avatar.public_repos}
+            <div className="detail" />
+            <p>Repositorios</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="title">Titulo</h2>
+      <div className="wrapper">
+        <div className="list">
+          <h3>Nome do repositório</h3>
+          {repositories.map((repository) => {
+            return <div className="repository_name">{repository.name}</div>;
+          })}
+        </div>
+
+        <div className="list">
+          <h3>Tamanho</h3>
+          {repositories.map((repository) => {
+            return (
+              <div className="repository_name">
+                <p>{repository.size} MB</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="list">
+          <h3>Forks</h3>
+          {repositories.map((repository) => {
+            return (
+              <div className="repository_name">
+                {repository.forks !== 0
+                  ? repository.forks
+                  : "Sem Forks"}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="list">
+          <h3>Issues abertas</h3>
+          {repositories.map((repository) => {
+            return (
+              <div className="repository_name">
+                {repository.open_issues_count !== 0
+                  ? repository.open_issues_count
+                  : "Nenhuma issue aberta"}
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </>
-    )
+  );
 }
 
-export default Repositories
+export default Repositories;

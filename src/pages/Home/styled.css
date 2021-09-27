@@ -1,74 +1,74 @@
 * {
-    margin: 0;
-	padding: 0;
-	border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 @font-face {
-    font-family: 'Gotham';
-    src: url('/src/assets/fonts/Gotham-Font/Gotham-Light.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Gotham";
+  src: url("/src/assets/fonts/Gotham-Font/Gotham-Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .logo {
-    position: absolute;
-    left: 12%;
-    right: 80.35%;
-    top: 10%;
-    bottom: 86.08%;
-
+  position: absolute;
+  left: 12%;
+  right: 80.35%;
+  top: 10%;
+  bottom: 86.08%;
 }
 
 .container > img {
-    width: 110%;
+  width: 110%;
 }
 
-.logo, h3 {
-    padding: 19.3px 0 0 8px;
-    font-size:9px;
-    letter-spacing: 4px;
+.logo,
+h3 {
+  padding: 19.3px 0 0 8px;
+  font-size: 9px;
+  letter-spacing: 4px;
 }
 
 .content {
-    position: absolute;
-    width: 806px;
-    height: 100px;
-    left: 11.5%;
-    top: 249px;
+  position: absolute;
+  width: 806px;
+  height: 100px;
+  left: 11.5%;
+  top: 249px;
 
-    font-family: 'Gotham';
-    font-size: 62px;
-    line-height: 50px;
-    /* or 119% */
+  font-family: "Gotham";
+  font-size: 62px;
+  line-height: 50px;
+  /* or 119% */
 
-    letter-spacing: -3px;
+  letter-spacing: -3px;
 
-    /* Secondary */
+  /* Secondary */
 
-    color: #5A3D5C;
+  color: #5a3d5c;
 }
 
 .sociais {
-    position: absolute;
-    width: 5.4vw;
-    height: 2.8vh;
-    left: 900px;
-    top: 780px;
+  position: absolute;
+  width: 5.4vw;
+  height: 2.8vh;
+  left: 900px;
+  top: 780px;
 }
 
 .container {
-    position: absolute;
-    width: 925px;
-    height: 647px;
-    left: 47%;
-    top: 0px;
+  position: absolute;
+  width: 925px;
+  height: 647px;
+  left: 47%;
+  top: 0px;
 }
 
 .container__image {
-    position: absolute;
-    width: 443px;
-    height: 406px;
-    left: 35%;
-    top: 164px;
+  position: absolute;
+  width: 443px;
+  height: 406px;
+  left: 35%;
+  top: 164px;
 }

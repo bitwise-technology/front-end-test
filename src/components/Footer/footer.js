@@ -7,7 +7,7 @@ import Sociais from "../../assets/image/Sociais.svg";
 
 function Footer() {
   return (
-    <footer  className='footer'>
+    <footer className="footer">
       <div className="separator" />
       <div className="contant">
         <div className="section">
@@ -31,11 +31,11 @@ function Footer() {
             <p>830, Av. Ernest-Gagnon, Bureau 315, Sala 609 Quebec </p>
           </div>
         </div>
-        <div className='line'/>
-        <div className='rodape'>
-            <p>Todos os direitos reservados - 2020</p>
-            <img src={Sociais} alt="" />
-            <a href="#">Voltar ao topo</a>
+        <div className="line" />
+        <div className="rodape">
+          <p>Todos os direitos reservados - 2020</p>
+          <img src={Sociais} alt="" />
+          <a href="#">Voltar ao topo</a>
         </div>
       </div>
     </footer>

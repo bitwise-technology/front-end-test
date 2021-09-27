@@ -1,116 +1,116 @@
 @font-face {
-    font-family: 'Futura Bk BT';
-    src: url('/src/assets/fonts/Futura_bk_bt/FutuBkIt.ttf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Futura Bk BT";
+  src: url("/src/assets/fonts/Futura_bk_bt/FutuBkIt.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .git {
-    position: absolute;
-    width: 64px;
-    height: 56px;
-    left: 770px;
-    top: 437px;
-    cursor: pointer;
+  position: absolute;
+  width: 64px;
+  height: 56px;
+  left: 770px;
+  top: 437px;
+  cursor: pointer;
 
-    background: #5A3D5C;
-    border-radius: 2px;
+  background: #5a3d5c;
+  border-radius: 2px;
 }
 
-.git_img{
-    position: absolute;
-    left: 32.33%;
-    right: 10.42%;
-    top: 25.06%;
-    bottom: 8.33%;
+.git_img {
+  position: absolute;
+  left: 32.33%;
+  right: 10.42%;
+  top: 25.06%;
+  bottom: 8.33%;
 }
 
 .search_case {
-    background-color: #fcfcfc;
+  background-color: #fcfcfc;
 }
 
 .search {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .search {
-    margin: 27.3rem 0 0 13rem;
-    width: 563px;
-    height: 56px;
+  margin: 27.3rem 0 0 13rem;
+  width: 563px;
+  height: 56px;
 
-    /* White */
+  /* White */
 
-    background: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
-.search, input[type=text]{
-    padding-left: 50px;
+.search,
+input[type="text"] {
+  padding-left: 50px;
 }
 
 .search_icon {
-    position: absolute;
-    left: 12%;
-    top: 48.6%;
-    font-size: 19.2px;
+  position: absolute;
+  left: 12%;
+  top: 48.6%;
+  font-size: 19.2px;
 
-    color: #4F4F4F;
+  color: #4f4f4f;
 }
 
 .alert {
-    position: absolute;
-    width: 600px;
-    height: 160px;
-    left: 11.5%;
-    top: 55%;
-    border-radius: 20px;
-    letter-spacing: -1px;
+  position: absolute;
+  width: 600px;
+  height: 160px;
+  left: 11.5%;
+  top: 55%;
+  border-radius: 20px;
+  letter-spacing: -1px;
 
-    background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
+  background: linear-gradient(90deg, #a51c92 0%, #f638dc 100%);
 }
 
 .alert > h2 {
-    font-family: 'Gotham';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 29px;
-    line-height: 60px;
-    margin: 5px 0 0 40px;
-    
-    color: #F0F0F0;
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29px;
+  line-height: 60px;
+  margin: 5px 0 0 40px;
+
+  color: #f0f0f0;
 }
 
 .alert > span {
-    font-family: 'Futura Bk BT';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    margin: 10px 0 0 40px;
-    /* or 286% */
+  font-family: "Futura Bk BT";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  margin: 10px 0 0 40px;
+  /* or 286% */
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    /* White */
+  /* White */
 
-    color: #F0F0F0;
+  color: #f0f0f0;
 }
 
 .alert > span > img {
-    width: 75px;
-    margin-left: 50px;
+  width: 75px;
+  margin-left: 50px;
 }
 
 .close {
-    display: none;
+  display: none;
 }
 
 .btnclose {
-    color: #FFFFFF;
-    background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
-    padding:1rem 0 0 36rem;
-    border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(90deg, #a51c92 0%, #f638dc 100%);
+  padding: 1rem 0 0 36rem;
+  border-radius: 50%;
 }
-
