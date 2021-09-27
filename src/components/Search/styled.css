@@ -5,67 +5,56 @@
   font-style: normal;
 }
 
-.git {
-  position: absolute;
+.gitBtn {
   width: 64px;
   height: 56px;
-  left: 770px;
-  top: 437px;
+  margin: 0 0 0 33.2rem;
   cursor: pointer;
 
   background: #5a3d5c;
   border-radius: 2px;
 }
 
-.git_img {
-  position: absolute;
-  left: 32.33%;
-  right: 10.42%;
-  top: 25.06%;
-  bottom: 8.33%;
-}
-
 .search_case {
-  background-color: #fcfcfc;
+  background: #ffffff;
 }
 
-.search {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.search {
+.search_case_input {
+  display: flex;
   margin: 27.3rem 0 0 13rem;
+}
+
+.search_input {
+  
   width: 563px;
   height: 56px;
-
+  
   /* White */
-
+  
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: #ffffff;
   border: 1px solid #ffffff;
   box-sizing: border-box;
   border-radius: 4px;
 }
 
-.search,
+.search_input,
 input[type="text"] {
   padding-left: 50px;
 }
 
 .search_icon {
-  position: absolute;
-  left: 12%;
-  top: 48.6%;
+  margin: 1.1rem 0 0 -34.4rem;
   font-size: 19.2px;
+  z-index: 2;
 
   color: #4f4f4f;
 }
 
 .alert {
-  position: absolute;
+  margin: 2rem 0 0 13.5rem;
   width: 600px;
   height: 160px;
-  left: 11.5%;
-  top: 55%;
   border-radius: 20px;
   letter-spacing: -1px;
 
@@ -77,8 +66,8 @@ input[type="text"] {
   font-style: normal;
   font-weight: bold;
   font-size: 29px;
-  line-height: 60px;
-  margin: 5px 0 0 40px;
+  line-height: 40px;
+  margin: 0 0 0 5rem;
 
   color: #f0f0f0;
 }
@@ -88,7 +77,7 @@ input[type="text"] {
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
-  margin: 10px 0 0 40px;
+  margin: 1.2rem 0 0 7rem;
   /* or 286% */
 
   display: flex;
@@ -110,7 +99,44 @@ input[type="text"] {
 
 .btnclose {
   color: #ffffff;
-  background: linear-gradient(90deg, #a51c92 0%, #f638dc 100%);
-  padding: 1rem 0 0 36rem;
+  background: linear-gradient(90deg, #a51c92 0%, #f638dc 0%);
+  margin: 0 0 0 35rem;
   border-radius: 50%;
+}
+
+@media (max-width: 825px) {
+
+    .search_case_input {
+      display: flex;
+      margin: 20rem 0 0 0;
+    }
+
+    .sociais {
+      margin: 20rem 0 0 10.5em;
+    }
+
+    .search {
+      width: 250px;
+      height: 3.5rem;
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      box-sizing: border-box;
+      border-radius: 4px;
+      margin: 0 3.7rem 0 2.69rem;
+  }
+
+  .gitBtn {
+    width: 64px;
+    height: 56px;
+    margin-left: 472px;
+    /* margin: 0 5px 0 36.2rem; */
+    cursor: pointer;
+    background: #5a3d5c;
+    border-radius: 2px;
+  }
+
+  .alert {
+    width: 100%;
+    height: 100%;
+  }
 }

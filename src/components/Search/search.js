@@ -40,22 +40,25 @@ function Search() {
 
   return (
     <div className="search_case">
-      <input
+      <div className='search_case_input'>
+        <input
         type="text"
-        className="search"
+        className="search_input"
         placeholder="Buscar usuário"
         value={user}
         onChange={(e) => setUser(e.target.value)}
-      />
+       ></input>
       <FiSearch className="search_icon" />
       <button
-        className="git"
+        className="gitBtn"
         id="btnSearch"
         type="subimit"
         onClick={submitGetUser}
       >
-        <img className="git_img" src={Git} alt="" />
+        <img src={Git} alt="git_image" />
       </button>
+
+      </div>
       {error ? (
         <div className="alert" id="alertmodal">
           <button onClick={closeAlert} className="btnclose">

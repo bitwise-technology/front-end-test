@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
 import Api from "../../services/api";
 
 import Logo from "../../assets/image/Logo.svg";
@@ -10,7 +11,7 @@ import Sociais from "../../assets/image/Sociais.svg";
 import "./styled.css";
 
 function Repositories() {
-  // const history = useHistory()
+  const history = useHistory()
   const [repositories, setRepositories] = useState([]);
   const [user, setUser] = useState([]);
   const [avatar, setAvatar] = useState([]);
@@ -21,25 +22,24 @@ function Repositories() {
       userName = JSON.parse(userName);
       setUser(userName);
       localStorage.clear();
-      // }else {
-      //     history.push('/')
+      }else {
+          history.push('/')
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (user !== []) {
-      Api.get(`users/${user[0]}/repos`).then((res) => {
-        setRepositories(res.data);
-      });
-    }
+    setTimeout(function(){ 
+        Api.get(`users/${user[0]}/repos`).then((res) => {
+          setRepositories(res.data);
+        });
+    }, 500)
   }, [user]);
 
   useEffect(() => {
-    if (user !== []) {
       Api.get(`users/${user[0]}`).then((res) => {
         setAvatar(res.data);
       });
-    }
   }, [user]);
 
   return (
@@ -53,7 +53,6 @@ function Repositories() {
       <Link className="btn_back" to="/">
         Voltar
       </Link>
-    
       <div className="user">
         <img src={avatar.avatar_url} alt="" />
         <div>
@@ -66,7 +65,8 @@ function Repositories() {
         </div>
       </div>
 
-      <h2 className="title">Titulo</h2>
+
+        <h2 className="title">Titulo</h2>
       <div className="wrapper">
         <div className="list">
           <h3>Nome do repositório</h3>
@@ -76,11 +76,11 @@ function Repositories() {
         </div>
 
         <div className="list">
-          <h3>Tamanho</h3>
+          <h3>Linguagem</h3>
           {repositories.map((repository) => {
             return (
               <div className="repository_name">
-                <p>{repository.size} MB</p>
+                <p>{repository.language}</p>
               </div>
             );
           })}

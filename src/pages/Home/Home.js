@@ -24,9 +24,9 @@ function Header() {
         <img src={Sociais} alt="Sociais" />
       </div>
       <div className="container">
-        <img src={Polygon} alt="" />
+        <img src={Polygon} alt="imgage_body" />
         <div className="container__image">
-          <img src={ImgApp} alt="" />
+          <img src={ImgApp} alt="background_image" />
         </div>
       </div>
     </>

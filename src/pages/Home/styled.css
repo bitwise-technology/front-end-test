@@ -4,6 +4,10 @@
   border: 0;
 }
 
+body {
+  background: #ffffff;
+}
+
 @font-face {
   font-family: "Gotham";
   src: url("/src/assets/fonts/Gotham-Font/Gotham-Light.otf") format("opentype");
@@ -20,7 +24,7 @@
 }
 
 .container > img {
-  width: 110%;
+  width: 52.35vw;
 }
 
 .logo,
@@ -51,11 +55,11 @@ h3 {
 
 .sociais {
   position: absolute;
-  width: 5.4vw;
-  height: 2.8vh;
-  left: 900px;
-  top: 780px;
-}
+  width: 94px;
+  height: 24px;
+  left: 800px;
+  top: 865px;
+  }
 
 .container {
   position: absolute;
@@ -66,9 +70,52 @@ h3 {
 }
 
 .container__image {
-  position: absolute;
-  width: 443px;
+  margin: -34rem 0 0 20rem;
   height: 406px;
-  left: 35%;
-  top: 164px;
+  width: 443px;
+}
+
+@media (max-width: 825px) {
+  
+  .container{
+    width: 53%;
+    padding-right: 0px;
+  }
+
+  .container > img {
+    width: 100%;
+  }
+  .container__image{
+    display: none;
+  }
+    .logo,
+  h3 {
+    padding: 10px 0 0 6px;
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 10px;
+
+    font-family: "Gotham";
+    font-size: 30px;
+    line-height: 50px;
+    /* or 119% */
+
+    letter-spacing: -3px;
+
+    /* Secondary */
+
+    color: #5a3d5c;
+  }
+
+  .sociais {
+    display: none;
+  }
+
 }
