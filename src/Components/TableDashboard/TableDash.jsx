@@ -16,14 +16,27 @@ const TableDash = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data?.repositories?.list?.length && data?.repositories?.list.map((repo, index) => (
-            <tr key={index}>
-              <td>{repo.name}</td>
-              <td>{repo.refs.edges[0]?.repo?.target?.commits?.totalCommits}</td>
-              <td>{repo.refs.edges[0]?.repo?.target?.commits?.lastCommit[0].node.title}</td>
-              <td>{repo.refs.edges[0]?.repo?.target?.commits?.lastCommit[0].node.hash}</td>
-            </tr>
-          ))}
+          {data?.repositories?.list?.length &&
+            data?.repositories?.list.map((repo, index) => (
+              <tr key={index}>
+                <td>{repo.name}</td>
+                <td>
+                  {repo.refs.edges[0]?.repo?.target?.commits?.totalCommits}
+                </td>
+                <td>
+                  {
+                    repo.refs.edges[0]?.repo?.target?.commits?.lastCommit[0]
+                      .node.title
+                  }
+                </td>
+                <td>
+                  {
+                    repo.refs.edges[0]?.repo?.target?.commits?.lastCommit[0]
+                      .node.hash
+                  }
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </Table>
