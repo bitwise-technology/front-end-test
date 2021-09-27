@@ -63,11 +63,26 @@ header > img {
 
 .wrapper {
   display: flex;
+  width: 90rem;
+  height: 30rem;
   margin-left: 11.5%;
+
+  overflow-y: scroll;
 
   background: #ffffff;
   border-radius: 6px;
 }
+
+.wrapper::-webkit-scrollbar {
+  width: 10px; 
+  border-radius: 3px; 
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background: #ADB6C0;
+  border-radius: 3px;
+}
+
 .list {
   width: 280px;
   margin-right: 50px;

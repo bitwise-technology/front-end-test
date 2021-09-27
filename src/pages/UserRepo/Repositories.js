@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Api from "../../services/api";
 
 import Logo from "../../assets/image/Logo.svg";
+import Footer from '../../components/Footer/footer'
 import Sociais from "../../assets/image/Sociais.svg";
 import "./styled.css";
 
@@ -44,7 +45,7 @@ function Repositories() {
   return (
     <>
       <header>
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo"/>
         <input type="text" placeholder="Buscar usuário" />
         <img src={Sociais} alt="Sociais" />
         <FiSearch className="icon_search" />
@@ -52,7 +53,7 @@ function Repositories() {
       <Link className="btn_back" to="/">
         Voltar
       </Link>
-
+    
       <div className="user">
         <img src={avatar.avatar_url} alt="" />
         <div>
@@ -111,6 +112,7 @@ function Repositories() {
           })}
         </div>
       </div>
+        <Footer />
     </>
   );
 }
