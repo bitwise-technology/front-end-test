@@ -26,7 +26,12 @@ const InputHero = ({ primary = true, userName, updateUserName }) => {
         }
       />
       {primary && (
-        <SearchButton onClick={() =>{ updateUserName(username);  navigate("/Dashboard")}}>
+        <SearchButton
+          onClick={() => {
+            updateUserName(username);
+            navigate("/Dashboard");
+          }}
+        >
           <img src={githubIcon} alt="Octocat do GitHub" />
         </SearchButton>
       )}
