@@ -6,7 +6,6 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./reset.css";
 
-
 const queryClient = new QueryClient();
 const history = createBrowserHistory();
 
@@ -14,7 +13,7 @@ ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter history={history}>
-      <App />
+        <App />
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>,
