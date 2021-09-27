@@ -4,7 +4,7 @@ import useDebounce from "./hooks/useDebounce";
 import { gql, GraphQLClient } from "graphql-request";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home.jsx";
-import Dashboard from "./Pages/Dashborad/Dashoborad.jsx";
+import Dashboard from "./Pages/Dashboard/Dashoboard.jsx";
 
 function App() {
   const [username, setUsername] = useState("");
