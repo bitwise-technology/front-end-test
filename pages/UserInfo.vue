@@ -47,16 +47,19 @@
 <script>
 import UserSearchInput from '~/components/UserSearchInput.vue';
 import SocialMediaIcons from '~/components/SocialMediaIcons.vue';
+import Alert from '~/components/Alert.vue';
 
 export default {
   components: {
     UserSearchInput,
     SocialMediaIcons,
+    Alert,
   },
   data() {
     return {
       user: null,
       modal: false,
+      error: null,
     }
   },
   watch: {
@@ -71,13 +74,13 @@ export default {
     async getUser() {
       this.modal = false;
       
-      const login = this.$route.query.user;
+      const login = this.$route?.query.user;
       const endpoint = "https://api.github.com/graphql";
       const headers = {
         "Authorization": `bearer ${process.env.token}`,
         "Accept": "application/vnd.github.v3+json"
       };
-      ;
+
       const graphqlQuery = {
         "query": `{
           user(login: "${login}") {
@@ -115,14 +118,14 @@ export default {
 
       const response = await fetch(endpoint, options);
       await response.json().then(res => {
-        if (res.data.user.repositories.nodes?.length === 0) {
+        if (res.data.user?.repositories.nodes?.length === 0) {
           this.modal = true;
         }
 
         this.user = res.data.user;
       })
       .catch(err => {
-        console.log(err);
+        this.error = err;
       })
       .finally(() => (this.isLoading = false))
     },
@@ -139,7 +142,7 @@ export default {
 }
 
 .userInfo .social-media {
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: 30px;
   position: absolute;
   right: 0;
@@ -184,7 +187,7 @@ export default {
 .userInfo .repositories-quantity {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 @media (min-width: 600px) {

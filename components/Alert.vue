@@ -20,10 +20,10 @@
           </v-col>
         </v-row>
         <v-row class="social-media">
-          <v-col cols="12">
+          <v-col cols="12" md="6">
             <label> Enquanto isso, acompanhe a Bitwise nas redes sociais: </label>
           </v-col>
-          <v-col cols="12" class="mr-n12">
+          <v-col cols="12" md="6" class="mr-n12">
             <SocialMediaIcons :color-white="true" />
           </v-col>
         </v-row>
@@ -97,7 +97,6 @@ export default {
   margin: 16px 0 8px 20px;
   text-align: center;
 }
-
 @media (min-width: 600px) {
   .Alert {
     background: linear-gradient(90deg, #A51C92 0%, #F638DC 100%);
@@ -114,6 +113,7 @@ export default {
   .Alert .social-media {
     margin: 16px 0 8px 20px;
     align-items: center;
+    text-align: right;
   }
 }
 

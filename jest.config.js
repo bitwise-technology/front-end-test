@@ -3,6 +3,8 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
     '^vue$': 'vue/dist/vue.common.js',
+    'vuetify/lib(.*)': '<rootDir>/node_modules/vuetify/es5$1',
+    '\\.(css|less)$': '<rootDir>/test/mocks/styleMock.js',
   },
   moduleFileExtensions: ['js', 'vue', 'json'],
   transform: {
@@ -15,4 +17,5 @@ module.exports = {
     '<rootDir>/pages/**/*.vue',
   ],
   testEnvironment: 'jsdom',
+  setupFiles: ['<rootDir>/test/mocks/setup.js'],
 }

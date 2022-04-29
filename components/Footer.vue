@@ -151,7 +151,7 @@ export default {
   }
   .Footer .logo-container {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
   .Footer .copyright {
     text-align: right;

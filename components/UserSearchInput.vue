@@ -15,7 +15,7 @@
       item-value="login"
       solo>
       <template #item="{ item }">
-        <v-list-item-title @click="userInfo(item.login)" v-text="item.name"></v-list-item-title>
+        <v-list-item-title class="list-item-user" @click="userInfo(item.login)" v-text="item.name"></v-list-item-title>
       </template>
       <template #append>
         <div v-if="githubButton" class="github-icon" @click="getUsers()">
@@ -35,8 +35,8 @@
 
 <script>
 
-import Vue from 'vue'
-import vueDebounce from 'vue-debounce'
+import Vue from 'vue';
+import vueDebounce from 'vue-debounce';
 import Alert from '~/components/Alert.vue';
 
 Vue.use(vueDebounce);
@@ -57,6 +57,7 @@ export default {
       users: [],
       isLoading: false,
       modal: false,
+      error: null,
     }
   },
   methods: {
@@ -100,15 +101,15 @@ export default {
 
       const response = await fetch(endpoint, options);
       await response.json().then(res => {
-        if (res.data.search.nodes?.length === 0) {
+        if (res?.data?.search?.nodes?.length === 0) {
           this.modal = true;
           return;
         }
 
-        this.users = res.data.search.nodes;
+        this.users = res?.data.search.nodes;
       })
       .catch(err => {
-        console.log(err);
+        this.error = err;
       })
       .finally(() => (this.isLoading = false))
     },

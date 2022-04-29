@@ -42,8 +42,7 @@ export default {
     SocialMediaIcons,
   },
   data () {
-    return {
-    }
+    return {}
   }
 }
 </script>

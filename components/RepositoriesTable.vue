@@ -4,7 +4,7 @@
       <table class="table">
         <tr class="table-title">
           <th class="pa-7 text-left" colspan="4">
-            Repositórios de {{ user.name }}
+            Repositórios de {{ user && user.name }}
           </th>
         </tr>
         <tr class="table-headers">
@@ -14,11 +14,11 @@
           <th>Hash do Ultimo Commit</th>
         </tr>
         <tr
-          v-for="(repository, key) in user.repositories.nodes"
+          v-for="(repository, key) in (user && user.repositories.nodes)"
           :key="key"
           class="table-body"
         >
-          <td>{{ repository.name }}</td>
+          <td>{{ repository && repository.name }}</td>
           <td>{{ repository.defaultBranchRef && repository.defaultBranchRef.target && repository.defaultBranchRef.target.history.totalCount }}</td>
           <v-tooltip left>
             <template #activator="{ on, attrs }">
@@ -51,8 +51,7 @@ export default {
     },
   },
   data() {
-    return {
-    }
+    return {}
   },
 }
 
