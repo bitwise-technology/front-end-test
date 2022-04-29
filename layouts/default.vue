@@ -22,11 +22,8 @@ export default {
 
 <style scoped>
 .LayoutDefault .bg {
-  position: absolute;
-  width: 100%;
   height: 100%;
-  left: 0px;
-  top: 0px;
+  width: 100%;
   background: linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%);
 }
 

@@ -99,9 +99,9 @@ export default {
     margin-top: 100px;
   }
   .Home .triangle-bg-img {
-    position: absolute;
-    width: 1150px;
-    height: 800px;
+    position: fixed;
+    width: 60%;
+    height: 80%;
     right: 0;
     top: 0;
     background: url('~/static/home-triangle-bg.jpg');
@@ -109,11 +109,11 @@ export default {
     clip-path: polygon(0% 0, 100% 0%, 100% 100%);
   }
   .Home .app-img {
-    position: absolute;
-    width: 443px;
-    height: 406px;
-    left: 1170px;
-    top: 210px;
+    position: fixed;
+    width: 450px;
+    height: 400px;
+    margin-top: 60px;
+    margin-left: 130px;
   }
   .Home .social-media {
     margin-top: 320px;
