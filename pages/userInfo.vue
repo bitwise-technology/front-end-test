@@ -1,22 +1,22 @@
 <template>
   <v-container class="userInfo">
     <v-row class="padding-left header">
-      <v-col md="3">
+      <v-col cols="6" md="3">
         <a href="https://bitwise.ltda/" target="_blank">
           <v-img alt="logo" src="/logo.png" class="logo"></v-img>
         </a>
       </v-col>
-      <v-col md="6">
+      <v-col cols="12" md="6">
         <UserSearchInput />
       </v-col>
-      <v-col md="3" class="social-media">
+      <v-col cols="6" md="3" class="social-media">
         <SocialMediaIcons />
       </v-col>
     </v-row>
     <v-row v-if="user" class="padding-left">
       <v-col>
         <v-row>
-          <v-col md="1">
+          <v-col cols="5" md="1">
             <v-img 
               class="user-avatar" 
               width="120"
@@ -25,7 +25,7 @@
               :src="user.avatarUrl">
             </v-img>
           </v-col>
-          <v-col md="11" class="repositories-quantity">
+          <v-col cols="7" md="11" class="repositories-quantity">
             <div class="user-name">{{ user.name }}</div>
             <div class="user-repositories"> 
               <label>{{ user.repositories.nodes.length }}</label><br>
@@ -131,25 +131,19 @@ export default {
 </script>
 
 <style scoped>
-.userInfo {
-  height: 100%;
-}
+
 .userInfo .logo {
   width: 140px;
   height: 50px;
+  margin-top: 20px;
 }
-.userInfo .padding-left {
-  padding-left: 138px;
-}
-.userInfo .header {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 60px;
-}
+
 .userInfo .social-media {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
+  justify-content: end;
+  margin-top: 30px;
+  position: absolute;
+  right: 0;
+  text-align: right;
 }
 .userInfo .user-avatar {
   background-blend-mode: normal;
@@ -192,4 +186,32 @@ export default {
   flex-direction: column;
   justify-content: end;
 }
+
+@media (min-width: 600px) {
+  .userInfo {
+    height: 100%;
+  }
+  .userInfo .logo {
+    margin-top: 0;
+  }
+  .userInfo .padding-left {
+    padding-left: 138px;
+  }
+  .userInfo .header {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 60px;
+  }
+  .userInfo .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .userInfo .user-avatar {
+    background-blend-mode: normal;
+    filter: drop-shadow(0px 2px 4px rgba(84, 84, 89, 0.14));
+    border-radius: 4px;
+  }
+}
+
 </style>

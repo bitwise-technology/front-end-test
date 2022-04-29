@@ -1,6 +1,6 @@
 <template>
   <div class="RepositoriesTable">
-    <vue-custom-scrollbar class="scroll-area">
+    <vue-custom-scrollbar class="scroll-area overflow-x-scroll">
       <table class="table">
         <tr class="table-title">
           <th class="pa-7 text-left" colspan="4">
@@ -49,7 +49,11 @@ export default {
       type: Object,
       default: null,
     },
-  }
+  },
+  data() {
+    return {
+    }
+  },
 }
 
 </script>
@@ -59,7 +63,8 @@ export default {
 .RepositoriesTable .scroll-area {
   position: relative;
   margin: auto;
-  height: 560px;
+  height: 310px;
+  width: 350px;
 }
 .RepositoriesTable .table {
   background: #FFFFFF;
@@ -68,6 +73,7 @@ export default {
   margin-top: auto;
   border-collapse: collapse;
 }
+
 .RepositoriesTable .table-title {
   font-family: 'Roboto';
   font-style: normal;
@@ -108,8 +114,17 @@ export default {
   line-height: 18px;
   color: #3D5879;
 }
-.RepositoriesTable .commit-message {
-  max-width: 250px;
+
+@media (min-width: 600px) {
+  .RepositoriesTable .scroll-area {
+    position: relative;
+    margin: auto;
+    height: 560px;
+    width: auto;
+  }
+  .RepositoriesTable .commit-message {
+    max-width: 250px;
+  }
 }
 
 </style>
