@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Gotham-Bold";
+  src: local("Gotham"), url(~/assets/fonts/Gotham/GothamBold.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Gotham-Book";
+  src: local("Gotham"), url(~/assets/fonts/Gotham/GothamBook.ttf) format("opentype");
+}
+
+html {
+  overflow: auto !important;
+}
