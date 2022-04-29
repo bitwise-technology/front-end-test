@@ -113,7 +113,7 @@ export default {
       .finally(() => (this.isLoading = false))
     },
     userInfo(login) {
-      this.$router.push(`/userInfo?user=${login}`);
+      this.$router.push(`/UserInfo?user=${login}`);
     },
   }
 };
