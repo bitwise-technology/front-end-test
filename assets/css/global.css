@@ -11,7 +11,7 @@
   src: local("Roboto"), url(~/assets/fonts/Roboto/Roboto-Regular.ttf) format("opentype");
 }
 @font-face {
-  font-family: "Futura Bk Bt";
+  font-family: "Futura Bk BT";
   src: local("Futura"), url(~/assets/fonts/Futura/FutuBk.ttf) format("opentype");
 }
 html {
