@@ -73,6 +73,10 @@ export default {
     },
   },
 
+  env: {
+    token: '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',
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
