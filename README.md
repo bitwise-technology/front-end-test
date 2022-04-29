@@ -1,64 +1,68 @@
-# Desafio Frontend - Bem-vindo a Bitwise
+# front-end-test
 
-Somos Humanos e amamos trabalhar com pessoas humanas, pode parecer estranha essa frase, mas pense bem nas empresas que você já trabalhou e em algum momento você foi tratado como um robô ou pior como recurso, aqui sabemos que nossos **'wisers'** são a nossa assinatura, cultura e o motivo pelo qual nossa empresa existe.
+## Build Setup
 
-Nosso modelo de negócios combina projetos de valor compartilhado com consultoria nas tecnologias mais avançadas. Esse desafio é uma oportunidade para fazer parte do nosso time em uma jornada de aprendizado e desenvolvimento!
+```bash
+# install dependencies
+$ npm install
 
-## Que tipo de pessoas buscamos?
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que não fiquem presas em paradigmas de programação, pois acreditamos que linguagens, frameworks o SDK's precisam ser escolhidas baseadas na necessidade de cada projeto. E o que isso quer dizer? Simples, quer dizer que nós amamos trabalhar com tecnologias de ponta e quem decidirá as ferramentas a serem utilizadas assim como a composição tecnológica será o time envolvido.
+# build for production and launch server
+$ npm run build
+$ npm run start
 
-## Instruções para participar
+# generate static project
+$ npm run generate
+```
 
-- Crie sua conta no github, caso você não tenha uma
-- Crie um novo fork do repositório do desafio
-- Crie uma nova branch com seu nome-sobrenome
-- Faça um pull request para o nosso repositório quando você terminar o desafio.
-- Envie um email para douglas@bitwise.ltda para te adicionarmos ao time slack do desafio.
+For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## O nosso desafio
+## Special Directories
 
-Como você irá ver, nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional! 
+You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
-Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) que tenha as seguintes features:
+### `assets`
 
-- Implementação do campo de busca pelo nome de usuários no github
-- Caso o nome de usuário seja encontrado pela busca, mostrar imagem do perfil do github na pagina principal como está desenhada no Figma
-- Caso o nome de usuário não seja encontrado mostrar um alerta informando que o usuário não existe.
-- Caso o nome de usuário possua ou participe de algum repositório, então mostrar uma lista com 
-  | Quantidade de repositórios do usuário | ( Participação e Repositórios criados pelo usuário )
-  | Nome do Repo | Quantidade de commits do usuário | Mensagem do ultimo commit | Hash do ultimo commit | 
-- Caso o nome de usuário não possua e nem participe de nenhum repositório mostrar um alert informando que o usuário encontrado não possui nenhum repo.
+The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
 
-Você pode usar qualquer tipo de tecnologia para entregar o projeto como: ReactJS, VueJS, Ruby on Rails e etc.. Não existe limites ou formas erradas de fazer o projeto. 
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
 
-OBS: *É muito importante para analisarmos sua capacidade de adaptação a novas tecnologias que o projeto seja implementado utilizando a **API de GraphQL**, mas se caso você encontre muitos problemas para entender ou implementar o GraphQL, como fallback você pode utilizar a versão **REST** , mas lembre-se, que ao fazer isso você irá perder uma grande quantidade pontos no nosso teste.*
+### `components`
 
+The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
 
-## Interface no figma
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
 
-![](images/interface-example.png) 
+### `layouts`
 
-Interface: https://www.figma.com/file/QwOji1MvZGBQiK5BCM9lxL/Bitwise-tests?node-id=0%3A1
+Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
 
-### Adicionais
+### `pages`
 
-Caso você consiga completar todas tarefas acima e queira nós mostrar que você manja:
-- Adicione ao campo de busca sugestões de nome de usuários, ou seja, quando usuário começar a digitar "mend" abaixo do campo de busca ira mostrar uma lista de nomes como: "mendos, mendesbarreto, mendeswhat" etc.. e quando usuário clicar em um desses nomes irá executar as atividades descritas acima.
+This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
 
-OBS: O Github possui API para busca dos usuários
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
 
+### `plugins`
 
-## O que iremos avaliar?
+The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
 
-- Adaptação a novos tipos de tecnologias como API de GraphQL do Github
-- Coesão das mensagens dos commits
-- Testes automatizados como (Unit Test, UI Test ...)
-- Estrutura do projeto
-- Nomenclatura de classes, funções e métodos
-- Conhecimento em CI/CD
-- Aplicação de Design Patterns
-- Nível de fidelidade/carinho do desenvolvimento da UI que entregamos no figama
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
 
+### `static`
 
+This directory contains your static files. Each file inside this directory is mapped to `/`.
+
+Example: `/static/robots.txt` is mapped as `/robots.txt`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+
+### `store`
+
+This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
