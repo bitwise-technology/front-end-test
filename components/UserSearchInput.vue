@@ -59,7 +59,6 @@ export default {
       modal: false,
     }
   },
-
   methods: {
     async getUsers(user) {
       this.users = [];
@@ -75,7 +74,7 @@ export default {
 
       const endpoint = "https://api.github.com/graphql";
       const headers = {
-        "Authorization": "bearer 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",
+        "Authorization": `bearer ${process.env.token}`,
         "Accept": "application/vnd.github.v3+json"
       };
       ;

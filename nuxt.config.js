@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import token from './token.js';
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -74,7 +75,7 @@ export default {
   },
 
   env: {
-    token: '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',
+    token,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

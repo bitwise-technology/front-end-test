@@ -74,7 +74,7 @@ export default {
       const login = this.$route.query.user;
       const endpoint = "https://api.github.com/graphql";
       const headers = {
-        "Authorization": "bearer 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",
+        "Authorization": `bearer ${process.env.token}`,
         "Accept": "application/vnd.github.v3+json"
       };
       ;
@@ -120,7 +120,6 @@ export default {
         }
 
         this.user = res.data.user;
-        console.log(this.user);
       })
       .catch(err => {
         console.log(err);
