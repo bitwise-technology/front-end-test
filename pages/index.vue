@@ -2,7 +2,9 @@
   <v-container class="Home">
     <v-row class="padding-left">
       <v-col md="6">
-        <v-img alt="logo" src="/logo.png" class="logo"></v-img>
+        <a href="https://bitwise.ltda/" target="_blank">
+          <v-img alt="logo" src="/logo.png" class="logo"></v-img>
+        </a>
       </v-col>
     </v-row>
     <v-row class="padding-left">
@@ -12,7 +14,7 @@
           ficou muito <span> fácil! </span>
         </div>
         <div class="user-search-input">
-          <UserSearchInput />
+          <UserSearchInput :github-button="true"/>
         </div>
       </v-col>
       <v-col md="6">

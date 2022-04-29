@@ -19,16 +19,16 @@
           class="table-body"
         >
           <td>{{ repository.name }}</td>
-          <td>{{ repository.defaultBranchRef.target.history.totalCount }}</td>
+          <td>{{ repository.defaultBranchRef && repository.defaultBranchRef.target && repository.defaultBranchRef.target.history.totalCount }}</td>
           <v-tooltip left>
             <template #activator="{ on, attrs }">
               <td v-bind="attrs" class="commit-message text-truncate" v-on="on">
-                {{ repository.defaultBranchRef.target.message }}
+                {{ repository.defaultBranchRef && repository.defaultBranchRef.target && repository.defaultBranchRef.target.message }}
               </td>
             </template>
-            <span>{{ repository.defaultBranchRef.target.message }}</span>
+            <span>{{ repository.defaultBranchRef && repository.defaultBranchRef.target && repository.defaultBranchRef.target.message }}</span>
           </v-tooltip>
-          <td>{{ repository.defaultBranchRef.target.oid }}</td>
+          <td>{{ repository.defaultBranchRef && repository.defaultBranchRef.target && repository.defaultBranchRef.target.oid }}</td>
         </tr>
       </table>
     </vue-custom-scrollbar>

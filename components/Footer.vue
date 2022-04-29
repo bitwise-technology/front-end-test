@@ -4,7 +4,9 @@
     <v-container>
       <v-row class="d-flex mt-13" align="center" justify="center">
         <v-col md="auto" class="mr-15">
-          <v-img width="100" height="35" alt="logo-footer" src="logo-footer.png"></v-img>
+          <a href="https://bitwise.ltda/" target="_blank">
+            <v-img width="100" height="35" alt="logo-footer" src="logo-footer.png"></v-img>
+          </a>
         </v-col>
         <v-col md="auto" class="mr-10">
           <p>
@@ -43,7 +45,7 @@
         <v-col md="auto" class="mx-n15">
           <SocialMediaIcons />
         </v-col>
-        <v-col md="auto" class="ml-n10">
+        <v-col md="auto" class="ml-n10" @click="toTop">
           <div class="back-to-top">Voltar ao Topo</div>
         </v-col>
       </v-row>
@@ -57,6 +59,14 @@ import SocialMediaIcons from '~/components/SocialMediaIcons.vue';
 export default {
   components: {
     SocialMediaIcons,
+  },
+  methods: {
+    toTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
   }
 }
 </script>
@@ -98,6 +108,7 @@ export default {
   line-height: 20px;
   color: #FD71EA;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .Footer .divider {
   display: flex;

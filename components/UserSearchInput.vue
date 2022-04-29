@@ -10,6 +10,7 @@
       height="50"
       :loading="isLoading"
       hide-selected
+      hide-no-data
       item-text="name"
       item-value="login"
       solo>
@@ -17,7 +18,7 @@
         <v-list-item-title @click="userInfo(item.login)" v-text="item.name"></v-list-item-title>
       </template>
       <template #append>
-        <div class="github-icon" @click="getUsers()">
+        <div v-if="githubButton" class="github-icon" @click="getUsers()">
           <img
             width="24"
             height="24"
@@ -25,11 +26,10 @@
             alt=""
           >
         </div>
-      </template>
-      <template #no-data>
-        <div class="pa-4"> Nenhum usuário foi encontrado </div>
+        <div v-else></div>
       </template>
     </v-autocomplete>
+    <Alert message="Nenhum usuário encontrado!" :modal="modal" />
   </div>
 </template>
 
@@ -37,15 +37,26 @@
 
 import Vue from 'vue'
 import vueDebounce from 'vue-debounce'
+import Alert from '~/components/Alert.vue';
 
 Vue.use(vueDebounce);
 
 export default {
+  components: {
+    Alert,
+  },
+  props: {
+    githubButton: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return { 
       user: null,
       users: [],
       isLoading: false,
+      modal: false,
     }
   },
 
@@ -54,16 +65,17 @@ export default {
       this.users = [];
 
       if (!user) {
-        this.users = [] 
+        this.users = [];
         return;
       }
       if (this.isLoading) return;
 
-      this.isLoading = true
+      this.isLoading = true;
+      this.modal = false;
 
       const endpoint = "https://api.github.com/graphql";
       const headers = {
-        "Authorization": "bearer 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",
+        "Authorization": "bearer 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",
         "Accept": "application/vnd.github.v3+json"
       };
       ;
@@ -89,8 +101,12 @@ export default {
 
       const response = await fetch(endpoint, options);
       await response.json().then(res => {
+        if (res.data.search.nodes?.length === 0) {
+          this.modal = true;
+          return;
+        }
+
         this.users = res.data.search.nodes;
-        this.$forceUpdate();
       })
       .catch(err => {
         console.log(err);
@@ -99,7 +115,7 @@ export default {
     },
     userInfo(login) {
       this.$router.push(`/userInfo?user=${login}`);
-    }
+    },
   }
 };
 

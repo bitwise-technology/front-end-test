@@ -2,7 +2,9 @@
   <v-container class="userInfo">
     <v-row class="padding-left header">
       <v-col md="3">
-        <v-img alt="logo" src="/logo.png" class="logo"></v-img>
+        <a href="https://bitwise.ltda/" target="_blank">
+          <v-img alt="logo" src="/logo.png" class="logo"></v-img>
+        </a>
       </v-col>
       <v-col md="6">
         <UserSearchInput />
@@ -15,7 +17,13 @@
       <v-col>
         <v-row>
           <v-col md="1">
-            <v-img class="user-avatar" width="120" height="120" alt="user-avatar" :src="user.avatarUrl"></v-img>
+            <v-img 
+              class="user-avatar" 
+              width="120"
+              height="120" 
+              alt="user-avatar" 
+              :src="user.avatarUrl">
+            </v-img>
           </v-col>
           <v-col md="11" class="repositories-quantity">
             <div class="user-name">{{ user.name }}</div>
@@ -32,6 +40,7 @@
         <RepositoriesTable :user="user" />
       </v-col>
     </v-row>
+    <Alert message="Nenhum repositório encontrado!" :modal="modal" />
   </v-container>
 </template>
 
@@ -47,6 +56,7 @@ export default {
   data() {
     return {
       user: null,
+      modal: false,
     }
   },
   watch: {
@@ -59,10 +69,12 @@ export default {
   },
   methods: {
     async getUser() {
+      this.modal = false;
+      
       const login = this.$route.query.user;
       const endpoint = "https://api.github.com/graphql";
       const headers = {
-        "Authorization": "bearer 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",
+        "Authorization": "bearer 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",
         "Accept": "application/vnd.github.v3+json"
       };
       ;
@@ -103,6 +115,10 @@ export default {
 
       const response = await fetch(endpoint, options);
       await response.json().then(res => {
+        if (res.data.user.repositories.nodes?.length === 0) {
+          this.modal = true;
+        }
+
         this.user = res.data.user;
         console.log(this.user);
       })
