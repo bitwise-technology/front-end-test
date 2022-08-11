@@ -39,7 +39,7 @@ OBS: *É muito importante para analisarmos sua capacidade de adaptação a novas
 
 ![](images/interface-example.png) 
 
-Interface: https://www.figma.com/file/QwOji1MvZGBQiK5BCM9lxL/Bitwise-tests?node-id=0%3A1
+Interface: https://www.figma.com/file/0yRZAx8GSGDhKpjXvjMf4A/Bitwise-tests-V2?node-id=0%3A1
 
 
 ### Adicionais
