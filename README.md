@@ -20,7 +20,7 @@ Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que n�
 
 Como você irá ver, nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional!
 
-Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) que tenha as seguintes features:
+Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) ou [API de REST do Github](https://docs.github.com/en/rest) que tenha as seguintes features:
 
 - Implementação do campo de busca pelo nome de usuários no github
 - Caso o nome de usuário seja encontrado pela busca, mostrar imagem do perfil do github na pagina principal como está desenhada no Figma
@@ -31,8 +31,6 @@ Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API
 - Caso o nome de usuário não possua e nem participe de nenhum repositório mostrar um alert informando que o usuário encontrado não possui nenhum repo.
 
 Você pode usar qualquer tipo de tecnologia para entregar o projeto como: ReactJS, VueJS, Ruby on Rails e etc.. Não existe limites ou formas erradas de fazer o projeto.
-
-OBS: *É muito importante para analisarmos sua capacidade de adaptação a novas tecnologias que o projeto seja implementado utilizando a **API de GraphQL**, mas se caso você encontre muitos problemas para entender ou implementar o GraphQL, como fallback você pode utilizar a versão **REST** , mas lembre-se, que ao fazer isso você irá perder uma grande quantidade pontos no nosso teste.*
 
 ## Interface no figma
 
@@ -49,7 +47,6 @@ OBS: O Github possui API para busca dos usuários
 
 ## O que iremos avaliar?
 
-- Adaptação a novos tipos de tecnologias como API de GraphQL do Github
 - Coesão das mensagens dos commits
 - Testes automatizados como (Unit Test, UI Test ...)
 - Estrutura do projeto
