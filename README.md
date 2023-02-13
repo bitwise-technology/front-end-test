@@ -1,56 +1,106 @@
-# Desafio Frontend - Bem-vindo a Bitwise
+<h1>Bitwise Challenge</h1>
 
-Somos Humanos e amamos trabalhar com pessoas humanas, pode parecer estranha essa frase, mas pense bem nas empresas que você já trabalhou e em algum momento você foi tratado como um robô ou pior como recurso, aqui sabemos que nossos **'wisers'** são a nossa assinatura, cultura e o motivo pelo qual nossa empresa existe.
+<p align="center">
+  <!-- Nextjs -->
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"/>
+  <!-- Chakra UI -->
+  <img src="https://img.shields.io/badge/Chakra%20UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white"/>
+  <!-- Jest -->
+  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"/>
+  <!-- Docker -->
+  <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white"/>
+  <!-- TypeScript -->
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
+</p>
 
-Nosso modelo de negócios combina projetos de valor compartilhado com consultoria nas tecnologias mais avançadas. Esse desafio é uma oportunidade para fazer parte do nosso time em uma jornada de aprendizado e desenvolvimento!
+- [📑 About the project](#-about-the-project)
+- [📦 Dependencies](#-dependencies)
+- [📥 Package Manager](#-package-manager)
+- [🚀 Getting Started](#-getting-started)
+  - [Install](#install)
+  - [Run](#run)
+  - [Running with docker 🐋](#running-with-docker-)
+- [⚙ Tests](#-tests)
+- [🔍 SonarQube](#-sonarqube)
+- [📖 Docs](#-docs)
+- [📝 License](#-license)
 
-## Que tipo de pessoas buscamos?
+## 📑 About the project
 
-Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que não fiquem presas em paradigmas de programação, pois acreditamos que linguagens, frameworks o SDK's precisam ser escolhidas baseadas na necessidade de cada projeto. E o que isso quer dizer? Simples, quer dizer que nós amamos trabalhar com tecnologias de ponta e quem decidirá as ferramentas a serem utilizadas assim como a composição tecnológica será o time envolvido.
+...
 
-## Instruções para participar
+## 📦 Dependencies
 
-- Crie sua conta no github, caso você não tenha uma
-- Crie um novo fork do repositório do desafio
-- Crie uma nova branch com seu nome-sobrenome
-- Faça um pull request para o nosso repositório quando você terminar o desafio.
-- Envie um email para douglas@bitwise.ltda para te adicionarmos ao time slack do desafio.
+- [Next.js](https://nextjs.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Jest](https://jestjs.io/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-## O nosso desafio
+## 📥 Package Manager
 
-Como você irá ver, nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional!
+The project was developed using [PNPM](https://pnpm.io/), but you can use any of the package managers below:
 
-Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) ou [API de REST do Github](https://docs.github.com/en/rest) que tenha as seguintes features:
+- [NPM](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/)
+- [PNPM](https://pnpm.io/)
 
-- Implementação do campo de busca pelo nome de usuários no github
-- Caso o nome de usuário seja encontrado pela busca, mostrar imagem do perfil do github na pagina principal como está desenhada no Figma
-- Caso o nome de usuário não seja encontrado mostrar um alerta informando que o usuário não existe.
-- Caso o nome de usuário possua ou participe de algum repositório, então mostrar uma lista com 
-  | Quantidade de repositórios do usuário | ( Participação e Repositórios criados pelo usuário )
-  | Nome do Repo | Quantidade de commits do usuário | Mensagem do ultimo commit | Hash do ultimo commit | 
-- Caso o nome de usuário não possua e nem participe de nenhum repositório mostrar um alert informando que o usuário encontrado não possui nenhum repo.
+## 🚀 Getting Started
 
-Você pode usar qualquer tipo de tecnologia para entregar o projeto como: ReactJS, VueJS, Ruby on Rails e etc.. Não existe limites ou formas erradas de fazer o projeto.
+Start by defining the environment variables:
 
-## Interface no figma
+### Install
 
-![](images/interface-example.png)
+```bash
+npm install
+```
 
-Interface: https://www.figma.com/file/0yRZAx8GSGDhKpjXvjMf4A/Bitwise-tests-V2?node-id=0%3A1
+### Run
 
-### Adicionais
+```bash
+npm run dev
+```
 
-Caso você consiga completar todas tarefas acima e queira nós mostrar que você manja:
-- Adicione ao campo de busca sugestões de nome de usuários, ou seja, quando usuário começar a digitar "mend" abaixo do campo de busca ira mostrar uma lista de nomes como: "mendos, mendesbarreto, mendeswhat" etc.. e quando usuário clicar em um desses nomes irá executar as atividades descritas acima.
+### Running with docker 🐋
 
-OBS: O Github possui API para busca dos usuários
+Just run:
 
-## O que iremos avaliar?
+```bash
+docker-compose up -d
+```
 
-- Coesão das mensagens dos commits
-- Testes automatizados como (Unit Test, UI Test ...)
-- Estrutura do projeto
-- Nomenclatura de classes, funções e métodos
-- Conhecimento em CI/CD
-- Aplicação de Design Patterns
-- Nível de fidelidade/carinho do desenvolvimento da UI que entregamos no figama
+## ⚙ Tests
+
+```bash
+npm run test
+
+# And use test:watch for watch mode
+npm run test:watch
+
+# And use test:coverage for generate coverage report
+npm run test:coverage
+```
+
+## 🔍 SonarQube
+
+```bash
+npm run sonar
+```
+
+## 📖 Docs
+
+The REST API documentation is based on Openapi/Swagger is available at:
+
+[http://localhost:8080/docs](http://localhost:8080/docs)
+
+## 📝 License
+
+This project is under the MIT license.
+
+<p align="center">
+  <strong> Maded with 💜 by: </strong>
+  <p align="center">
+    <a href="https://github.com/ZauJulio">
+      <img src="https://github.com/ZauJulio.png" width="50" height="50" alt="OakAnderson" />
+    </a>
+  </p>
+</p>
