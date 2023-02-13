@@ -1,0 +1,70 @@
+{
+  "name": "bitwise-challenge",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "author": {
+    "name": "Zaú Júlio",
+    "email": "zaujulio.dev@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZauJulio/front-end-test.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install",
+    "unprepare": "husky uninstall",
+    "postinstall": "husky install",
+    "scan": "./scripts/sonar-scanner.sh"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0",
+    "pnpm": ">=6.0.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.4.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@next/font": "13.1.6",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.10",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
+    "framer-motion": "^9.0.2",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@commitlint/cli": "^17.4.3",
+    "@commitlint/config-conventional": "^17.4.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "husky": "^8.0.3",
+    "jest": "^29.4.2",
+    "jest-environment-jsdom": "^29.4.2",
+    "lint-staged": "^13.1.1",
+    "prettier": "^2.8.4"
+  }
+}
