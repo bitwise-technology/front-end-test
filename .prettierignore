@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# IDE and editors files
+.vscode
+
+# Code Quality
+.scannetwork/
+coverage/
+
+# Git
+.husky/
