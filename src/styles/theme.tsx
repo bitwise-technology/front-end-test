@@ -3,6 +3,7 @@ import { extendTheme } from '@chakra-ui/react'
 const colors = {
   brand: {
     white: 'rgb(251, 251, 251)',
+    gray2: 'rgb(79,79,79)',
     primary: {
       10: 'rgb(233, 205, 228)',
       50: 'rgb(219, 175, 211)',
@@ -33,4 +34,13 @@ const colors = {
   },
 }
 
-export const theme = extendTheme({ colors })
+const shadows = {
+  outline: 'brand.primary.600',
+}
+
+const fonts = {
+  heading: `'Gotham', sans-serif`,
+  body: `'Gotham', sans-serif`,
+}
+
+export const theme = extendTheme({ colors, shadows, fonts })
