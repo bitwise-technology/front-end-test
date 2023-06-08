@@ -22,11 +22,11 @@ export default {
         background-image: url('@/assets/background.svg');
         background-size: cover;
         font-family: 'Gotham', sans-serif;
+        padding: 60px 150px 41px 150px;
         height: 100%;
     }
 
     .home{
-        padding: 60px 150px 41px 150px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
