@@ -1,0 +1,9 @@
+html,body{
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+  }
