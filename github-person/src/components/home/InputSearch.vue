@@ -4,7 +4,7 @@
         <button @click="()=>{}">
             <img src="@/assets/icon-search.svg" alt="Icone de busca">
         </button>
-        <div>
+        <div class="box-github">
             <img src="@/assets/github-icon.svg" alt="Icone do Github">
         </div>
     </div>
@@ -23,7 +23,6 @@ export default {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         display: flex;
         align-items: center;
-        margin-bottom: 216px;
     }
 
     .search input{
@@ -56,7 +55,7 @@ export default {
         cursor: pointer;
     }
 
-    .search div{
+    .box-github{
         padding: 19px 22px;
         background-color: #42163A;
         border: none;
@@ -67,6 +66,7 @@ export default {
         position: absolute;
         right: -0.43px;
     }
+    
     /* Responsive */
     @media (max-width:640px){
         .search input{
@@ -95,7 +95,7 @@ export default {
             margin-bottom: 0;
         }
 
-        .search div{
+        .box-github{
             padding: 11px 22px;
         }
     }
