@@ -67,5 +67,36 @@ export default {
         position: absolute;
         right: -0.43px;
     }
-    
+    /* Responsive */
+    @media (max-width:640px){
+        .search input{
+            width: 480px;   
+        }
+    }
+
+    @media (max-width:550px){
+        .search input{
+            width: 400px;   
+        }
+
+    }
+
+    @media (max-width:460px){
+        .search input{
+            padding: 8px 0px 8px 64px;
+            font-size:1rem;
+            width: 320px;
+        }
+
+        .search{
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .search div{
+            padding: 11px 22px;
+        }
+    }
 </style>
