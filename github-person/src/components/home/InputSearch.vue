@@ -23,7 +23,7 @@ export default {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         display: flex;
         align-items: center;
-        margin-bottom: 219px;
+        margin-bottom: 216px;
     }
 
     .search input{

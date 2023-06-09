@@ -24,7 +24,7 @@ export default {
         background-image: url('@/assets/backgrounds/background.svg');
         background-size: cover;
         font-family: 'Gotham', sans-serif;
-        padding: 60px 150px 41px 150px;
+        padding: 60px 150px 30px 150px;
         height: 100%;
     }
 
