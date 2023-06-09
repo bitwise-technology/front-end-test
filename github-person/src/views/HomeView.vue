@@ -9,7 +9,6 @@
             <div class="row-social">
                 <SocialContainer></SocialContainer>
             </div>
-            
         </section>
     </div>
 </template>
