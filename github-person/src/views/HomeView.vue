@@ -1,12 +1,15 @@
 <template>
     <div id="home-container">
         <section class="container home" id="home" name="home">
-            <img class="logotipo" src="@/assets/logo.svg" alt="Logo da Bitwise">
+            <img src="@/assets/logo.svg" alt="Logo da Bitwise">
             <div>
                 <h1 class="title">Buscar um usuário no <strong>Github</strong> ficou muito <strong>fácil!</strong></h1>
                 <InputSearch></InputSearch>
             </div>
-            <SocialContainer></SocialContainer>
+            <div class="row-social">
+                <SocialContainer></SocialContainer>
+            </div>
+            
         </section>
     </div>
 </template>
@@ -32,12 +35,8 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-between;
         height: 100%;
-    }
-
-    .logotipo{
-        margin-bottom: 133px;
     }
 
     .title{
@@ -52,6 +51,10 @@ export default {
 
     .title strong{
         font-weight: 700;
+    }
+
+    .row-social{
+        width: 100%;
     }
 
     /* Responsive */
@@ -81,10 +84,6 @@ export default {
             align-items: flex-start;
             justify-content: space-between;
             height: 100%;
-        }
-
-        .logotipo{
-            margin-bottom: 0px;
         }
 
         .title{
