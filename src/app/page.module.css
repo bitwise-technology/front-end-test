@@ -1,0 +1,51 @@
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+}
+
+.polygon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 45%;
+  z-index: -99;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  margin-top: 130px;
+  font-size: 42px;
+  color: #42163A;
+  letter-spacing: -3px;
+}
+
+.inputContainer {
+  margin-top: 90px;
+  display: flex;
+}
+
+.center {
+ flex:1;
+ padding: 60px 150px;
+ display: flex;
+
+}
+
+.footer {
+ padding: 30px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: black;
+}

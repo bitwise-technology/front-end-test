@@ -1,56 +1,34 @@
-# Desafio Frontend - Bem-vindo a Bitwise
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Somos Humanos e amamos trabalhar com pessoas humanas, pode parecer estranha essa frase, mas pense bem nas empresas que você já trabalhou e em algum momento você foi tratado como um robô ou pior como recurso, aqui sabemos que nossos **'wisers'** são a nossa assinatura, cultura e o motivo pelo qual nossa empresa existe.
+## Getting Started
 
-Nosso modelo de negócios combina projetos de valor compartilhado com consultoria nas tecnologias mais avançadas. Esse desafio é uma oportunidade para fazer parte do nosso time em uma jornada de aprendizado e desenvolvimento!
+First, run the development server:
 
-## Que tipo de pessoas buscamos?
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que não fiquem presas em paradigmas de programação, pois acreditamos que linguagens, frameworks o SDK's precisam ser escolhidas baseadas na necessidade de cada projeto. E o que isso quer dizer? Simples, quer dizer que nós amamos trabalhar com tecnologias de ponta e quem decidirá as ferramentas a serem utilizadas assim como a composição tecnológica será o time envolvido.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Instruções para participar
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Crie sua conta no github, caso você não tenha uma
-- Crie um novo fork do repositório do desafio
-- Crie uma nova branch com seu nome-sobrenome
-- Faça um pull request para o nosso repositório quando você terminar o desafio.
-- Envie um email para douglas@bitwise.ltda para te adicionarmos ao time slack do desafio.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## O nosso desafio
+## Learn More
 
-Como você irá ver, nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional!
+To learn more about Next.js, take a look at the following resources:
 
-Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) ou [API de REST do Github](https://docs.github.com/en/rest) que tenha as seguintes features:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Implementação do campo de busca pelo nome de usuários no github
-- Caso o nome de usuário seja encontrado pela busca, mostrar imagem do perfil do github na pagina principal como está desenhada no Figma
-- Caso o nome de usuário não seja encontrado mostrar um alerta informando que o usuário não existe.
-- Caso o nome de usuário possua ou participe de algum repositório, então mostrar uma lista com 
-  | Quantidade de repositórios do usuário | ( Participação e Repositórios criados pelo usuário )
-  | Nome do Repo | Quantidade de commits do usuário | Mensagem do ultimo commit | Hash do ultimo commit | 
-- Caso o nome de usuário não possua e nem participe de nenhum repositório mostrar um alert informando que o usuário encontrado não possui nenhum repo.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Você pode usar qualquer tipo de tecnologia para entregar o projeto como: ReactJS, VueJS, Ruby on Rails e etc.. Não existe limites ou formas erradas de fazer o projeto.
+## Deploy on Vercel
 
-## Interface no figma
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-![](images/interface-example.png)
-
-Interface: https://www.figma.com/file/0yRZAx8GSGDhKpjXvjMf4A/Bitwise-tests-V2?node-id=0%3A1
-
-### Adicionais
-
-Caso você consiga completar todas tarefas acima e queira nós mostrar que você manja:
-- Adicione ao campo de busca sugestões de nome de usuários, ou seja, quando usuário começar a digitar "mend" abaixo do campo de busca ira mostrar uma lista de nomes como: "mendos, mendesbarreto, mendeswhat" etc.. e quando usuário clicar em um desses nomes irá executar as atividades descritas acima.
-
-OBS: O Github possui API para busca dos usuários
-
-## O que iremos avaliar?
-
-- Coesão das mensagens dos commits
-- Testes automatizados como (Unit Test, UI Test ...)
-- Estrutura do projeto
-- Nomenclatura de classes, funções e métodos
-- Conhecimento em CI/CD
-- Aplicação de Design Patterns
-- Nível de fidelidade/carinho do desenvolvimento da UI que entregamos no figama
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
