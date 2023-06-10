@@ -1,7 +1,7 @@
 <template>
     <div id="home-container">
         <section class="container home" id="home" name="home">
-            <img src="@/assets/logo.svg" alt="Logo da Bitwise">
+            <img class="logo" src="@/assets/logo.svg" alt="Logo da Bitwise">
             <div>
                 <h1 class="title">Buscar um usuário no <strong>Github</strong> ficou muito <strong>fácil!</strong></h1>
                 <InputSearch></InputSearch>
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import InputSearch from '@/components/home/InputSearch.vue';
-import SocialContainer from '@/components/home/SocialContainer.vue';
+import InputSearch from '@/components/InputSearch.vue';
+import SocialContainer from '@/components/SocialContainer.vue';
 export default {
     components:{InputSearch, SocialContainer},
 }
@@ -34,8 +34,12 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
+        justify-content: center;
         height: 100%;
+    }
+
+    .logo{
+        margin-bottom: 133px;
     }
 
     .title{
@@ -54,6 +58,7 @@ export default {
 
     .row-social{
         width: 100%;
+        margin-top: 219px;
     }
 
     /* Responsive */
