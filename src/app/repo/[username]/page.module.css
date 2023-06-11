@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: black;
+}
+
+.headerContainer {
+  width: 1124px;
+  display: flex;
+  margin: auto;
+}
+
+.container {
+  width: 1124px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContainer {
+  display: flex;
+  align-items: center;
+}
+
+.tableContainer {
+  padding: 24px;
+  height: 300px;
+}
+
+.tableContainer th {
+  padding: 18px;
+  text-align: start;
+}
+
+.tableContainer td {
+  padding: 18px;
+}
+
+.tableContainer tr:nth-child(even) {
+  background: #F0F0F0;
+}
+
+.footerContainer {
+  
+}
