@@ -14,7 +14,7 @@ import vector4 from "../../../../public/Vector (4).png";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ToastCustom } from "@/app/page";
+import ToastCustom from "@/components/ToastCustom";
 import { Autour_One } from "next/font/google";
 
 interface Props {

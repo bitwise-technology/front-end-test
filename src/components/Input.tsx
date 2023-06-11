@@ -4,7 +4,7 @@ import { MagnifyingGlass, GithubLogo } from "@phosphor-icons/react";
 type Props = {
   placeholder: string;
   onChangeText: (value: string) => void;
-  onClose: () => void;
+  // onClose: () => void;
   onClick: () => void;
   onKeyPress: React.KeyboardEventHandler<HTMLInputElement>;
 };
