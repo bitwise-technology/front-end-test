@@ -1,7 +1,7 @@
 <template>
     <div class="input-search">
-        <input type="text" placeholder="Buscar usuário">
-        <button @click="()=>{}">
+        <input type="text" placeholder="Buscar usuário" v-model="user">
+        <button @click="searchUser(user)">
             <img src="@/assets/icon-search.svg" alt="Icone de busca">
         </button>
         <div class="box-github">
@@ -12,8 +12,19 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
-    
+    data(){
+        return{
+            user:""
+        }
+    },
+    methods:{
+        ...mapActions(['actionUserGithub']),
+        searchUser(user){
+            this.actionUserGithub(user);
+        }
+    }
 }
 </script>
 
@@ -75,12 +86,12 @@ export default {
 
     @media (max-width:1086px){
         .input-search input{
-            width: 450px;   
+            width: 480px;   
         }
     }
     @media (max-width:640px){
         .input-search input{
-            width: 480px;   
+            width: 478px;   
         }
     }
 
