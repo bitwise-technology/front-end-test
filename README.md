@@ -12,7 +12,7 @@ Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que n�
 
 - Crie sua conta no github, caso você não tenha uma
 - Crie um novo fork do repositório do desafio
-- Crie uma nova branch com seu nome-sobrenome
+- Crie uma nova branch com seu `nome-sobrenome`
 - Faça um pull request para o nosso repositório quando você terminar o desafio
 - Envie um e-mail para `douglas@bitwisespace.com`
 
