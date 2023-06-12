@@ -9,10 +9,10 @@ const routes = [
     component: HomeView
   },
   {
-    path:'/search',
+    path:'/search/:login',
     name: 'search',
     component: SearchView,
-    props:true
+    props:true,
   }
 ]
 
