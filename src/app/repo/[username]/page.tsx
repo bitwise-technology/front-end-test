@@ -23,14 +23,16 @@ interface Props {
 
 const Header = () => {
   const [search, setSearch] = useState("");
-  // const [suggestions, setSuggestions] = useState<string[]>([]); // Suggestions list
   const router = useRouter();
 
   const submit = async () => {
     if (!search.length) {
-      toast.custom((t) => <ToastCustom onCloseToast={() => toast.dismiss(t.id)} />, {
-        position: "top-right",
-      });
+      toast.custom(
+        (t) => <ToastCustom onCloseToast={() => toast.dismiss(t.id)} />,
+        {
+          position: "top-right",
+        }
+      );
       return;
     }
     try {
@@ -48,9 +50,12 @@ const Header = () => {
         router.push(`repo/${search}`);
       }
     } catch (error) {
-      toast.custom((t) => <ToastCustom onCloseToast={() => toast.dismiss(t.id)} />, {
-        position: "top-right",
-      });
+      toast.custom(
+        (t) => <ToastCustom onCloseToast={() => toast.dismiss(t.id)} />,
+        {
+          position: "top-right",
+        }
+      );
     }
   };
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -58,22 +63,7 @@ const Header = () => {
       submit();
     }
   };
-  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { value } = event.target;
-  //   setSearch(value);
 
-  //   // Generate suggestions based on input value
-  //   const suggestionsList = ["mendos", "mendesbarreto", "mendeswhat"]; // Example suggestions
-  //   const filteredSuggestions = suggestionsList.filter((suggestion) =>
-  //     suggestion.toLowerCase().startsWith(value.toLowerCase())
-  //   );
-  //   setSuggestions(filteredSuggestions);
-  // };
-
-  // const handleSuggestionClick = (suggestion: string) => {
-  //   setSearch(suggestion);
-  //   submit();
-  // };
   const handleLogoClick = () => {
     router.back();
   };
@@ -82,7 +72,7 @@ const Header = () => {
       <div className={styles.headerContainer}>
         <div style={{ flex: 1 }}>
           <Link href="/">
-              <Image src={logo} alt="" />
+            <Image src={logo} alt="" />
           </Link>
         </div>
         <div style={{ flex: 2 }}>
@@ -93,21 +83,27 @@ const Header = () => {
             }}
             onClick={submit}
             onKeyPress={handleKeyPress}
-            //list="suggestions"
           />
-          {/* <datalist id="suggestions">
-            {suggestions.map((suggestion) => (
-              <option key={suggestion} value={suggestion} />
-            ))}
-          </datalist> */}
         </div>
         <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
-          <Image alt="" src={vector1} style={{marginLeft: 8, marginRight: 8}}/>
+          <Image
+            alt=""
+            src={vector1}
+            style={{ marginLeft: 8, marginRight: 8 }}
+          />
           <Image alt="" src={vector2} />
         </div>
       </div>
     </div>
   );
+};
+
+const handleScrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
 };
 
 const Footer = () => {
@@ -172,24 +168,25 @@ const Footer = () => {
         <div
           style={{
             display: "flex",
-            gap: 3,
+            gap: 4,
             color: "white",
             fontSize: 12,
+            justifyContent: "flex-start",
           }}
         >
           <div
             style={{
               flex: 1,
-              paddingInline: 40,
+              paddingInline: 12,
             }}
           >
             Todos os direitos reservados - 2020
           </div>
           <div
             style={{
-              //flex: 1,
-              paddingInline: 12,
-              //marginLeft: 8,
+              flex: 1,
+              display: "flex",
+              justifyContent: "right",
             }}
           >
             <Image alt="" src={vector3} />
@@ -197,8 +194,9 @@ const Footer = () => {
           <div
             style={{
               flex: 1,
-              paddingInline: 0,
-              marginRight: 12,
+              display: "flex",
+              justifyContent: "space-between",
+              
             }}
           >
             <Image alt="" src={vector4} />
@@ -206,8 +204,10 @@ const Footer = () => {
           <div
             style={{
               flex: 1,
-              paddingInline: 12,
+              paddingLeft: 12,
+              justifyContent: "flex-end"
             }}
+            onClick={handleScrollToTop}
           >
             VOLTAR AO TOPO
           </div>
@@ -352,7 +352,7 @@ export default function Page({ params }: Props) {
         </div>
       )}
       <Footer />
-      <Toaster />
+      <Toaster position="top-right" />
     </div>
   );
 }
