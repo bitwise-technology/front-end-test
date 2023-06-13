@@ -89,7 +89,7 @@ body {
 }
 
 body {
-  color: #FFFFFF;
+  background: linear-gradient(359.39deg, #EFEEEE 0.46%, #FFFFFF 99.42%);
 }
 
 a {
@@ -99,6 +99,6 @@ a {
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    color-scheme: dark;  
   }
 }
