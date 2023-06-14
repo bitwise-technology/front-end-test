@@ -26,4 +26,41 @@ html,body{
 .container{
     max-width: 1440px;
     margin: 0 auto;
-  }
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('./fonts/Gotham/Gotham-Black.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('./fonts/Gotham/Gotham-Bold.otf') format('opentype');
+    font: 600;
+}
+
+@font-face {
+    font-family:'Gotham' ;
+    src: url('./fonts/Gotham/Gotham-Light.otf') format('opentype');
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family:'Gotham' ;
+    src: url('./fonts/Gotham/Gotham-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+
+@font-face {
+    font-family:'Gotham' ;
+    src: url('./fonts/Gotham/Gotham-Thin.otf') format('opentype');
+    font-weight: 300;
+}
+
+
+
+
+
