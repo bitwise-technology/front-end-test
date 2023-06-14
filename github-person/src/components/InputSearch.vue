@@ -1,10 +1,10 @@
 <template>
     <div class="input-search">
         <input type="text" placeholder="Buscar usuário" v-model="user">
-        <button @click="searchUser(user)">
+        <div class="img-search">
             <img src="@/assets/icon-search.svg" alt="Icone de busca">
-        </button>
-        <div class="box-github">
+        </div>
+        <div class="box-github" @click="searchUser(user)">
             <img v-if="loading" src="@/assets/github-icon.svg" alt="Icone do Github">
             <CicleProgress v-else></CicleProgress>
         </div>
@@ -61,15 +61,14 @@ export default {
         border: 3px solid #42163A;
     }
 
-    .input-search button{
+    .img-search{
         box-sizing: border-box;
         position: absolute;
         height: 32px;
-        left: 16px;
-        top: 16px;
+        left: 21px;
+        top: 21px;
         border: none;
         background-color: #fff;
-        cursor: pointer;
     }
 
     .box-github{
@@ -83,6 +82,7 @@ export default {
         position: absolute;
         top: 0.01px;
         right: -0.43px;
+        cursor: pointer;
     }
     
     /* Responsive */
