@@ -1,13 +1,13 @@
 <template>
     <div class="input-search">
-        <input type="text" placeholder="Buscar usuário" v-model="user">
+        <input type="text" placeholder="Buscar usuário" v-model="user" @keyup.enter="searchUser(user)">
         <div class="img-search">
             <img src="@/assets/icon-search.svg" alt="Icone de busca">
         </div>
-        <div class="box-github" @click="searchUser(user)">
+        <button class="box-github" @click="searchUser(user)">
             <img v-if="loading" src="@/assets/github-icon.svg" alt="Icone do Github">
             <CicleProgress v-else></CicleProgress>
-        </div>
+        </button>
     </div>
     
 </template>
