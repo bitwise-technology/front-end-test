@@ -2,8 +2,11 @@
     <div id="home-container">
         <section class="container home" id="home" name="home">
             <img class="logo" src="@/assets/logo.svg" alt="Logo da Bitwise">
+            <div v-if="valid">
+                    <h1 class="title" >Buscar um usuário no <strong>Github</strong> ficou muito <strong>fácil!</strong></h1>
+                </div>
+                <AlertComponent v-else></AlertComponent>
             <div>
-                <h1 class="title">Buscar um usuário no <strong>Github</strong> ficou muito <strong>fácil!</strong></h1>
                 <InputSearch></InputSearch>
             </div>
             <div class="row-social">
@@ -16,8 +19,16 @@
 <script>
 import InputSearch from '@/components/InputSearch.vue';
 import SocialContainer from '@/components/SocialContainer.vue';
+import { mapGetters } from 'vuex';
+import AlertComponent from '@/components/AlertComponent.vue';
 export default {
-    components:{InputSearch, SocialContainer},
+    components:{InputSearch, SocialContainer, AlertComponent},
+    computed:{
+        ...mapGetters(['getNotFound']),
+        valid(){
+            return this.getNotFound;
+        }
+    }
 }
 </script>
 
