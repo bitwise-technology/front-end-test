@@ -1,8 +1,10 @@
 <template>
     <div id="search-container">
-       <section class="container search">
+       <section v-if="getValid" class="container search">
             <nav>
-                <img src="@/assets/logo.svg" alt="Logotipo da Bitwise">
+                <router-link to="/">
+                    <img src="@/assets/logo.svg" alt="Logotipo da Bitwise">
+                </router-link>
                 <div class="input-component">
                     <InputSearch></InputSearch>
                 </div>
@@ -17,11 +19,12 @@
                 <InputSearch></InputSearch>
             </div>
             <div class="box-profile">
-                <div class="avatar"></div>
+                <div class="avatar" :style="{ backgroundImage: `url(${user.avatar_url})` }"></div>
                 <div class="container-describe">
-                    <h1>Fernando Carrara</h1>
+                    <h1>{{ user.username }}</h1>
                     <div class="repo-amount">
-                        <h2>32</h2>
+                        <h2 v-if="isLoading">{{ repositorys.length }}</h2>
+                        <CicleProgressVue v-else style="height: 14px; width: 14px;"></CicleProgressVue>
                         <span>Repositórios</span>
                     </div>
                     <div class="ornament"></div>
@@ -38,19 +41,25 @@
                     </div>
                 </div>
                 <div class="list">
-                    <div class="scrollable-div">
-                        <div :class=" index % 2 == 0 ? 'items' : 'items-par'" v-for="(item, index) in items" :key="index">
-                            <span class="item name">{{ item.name }}</span>
-                            <span class="item commits">{{ item.commits }}</span>
-                            <span class="item message">{{ item.message }}</span>
-                            <span class="item hash">{{ item.hash }}</span>
+                    <div v-if="isLoading" class="scrollable-div">
+                        <div :class=" index % 2 == 0 ? 'items' : 'items-par'" v-for="(repo, index) in repositorys" :key="index">
+                            <span class="item name">{{ repo.name }}</span>
+                            <span class="item commits">{{ repo.commit_count }}</span>
+                            <span class="item message">{{ repo.last_commit_message}}</span>
+                            <span class="item hash">{{ repo.last_commit_hash}}</span>
                         </div>
+                    </div>
+                    <div v-else class="list-loading">
+                        <CicleProgressVue></CicleProgressVue>
                     </div>
                 </div>
             </div>
        </section>
+       <section v-else class="loading">
+            <AlertComponent></AlertComponent>
+       </section>
        <div class="footer-component">
-        <FooterComponent></FooterComponent>
+            <FooterComponent></FooterComponent>
        </div>
        <div class="active-social-bottom">
             <SocialContainer></SocialContainer>
@@ -61,24 +70,49 @@
 import InputSearch from '@/components/InputSearch.vue';
 import SocialContainer from '@/components/SocialContainer.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
+import AlertComponent from '@/components/AlertComponent.vue';
+import CicleProgressVue from '@/components/CicleProgress.vue';
+import { mapGetters, mapActions } from 'vuex';
 export default {
-    components:{InputSearch, SocialContainer, FooterComponent},
-
+    components:{InputSearch, SocialContainer, FooterComponent,AlertComponent,CicleProgressVue},
     data(){
         return{
-            items:[
-                {name:"project", commits:0, message:"feat: Inital commit", hash:"fer349"},
-                {name:"project", commits:0, message:"feat: Inital commit", hash:"sad501"},
-                {name:"project", commits:0, message:"feat: Inital commit", hash:"fdg023"},
-                {name:"project", commits:0, message:"feat: Inital commit", hash:"mvj495"},
-                {name:"project", commits:0, message:"feat: Inital commit", hash:"dsm234"},
-                {name:"project", commits:0, message:"feat: Inital commit", hash:"ass085"},
-                {name:"project", commits:0, message:"feat: Inital commit", hash:"fjj435"},
-            ],
-
             valid: false,
+            isLoading:false,
         }
     },
+    watch: {
+        '$route'(to, from) {
+            if (to.params.login !== from.params.login) {
+                // Parâmetro de rota 'login' alterado
+                // Executar ação ou recarregar a página aqui
+                location.reload(); // Recarrega a página
+            }
+        },
+    },
+    methods:{
+        //Buscando actions especificas na gerencia de estado
+        ...mapActions(['actionUserInfo'])
+    },
+    computed:{
+        //Buscando getters especificos na gerencia de estado
+        ...mapGetters(['getUser', 'getRepos','getNotFound']),
+        user(){
+            return this.getUser;
+        },
+        repositorys(){
+            return this.getRepos;
+        },
+        getValid(){
+            return this.getNotFound;
+        },
+    },
+    async created(){
+        const login = this.$route.params.login;
+        this.isLoading = false
+        await this.actionUserInfo(login);
+        this.isLoading = true
+    }
 }
 </script>
 <style scoped>
@@ -95,6 +129,15 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         gap: 60px;
+    }
+
+    .loading{
+        padding: 60px 158px 98px 158px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 660px;
     }
 
     .search nav {
@@ -119,7 +162,6 @@ export default {
     }
 
     .box-profile .avatar{
-        background-image: url('../assets/avatar.png');
         height: 120px;
         width: 120px;
         border-radius: 4px;
@@ -223,6 +265,13 @@ export default {
         overflow: hidden;
     }
 
+    .list-loading{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .scrollable-div{
         height: 100%;
         overflow-y: auto;
@@ -266,10 +315,12 @@ export default {
 
     .message{
         width: 176px;
+        text-align: start;
     }
 
     .hash{
         width: 250px;
+        text-align: end;
     }
 
     .active-social-bottom{
