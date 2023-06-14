@@ -1,6 +1,6 @@
 <template>
     <div class="social-container">
-        <a href="" target="_blank" rel="Link para o email">
+        <a href="mailto:zau.galvao@bitwisespace.com" target="_blank" rel="Link para o email">
             <img src="@/assets/social/email.png" alt="Icone do Email" height="24" width="24">
         </a>
         <a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel="Link para o LinkedIn">

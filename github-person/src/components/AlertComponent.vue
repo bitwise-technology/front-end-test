@@ -9,7 +9,7 @@
         <div class="subtitle-alert">
             <span class="subtitle">Enquanto isso, acompanhe a Bitwise nas redes sociais:</span>
             <div class="alert-social">
-                <a href="" target="_blank" rel="Link para o email">
+                <a href="mailto:zau.galvao@bitwisespace.com" target="_blank" rel="Link para o email">
                     <img src="@/assets/social/email_with_icon.svg" alt="Icone do Email" height="24" width="24">
                 </a>
                 <a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel="Link para o LinkedIn">

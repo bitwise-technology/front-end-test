@@ -30,7 +30,7 @@
             <div class="direct-bitwise">
                 <p>Todos os direitos reservados - 2020</p>
                 <div class="footer-social">
-                    <a href="" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:zau.galvao@bitwisespace.com" target="_blank" rel="noopener noreferrer">
                         <img src="@/assets/social/email_with_icon.svg" alt="Imagem de email" height="24" width="24">
                     </a>
                     <a href="https://www.linkedin.com/company/bitwisetechnology/" target="_blank" rel="noopener noreferrer">
