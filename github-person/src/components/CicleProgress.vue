@@ -6,8 +6,9 @@
   
 <style scoped>
   .loader {
-    width: 24px;
-    height: 24px;
+    width: 23px;
+    height: 23px;
+    box-sizing: border-box;
     border-radius: 50%;
     background-color:transparent;
     position: relative;
