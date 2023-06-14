@@ -1,40 +1,53 @@
 <template>
-    <div class="circle-progress">
-      <div class="progress-circle" :style="{ transform: progressRotation }"></div>
+    <div class="loader">
+      <div class="loader-progress"></div>
     </div>
 </template>
   
-<script>
-  export default {
-    props: {
-      progress: {
-        type: Number,
-        required: true,
-        validator: (value) => value >= 0 && value <= 100
-      }
-    },
-    computed: {
-      progressRotation() {
-        const rotation = (this.progress / 100) * 360;
-        return `rotate(${rotation}deg)`;
-      }
-    }
-  };
-</script>
-  
 <style scoped>
-  .circle-progress {
+  .loader {
     width: 24px;
     height: 24px;
-    background-color: transparent;
+    border-radius: 50%;
+    background-color:transparent;
+    position: relative;
+    animation: spin 1s infinite linear;
+    border: #42163A 1px solid;
+    overflow: hidden;
   }
-  
-  .progress-circle {
+
+  .loader-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: white; /* Aqui você pode definir a cor do círculo de progresso */
-    transform-origin: center center;
-    transition: transform 0.3s ease-in-out;
+    background-color: transparent;
+    border: 4px solid #fff;
+    border-right-color: transparent;
+    transform-origin: right center;
+    animation: progress 2s infinite linear;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes progress {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
   }
 </style>
