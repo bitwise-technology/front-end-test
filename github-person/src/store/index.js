@@ -1,10 +1,9 @@
 import { createStore } from 'vuex'
 import router from '../router/index';
 import axios from 'axios';
-import { token } from '../env/env'; 
 
 // Defina o token de acesso pessoal do GitHub
-const tokenID = token;
+const tokenID = process.env.VUE_APP_API_TOKEN;
 
 export default createStore({
   state: {
