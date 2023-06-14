@@ -5,18 +5,27 @@
             <img src="@/assets/icon-search.svg" alt="Icone de busca">
         </button>
         <div class="box-github">
-            <img src="@/assets/github-icon.svg" alt="Icone do Github">
+            <img v-if="loading" src="@/assets/github-icon.svg" alt="Icone do Github">
+            <CicleProgress v-else></CicleProgress>
         </div>
     </div>
     
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions,mapGetters } from 'vuex';
+import CicleProgress from './CicleProgress.vue';
 export default {
+    components:{CicleProgress},
     data(){
         return{
             user:""
+        }
+    },
+    computed:{
+        ...mapGetters(['getIsloading']),
+        loading(){
+            return this.getIsloading;
         }
     },
     methods:{
