@@ -40,11 +40,24 @@
                         <img src="@/assets/social/instagram-withe.png" alt="Imagem do Instagram" height="24" width="24">
                     </a>
                 </div>
-                <a href="">VOLTAR AO TOPO</a>
+                <span class="back-top" @click="scrollToTop">VOLTAR AO TOPO</span>
             </div>
         </footer>
     </section>
 </template>
+
+<script>
+export default {
+    methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // rolagem suave
+            });
+        }
+    }
+}
+</script>
 
 <style scoped>
     #container-footer{
@@ -122,11 +135,13 @@
         color: #E9CDE4;
     }
 
-    .direct-bitwise a{
+    .back-top{
         font-weight: 400;
         font-size: 0.75rem;
         line-height: 16px;
         color: #E9CDE4;
+        text-decoration: underline;
+        cursor: pointer;
     }
 
     .direct-bitwise .footer-social{
