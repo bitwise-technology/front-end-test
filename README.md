@@ -1,5 +1,5 @@
 <h1 align="center"> Git Hub Search - Username 
-<img alt="projeto BitWise" src="/assets/Logo.svg" width="5%">
+<img alt="projeto BitWise" src="/assets/Logo.svg" width="10%">
 </h1>
 
 <p align="center">Desafio Frontend - Bitwise <br/>
