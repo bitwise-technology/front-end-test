@@ -51,12 +51,14 @@
         <form id="search" action="" method="post" accept-charset="utf-8">
           <label for="user"></label>
           <div class="busca">          
-            <input            
+            <input onkeyup="filtrar()"
             type="search"
             id="user"
             name="user"
             placeholder="Buscar Usuário"
-          />          
+          /> 
+          <ul id="listaProdutos">                       
+          </ul>         
           </div>
           <button type="submit"><img class="githover" src="/assets/Github.svg" alt="Botão buscar"></button>
           <div class="error"></div>
