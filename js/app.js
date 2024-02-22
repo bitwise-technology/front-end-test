@@ -19,27 +19,34 @@ const refresh = document.getElementById("refresh");
 const x = document.querySelector("#alert .x");
 const repos = document.getElementById("repos");
 const userRepoContent = document.querySelector("#result .table");
+const gitlogo = document.querySelector(".githover1");
+const reload = document.querySelector(".reload");
 
 let response, isSuccessful;
 
 refresh.addEventListener("click", () => {
   location.reload();
 });
-
 x.addEventListener("click", () => {
   errorDiv.classList.add("inactive");
 });
+gitlogo.addEventListener("click", () => {
+  location.reload();    
+});
+reload.addEventListener("click", () => {
+  location.reload();    
+});
 
-fetch('https://api.github.com/users')
+fetch('https://api.github.com/users?per_page=100')
     .then(res => res.json())
     .then((json) => {
         console.log(json);
         const ul = document.getElementById('listaProdutos');
-        json.forEach((item) => {
+        json.forEach((data) => {
             const li = document.createElement("li");
             li.innerHTML = `
             
-                <span>${item.login}</span>
+                <span Class="item-name">${data.login}</span>
             
             `;
             ul.appendChild(li);
@@ -58,9 +65,9 @@ function filtrar() {
       count = 0
 
   //PEGAR OS ELEMENTOS HTML
-  input = document.getElementById('search');
+  input = document.getElementById('user');
   ul = document.getElementById('listaProdutos');
-
+  
   //FILTRO
   filter = input.value;
 
@@ -70,11 +77,11 @@ function filtrar() {
   //PERCORRER TODOS OS LI'S
   for (i = 0; i < li.length; i++) {
       //PEGAR A TAG A DO ELEMENTO PERCORRIDO
-      a = li[i].getElementsByTagName("a")[0];
+      a = li[i].getElementsByTagName("span")[0];
       //PEGAR O TEXTO DENTRO DO NOSSA TAG A
-      txtValue = a ;
+      txtValue = a.textContent;      
       //VERIFICAR SE O QUE O USUARIO DIGITOU BATE COM O TEXTO DA TAG A
-      if (txtValue .indexOf > -1) {
+      if (txtValue.indexOf(filter) > -1) {
           //VALOR BATEU
           li[i].style.display = "";
           //INCREMENTAR O CONTADOR
@@ -82,6 +89,7 @@ function filtrar() {
           //PEGAR A TAG SPAN DO ITEM
           span = li[i].querySelector(".item-name");
           //SE EXISTIR
+          console.log(txtValue.indexOf(filter));
           if (span) {
               span.innerHTML = txtValue.replace(new RegExp(filter, "gi"), (match) => {
                   return "<strong>" + match + "</strong>";
@@ -101,13 +109,12 @@ function filtrar() {
   }
 }
 
-
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   loading.style.display = "block";
 
   let apiLink = `https://api.github.com/users/${user.value}`;
-
+   
   // "./git-user.json"
 
   await getInfo(apiLink)
@@ -176,20 +183,16 @@ form.addEventListener("submit", async (e) => {
       userRepoLi.appendChild(namerepo)
             
       function qtd() {      
-      fetch(`https://api.github.com/repos/${user.value}/${namerepo.textContent}/contributors`)
+      fetch(`https://api.github.com/repos/${user.value}/${namerepo.textContent}/contributors?per_page=1`)
         .then(async res => {
           let data = await res.json();
-          data.map( item => {
-            
-            for (i = 0; i <= item.length; i++) {            
-              soma += item.contributions;               
-            }                                               
-            
-            const qtdcommit = document.createElement("span")
+          data.map( item => {          
+                                                     
+             const qtdcommit = document.createElement("span")
             qtdcommit.classList.add("qtd_commit")
-            qtdcommit.textContent = soma
+            qtdcommit.textContent = item.contributions
             userRepoLi.appendChild(qtdcommit)
-            console.log(soma);
+            
           })
         })                    
       }     
@@ -237,10 +240,6 @@ form.addEventListener("submit", async (e) => {
   }
 }
 });
-
-
-
-
 
 async function getInfo(url, options = {}) {
   // extract timeout param from options

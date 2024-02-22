@@ -136,7 +136,7 @@ color: #42163A;
 
 #listaProdutos{
   height: 150px;
-  width: 560px;
+  width: 560px; 
   text-align: center;
   background-color: white;
   text-align: left;
@@ -254,7 +254,7 @@ z-index: 1;
 }
 
 .pesquisa{
-  position: absolute;
+position: absolute;
 margin: 0;
 width: 560px;
 height: 56px;
@@ -271,8 +271,7 @@ z-index: 1;
   background-image: url(../assets/Search.svg);
   background-repeat: no-repeat;
   height: 56px;
-  width: 560px;
-  
+  width: 560px;  
   background-position: 1%;
   border: 1px solid #d6d6d6;
   box-shadow: 0px 4px 4px 0px #00000040;  
@@ -287,24 +286,27 @@ z-index: 1;
 
 .githover1{
   box-shadow: 0px 4px 4px 0px #00000040;
-  margin-left: -64px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  z-index: 1;
 }
 .githover1:hover{
   scale: 1.1;
 }
 
-#result_header .pesquisa form button[type="submit"]{
-border: 0;
-height: 0;
-align-items: center;
+.reload{
+position: absolute;
+display: flex;
 margin: 0;
-cursor: pointer;
+padding: 0;
+width: 496px;
+height: 56px;
 z-index: 1;
-}
-
-#search1{
-  display: flex;
-  align-items: center;
+cursor: pointer;
 }
 
 .sociais{
