@@ -924,13 +924,9 @@ left: 247px;
 top: 305px;
 }
 
-#alert,
 .load {
   display: none;
   margin-top: 2rem;
-}
-
-.load {
   position: relative;
   animation: rotation 0.5s ease infinite;
 }
@@ -958,20 +954,16 @@ top: 305px;
   rotate: -45deg;
 }
 
-@keyframes rotation {
-  0% {
-    rotate: 0deg;
+/*Mobile */
+@media(max-width: 992px){
+    
+  body main{
+      flex-direction: column;
+      align-items: center;
   }
-  25% {
-    rotate: 90deg;
-  }
-  50% {
-    rotate: 180deg;
-  }
-  75% {
-    rotate: 270deg;
-  }
-  100% {
-    rotate: 360deg;
+
+  div #polygon{
+      max-width: 350px;
+
   }
 }
