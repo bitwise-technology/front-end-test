@@ -37,8 +37,6 @@ Criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en
 Adicional
 - Adicione ao campo de busca sugestões de nome de usuários, ou seja, quando usuário começar a digitar "mend" abaixo do campo de busca irá mostrar uma lista de nomes como: "mendos, mendesbarreto, mendeswhat" etc.. e quando usuário clicar em um desses nomes irá executar as atividades descritas acima.
 
-- [Acesse o projeto finalizado, online](https://rcsn03.github.io/front-end-test/)
-
 ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/0yRZAx8GSGDhKpjXvjMf4A/Bitwise-tests-V2?node-id=0%3A1).
