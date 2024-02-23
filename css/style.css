@@ -151,6 +151,10 @@ color: #42163A;
   display: none;
 }
 
+#listaProdutos.active{
+  display: none;
+}
+
 #listaProdutos::-webkit-scrollbar{
   background-color: #ffffff;
   width: 6px;

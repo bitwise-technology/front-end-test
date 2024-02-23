@@ -38,7 +38,7 @@ reload.addEventListener("click", () => {
 });
 
 
-//FILTRO DE USUÁRIOS PELO USERNAME, PORÉM SEM EVENTO DE CLICK
+/*//FILTRO DE USUÁRIOS PELO USERNAME, PORÉM SEM EVENTO DE CLICK
 fetch('https://api.github.com/users?per_page=100')
     .then(res => res.json())
     .then((json) => {
@@ -101,6 +101,7 @@ function filtrar() {
           //NÃO MOSTRA O ITEM DA LISTA
           li[i].style.display = "none";
       }
+      li[i].setAttribute("onclick", "select(this)");
   }
   
 //VERIFICANDO SE TEM ITENS NA LISTA
@@ -108,8 +109,13 @@ function filtrar() {
   ul.style.display = "none";
   }else{ 
   ul.style.display = "block";
-  }
+  }  
 }
+function select(element){
+    let selectData = element.textContent;
+    user.value = selectData;
+    user.classList.add("active");
+  }*/
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
