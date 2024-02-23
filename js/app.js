@@ -37,6 +37,8 @@ reload.addEventListener("click", () => {
   location.reload();    
 });
 
+
+//FILTRO DE USUÁRIOS PELO USERNAME, PORÉM SEM EVENTO DE CLICK
 fetch('https://api.github.com/users?per_page=100')
     .then(res => res.json())
     .then((json) => {
@@ -93,7 +95,7 @@ function filtrar() {
           if (span) {
               span.innerHTML = txtValue.replace(new RegExp(filter, "gi"), (match) => {
                   return "<strong>" + match + "</strong>";
-              })
+              })               
           }
       } else {
           //NÃO MOSTRA O ITEM DA LISTA

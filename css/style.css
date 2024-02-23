@@ -13,6 +13,10 @@ body {
   height: 776px;   
 }
 
+#alert{
+  display: none;
+}
+
 #alert.active{
 position: absolute;
 display: flex;
@@ -457,7 +461,7 @@ color: #373435;
 
 #result,#footer-r,
 #search.inactive, #description.inactive, #Polygon.inactive,
-#logo.inactive, #result_header, #socials.inactive{
+#logo.inactive, #result_header, #socials.inactive, #alert.inactive{
   display: none;
   /* opacity: 0;
   pointer-events: none; */
