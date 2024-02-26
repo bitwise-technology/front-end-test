@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Bitwise - GitHub user search</title>
+  </head>
+  <body>
+    <div id="alert">
+      <a class="x" href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#FBFBFB"/>
+        </svg>
+        </a>
+        <p class="not">Nenhum usuário encontrado!</p>
+        <div class="frame2">
+          <p class="siga">Enquanto isso, acompanhe a Bitwise nas redes sociais:</p>
+          <div class="social1">
+            <a
+              href="https://bitwise.ltda/"
+              target="_blank"            
+            > <img class="fa-github" src="/assets/Social2.svg" alt="Site BitWise">
+              
+            </a>          
+            <a
+              href="https://www.instagram.com/bitwisetechnology"
+              target="_blank"            
+            > <img class="fa-square-instagram" src="/assets/Social-Insta2.svg" alt="Instagram BitWise">
+              
+            </a>
+            <a
+              href="https://www.linkedin.com/company/bitwisetechnology/"
+              target="_blank"            
+            > <img class="fa-linkedin" src="/assets/Social-Linkedin2.svg" alt="Linkedin BitWise">
+              
+            </a>
+        </div> 
+        </div>
+    </div>
+    <div id="Polygon"></div>
+    <main>
+      <header>
+        <a href="https://bitwise.ltda/" target="_blank">
+          <img id="logo" src="./assets/Logo.svg" alt="Logo">
+        </a>        
+      </header>
+
+      <section id="main">
+        <p id="description">Buscar um usuário no <b>Github</b> ficou muito <b>fácil!</b></p>
+        <form id="search" action="" method="post" accept-charset="utf-8">
+          <label for="user"></label>
+          <div class="busca">          
+            <input onkeyup="filtrar()"
+            type="search"
+            id="user"
+            name="user"
+            placeholder="Buscar Usuário"
+          /> 
+          <ul id="listaProdutos">                       
+          </ul>         
+          </div>
+          <button type="submit"><img class="githover" src="/assets/Github.svg" alt="Botão buscar"></button>
+          <div class="error"></div>
+          <div class="load">
+            <div></div>
+          </div>
+        </form>                  
+        
+        <div id="result_header">          
+          <a class="logo3" href="https://bitwise.ltda/" target="_blank">
+            <img src="./assets/Logo.svg" alt="Logo">
+          </a>          
+          <div class="pesquisa">
+          <div class="reload"></div>            
+          <div class="busca1">          
+            <input            
+            type="search"
+            id="user1"              
+            placeholder="Buscar Usuário"
+          />             
+          </div>
+          <img class="githover1" src="/assets/Github.svg" alt="Botão buscar">
+        </div>
+          <div class="sociais">                     
+              <a
+                href="https://bitwise.ltda/"
+                target="_blank"            
+              > <img class="fa-github" src="/assets/Social.svg" alt="Site BitWise">
+              </a>          
+              <a
+                href="https://www.instagram.com/bitwisetechnology"
+                target="_blank"            
+              > <img class="fa-square-instagram" src="/assets/Social-Insta.svg" alt="Instagram BitWise">              
+              </a>
+              <a
+                href="https://www.linkedin.com/company/bitwisetechnology/"
+                target="_blank"            
+              > <img class="fa-linkedin" src="/assets/Social-Linkedin.svg" alt="Linkedin BitWise">               
+              </a>            
+          </div>
+        </div>
+
+        <div id="result">           
+          <div class="name-repo">
+            <div id="avatar">
+              <img class="avatar" src="" alt="" height="120" width="120"/>              
+              <div class="nome-box">
+                <h2 id="full_name"></h2>
+                <h4 id="username"></h4>
+              </div>
+              <div id="repo">
+                <div class="frame1">
+                  <span id="repos"></span>
+                  <span class="repos1">Repositórios</span>                
+                </div> 
+                <div class="left-bar"></div>             
+              </div>
+            </div>
+          </div>          
+          <div class="table_back">
+            <p class="title">Repositórios Criados</p>
+            <span class="lin1"></span>
+            <span class="lin2"></span>
+            <span class="lin3"></span>
+          </div>
+          <div class="table">
+            <div id="links">
+              <button type="button" id="github_page">
+                <a class="github_page" target="_blank">Mais Informações</a>
+                <div class="left-bar1"></div>
+              </button>              
+              <button type="button" id="refresh" >Pesquisar Novamente
+                <div class="left-bar1"></div>
+              </button>
+            </div>
+            <div class="line_head">
+              <span class="t">Nome do repositório</span>
+              <span class="t1">Qtd de commit</span>
+              <span class="t2">Msg Ultimo commit</span>
+              <span class="t3">hash do ultimo commit</span>
+            </div>
+            
+            <div class="line2">
+
+            </div>
+            <div class="line3">
+
+            </div>
+          </div>
+          
+        </div>
+        <footer id="footer-r">
+          <div id="footer-result">
+            <div id="footer-result-info"></div>
+              <div class="social">          
+                <a
+                  href="https://bitwise.ltda/"
+                  target="_blank"            
+                > <img class="fa-github" src="/assets/Social2.svg" alt="Site BitWise">
+                  
+                </a>          
+                <a
+                  href="https://www.instagram.com/bitwisetechnology"
+                  target="_blank"            
+                > <img class="fa-square-instagram" src="/assets/Social-Insta2.svg" alt="Instagram BitWise">
+                  
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/bitwisetechnology/"
+                  target="_blank"            
+                > <img class="fa-linkedin" src="/assets/Social-Linkedin2.svg" alt="Linkedin BitWise">
+                  
+                </a>
+            </div> 
+            <a href="https://bitwise.ltda/" target="_blank">
+              <img class="logo2" src="./assets/Logo2.svg" alt="Logo">
+            </a>
+            <p class="tex1">Acreditamos no valor da tecnologia e no impacto positivo que a transformação digital exerce sobre 
+              a sociedade, mudando o nosso dia a dia, facilitando atividades comuns e acelerando os negócios.</p>
+            <div class="endereco">
+              <p class="tex2"><b>BRASIL</b><br>
+                R. Raphael Dias da Silva, 75
+                3º andar • Sala 306 e 308
+                Campolim • Sorocaba/SP</p>
+              <p class="tex3"><b>CANADÁ</b><br>                
+                830, Av. Ernest-Gagnon,
+                Bureau 315, Sala 609
+                Quebec</p>
+            </div>
+            <p class="direitos">Todos os direitos reservados - 2020</p>
+            <a href="#" class="voltar">VOLTAR AO TOPO</a>
+            <img src="/assets/Rectangle.svg" alt="Retângulo" class="rectangle11">
+          </div>
+        </footer>
+      </section>
+
+      <footer>
+        <div id="socials">          
+          <a
+            href="https://bitwise.ltda/"
+            target="_blank"            
+          > <img class="fa-github" src="/assets/Social.svg" alt="Site BitWise">
+            
+          </a>          
+          <a
+            href="https://www.instagram.com/bitwisetechnology"
+            target="_blank"            
+          > <img class="fa-square-instagram" src="/assets/Social-Insta.svg" alt="Instagram BitWise">
+            
+          </a>
+          <a
+            href="https://www.linkedin.com/company/bitwisetechnology/"
+            target="_blank"            
+          > <img class="fa-linkedin" src="/assets/Social-Linkedin.svg" alt="Linkedin BitWise">
+            
+          </a>
+        </div>        
+      </footer>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

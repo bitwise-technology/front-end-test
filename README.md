@@ -1,55 +1,46 @@
-# Desafio Frontend - Bem-vindo a Bitwise
+<h1 align="center"> Git Hub Search - Username 
+<img alt="projeto BitWise" src="/assets/Logo.svg" width="10%">
+</h1>
 
-Somos Humanos e amamos trabalhar com pessoas humanas, pode parecer estranha essa frase, mas pense bem nas empresas que você já trabalhou e em algum momento você foi tratado como um robô ou pior como recurso, aqui sabemos que nossos **'wisers'** são a nossa assinatura, cultura e o motivo pelo qual nossa empresa existe.
+<p align="center">Desafio Frontend - Bitwise <br/>
 
-Nosso modelo de negócios combina projetos de valor compartilhado com consultoria nas tecnologias mais avançadas. Esse desafio é uma oportunidade para fazer parte do nosso time em uma jornada de aprendizado e desenvolvimento.
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Desafio">Desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
+</p>
 
-## Que tipo de pessoas buscamos?
+<br>
 
-Buscamos pessoas que gostem de aprender, que não tenham medo de falhar e que não fiquem presas em paradigmas de programação, pois acreditamos que linguagens, frameworks o SDK's precisam ser escolhidas baseadas na necessidade de cada projeto. E o que isso quer dizer? Simples, quer dizer que nós amamos trabalhar com tecnologias de ponta e quem decidirá as ferramentas a serem utilizadas assim como a composição tecnológica será o time envolvido.
+<p align="center">
+  <img alt="projeto BitWise" src="/assets/interface-example.png" width="100%">
+</p>
 
-## Instruções para participar
+## 🚀 Tecnologias
 
-- Crie sua conta no github, caso você não tenha uma
-- Crie um novo fork do repositório do desafio
-- Crie uma nova branch com seu `nome-sobrenome`
-- Faça um pull request para o nosso repositório quando você terminar o desafio
-- Envie um e-mail para `douglas@bitwisespace.com`
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-## O nosso desafio
+- HTML e CSS
+- JavaScript
+- Git e Github
+- Figma
 
-Como você irá ver, nós somos fãs do Github e nada mais justo que fazer um desafio baseado nessa API sensacional!
+## 💻 Desafio
 
-Bem, basicamente você tem a responsabilidade de criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) ou [API de REST do Github](https://docs.github.com/en/rest) que tenha as seguintes features:
+Criar uma webpage usando a [API de GraphQL do Github](https://docs.github.com/en/graphql) ou [API de REST do Github](https://docs.github.com/en/rest) que tenha as seguintes features:
 
 - Implementação do campo de busca pelo nome de usuários no github
 - Caso o nome de usuário seja encontrado pela busca, mostrar imagem do perfil do github na pagina principal como está desenhada no Figma
 - Caso o nome de usuário não seja encontrado mostrar um alerta informando que o usuário não existe
 - Caso o nome de usuário possua ou participe de algum repositório, então mostrar uma lista com | Quantidade de repositórios do usuário | ( Participação e Repositórios criados pelo usuário ) | Nome do Repo | Quantidade de commits do usuário | Mensagem do ultimo commit | Hash do ultimo commit |
 - Caso o nome de usuário não possua e nem participe de nenhum repositório mostrar um alert informando que o usuário encontrado não possui nenhum repo.
-
-Você pode usar qualquer tipo de tecnologia para entregar o projeto como: ReactJS, VueJS, Ruby on Rails e etc.. Não existe limites ou formas erradas de fazer o projeto.
-
-## Interface no figma
-
-![interface-example](images/interface-example.png)
-
-Interface: [Link do Figma](https://www.figma.com/file/0yRZAx8GSGDhKpjXvjMf4A/Bitwise-tests-V2?node-id=0%3A1)
-
-### Adicionais
-
-Caso você consiga completar todas tarefas acima e queira nós mostrar que você manja:
-
+Adicional
 - Adicione ao campo de busca sugestões de nome de usuários, ou seja, quando usuário começar a digitar "mend" abaixo do campo de busca irá mostrar uma lista de nomes como: "mendos, mendesbarreto, mendeswhat" etc.. e quando usuário clicar em um desses nomes irá executar as atividades descritas acima.
 
-OBS: O Github possui API para busca dos usuários
+## 🔖 Layout
 
-## O que iremos avaliar?
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/0yRZAx8GSGDhKpjXvjMf4A/Bitwise-tests-V2?node-id=0%3A1).
 
-- Coesão das mensagens dos commits
-- Testes automatizados como (Unit Test, UI Test, ...)
-- Estrutura do projeto
-- Nomenclatura de classes, funções e métodos
-- Conhecimento em CI/CD
-- Aplicação de Design Patterns
-- Nível de fidelidade/carinho do desenvolvimento da UI que entregamos no Figma
+---
+
+Feito com ♥ by Rafa :wave:
